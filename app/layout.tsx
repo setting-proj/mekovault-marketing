@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { I18nProvider } from "@/lib/i18n/I18nProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -68,9 +69,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        <Header />
-        <div className="pt-16">{children}</div>
-        <Footer />
+        <I18nProvider>
+          <Header />
+          <div className="pt-16">{children}</div>
+          <Footer />
+        </I18nProvider>
       </body>
     </html>
   );

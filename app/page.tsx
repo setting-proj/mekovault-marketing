@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   ArrowRight,
@@ -16,8 +18,10 @@ import {
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading, EyebrowBadge } from "@/components/Section";
+import { useT } from "@/lib/i18n/I18nProvider";
 
 export default function Home() {
+  const t = useT();
   return (
     <>
       {/* Hero */}
@@ -32,19 +36,17 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center">
             <EyebrowBadge>
               <span className="size-1.5 rounded-full bg-current animate-brand-pulse" />
-              Trial gratis · Sin tarjeta
+              {t("hero.eyebrow")}
             </EyebrowBadge>
 
             <h1 className="mt-6 text-balance font-heading text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
-              Identidades corporativas,{" "}
-              <span className="text-brand-gradient">automatizadas</span> y{" "}
-              <span className="text-brand-gradient">auditadas</span>.
+              {t("hero.title.pre")}{" "}
+              <span className="text-brand-gradient">{t("hero.title.hl1")}</span>{" "}
+              {t("hero.title.and")}{" "}
+              <span className="text-brand-gradient">{t("hero.title.hl2")}</span>.
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground">
-              Mekovault reemplaza el flujo manual de altas, bajas y cambios en
-              Google&nbsp;Workspace, Microsoft&nbsp;Entra y otros directorios por
-              un portal self-service con aprobaciones, workers async y auditoría
-              inmutable.
+              {t("hero.subtitle")}
             </p>
 
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -53,17 +55,17 @@ export default function Home() {
                 external
                 size="lg"
               >
-                Crear cuenta gratis <ArrowRight />
+                {t("hero.cta.signup")} <ArrowRight />
               </LinkButton>
               <LinkButton href="/products" variant="outline" size="lg">
-                Ver producto
+                {t("nav.product")}
               </LinkButton>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
-              <TrustDot color="emerald" label="99.9% SLA" />
-              <TrustDot color="cyan" label="Multi-tenant + RLS" />
-              <TrustDot color="deep" label="Datos en LATAM" />
+              <TrustDot color="emerald" label={t("hero.trust.sla")} />
+              <TrustDot color="cyan" label={t("hero.trust.rls")} />
+              <TrustDot color="deep" label={t("hero.trust.latam")} />
             </div>
           </div>
 
@@ -112,7 +114,7 @@ export default function Home() {
       <Section compact className="border-t bg-background/60">
         <Container>
           <p className="text-center text-xs uppercase tracking-widest text-muted-foreground">
-            Integraciones nativas
+            {t("integrations.title")}
           </p>
           <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm font-medium text-muted-foreground">
             <span>Google Workspace</span>
