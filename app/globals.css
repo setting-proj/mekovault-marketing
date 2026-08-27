@@ -1,0 +1,166 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ============================================================
+   Mekovault marketing — mismo design language que el portal.
+   Paleta: #03045e / #0077b6 / #00b4d8 / #90e0ef / #caf0f8
+   ============================================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-brand-navy: #03045e;
+  --color-brand-deep: #0077b6;
+  --color-brand-cyan: #00b4d8;
+  --color-brand-sky: #90e0ef;
+  --color-brand-mist: #caf0f8;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  --shadow-glow: 0 8px 32px -8px rgb(3 4 94 / 0.25);
+  --shadow-glow-cyan: 0 12px 40px -8px rgb(0 180 216 / 0.35);
+}
+
+:root {
+  --background: #f7fbfd;
+  --foreground: #03045e;
+  --card: #ffffff;
+  --card-foreground: #03045e;
+  --muted: #eaf6fb;
+  --muted-foreground: #4a6b83;
+  --border: #d7e9f2;
+  --primary: #0077b6;
+  --primary-foreground: #ffffff;
+  --accent: #00b4d8;
+  --accent-foreground: #03045e;
+}
+
+.dark {
+  --background: #010226;
+  --foreground: #eaf6fb;
+  --card: #0a0d47;
+  --card-foreground: #eaf6fb;
+  --muted: #0a1170;
+  --muted-foreground: #90e0ef;
+  --border: rgb(144 224 239 / 0.12);
+  --primary: #00b4d8;
+  --primary-foreground: #03045e;
+  --accent: #0077b6;
+  --accent-foreground: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: #010226;
+    --foreground: #eaf6fb;
+    --card: #0a0d47;
+    --card-foreground: #eaf6fb;
+    --muted: #0a1170;
+    --muted-foreground: #90e0ef;
+    --border: rgb(144 224 239 / 0.12);
+    --primary: #00b4d8;
+    --primary-foreground: #03045e;
+    --accent: #0077b6;
+    --accent-foreground: #ffffff;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--color-brand-cyan) 40%, transparent);
+    color: var(--foreground);
+  }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--color-brand-cyan) 30%, transparent);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklab, var(--color-brand-cyan) 55%, transparent);
+  }
+}
+
+/* Utilidades reusables */
+@utility bg-brand-gradient {
+  background-image: linear-gradient(135deg, #03045e 0%, #0077b6 55%, #00b4d8 100%);
+}
+@utility bg-brand-radial {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 20%, rgb(0 180 216 / 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgb(0 119 182 / 0.20), transparent 60%);
+}
+@utility text-brand-gradient {
+  background-image: linear-gradient(135deg, #0077b6, #00b4d8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility glass {
+  background: color-mix(in oklab, var(--card) 78%, transparent);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border: 1px solid color-mix(in oklab, var(--color-brand-cyan) 18%, var(--border));
+}
+@utility grid-dot {
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--color-brand-cyan) 28%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+@utility grid-lines {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--color-brand-cyan) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-brand-cyan) 12%, transparent) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+@keyframes brand-pulse {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 0.9; }
+}
+@keyframes brand-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+@utility animate-brand-pulse { animation: brand-pulse 3s ease-in-out infinite; }
+@utility animate-brand-float { animation: brand-float 6s ease-in-out infinite; }
