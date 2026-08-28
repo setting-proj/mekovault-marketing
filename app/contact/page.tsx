@@ -1,32 +1,29 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Mail, MapPin, Building, ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
-
-export const metadata: Metadata = {
-  title: "Contacto",
-  description:
-    "Escribinos a cloud@mekovault.com o pedí una reunión con nuestro equipo comercial.",
-};
+import { useT } from "@/lib/i18n/I18nProvider";
 
 export default function ContactPage() {
+  const t = useT();
   return (
     <>
       <Section compact>
         <Container size="narrow">
           <SectionHeading
-            eyebrow="Contacto"
+            eyebrow={t("contact.eyebrow")}
             title={
               <>
-                Hablemos.{" "}
+                {t("contact.title.pre")}{" "}
                 <span className="text-brand-gradient">
-                  Respondemos en 1 día hábil.
+                  {t("contact.title.hl")}
                 </span>
               </>
             }
-            desc="La forma más rápida de conocer Mekovault es abrir un trial. Si preferís hablar antes, escribinos por email o vía formulario."
+            desc={t("contact.subtitle")}
           />
         </Container>
       </Section>
@@ -36,25 +33,25 @@ export default function ContactPage() {
           <div className="grid gap-6 sm:grid-cols-2">
             <ContactCard
               icon={<Mail />}
-              title="Ventas y consultas generales"
+              title={t("contact.card.sales")}
               value="cloud@mekovault.com"
               href="mailto:cloud@mekovault.com"
             />
             <ContactCard
               icon={<Building />}
-              title="Soporte a clientes"
+              title={t("contact.card.support")}
               value="soporte@mekovault.com"
               href="mailto:soporte@mekovault.com"
             />
             <ContactCard
               icon={<MapPin />}
-              title="Oficina"
-              value="Santiago de Chile"
-              subvalue="Trabajo remoto por defecto"
+              title={t("contact.card.office")}
+              value={t("contact.card.office_value")}
+              subvalue={t("contact.card.office_sub")}
             />
             <ContactCard
               icon={<ArrowRight />}
-              title="Trial inmediato"
+              title={t("contact.card.trial")}
               value="app.mekovault.com/signup"
               href="https://app.mekovault.com/signup"
               external
@@ -66,9 +63,9 @@ export default function ContactPage() {
       <Section className="border-t bg-muted/30">
         <Container size="narrow">
           <SectionHeading
-            eyebrow="Formulario"
-            title="Escribinos"
-            desc="Contanos brevemente qué necesitás. Este formulario abre tu cliente de email."
+            eyebrow={t("contact.form.eyebrow")}
+            title={t("contact.form.title")}
+            desc={t("contact.form.desc")}
             center
           />
 
@@ -80,7 +77,7 @@ export default function ContactPage() {
           >
             <div className="space-y-1.5">
               <label htmlFor="name" className="text-sm font-medium">
-                Nombre
+                {t("contact.form.name")}
               </label>
               <input
                 id="name"
@@ -91,7 +88,7 @@ export default function ContactPage() {
             </div>
             <div className="space-y-1.5">
               <label htmlFor="email" className="text-sm font-medium">
-                Email
+                {t("contact.form.email")}
               </label>
               <input
                 id="email"
@@ -103,7 +100,7 @@ export default function ContactPage() {
             </div>
             <div className="space-y-1.5">
               <label htmlFor="company" className="text-sm font-medium">
-                Empresa
+                {t("contact.form.company")}
               </label>
               <input
                 id="company"
@@ -113,7 +110,7 @@ export default function ContactPage() {
             </div>
             <div className="space-y-1.5">
               <label htmlFor="message" className="text-sm font-medium">
-                Cuéntanos
+                {t("contact.form.message")}
               </label>
               <textarea
                 id="message"
@@ -124,10 +121,10 @@ export default function ContactPage() {
               />
             </div>
             <LinkButton href="mailto:cloud@mekovault.com" size="lg" className="w-full">
-              Enviar mensaje
+              {t("contact.form.send")}
             </LinkButton>
             <p className="text-center text-xs text-muted-foreground">
-              También podés escribirnos directamente a{" "}
+              {t("contact.form.also")}{" "}
               <a
                 href="mailto:cloud@mekovault.com"
                 className="font-medium text-primary hover:underline"

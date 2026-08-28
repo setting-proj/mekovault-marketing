@@ -1,15 +1,11 @@
-import type { Metadata } from "next";
+"use client";
+
 import { ArrowRight, Check, Sparkles } from "lucide-react";
 
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
-
-export const metadata: Metadata = {
-  title: "Planes",
-  description:
-    "6 planes en pesos chilenos, desde Starter hasta Enterprise. 15% de descuento pagando anual. Sin tarjeta para el trial.",
-};
+import { useT } from "@/lib/i18n/I18nProvider";
 
 const PLANS = [
   {
@@ -83,23 +79,24 @@ function formatCLP(v: number) {
 }
 
 export default function PricingPage() {
+  const t = useT();
   return (
     <>
       <Section compact>
         <Container>
           <SectionHeading
-            eyebrow="Planes"
+            eyebrow={t("pricing.eyebrow")}
             title={
               <>
-                Precios claros en{" "}
-                <span className="text-brand-gradient">pesos chilenos</span>
+                {t("pricing_page.title.pre")}{" "}
+                <span className="text-brand-gradient">{t("pricing_page.title.hl")}</span>
               </>
             }
-            desc="6 tiers en CLP nativo. Excedentes por cuenta si superás el incluido. Pagando anual, 15% off automático."
+            desc={t("pricing_page.subtitle")}
           />
           <div className="mx-auto mt-6 inline-flex items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-xs">
             <Sparkles className="size-3.5 text-primary" />
-            <span className="text-muted-foreground">Trial 30 días · sin tarjeta</span>
+            <span className="text-muted-foreground">{t("pricing_page.trial_badge")}</span>
           </div>
         </Container>
       </Section>
@@ -119,7 +116,7 @@ export default function PricingPage() {
               >
                 {plan.highlighted && (
                   <span className="absolute right-4 top-4 rounded-full bg-brand-gradient px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white">
-                    Popular
+                    {t("pricing_page.popular")}
                   </span>
                 )}
                 <h3 className="font-heading text-xl font-semibold tracking-tight">
@@ -134,11 +131,11 @@ export default function PricingPage() {
                     <span className="font-heading text-4xl font-semibold tracking-tight">
                       {formatCLP(plan.priceCLP)}
                     </span>
-                    <span className="text-sm text-muted-foreground">/mes</span>
+                    <span className="text-sm text-muted-foreground">{t("pricing_page.per_month")}</span>
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    {plan.included} cuentas incluidas · excedente{" "}
-                    {formatCLP(plan.extra)}/cta
+                    {plan.included} {t("pricing_page.included")}{" "}
+                    {formatCLP(plan.extra)}{t("pricing_page.per_account")}
                   </p>
                 </div>
 
@@ -157,7 +154,7 @@ export default function PricingPage() {
                   className="mt-6 w-full"
                   variant={plan.highlighted ? "primary" : "outline"}
                 >
-                  Empezar con {plan.name}
+                  {t("pricing_page.start_with")} {plan.name}
                 </LinkButton>
               </div>
             ))}
@@ -169,9 +166,9 @@ export default function PricingPage() {
       <Section compact className="border-t bg-muted/30">
         <Container size="narrow">
           <SectionHeading
-            eyebrow="Sin sorpresas"
-            title="Precios locales, sin volatilidad cambiaria"
-            desc="Facturamos en CLP con boleta/factura chilena. Nada de sorpresas por tipo de cambio a fin de mes."
+            eyebrow={t("pricing_page.no_surprises.eyebrow")}
+            title={t("pricing_page.no_surprises.title")}
+            desc={t("pricing_page.no_surprises.desc")}
             center
           />
         </Container>
@@ -181,34 +178,17 @@ export default function PricingPage() {
       <Section className="border-t">
         <Container size="narrow">
           <SectionHeading
-            eyebrow="FAQ"
-            title="Preguntas frecuentes"
-            desc="Si tenés otra duda, escribinos a cloud@mekovault.com."
+            eyebrow={t("pricing_page.faq.eyebrow")}
+            title={t("pricing_page.faq.title")}
+            desc={t("pricing_page.faq.desc")}
           />
 
           <div className="mt-10 space-y-4">
-            <FAQItem q="¿Qué cuenta como 'cuenta gestionada'?">
-              Toda cuenta creada, sincronizada o suspendida por Mekovault dentro
-              de tu tenant durante el mes. Las cuentas eliminadas ya no cuentan.
-            </FAQItem>
-            <FAQItem q="¿Cómo se cobran los excedentes?">
-              Al cierre de cada período de facturación, Mekovault calcula el
-              promedio diario de cuentas gestionadas. Todo lo que supere el
-              incluido en tu plan se cobra al precio de excedente unitario del
-              plan.
-            </FAQItem>
-            <FAQItem q="¿Puedo cambiar de plan?">
-              Sí, en cualquier momento desde el panel de billing. El prorrateo es
-              día a día: no pagás doble por el cambio.
-            </FAQItem>
-            <FAQItem q="¿Cómo se paga?">
-              Vía MercadoPago Chile (suscripción con débito automático) o
-              transferencia manual para Enterprise.
-            </FAQItem>
-            <FAQItem q="¿Hay contrato mínimo?">
-              No. El trial es de 30 días y podés cancelar cuando quieras. Los
-              anuales tienen 15% off pero se prorratean al cancelar.
-            </FAQItem>
+            <FAQItem q={t("faq.what_counts.q")}>{t("faq.what_counts.a")}</FAQItem>
+            <FAQItem q={t("faq.overages.q")}>{t("faq.overages.a")}</FAQItem>
+            <FAQItem q={t("faq.switch_plan.q")}>{t("faq.switch_plan.a")}</FAQItem>
+            <FAQItem q={t("faq.payment.q")}>{t("faq.payment.a")}</FAQItem>
+            <FAQItem q={t("faq.contract.q")}>{t("faq.contract.a")}</FAQItem>
           </div>
         </Container>
       </Section>
@@ -217,7 +197,7 @@ export default function PricingPage() {
       <Section className="border-t bg-muted/30">
         <Container size="narrow" className="text-center">
           <h2 className="font-heading text-3xl font-semibold tracking-tight">
-            Empezá tu trial en 2 minutos
+            {t("pricing_page.cta.title")}
           </h2>
           <div className="mt-6">
             <LinkButton
@@ -225,7 +205,7 @@ export default function PricingPage() {
               external
               size="lg"
             >
-              Crear cuenta gratis <ArrowRight />
+              {t("hero.cta.signup")} <ArrowRight />
             </LinkButton>
           </div>
         </Container>

@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+"use client";
+
 import {
   ArrowRight,
   Check,
@@ -17,12 +18,7 @@ import {
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
-
-export const metadata: Metadata = {
-  title: "Producto y servicios",
-  description:
-    "Los módulos verticales de Mekovault: Super Workspace, Notifications, Requests, Rooms y Audit. Cada uno resuelve una pieza del lifecycle de identidades.",
-};
+import { useT } from "@/lib/i18n/I18nProvider";
 
 const SERVICES = [
   {
@@ -148,21 +144,22 @@ const SERVICES = [
 ];
 
 export default function ProductsPage() {
+  const t = useT();
   return (
     <>
       <Section compact>
         <Container>
           <SectionHeading
-            eyebrow="Producto"
+            eyebrow={t("features.eyebrow")}
             title={
               <>
-                Un panel único.{" "}
+                {t("products.title.pre")}{" "}
                 <span className="text-brand-gradient">
-                  Módulos independientes.
+                  {t("products.title.hl")}
                 </span>
               </>
             }
-            desc="Todo comparte el mismo core de identidad, RBAC y auditoría. Activás lo que necesitás, cuando lo necesitás."
+            desc={t("products.subtitle")}
           />
         </Container>
       </Section>
@@ -181,11 +178,10 @@ export default function ProductsPage() {
       <Section className="border-t bg-muted/30">
         <Container size="narrow" className="text-center">
           <h2 className="font-heading text-3xl font-semibold tracking-tight">
-            ¿Querés verlo en tu directorio?
+            {t("products.cta.title")}
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Creá tu cuenta y conectá Google Workspace o Microsoft Entra desde el
-            Wizard. No hay setup manual: todo desde el portal.
+            {t("products.cta.subtitle")}
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <LinkButton
@@ -193,10 +189,10 @@ export default function ProductsPage() {
               external
               size="lg"
             >
-              Empezar gratis <ArrowRight />
+              {t("products.cta.signup")} <ArrowRight />
             </LinkButton>
             <LinkButton href="/contact" size="lg" variant="outline">
-              Hablar con ventas
+              {t("products.cta.sales")}
             </LinkButton>
           </div>
         </Container>

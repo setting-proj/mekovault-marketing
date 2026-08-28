@@ -86,23 +86,23 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="grid gap-4 pt-5 sm:grid-cols-3">
-                  <MockStat label="Cuentas activas" value="1,284" delta="+34" />
-                  <MockStat label="Requests hoy" value="47" delta="+12" />
-                  <MockStat label="SLA cumplido" value="99.9%" delta="30d" />
+                  <MockStat label={t("mock.acc_active")} value="1,284" delta="+34" />
+                  <MockStat label={t("mock.req_today")} value="47" delta="+12" />
+                  <MockStat label={t("mock.sla_met")} value="99.9%" delta="30d" />
                 </div>
                 <div className="mt-5 rounded-lg border bg-muted/40 p-4">
                   <div className="mb-3 flex items-center justify-between text-xs">
                     <span className="font-medium">
-                      Onboarding · maria@empresa.cl
+                      {t("mock.onboarding_of")} maria@empresa.cl
                     </span>
                     <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-300">
-                      completado
+                      {t("mock.status_completed")}
                     </span>
                   </div>
-                  <MockStep label="Aprobado por RRHH" />
-                  <MockStep label="Cuenta Google creada" />
-                  <MockStep label="Grupos + OU asignados" />
-                  <MockStep label="Notificación al manager" />
+                  <MockStep label={t("mock.step_hr")} />
+                  <MockStep label={t("mock.step_gaccount")} />
+                  <MockStep label={t("mock.step_groups")} />
+                  <MockStep label={t("mock.step_notify")} />
                 </div>
               </div>
             </div>
@@ -134,41 +134,41 @@ export default function Home() {
       <Section id="features" className="border-t">
         <Container>
           <SectionHeading
-            eyebrow="Producto"
-            title="Todo el lifecycle en un solo panel"
-            desc="Diseñado para IT Managers e integradores que hoy dependen de spreadsheets, tickets sueltos y consolas dispersas."
+            eyebrow={t("features.eyebrow")}
+            title={t("features.title")}
+            desc={t("features.subtitle")}
           />
 
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <Feature
               icon={<Zap />}
-              title="Provisioning async"
-              desc="Workers con reintentos exponenciales, circuit breaker y DLQ. Nunca pierdes una operación."
+              title={t("features.async.title")}
+              desc={t("features.async.desc")}
             />
             <Feature
               icon={<Workflow />}
-              title="Aprobaciones y plantillas"
-              desc="Access Profiles + Bulk CSV. Aprobación por rol antes de tocar el directorio."
+              title={t("features.approvals.title")}
+              desc={t("features.approvals.desc")}
             />
             <Feature
               icon={<Users />}
-              title="RBAC granular"
-              desc="Roles + grupos + permisos por servicio. Cache Redis 5 min para latencia baja."
+              title={t("features.rbac.title")}
+              desc={t("features.rbac.desc")}
             />
             <Feature
               icon={<KeySquare />}
-              title="Vault por tenant"
-              desc="Infisical self-hosted. Cada empresa tiene su project, aislamiento real de secretos."
+              title={t("features.vault.title")}
+              desc={t("features.vault.desc")}
             />
             <Feature
               icon={<ShieldCheck />}
-              title="Audit log inmutable"
-              desc="Triggers PL/pgSQL bloquean UPDATE/DELETE. Retención 18 meses tenant, 5 años platform."
+              title={t("features.audit.title")}
+              desc={t("features.audit.desc")}
             />
             <Feature
               icon={<LineChart />}
-              title="Métricas y SLA"
-              desc="Grafana + Loki + Tempo. Dashboards por tenant, alertas por Brevo."
+              title={t("features.metrics.title")}
+              desc={t("features.metrics.desc")}
             />
           </div>
         </Container>
@@ -178,31 +178,15 @@ export default function Home() {
       <Section className="border-t bg-muted/30">
         <Container>
           <SectionHeading
-            eyebrow="Cómo funciona"
-            title="Cuatro pasos para pasar de tickets a self-service"
+            eyebrow={t("how.eyebrow")}
+            title={t("how.title")}
           />
 
           <div className="mt-14 grid gap-6 lg:grid-cols-4">
-            <Step
-              n={1}
-              title="Conecta tu directorio"
-              desc="Google Workspace o Microsoft Entra vía Service Account con Domain-Wide Delegation. Wizard guiado en menos de 10 minutos."
-            />
-            <Step
-              n={2}
-              title="Define plantillas"
-              desc="Access Profiles con roles, grupos y OU. Un IT Manager los mantiene, todo el resto los usa."
-            />
-            <Step
-              n={3}
-              title="El manager pide, la plataforma provisiona"
-              desc="Los managers piden accesos por template o por CSV. Aprobación → workers → auditoría."
-            />
-            <Step
-              n={4}
-              title="Observabilidad total"
-              desc="Cada operación queda en audit log inmutable. Dashboards y alertas listas para tu equipo."
-            />
+            <Step n={1} title={t("how.step1.title")} desc={t("how.step1.desc")} />
+            <Step n={2} title={t("how.step2.title")} desc={t("how.step2.desc")} />
+            <Step n={3} title={t("how.step3.title")} desc={t("how.step3.desc")} />
+            <Step n={4} title={t("how.step4.title")} desc={t("how.step4.desc")} />
           </div>
         </Container>
       </Section>
@@ -211,54 +195,54 @@ export default function Home() {
       <Section className="border-t">
         <Container>
           <SectionHeading
-            eyebrow="Servicios"
-            title="Módulos verticales, todos en la misma plataforma"
-            desc="Empezá con Super Workspace y activá el resto cuando lo necesites."
+            eyebrow={t("services.eyebrow")}
+            title={t("services.title")}
+            desc={t("services.subtitle")}
           />
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <ServiceCard
               icon={<Cloud />}
-              status="Disponible"
-              title="Super Workspace"
-              desc="Gestión de lifecycle de cuentas en Google Workspace y Microsoft Entra: alta, suspensión, reactivación, delete, cambio de OU y reset de password."
+              status={t("svc.status.available")}
+              title={t("svc.workspace.title")}
+              desc={t("svc.workspace.desc")}
               bullets={[
-                "Google Admin SDK + Microsoft Graph",
-                "Provisioning async con reintentos",
-                "Sync incremental cada 5 min",
+                t("svc.workspace.b1"),
+                t("svc.workspace.b2"),
+                t("svc.workspace.b3"),
               ]}
             />
             <ServiceCard
               icon={<MailCheck />}
-              status="Disponible"
-              title="Notifications Engine"
-              desc="Emails transaccionales multi-idioma con quiet hours por timezone, business days y feriados, y templates overrideable por tenant."
+              status={t("svc.status.available")}
+              title={t("svc.notifications.title")}
+              desc={t("svc.notifications.desc")}
               bullets={[
-                "Brevo SMTP + tenant SMTP override",
-                "Quiet hours + holidays",
-                "Templates es/en/pt",
+                t("svc.notifications.b1"),
+                t("svc.notifications.b2"),
+                t("svc.notifications.b3"),
               ]}
             />
             <ServiceCard
               icon={<Ticket />}
-              status="Disponible"
-              title="Requests & Tickets"
-              desc="Solicitudes con state machine (draft → submitted → approved → completed), scheduled requests y bulk CSV para altas masivas."
+              status={t("svc.status.available")}
+              title={t("svc.tickets.title")}
+              desc={t("svc.tickets.desc")}
               bullets={[
-                "Access Profiles",
-                "Scheduled requests",
-                "Bulk import 500 filas",
+                t("svc.tickets.b1"),
+                t("svc.tickets.b2"),
+                t("svc.tickets.b3"),
               ]}
             />
             <ServiceCard
               icon={<KeySquare />}
-              status="Roadmap"
-              title="Super Rooms · Super Audit"
-              desc="Módulos en desarrollo: gestión de Google Meet rooms compartidas y auditorías de compliance sobre el directorio activo."
+              status={t("svc.status.roadmap")}
+              title={t("svc.roadmap.title")}
+              desc={t("svc.roadmap.desc")}
               bullets={[
-                "Rooms: pool + reservas + auto-cleanup",
-                "Audit: checks periódicos + reportes",
-                "Q4 2026",
+                t("svc.roadmap.b1"),
+                t("svc.roadmap.b2"),
+                t("svc.roadmap.b3"),
               ]}
               muted
             />
@@ -270,14 +254,14 @@ export default function Home() {
       <Section className="border-t bg-muted/30">
         <Container>
           <SectionHeading
-            eyebrow="Planes"
-            title="Precios claros en pesos chilenos"
-            desc="Desde 6 tiers pensados para SMBs y mid-market. Descuento de 15% pagando anual."
+            eyebrow={t("pricing.eyebrow")}
+            title={t("pricing.title")}
+            desc={t("pricing.subtitle")}
           />
 
           <div className="mt-12 flex justify-center">
             <LinkButton href="/pricing" size="lg" variant="outline">
-              Ver todos los planes <ArrowRight />
+              {t("pricing.cta.viewAll")} <ArrowRight />
             </LinkButton>
           </div>
         </Container>
@@ -292,11 +276,10 @@ export default function Home() {
             <div aria-hidden className="absolute inset-0 grid-lines opacity-20" />
             <div className="relative">
               <h2 className="text-balance font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
-                Empieza a automatizar en menos de 10 minutos
+                {t("cta.title")}
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-white/85">
-                Conecta Google Workspace o Microsoft Entra desde el Wizard.
-                Cuando estés listo, activa el plan que necesites.
+                {t("cta.subtitle")}
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <LinkButton
@@ -305,14 +288,14 @@ export default function Home() {
                   size="lg"
                   variant="secondary"
                 >
-                  Crear cuenta gratis <ArrowRight />
+                  {t("cta.signup")} <ArrowRight />
                 </LinkButton>
                 <LinkButton
                   href="/pricing"
                   size="lg"
                   variant="white"
                 >
-                  Ver planes
+                  {t("cta.pricing")}
                 </LinkButton>
               </div>
             </div>
