@@ -102,7 +102,7 @@ export default function PrivacyPage() {
         <a href="mailto:privacidad@mekovault.com">privacidad@mekovault.com</a>{" "}
         o desde el portal de tu organización en{" "}
         <code>app.mekovault.com/&lt;tenant&gt;/privacy</code>. Si eres una
-        persona externa (no tienes cuenta en Mekovault) también podés escribir
+        persona externa (no tienes cuenta en Mekovault) también puedes escribir
         al email indicado.
       </p>
       <p>

@@ -55,7 +55,7 @@ const es_419 = {
     "Access Profiles + Bulk CSV. Aprobación por rol antes de tocar el directorio.",
   "features.rbac.title": "RBAC granular",
   "features.rbac.desc":
-    "Roles + grupos + permisos por servicio. Cache Redis 5 min para latencia baja.",
+    "Roles + grupos + permieres por servicio. Cache Redis 5 min para latencia baja.",
   "features.vault.title": "Vault por tenant",
   "features.vault.desc":
     "Infisical self-hosted. Cada empresa tiene su project, aislamiento real de secretos.",
@@ -68,10 +68,10 @@ const es_419 = {
   // How it works
   "how.eyebrow": "Cómo funciona",
   "how.title": "Cuatro pasos para pasar de tickets a self-service",
-  "how.step1.title": "Conectá tu directorio",
+  "how.step1.title": "Conecta tu directorio",
   "how.step1.desc":
     "Google Workspace o Microsoft Entra vía Service Account con Domain-Wide Delegation. Wizard guiado en menos de 10 minutos.",
-  "how.step2.title": "Definí plantillas",
+  "how.step2.title": "Define plantillas",
   "how.step2.desc":
     "Access Profiles con roles, grupos y OU. Un IT Manager los mantiene, todo el resto los usa.",
   "how.step3.title": "El manager pide, la plataforma provisiona",
@@ -85,7 +85,7 @@ const es_419 = {
   "services.eyebrow": "Servicios",
   "services.title": "Módulos verticales, todos en la misma plataforma",
   "services.subtitle":
-    "Empezá con Super Workspace y activá el resto cuando lo necesites.",
+    "Empieza con Super Workspace y activa el resto cuando lo necesites.",
 
   // Pricing preview
   "pricing.eyebrow": "Planes",
@@ -95,9 +95,9 @@ const es_419 = {
   "pricing.cta.viewAll": "Ver todos los planes",
 
   // CTA
-  "cta.title": "Empezá a automatizar en menos de 10 minutos",
+  "cta.title": "Empieza a automatizar en menos de 10 minutos",
   "cta.subtitle":
-    "Conectá Google Workspace o Microsoft Entra desde el Wizard. Cuando estés listo, activá el plan que necesites.",
+    "Conecta Google Workspace o Microsoft Entra desde el Wizard. Cuando estés listo, activa el plan que necesites.",
   "cta.signup": "Crear cuenta gratis",
   "cta.pricing": "Ver planes",
 
@@ -171,10 +171,10 @@ const es_419 = {
   "products.title.pre": "Un panel único.",
   "products.title.hl": "Módulos independientes.",
   "products.subtitle":
-    "Todo comparte el mismo core de identidad, RBAC y auditoría. Activás lo que necesitás, cuando lo necesitás.",
-  "products.cta.title": "¿Querés verlo en tu directorio?",
+    "Todo comparte el mismo core de identidad, RBAC y auditoría. Activas lo que necesitas, cuando lo necesitas.",
+  "products.cta.title": "¿Quieres verlo en tu directorio?",
   "products.cta.subtitle":
-    "Creá tu cuenta y conectá Google Workspace o Microsoft Entra desde el Wizard. No hay setup manual: todo desde el portal.",
+    "Crea tu cuenta y conecta Google Workspace o Microsoft Entra desde el Wizard. No hay setup manual: todo desde el portal.",
   "products.cta.signup": "Empezar gratis",
   "products.cta.sales": "Hablar con ventas",
 
@@ -195,8 +195,8 @@ const es_419 = {
     "Facturamos en CLP con boleta/factura chilena. Nada de sorpresas por tipo de cambio a fin de mes.",
   "pricing_page.faq.eyebrow": "FAQ",
   "pricing_page.faq.title": "Preguntas frecuentes",
-  "pricing_page.faq.desc": "Si tenés otra duda, escribinos a cloud@mekovault.com.",
-  "pricing_page.cta.title": "Empezá tu trial en 2 minutos",
+  "pricing_page.faq.desc": "Si tienes otra duda, escríbenos a cloud@mekovault.com.",
+  "pricing_page.cta.title": "Empieza tu trial en 2 minutos",
 
   // Pricing FAQ items
   "faq.what_counts.q": "¿Qué cuenta como 'cuenta gestionada'?",
@@ -213,7 +213,7 @@ const es_419 = {
     "Vía MercadoPago Chile (suscripción con débito automático) o transferencia manual para Enterprise.",
   "faq.contract.q": "¿Hay contrato mínimo?",
   "faq.contract.a":
-    "No. El trial es de 90 días y podés cancelar cuando quieras. Los anuales tienen 15% off pero se prorratean al cancelar.",
+    "No. El trial es de 90 días y puedes cancelar cuando quieras. Los anuales tienen 15% off pero se prorratean al cancelar.",
 
   // ========== About page ==========
   "about.eyebrow": "Nuestra historia",
@@ -238,9 +238,9 @@ const es_419 = {
     "El diagnóstico fue simple. Los productos globales de IAM se enfocan en enterprises que ya tienen un equipo dedicado. Para todos los demás — 50, 100, 200, 500 personas — no hay opción simple, local y accesible.",
   "about.why.p3":
     "Mekovault es esa opción. Multi-tenant real (RLS + vault por tenant), audit inmutable, workers async con reintentos, y una paleta de servicios que crece por módulos. No es solo un provisioning tool: es la infraestructura de identidad que las empresas de LATAM necesitan.",
-  "about.cta.title": "¿Querés conocer al equipo?",
+  "about.cta.title": "¿Quieres conocer al equipo?",
   "about.cta.desc":
-    "Escribinos y coordinamos una reunión. Contamos qué hacemos, cómo lo hacemos, y qué te podemos resolver.",
+    "Escríbenos y coordinamos una reunión. Contamos qué hacemos, cómo lo hacemos, y qué te podemos resolver.",
   "about.cta.contact": "Contactanos",
   "about.cta.signup": "Empezar gratis",
 
@@ -249,7 +249,7 @@ const es_419 = {
   "contact.title.pre": "Hablemos.",
   "contact.title.hl": "Respondemos en 1 día hábil.",
   "contact.subtitle":
-    "La forma más rápida de conocer Mekovault es abrir un trial. Si preferís hablar antes, escribinos por email o vía formulario.",
+    "La forma más rápida de conocer Mekovault es abrir un trial. Si preferís hablar antes, escríbenos por email o vía formulario.",
   "contact.card.sales": "Ventas y consultas generales",
   "contact.card.support": "Soporte a clientes",
   "contact.card.office": "Oficina",
@@ -257,16 +257,16 @@ const es_419 = {
   "contact.card.office_sub": "Trabajo remoto por defecto",
   "contact.card.trial": "Trial inmediato",
   "contact.form.eyebrow": "Formulario",
-  "contact.form.title": "Escribinos",
+  "contact.form.title": "Escríbenos",
   "contact.form.desc":
-    "Contanos brevemente qué necesitás. Este formulario abre tu cliente de email.",
+    "Cuéntanos brevemente qué necesitas. Este formulario abre tu cliente de email.",
   "contact.form.name": "Nombre",
   "contact.form.email": "Email",
   "contact.form.company": "Empresa",
   "contact.form.message": "Cuéntanos",
   "contact.form.send": "Enviar mensaje",
   "contact.form.also":
-    "También podés escribirnos directamente a",
+    "También puedes escribirnos directamente a",
 } as const;
 
 const en: Record<keyof typeof es_419, string> = {
@@ -551,7 +551,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
     "Grafana + Loki + Tempo. Dashboards por tenant, alertas via Brevo.",
 
   "how.eyebrow": "Como funciona",
-  "how.title": "Quatro passos de tickets para self-service",
+  "how.title": "Quatro paseres de tickets para self-service",
   "how.step1.title": "Conecte seu diretório",
   "how.step1.desc":
     "Google Workspace ou Microsoft Entra via Service Account com Domain-Wide Delegation. Wizard guiado em menos de 10 minutos.",
@@ -560,7 +560,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
     "Access Profiles com papéis, grupos e OUs. Um IT Manager mantém, todo o resto consome.",
   "how.step3.title": "Managers pedem, a plataforma provisiona",
   "how.step3.desc":
-    "Managers pedem acessos por template ou CSV. Aprovação → workers → auditoria.",
+    "Managers pedem aceseres por template ou CSV. Aprovação → workers → auditoria.",
   "how.step4.title": "Observabilidade total",
   "how.step4.desc":
     "Cada operação fica no audit log imutável. Dashboards e alertas prontos para sua equipe.",
@@ -707,7 +707,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
     "Ser o padrão regional para gestão de identidades em SMB e mid-market. Sem dependência de integradores externos.",
   "about.why.title": "Por que construímos o Mekovault",
   "about.why.p1":
-    "O ponto de partida foi um cliente concreto. Um IT Manager em Santiago que gerenciava ~200 contas do Google Workspace com um formulário, uma planilha e ~20 arquivos de Apps Script. A contradição era clara: uma empresa moderna executando processos artesanais.",
+    "O ponto de partida foi um cliente concreto. Um IT Manager em Santiago que gerenciava ~200 contas do Google Workspace com um formulário, uma planilha e ~20 arquivos de Apps Script. A contradição era clara: uma empresa moderna executando proceseres artesanais.",
   "about.why.p2":
     "O diagnóstico foi simples. Os produtos globais de IAM focam em enterprises que já têm equipe dedicada. Para todos os outros — 50, 100, 200, 500 pessoas — não há opção simples, local e acessível.",
   "about.why.p3":

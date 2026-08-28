@@ -46,9 +46,9 @@ export default function CookiesPage() {
 
       <h2>Contacto</h2>
       <p>
-        Escribinos a{" "}
+        Escríbenos a{" "}
         <a href="mailto:privacidad@mekovault.com">privacidad@mekovault.com</a>{" "}
-        si tenés dudas.
+        si tienes dudas.
       </p>
     </>
   );

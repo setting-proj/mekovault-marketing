@@ -39,7 +39,7 @@ export default function DPAPage() {
       <ul>
         <li>
           <strong>Empleados del Cliente</strong>: nombre, apellido, email
-          corporativo, cargo, departamento, manager, permisos asignados, IP y
+          corporativo, cargo, departamento, manager, permieres asignados, IP y
           user-agent de sesiones.
         </li>
         <li>
