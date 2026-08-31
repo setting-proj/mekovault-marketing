@@ -43,6 +43,12 @@
 }
 
 :root {
+  /* color-scheme: fuerza al navegador a renderizar controles nativos
+     (dropdown popup de <select>, scrollbars, autofill, date picker) con
+     el theme correcto. Sin esto Chrome/Edge usan default light y las
+     <option> se ven casi invisibles en dark. (Fix 2026-08-31.) */
+  color-scheme: light;
+
   --background: #f7fbfd;
   --foreground: #03045e;
   --card: #ffffff;
@@ -60,6 +66,8 @@
 }
 
 .dark {
+  color-scheme: dark;
+
   --background: #010226;
   --foreground: #eaf6fb;
   --card: #0a0d47;
@@ -77,6 +85,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
+    color-scheme: dark;
     --background: #010226;
     --foreground: #eaf6fb;
     --card: #0a0d47;
@@ -220,5 +229,43 @@
   }
   html {
     scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   Native <select> theming: dark/light aware.
+   Chrome/Edge/Firefox respetan bg y color en <option> combinado
+   con color-scheme en :root. Sin esto, popup dropdown se ve con
+   text-color pobre en dark. (Fix 2026-08-31 aplicando la misma
+   solución del portal en el marketing.)
+   ============================================================ */
+@layer base {
+  select {
+    background-color: var(--card);
+    color: var(--foreground);
+    color-scheme: inherit;
+  }
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent) 40%, transparent);
+  }
+  select option {
+    background-color: var(--card);
+    color: var(--foreground);
+    padding: 0.5rem 0.75rem;
+  }
+  select option:checked,
+  select option:hover {
+    background-color: var(--muted);
+    color: var(--foreground);
+    box-shadow: 0 0 10px 100px var(--muted) inset;
+  }
+  select option:disabled {
+    color: var(--muted-foreground);
+    opacity: 0.5;
+  }
+  select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
