@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { I18nProvider } from "@/lib/i18n/I18nProvider";
+import { detectLocaleServer } from "@/lib/i18n/detectLocale.server";
 import "./globals.css";
 
 // Type trio (revisión post-feedback 2026-08-30):
@@ -82,15 +83,21 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // FOUC de idioma fix (2026-08-30): detección server-side ANTES del render.
+  // El HTML sale directamente en el locale correcto según cookie o
+  // Accept-Language. Sin flash de switch en el cliente.
+  const locale = await detectLocaleServer();
+  const htmlLang = locale === "es-419" ? "es" : locale === "pt-BR" ? "pt" : "en";
+
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang={htmlLang} suppressHydrationWarning>
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        <I18nProvider>
+        <I18nProvider initialLocale={locale}>
           <Header />
           <div className="pt-16">{children}</div>
           <Footer />

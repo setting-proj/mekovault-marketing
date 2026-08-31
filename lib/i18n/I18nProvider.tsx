@@ -46,27 +46,9 @@ function normalizeToSupported(raw: string | undefined): Locale {
   return DEFAULT_LOCALE;
 }
 
-function detectLocale(): Locale {
-  if (typeof window === "undefined") return DEFAULT_LOCALE;
-  try {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      const norm = normalizeToSupported(stored);
-      if (norm) return norm;
-    }
-  } catch {
-    /* private mode */
-  }
-  const cookieMatch = document.cookie.match(
-    new RegExp(`(?:^|; )${COOKIE_KEY}=([^;]+)`),
-  );
-  if (cookieMatch?.[1]) {
-    const norm = normalizeToSupported(decodeURIComponent(cookieMatch[1]));
-    if (norm) return norm;
-  }
-  const nav = navigator.language ?? navigator.languages?.[0];
-  return normalizeToSupported(nav);
-}
+// (detectLocale client-side ya no es necesario: el server lo hace vía
+// detectLocaleServer y lo pasa como prop `initialLocale`. Mantenemos
+// solo la lectura de localStorage por si el user cambió en otra sesión.)
 
 function interpolate(str: string, vars?: Record<string, string | number>) {
   if (!vars) return str;
@@ -75,13 +57,37 @@ function interpolate(str: string, vars?: Record<string, string | number>) {
   );
 }
 
-export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE);
+export function I18nProvider({
+  children,
+  initialLocale,
+}: {
+  children: React.ReactNode;
+  /**
+   * Locale detectado server-side (cookie + Accept-Language). Cuando viene
+   * pasado desde el layout, el HTML ya salió en este idioma y no hay flash.
+   * Fallback DEFAULT_LOCALE por compatibilidad.
+   */
+  initialLocale?: Locale;
+}) {
+  const [locale, setLocaleState] = useState<Locale>(initialLocale ?? DEFAULT_LOCALE);
 
   useEffect(() => {
-    const detected = detectLocale();
-    if (detected !== locale) setLocaleState(detected);
-    document.documentElement.lang = detected;
+    // Sincronizar SOLO con localStorage (por si el user cambió locale en
+    // otra sesión y hay override client-side). Si no hay override, el locale
+    // del server sigue siendo el correcto y no forzamos re-render.
+    if (typeof window === "undefined") return;
+    try {
+      const stored = window.localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        const norm = normalizeToSupported(stored);
+        if (norm !== locale) {
+          setLocaleState(norm);
+          document.documentElement.lang = norm;
+        }
+      }
+    } catch {
+      /* private mode */
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
