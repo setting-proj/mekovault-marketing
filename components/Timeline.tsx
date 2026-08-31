@@ -74,7 +74,7 @@ export function Timeline({ milestones }: { milestones: Milestone[] }) {
       {/* Detalle del hito seleccionado */}
       <div className="mt-8 rounded-2xl border bg-card p-6 sm:p-8">
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-          <h3 className="font-heading text-2xl italic tracking-tight text-brand-gradient">
+          <h3 className="font-heading text-2xl tracking-tight text-brand-gradient">
             {current.title}
           </h3>
           {current.metric && (

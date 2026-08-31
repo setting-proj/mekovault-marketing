@@ -56,7 +56,7 @@ export default function AboutPage() {
       <Section className="border-t bg-muted/30">
         <Container size="narrow">
           <div className="prose prose-neutral max-w-none dark:prose-invert">
-            <h2 className="font-heading text-3xl italic tracking-tight">
+            <h2 className="font-heading text-3xl tracking-tight">
               {t("about.why.title")}
             </h2>
             <p className="mt-4 text-muted-foreground">{t("about.why.p1")}</p>

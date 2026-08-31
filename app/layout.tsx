@@ -1,26 +1,28 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { I18nProvider } from "@/lib/i18n/I18nProvider";
 import "./globals.css";
 
-// Type trio (design lesson from 10k-websites, "Never Inter as display face"):
-//   Display face fresca: Instrument Serif (cinematográfica, editorial)
-//   Body quieto: Inter (legible en párrafos)
-//   Mono para labels: JetBrains Mono (eyebrows, code, metadata)
+// Type trio (revisión post-feedback 2026-08-30):
+//   Display: Space Grotesk. Geometric-tech con carácter distintivo
+//     (a de doble piso, g abierta). Diseñada para SaaS técnico
+//     moderno, no editorial. Reemplaza el Instrument Serif italic
+//     que quedaba "magazine" en un sitio de servicio tecnológico.
+//   Body: Inter. Sigue siendo la mejor legibilidad en párrafos.
+//   Mono: JetBrains Mono. Eyebrows, labels, código.
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
+const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -86,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} antialiased min-h-screen bg-background text-foreground`}
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
         <I18nProvider>
           <Header />

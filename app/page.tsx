@@ -44,13 +44,13 @@ export default function Home() {
             </span>
 
             {/* Título en 2 líneas asimétricas: primera declaración concreta,
-                segunda promesa en italic serif con gradient. Sin paralelismo
+                segunda promesa con gradient tech. Sin paralelismo
                 perfecto "verb + and + verb" que grita AI. */}
             <h1 className="mt-8 text-balance leading-[1.05] tracking-tight">
               <span className="block font-heading text-4xl sm:text-5xl md:text-6xl">
                 {t("hero.title.line1")}
               </span>
-              <span className="mt-2 block font-heading italic text-4xl sm:text-5xl md:text-6xl text-brand-gradient">
+              <span className="mt-2 block font-heading text-4xl sm:text-5xl md:text-6xl text-brand-gradient">
                 {t("hero.title.line2")}
               </span>
             </h1>
@@ -119,24 +119,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      {/* Interactive moment: comparativa manual vs Mekovault
-          (10k-websites §6: cada página tiene UN interactive moment memorable) */}
-      <Section className="relative border-t">
-        <div aria-hidden className="pointer-events-none absolute inset-0 grid-lines opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-        <Container className="relative">
-          <SectionHeading
-            eyebrow={t("compare.eyebrow")}
-            title={t("compare.title")}
-            desc={t("compare.subtitle")}
-          />
-          <Reveal>
-            <div className="mx-auto mt-10 max-w-4xl">
-              <TimelineCompare />
-            </div>
-          </Reveal>
-        </Container>
-      </Section>
 
       {/* Logos */}
       <Section compact className="border-t bg-background/60">
@@ -227,6 +209,25 @@ export default function Home() {
               <Step n={4} title={t("how.step4.title")} desc={t("how.step4.desc")} />
             </Reveal>
           </div>
+        </Container>
+      </Section>
+
+      {/* Compare: interactive moment ahora DESPUÉS de Features+How (post-feedback:
+          antes estaba justo después del hero, cuando el visitante todavía no
+          entendía qué es Mekovault). */}
+      <Section className="relative border-t">
+        <div aria-hidden className="pointer-events-none absolute inset-0 grid-lines opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+        <Container className="relative">
+          <SectionHeading
+            eyebrow={t("compare.eyebrow")}
+            title={t("compare.title")}
+            desc={t("compare.subtitle")}
+          />
+          <Reveal>
+            <div className="mx-auto mt-10 max-w-4xl">
+              <TimelineCompare />
+            </div>
+          </Reveal>
         </Container>
       </Section>
 
@@ -423,7 +424,7 @@ function FeatureHero({
         <div className="mb-5 inline-flex size-14 items-center justify-center rounded-2xl bg-brand-gradient text-white shadow-[var(--shadow-glow-cyan)] transition-transform group-hover:scale-105 [&_svg]:size-7">
           {icon}
         </div>
-        <h3 className="font-heading text-2xl sm:text-3xl italic tracking-tight text-brand-gradient">
+        <h3 className="font-heading text-2xl sm:text-3xl tracking-tight text-brand-gradient">
           {title}
         </h3>
         <p className="mt-3 max-w-lg text-base text-muted-foreground leading-relaxed">
@@ -474,11 +475,10 @@ function FounderQuote({ t }: { t: ReturnType<typeof useT> }) {
       <div aria-hidden className="absolute -right-8 -top-8 size-40 rounded-full bg-brand-gradient opacity-10 blur-3xl" />
       <div className="relative grid gap-6 md:grid-cols-[auto_1fr] md:items-center">
         {/* Comilla tipográfica en display serif, sin icon lucide (evita cliché SaaS) */}
-        <div className="font-heading text-7xl leading-none text-primary/40 italic select-none" aria-hidden>
-          &ldquo;
-        </div>
+        {/* Barra vertical accent en vez de comilla serif italic (tech, no editorial) */}
+        <div aria-hidden className="hidden md:block h-24 w-1 rounded-full bg-brand-gradient" />
         <div>
-          <p className="font-heading text-xl sm:text-2xl italic leading-snug text-balance">
+          <p className="font-heading text-xl sm:text-2xl leading-snug text-balance">
             {t("founder.quote")}
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">

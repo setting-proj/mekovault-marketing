@@ -25,10 +25,10 @@
   --color-brand-sky: #90e0ef;
   --color-brand-mist: #caf0f8;
 
-  /* Type trio (10k-websites lesson):
-     sans = body silencioso, heading = display fresca, mono = labels/eyebrows */
+  /* Type trio v2 (revisión post-feedback: font tech, no editorial):
+     sans = Inter body, heading = Space Grotesk display, mono = JetBrains Mono */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-heading: var(--font-display), "Instrument Serif", ui-serif, Georgia, serif;
+  --font-heading: var(--font-display), "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
 
   --radius-sm: 0.5rem;
@@ -111,12 +111,9 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.015em;
-    /* Instrument Serif es display peso 400 — el "peso" viene del tamaño
-       y del contraste editorial, no del stroke width */
-    font-weight: 400;
-    /* Optical sizing para display face: mejor rendering en tamaños grandes */
-    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+    /* Space Grotesk peso 600 en headings — sharp, tech, sin ser bold-heavy */
+    font-weight: 600;
   }
   /* Eyebrows / labels / metadata: mono para textura editorial */
   .font-mono, code, kbd, samp, pre {

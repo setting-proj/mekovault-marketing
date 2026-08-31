@@ -20,52 +20,52 @@ type WorkflowStep = {
 
 const STEPS: WorkflowStep[] = [
   {
-    actor: "HR",
-    action: "Envía formulario",
-    service: "svc-tickets · account-create",
-    duration: "0s",
+    actor: "Recursos Humanos",
+    action: "Solicita la cuenta",
+    service: "Formulario en el portal",
+    duration: "",
     detail:
-      "María del área de RRHH completa un formulario con los datos de Juan Pérez. Nombre, apellidos, RUT, cargo, fecha de inicio. Si su rol tiene ticket_action_permissions=account_create, el ticket se crea directo. Sino, queda pendiente de aprobación.",
+      "El área de RRHH completa un formulario con los datos del nuevo empleado: nombre, apellidos, RUT, cargo, fecha de inicio. Si su rol tiene permisos de crear cuentas, el ticket entra a la cola directo. Si no, queda pendiente de aprobación.",
   },
   {
-    actor: "svc-tickets",
-    action: "Corre identity resolution",
-    service: "identity_resolution_service.lookup",
-    duration: "+1.2s",
+    actor: "Mekovault",
+    action: "Detecta duplicados",
+    service: "Verificación de identidad",
+    duration: "",
     detail:
-      "El backend busca en IdentityRegistry si el RUT o el nombre completo ya existieron. Si hay match, se marca en el ticket como HIGH/MEDIUM confidence y el admin decide: create_new, reactivate o create_distinct con username extendido.",
+      "El sistema busca en el registro histórico si el RUT o el nombre completo ya existieron en la empresa. Si detecta un match, avisa al admin: quizás la persona ya trabajó acá, o hay otro empleado con el mismo nombre. El admin decide: cuenta nueva, reactivar la anterior, o cuenta distinta con nombre ampliado.",
   },
   {
     actor: "Admin IT",
-    action: "Aprueba y ejecuta",
-    service: "POST /tickets/{id}/resolve-access-request",
-    duration: "+3m",
+    action: "Aprueba la solicitud",
+    service: "Un click en la consola",
+    duration: "",
     detail:
-      "El admin ve la solicitud en su inbox. Confirma dominio, elige la acción y aprieta 'Provisionar'. En 200ms el sistema publica identity.provisioning.requested al topic RabbitMQ y auto-transiciona el ticket a RESOLVED.",
+      "El admin ve la solicitud en su inbox. Confirma dominio corporativo, elige qué acción tomar, y aprieta \"Provisionar\". El ticket queda en estado resuelto y la operación entra a la cola de ejecución.",
   },
   {
-    actor: "identity-worker",
-    action: "Dispatcha a provider",
-    service: "super-workspace · provisioning_service.dispatch",
-    duration: "+3m 400ms",
+    actor: "Mekovault",
+    action: "Envía la orden al provider",
+    service: "Cola async con reintentos",
+    duration: "",
     detail:
-      "Un consumer del topic mekovault.events crea un ProvisioningRun row en Postgres y publica a la queue workspace.provision. El provisioning_worker toma el mensaje y llama al adapter Google Admin SDK con reintentos exponenciales y circuit breaker.",
+      "La orden se ejecuta en background contra Google Workspace o Microsoft Entra, según el tenant. Reintentos exponenciales, circuit breaker por conexión, y una cola muerta si algo falla. El admin no se queda esperando en la pantalla.",
   },
   {
-    actor: "Google Workspace",
-    action: "users.insert",
-    service: "Admin SDK Directory API",
-    duration: "+3m 6s",
+    actor: "Google / Microsoft",
+    action: "Crea la cuenta",
+    service: "Directory API del provider",
+    duration: "",
     detail:
-      "Google crea la cuenta juan.perez@moov.cl con el password temporal. El adapter devuelve el provider_user_id. El worker lo guarda en LinkedAccount + append en accounts_history + escribe en audit_log inmutable con timestamp firmado.",
+      "El provider crea la cuenta corporativa con la password temporal. Mekovault registra el resultado en su base: qué cuenta se creó, cuándo, con qué grupos y OU, y quién lo autorizó. El audit log queda firmado y no se puede editar.",
   },
   {
-    actor: "svc-notifications",
-    action: "Envía welcome email",
-    service: "handlers.tickets.handle_welcome_email",
-    duration: "+3m 12s",
+    actor: "Mekovault",
+    action: "Notifica al empleado",
+    service: "Email con branding del tenant",
+    duration: "",
     detail:
-      "El worker de notifications consume identity.welcome_email.requested y despacha un email a juan.personal@gmail.com con el correo corporativo listo. El template lleva el logo y color del tenant Moov, no genérico Mekovault.",
+      "Se envía un email al correo personal del nuevo empleado con los datos de acceso. El template lleva el logo y color de tu empresa, no de Mekovault. Si el admin activó \"restaurar grupos previos\" (caso rehire), el sistema reasigna en cascada las membresías que tenía antes.",
   },
 ];
 
@@ -143,7 +143,7 @@ export function WorkflowDiagram() {
                       "font-mono text-[10px] uppercase tracking-widest",
                       active ? "text-primary" : "text-muted-foreground",
                     )}>
-                      {s.actor} · {s.duration}
+                      {s.actor}
                     </div>
                     <div className={cn(
                       "text-sm",
@@ -167,9 +167,9 @@ export function WorkflowDiagram() {
             <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
               paso {selected + 1} / {STEPS.length}
             </span>
-            <code className="font-mono text-xs text-primary/80">{current.service}</code>
+            <span className="font-mono text-xs text-primary/80">{current.service}</span>
           </div>
-          <h3 className="mt-3 font-heading text-2xl italic tracking-tight">
+          <h3 className="mt-3 font-heading text-2xl tracking-tight">
             {current.action}
           </h3>
           <p className="mt-4 max-w-2xl text-sm text-muted-foreground leading-relaxed">
