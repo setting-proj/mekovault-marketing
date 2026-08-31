@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 const LEGAL_NAV = [
   { href: "/legal/terms", label: "Términos" },
   { href: "/legal/privacy", label: "Privacidad" },
+  { href: "/legal/security", label: "Seguridad" },
   { href: "/legal/dpa", label: "DPA" },
   { href: "/legal/aup", label: "AUP" },
   { href: "/legal/cookies", label: "Cookies" },
