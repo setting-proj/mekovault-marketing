@@ -26,16 +26,16 @@ const es_419 = {
   "nav.signup": "Empezar gratis",
 
   // Landing hero
-  "hero.eyebrow": "Trial 14 días. Sin tarjeta.",
+  "hero.eyebrow": "Trial 90 días · sin tarjeta · sin límite de cuentas",
   "hero.title.line1": "Contratás a alguien un lunes.",
   "hero.title.line2": "Su cuenta está operativa a las 9:15.",
   "hero.subtitle":
     "Provisioning para Google Workspace, Microsoft Entra y las apps que usan tus equipos. Aprobaciones, audit log inmutable y offboarding en cascada. Desde una consola, con las personas de tu equipo que vos autorices.",
   "hero.cta.signup": "Empezar el trial",
   "hero.cta.customer": "Ver cómo funciona",
-  "hero.trust.sla": "99.9% SLA en Pro",
+  "hero.trust.sla": "SLA definido en plan Pro",
   "hero.trust.rls": "RLS por tenant en Postgres",
-  "hero.trust.latam": "Backups y logs en LATAM",
+  "hero.trust.latam": "AWS + red privada + Tailscale",
 
   // Integrations strip
   "integrations.title": "Integraciones nativas",
@@ -59,9 +59,9 @@ const es_419 = {
     "Sin roadmap corporativo con emojis. Los momentos donde el proyecto tomó forma, en orden.",
   "timeline.m1.date": "Momento 1",
   "timeline.m1.title": "El caso que originó Mekovault",
-  "timeline.m1.metric": "Cliente de logística en Santiago",
+  "timeline.m1.metric": "Cliente en Santiago",
   "timeline.m1.detail":
-    "Un IT Manager gestiona alrededor de 200 cuentas Google Workspace con un formulario, una hoja de cálculo y una veintena de archivos Apps Script. Cada onboarding le toma horas de trabajo repetitivo. Los offboarding a veces dejan accesos sueltos que solo se descubren meses después.",
+    "Un IT Manager gestiona alrededor de 200 cuentas Google Workspace con un formulario, una hoja de cálculo y una veintena de archivos Apps Script. Cada onboarding le toma horas de trabajo repetitivo. Los offboarding a veces dejan accesos sueltos que se descubren después.",
   "timeline.m2.date": "Momento 2",
   "timeline.m2.title": "Prototipo interno",
   "timeline.m2.metric": "Reemplazo de scripts por servicio",
@@ -94,25 +94,25 @@ const es_419 = {
   "faq.eyebrow": "Objeciones honestas",
   "faq.title": "Lo que preguntan los IT Managers antes de firmar",
   "faq.subtitle":
-    "Recopilado de 40+ conversaciones con IT Managers de empresas de 30 a 500 personas en Chile y LATAM.",
+    "Recopilado de conversaciones con IT Managers de empresas pequeñas y medianas en Chile y LATAM.",
   "faq.trial.q": "¿Puedo probarlo sin comprometer datos reales?",
   "faq.trial.a":
-    "Sí. El trial de 14 días crea un tenant aislado con RLS, sin tocar tu Google Workspace ni MS Entra en producción. Al terminar el trial, o migrás y conservás todo, o el tenant se elimina completo (data y logs) sin residuo.",
+    "Sí. El trial de 90 días crea un tenant aislado con RLS, sin tocar tu Google Workspace ni MS Entra en producción. No hay límite de cuentas durante el trial. Al terminar, o migrás y conservás todo, o el tenant se elimina completo (data y logs) sin residuo.",
   "faq.security.q": "¿Qué tan seguro es que un tercero maneje mis identidades?",
   "faq.security.a":
-    "Mekovault no maneja las cuentas: las orquesta. Los tokens OAuth de tu tenant Google/MS los guarda Infisical self-hosted, un proyecto separado por cada empresa. Cross-tenant isolation real, no un flag en un ORM. Todo cambio queda en un audit log inmutable con timestamp firmado.",
+    "Mekovault no maneja las cuentas: las orquesta. Los tokens OAuth de tu tenant Google/MS los guarda Infisical self-hosted, un proyecto separado por cada empresa. Cross-tenant isolation real, no un flag en un ORM. Todo cambio queda en un audit log inmutable con timestamp.",
   "faq.lockin.q": "¿Vendor lock-in? ¿Puedo salir?",
   "faq.lockin.a":
-    "Cero lock-in. Las cuentas viven en tu Google Workspace o MS Entra, no en Mekovault. Si te vas mañana, tus users siguen activos en el provider como estaban. Exportamos todo el histórico (accounts_history, audit logs, tickets) en JSON o CSV con un click.",
+    "Cero lock-in. Las cuentas viven en tu Google Workspace o MS Entra, no en Mekovault. Si te vas mañana, tus users siguen activos en el provider como estaban. Podés exportar todo el histórico (accounts_history, audit logs, tickets) en formatos estándar.",
   "faq.stack.q": "¿Funciona si mi empresa usa MS 365 en vez de Google?",
   "faq.stack.a":
     "Sí. Los adapters de Google Workspace y Microsoft Entra son intercambiables. Un mismo tenant puede tener ambos (empresa mixta post-adquisición) con provisioning cross-provider.",
   "faq.support.q": "¿El soporte es en español? ¿En horario Chile?",
   "faq.support.a":
-    "Sí a las dos. El equipo está en Santiago, todo el soporte responde en español (o portugués para clientes en Brasil) en horario UTC-3 a UTC-4. Los planes Pro y Enterprise incluyen respuesta bajo 4 horas hábiles.",
+    "Sí. El equipo está en Santiago. Soporte principal en español, con portugués a demanda para clientes en Brasil. Horario UTC-3 a UTC-4. Los planes Pro y Enterprise tienen respuesta prioritaria en horario hábil.",
   "faq.setup.q": "¿Cuánto tarda arrancar? ¿Necesito consultora?",
   "faq.setup.a":
-    "Wizard de 15 min si ya tenés Google Workspace admin. Si tu setup tiene reglas raras (OUs custom, licencias especiales, workflows externos), el plan Pro incluye una sesión de onboarding donde configuramos junto a vos. Cero consultora externa.",
+    "Wizard guiado que se completa en pocos minutos si ya tenés Google Workspace admin. Si tu setup tiene reglas raras (OUs custom, licencias especiales, workflows externos), el plan Pro incluye una sesión de onboarding donde configuramos junto a vos. Cero consultora externa.",
 
   // Features
   "features.eyebrow": "Producto",
@@ -127,7 +127,7 @@ const es_419 = {
     "Access Profiles + Bulk CSV. Aprobación por rol antes de tocar el directorio.",
   "features.rbac.title": "RBAC granular",
   "features.rbac.desc":
-    "Roles + grupos + permieres por servicio. Cache Redis 5 min para latencia baja.",
+    "Roles + grupos + permisos por servicio. Cache en Redis para latencia baja.",
   "features.vault.title": "Vault por tenant",
   "features.vault.desc":
     "Infisical self-hosted. Cada empresa tiene su project, aislamiento real de secretos.",
@@ -176,7 +176,7 @@ const es_419 = {
   // Footer
   "footer.tagline":
     "Automatiza el lifecycle de identidades corporativas en Google Workspace, Microsoft Entra y otros directorios. Portal self-service, aprobaciones, workers async y auditoría inmutable.",
-  "footer.dataResidency": "Datos alojados en LATAM. Infraestructura AWS con red privada + Tailscale.",
+  "footer.dataResidency": "Infraestructura AWS con red privada + Tailscale. Data residency y sub-processors detallados en /legal.",
   "footer.col.product": "Producto",
   "footer.col.company": "Empresa",
   "footer.col.legal": "Legal",
@@ -217,7 +217,7 @@ const es_419 = {
     "Gestión de lifecycle de cuentas en Google Workspace y Microsoft Entra: alta, suspensión, reactivación, delete, cambio de OU y reset de password.",
   "svc.workspace.b1": "Google Admin SDK + Microsoft Graph",
   "svc.workspace.b2": "Provisioning async con reintentos",
-  "svc.workspace.b3": "Sync incremental cada 5 min",
+  "svc.workspace.b3": "Sync incremental periódico",
   "svc.notifications.title": "Notifications Engine",
   "svc.notifications.desc":
     "Emails transaccionales multi-idioma con quiet hours por timezone, business days y feriados, y templates overrideable por tenant.",
@@ -349,16 +349,16 @@ const en: Record<keyof typeof es_419, string> = {
   "nav.login": "Sign in",
   "nav.signup": "Start free",
 
-  "hero.eyebrow": "14 day trial. No card.",
+  "hero.eyebrow": "90 day trial · no card · no account limit",
   "hero.title.line1": "You hire someone on a Monday.",
   "hero.title.line2": "Their account is running by 9:15.",
   "hero.subtitle":
     "Provisioning for Google Workspace, Microsoft Entra and the apps your teams actually use. Approvals, immutable audit log and cascading offboarding. From one console, run by the people on your team you authorise.",
   "hero.cta.signup": "Start the trial",
   "hero.cta.customer": "See how it works",
-  "hero.trust.sla": "99.9% SLA on Pro",
+  "hero.trust.sla": "SLA defined on Pro plan",
   "hero.trust.rls": "Per-tenant RLS in Postgres",
-  "hero.trust.latam": "Backups and logs in LATAM",
+  "hero.trust.latam": "AWS + private network + Tailscale",
 
   "integrations.title": "Native integrations",
 
@@ -378,7 +378,7 @@ const en: Record<keyof typeof es_419, string> = {
     "Not a corporate roadmap with emojis. The moments where the project took shape, in order.",
   "timeline.m1.date": "Moment 1",
   "timeline.m1.title": "The case that started Mekovault",
-  "timeline.m1.metric": "Logistics client in Santiago",
+  "timeline.m1.metric": "Client in Santiago",
   "timeline.m1.detail":
     "An IT Manager runs around 200 Google Workspace accounts with a form, a spreadsheet and a couple dozen Apps Script files. Each onboarding takes hours of repetitive work. Offboardings sometimes leave loose access that only surfaces months later.",
   "timeline.m2.date": "Moment 2",
@@ -411,25 +411,25 @@ const en: Record<keyof typeof es_419, string> = {
   "faq.eyebrow": "Honest objections",
   "faq.title": "What IT Managers ask before signing",
   "faq.subtitle":
-    "Collected from 40+ conversations with IT Managers at 30 to 500 people companies in Chile and LATAM.",
+    "Collected from conversations with IT Managers at small and mid market companies in Chile and LATAM.",
   "faq.trial.q": "Can I try it without touching real data?",
   "faq.trial.a":
-    "Yes. The 14 day trial spins up an isolated tenant with RLS, without touching your production Google Workspace or MS Entra. When the trial ends you either migrate and keep everything, or the tenant is fully deleted (data and logs) with no residue.",
+    "Yes. The 90 day trial spins up an isolated tenant with RLS, without touching your production Google Workspace or MS Entra. No account limit during the trial. When it ends, you either migrate and keep everything, or the tenant is fully deleted (data and logs) with no residue.",
   "faq.security.q": "How safe is it for a third party to manage my identities?",
   "faq.security.a":
-    "Mekovault does not hold the accounts: it orchestrates them. Your Google/MS OAuth tokens live in a self hosted Infisical, one project per company. Real cross tenant isolation, not an ORM flag. Every change is stored in an immutable audit log with a signed timestamp.",
+    "Mekovault does not hold the accounts: it orchestrates them. Your Google/MS OAuth tokens live in a self hosted Infisical, one project per company. Real cross tenant isolation, not an ORM flag. Every change is stored in an immutable audit log with timestamp.",
   "faq.lockin.q": "Vendor lock in? Can I leave?",
   "faq.lockin.a":
-    "Zero lock in. Your accounts live in Google Workspace or MS Entra, not in Mekovault. If you leave tomorrow your users keep working in the provider exactly as before. We export the full history (accounts_history, audit logs, tickets) as JSON or CSV in one click.",
+    "Zero lock in. Your accounts live in Google Workspace or MS Entra, not in Mekovault. If you leave tomorrow your users keep working in the provider exactly as before. You can export the full history (accounts_history, audit logs, tickets) in standard formats.",
   "faq.stack.q": "Does it work if my company uses MS 365 instead of Google?",
   "faq.stack.a":
     "Yes. The Google Workspace and Microsoft Entra adapters are interchangeable. A single tenant can run both (mixed company after an acquisition) with cross provider provisioning.",
   "faq.support.q": "Is support in English? Real time zone coverage?",
   "faq.support.a":
-    "Support is in Spanish, English and Portuguese, from a team based in Santiago. Hours are UTC-3 to UTC-4. Pro and Enterprise plans include response under 4 business hours.",
+    "Yes. The team is in Santiago. Primary support in Spanish, with Portuguese on demand for Brazilian clients and English for cross-border. Hours are UTC-3 to UTC-4. Pro and Enterprise plans get priority response during business hours.",
   "faq.setup.q": "How long does it take to start? Do I need a consultancy?",
   "faq.setup.a":
-    "15 min wizard if you already have Google Workspace admin. If your setup has custom rules (custom OUs, special licenses, external workflows), the Pro plan includes an onboarding session where we configure it with you. No external consultancy.",
+    "Guided wizard that completes in a few minutes if you already have Google Workspace admin. If your setup has custom rules (custom OUs, special licenses, external workflows), the Pro plan includes an onboarding session where we configure it with you. No external consultancy.",
 
   "features.eyebrow": "Product",
   "features.title": "The whole lifecycle in one panel",
@@ -443,7 +443,7 @@ const en: Record<keyof typeof es_419, string> = {
     "Access Profiles + Bulk CSV. Role-based approval before touching the directory.",
   "features.rbac.title": "Granular RBAC",
   "features.rbac.desc":
-    "Roles + groups + per-service permissions. Redis cache 5 min for low latency.",
+    "Roles + groups + per-service permissions. Redis cache for low latency.",
   "features.vault.title": "Vault per tenant",
   "features.vault.desc":
     "Infisical self-hosted. Each company has its own project, real cross-tenant secret isolation.",
@@ -488,7 +488,7 @@ const en: Record<keyof typeof es_419, string> = {
   "footer.tagline":
     "Automates the lifecycle of corporate identities in Google Workspace, Microsoft Entra and other directories. Self-service portal, approvals, async workers and immutable audit.",
   "footer.dataResidency":
-    "Data hosted in LATAM. AWS infrastructure with private network + Tailscale.",
+    "AWS infrastructure with private network + Tailscale. Data residency and sub-processors detailed in /legal.",
   "footer.col.product": "Product",
   "footer.col.company": "Company",
   "footer.col.legal": "Legal",
@@ -525,7 +525,7 @@ const en: Record<keyof typeof es_419, string> = {
     "Account lifecycle in Google Workspace and Microsoft Entra: create, suspend, reactivate, delete, move OU and reset password.",
   "svc.workspace.b1": "Google Admin SDK + Microsoft Graph",
   "svc.workspace.b2": "Async provisioning with retries",
-  "svc.workspace.b3": "Incremental sync every 5 min",
+  "svc.workspace.b3": "Periodic incremental sync",
   "svc.notifications.title": "Notifications Engine",
   "svc.notifications.desc":
     "Multi-language transactional emails with quiet hours per timezone, business days and holidays, and tenant-overridable templates.",
@@ -651,16 +651,16 @@ const pt_BR: Record<keyof typeof es_419, string> = {
   "nav.login": "Entrar",
   "nav.signup": "Começar grátis",
 
-  "hero.eyebrow": "Trial 14 dias. Sem cartão.",
+  "hero.eyebrow": "Trial 90 dias · sem cartão · sem limite de contas",
   "hero.title.line1": "Você contrata alguém numa segunda.",
   "hero.title.line2": "A conta dele já funciona às 9:15.",
   "hero.subtitle":
     "Provisioning para Google Workspace, Microsoft Entra e os apps que suas equipes realmente usam. Aprovações, audit log imutável e offboarding em cascata. De um único console, com as pessoas do seu time que você autorizar.",
   "hero.cta.signup": "Começar o trial",
   "hero.cta.customer": "Ver como funciona",
-  "hero.trust.sla": "SLA 99,9% no Pro",
+  "hero.trust.sla": "SLA definido no plano Pro",
   "hero.trust.rls": "RLS por tenant no Postgres",
-  "hero.trust.latam": "Backups e logs em LATAM",
+  "hero.trust.latam": "AWS + rede privada + Tailscale",
 
   "integrations.title": "Integrações nativas",
 
@@ -680,7 +680,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
     "Não é um roadmap corporativo com emojis. Os momentos onde o projeto tomou forma, em ordem.",
   "timeline.m1.date": "Momento 1",
   "timeline.m1.title": "O caso que originou o Mekovault",
-  "timeline.m1.metric": "Cliente de logística em Santiago",
+  "timeline.m1.metric": "Cliente em Santiago",
   "timeline.m1.detail":
     "Um IT Manager gerencia cerca de 200 contas Google Workspace com um formulário, uma planilha e cerca de vinte arquivos Apps Script. Cada onboarding leva horas de trabalho repetitivo. Os offboardings às vezes deixam acessos soltos que só aparecem meses depois.",
   "timeline.m2.date": "Momento 2",
@@ -713,25 +713,25 @@ const pt_BR: Record<keyof typeof es_419, string> = {
   "faq.eyebrow": "Objeções honestas",
   "faq.title": "O que os IT Managers perguntam antes de assinar",
   "faq.subtitle":
-    "Coletado de mais de 40 conversas com IT Managers de empresas de 30 a 500 pessoas no Chile e LATAM.",
+    "Coletado de conversas com IT Managers de empresas pequenas e médias no Chile e LATAM.",
   "faq.trial.q": "Posso testar sem comprometer dados reais?",
   "faq.trial.a":
-    "Sim. O trial de 14 dias cria um tenant isolado com RLS, sem tocar seu Google Workspace ou MS Entra em produção. No fim do trial, você migra e conserva tudo, ou o tenant é totalmente excluído (dados e logs) sem resíduo.",
+    "Sim. O trial de 90 dias cria um tenant isolado com RLS, sem tocar seu Google Workspace ou MS Entra em produção. Sem limite de contas durante o trial. No fim, você migra e conserva tudo, ou o tenant é totalmente excluído (dados e logs) sem resíduo.",
   "faq.security.q": "Quão seguro é terceirizar a gestão de identidades?",
   "faq.security.a":
-    "O Mekovault não guarda as contas: as orquestra. Os tokens OAuth do seu Google/MS ficam no Infisical self hosted, um projeto separado por empresa. Isolamento cross tenant real, não uma flag no ORM. Toda mudança fica em um audit log imutável com timestamp assinado.",
+    "O Mekovault não guarda as contas: as orquestra. Os tokens OAuth do seu Google/MS ficam no Infisical self hosted, um projeto separado por empresa. Isolamento cross tenant real, não uma flag no ORM. Toda mudança fica em um audit log imutável com timestamp.",
   "faq.lockin.q": "Vendor lock in? Posso sair?",
   "faq.lockin.a":
-    "Zero lock in. Suas contas vivem no Google Workspace ou MS Entra, não no Mekovault. Se você sair amanhã, seus usuários seguem ativos no provider como estavam. Exportamos todo o histórico (accounts_history, audit logs, tickets) em JSON ou CSV com um clique.",
+    "Zero lock in. Suas contas vivem no Google Workspace ou MS Entra, não no Mekovault. Se você sair amanhã, seus usuários seguem ativos no provider como estavam. Você pode exportar todo o histórico (accounts_history, audit logs, tickets) em formatos padrão.",
   "faq.stack.q": "Funciona se minha empresa usa MS 365 no lugar de Google?",
   "faq.stack.a":
     "Sim. Os adapters de Google Workspace e Microsoft Entra são intercambiáveis. Um mesmo tenant pode ter os dois (empresa mista pós aquisição) com provisioning cross provider.",
   "faq.support.q": "O suporte é em português? Horário LATAM?",
   "faq.support.a":
-    "Sim aos dois. A equipe está em Santiago, o suporte responde em espanhol, português e inglês em horário UTC-3 a UTC-4. Os planos Pro e Enterprise incluem resposta em até 4 horas úteis.",
+    "Sim. A equipe está em Santiago. Suporte principal em espanhol, com português sob demanda para clientes no Brasil. Horário UTC-3 a UTC-4. Os planos Pro e Enterprise têm resposta prioritária em horário útil.",
   "faq.setup.q": "Quanto tempo leva para começar? Preciso de consultoria?",
   "faq.setup.a":
-    "Wizard de 15 min se você já tem Google Workspace admin. Se seu setup tem regras diferentes (OUs custom, licenças especiais, workflows externos), o plano Pro inclui uma sessão de onboarding onde configuramos junto com você. Zero consultoria externa.",
+    "Wizard guiado que se completa em poucos minutos se você já tem Google Workspace admin. Se seu setup tem regras diferentes (OUs custom, licenças especiais, workflows externos), o plano Pro inclui uma sessão de onboarding onde configuramos junto com você. Zero consultoria externa.",
 
   "features.eyebrow": "Produto",
   "features.title": "Todo o ciclo de vida em um painel",
@@ -745,7 +745,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
     "Access Profiles + Bulk CSV. Aprovação por papel antes de tocar o diretório.",
   "features.rbac.title": "RBAC granular",
   "features.rbac.desc":
-    "Papéis + grupos + permissões por serviço. Cache Redis 5 min para baixa latência.",
+    "Papéis + grupos + permissões por serviço. Cache Redis para baixa latência.",
   "features.vault.title": "Vault por tenant",
   "features.vault.desc":
     "Infisical self-hosted. Cada empresa tem seu projeto, isolamento real de segredos.",
@@ -791,7 +791,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
   "footer.tagline":
     "Automatiza o ciclo de vida de identidades corporativas no Google Workspace, Microsoft Entra e outros diretórios. Portal self-service, aprovações, workers assíncronos e auditoria imutável.",
   "footer.dataResidency":
-    "Dados hospedados na LATAM. Infraestrutura AWS com rede privada + Tailscale.",
+    "Infraestrutura AWS com rede privada + Tailscale. Data residency e sub-processors detalhados em /legal.",
   "footer.col.product": "Produto",
   "footer.col.company": "Empresa",
   "footer.col.legal": "Legal",
@@ -828,7 +828,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
     "Ciclo de vida de contas no Google Workspace e Microsoft Entra: criar, suspender, reativar, excluir, mover OU e resetar senha.",
   "svc.workspace.b1": "Google Admin SDK + Microsoft Graph",
   "svc.workspace.b2": "Provisioning assíncrono com retries",
-  "svc.workspace.b3": "Sync incremental a cada 5 min",
+  "svc.workspace.b3": "Sync incremental periódico",
   "svc.notifications.title": "Notifications Engine",
   "svc.notifications.desc":
     "Emails transacionais multi-idioma com quiet hours por timezone, dias úteis e feriados, e templates overrideable por tenant.",
