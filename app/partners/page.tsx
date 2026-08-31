@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * /partners — Landing pública del programa de partners de Mekovault.
+ * /partners: Landing pública del programa de partners de Mekovault.
  *
  * Objetivo: captar leads de resellers potenciales. El formulario POST-ea
  * al backend `/api/v1/public/reseller-applications` (creado en próximo
@@ -222,7 +222,7 @@ export default function PartnersPage() {
           <SectionHeading eyebrow="FAQ" title="Preguntas frecuentes" />
           <div className="mt-10 space-y-4">
             <FAQItem q="¿Necesito tener perfil técnico en mi team?">
-              No para arrancar. Silver es puramente comercial — nosotros ejecutamos
+              No para arrancar. Silver es puramente comercial, nosotros ejecutamos
               el setup técnico (Google/MS provisioning). Al llegar a Gold/Platinum
               recomendamos certificar 1-2 personas para poder hacer full-service
               a tus clientes.

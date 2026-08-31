@@ -42,6 +42,36 @@ const es_419 = {
   // Integrations strip
   "integrations.title": "Integraciones nativas",
 
+  // Compare (interactive moment)
+  "compare.eyebrow": "Antes vs después",
+  "compare.title": "El mismo onboarding, dos realidades",
+  "compare.subtitle":
+    "Movés el slider y ves el mismo caso resuelto de dos formas. Los números vienen de mediciones reales con clientes.",
+
+  // FAQ
+  "faq.eyebrow": "Objeciones honestas",
+  "faq.title": "Lo que preguntan los IT Managers antes de firmar",
+  "faq.subtitle":
+    "Recopilado de 40+ conversaciones con IT Managers de empresas de 30 a 500 personas en Chile y LATAM.",
+  "faq.trial.q": "¿Puedo probarlo sin comprometer datos reales?",
+  "faq.trial.a":
+    "Sí. El trial de 14 días crea un tenant aislado con RLS, sin tocar tu Google Workspace ni MS Entra en producción. Al terminar el trial, o migrás y conservás todo, o el tenant se elimina completo (data y logs) sin residuo.",
+  "faq.security.q": "¿Qué tan seguro es que un tercero maneje mis identidades?",
+  "faq.security.a":
+    "Mekovault no maneja las cuentas: las orquesta. Los tokens OAuth de tu tenant Google/MS los guarda Infisical self-hosted, un proyecto separado por cada empresa. Cross-tenant isolation real, no un flag en un ORM. Todo cambio queda en un audit log inmutable con timestamp firmado.",
+  "faq.lockin.q": "¿Vendor lock-in? ¿Puedo salir?",
+  "faq.lockin.a":
+    "Cero lock-in. Las cuentas viven en tu Google Workspace o MS Entra, no en Mekovault. Si te vas mañana, tus users siguen activos en el provider como estaban. Exportamos todo el histórico (accounts_history, audit logs, tickets) en JSON o CSV con un click.",
+  "faq.stack.q": "¿Funciona si mi empresa usa MS 365 en vez de Google?",
+  "faq.stack.a":
+    "Sí. Los adapters de Google Workspace y Microsoft Entra son intercambiables. Un mismo tenant puede tener ambos (empresa mixta post-adquisición) con provisioning cross-provider.",
+  "faq.support.q": "¿El soporte es en español? ¿En horario Chile?",
+  "faq.support.a":
+    "Sí a las dos. El equipo está en Santiago, todo el soporte responde en español (o portugués para clientes en Brasil) en horario UTC-3 a UTC-4. Los planes Pro y Enterprise incluyen respuesta bajo 4 horas hábiles.",
+  "faq.setup.q": "¿Cuánto tarda arrancar? ¿Necesito consultora?",
+  "faq.setup.a":
+    "Wizard de 15 min si ya tenés Google Workspace admin. Si tu setup tiene reglas raras (OUs custom, licencias especiales, workflows externos), el plan Pro incluye una sesión de onboarding donde configuramos junto a vos. Cero consultora externa.",
+
   // Features
   "features.eyebrow": "Producto",
   "features.title": "Todo el lifecycle en un solo panel",
@@ -119,7 +149,7 @@ const es_419 = {
   "footer.link.aup": "AUP",
   "footer.link.cookies": "Cookies",
   "footer.link.subprocessors": "Sub-procesadores",
-  "footer.copyright": "Mekovault SpA — Santiago, Chile",
+  "footer.copyright": "Mekovault SpA, Santiago, Chile",
 
   // Compliance badges (footer)
   "compliance.gdpr": "Cumplimos con el RGPD (UE 2016/679)",
@@ -227,7 +257,7 @@ const es_419 = {
     "Automatizar el lifecycle de identidades corporativas para que los equipos de IT dejen de operar y empiecen a diseñar.",
   "about.pillar.focus.title": "Enfoque",
   "about.pillar.focus.desc":
-    "Empezamos por Chile — precios en CLP, boletas chilenas, soporte en español. Escalamos a LATAM después.",
+    "Empezamos por Chile: precios en CLP, boletas chilenas, soporte en español. Escalamos a LATAM después.",
   "about.pillar.ambition.title": "Ambición",
   "about.pillar.ambition.desc":
     "Ser el standard regional para gestión de identidades en SMB y mid-market. Sin dependencias en integradores externos.",
@@ -235,7 +265,7 @@ const es_419 = {
   "about.why.p1":
     "El punto de partida fue un cliente concreto. Un IT Manager en Santiago que gestionaba ~200 cuentas Google Workspace con un formulario, una hoja de cálculo y ~20 archivos de Apps Script. La contradicción era clara: una empresa moderna ejecutando procesos artesanales.",
   "about.why.p2":
-    "El diagnóstico fue simple. Los productos globales de IAM se enfocan en enterprises que ya tienen un equipo dedicado. Para todos los demás — 50, 100, 200, 500 personas — no hay opción simple, local y accesible.",
+    "El diagnóstico fue simple. Los productos globales de IAM se enfocan en enterprises que ya tienen un equipo dedicado. Para todos los demás (50, 100, 200, 500 personas), no hay opción simple, local y accesible.",
   "about.why.p3":
     "Mekovault es esa opción. Multi-tenant real (RLS + vault por tenant), audit inmutable, workers async con reintentos, y una paleta de servicios que crece por módulos. No es solo un provisioning tool: es la infraestructura de identidad que las empresas de LATAM necesitan.",
   "about.cta.title": "¿Quieres conocer al equipo?",
@@ -292,6 +322,34 @@ const en: Record<keyof typeof es_419, string> = {
 
   "integrations.title": "Native integrations",
 
+  "compare.eyebrow": "Before vs after",
+  "compare.title": "The same onboarding, two realities",
+  "compare.subtitle":
+    "Move the slider and watch the same case solved two ways. Numbers come from measured client data.",
+
+  "faq.eyebrow": "Honest objections",
+  "faq.title": "What IT Managers ask before signing",
+  "faq.subtitle":
+    "Collected from 40+ conversations with IT Managers at 30 to 500 people companies in Chile and LATAM.",
+  "faq.trial.q": "Can I try it without touching real data?",
+  "faq.trial.a":
+    "Yes. The 14 day trial spins up an isolated tenant with RLS, without touching your production Google Workspace or MS Entra. When the trial ends you either migrate and keep everything, or the tenant is fully deleted (data and logs) with no residue.",
+  "faq.security.q": "How safe is it for a third party to manage my identities?",
+  "faq.security.a":
+    "Mekovault does not hold the accounts: it orchestrates them. Your Google/MS OAuth tokens live in a self hosted Infisical, one project per company. Real cross tenant isolation, not an ORM flag. Every change is stored in an immutable audit log with a signed timestamp.",
+  "faq.lockin.q": "Vendor lock in? Can I leave?",
+  "faq.lockin.a":
+    "Zero lock in. Your accounts live in Google Workspace or MS Entra, not in Mekovault. If you leave tomorrow your users keep working in the provider exactly as before. We export the full history (accounts_history, audit logs, tickets) as JSON or CSV in one click.",
+  "faq.stack.q": "Does it work if my company uses MS 365 instead of Google?",
+  "faq.stack.a":
+    "Yes. The Google Workspace and Microsoft Entra adapters are interchangeable. A single tenant can run both (mixed company after an acquisition) with cross provider provisioning.",
+  "faq.support.q": "Is support in English? Real time zone coverage?",
+  "faq.support.a":
+    "Support is in Spanish, English and Portuguese, from a team based in Santiago. Hours are UTC-3 to UTC-4. Pro and Enterprise plans include response under 4 business hours.",
+  "faq.setup.q": "How long does it take to start? Do I need a consultancy?",
+  "faq.setup.a":
+    "15 min wizard if you already have Google Workspace admin. If your setup has custom rules (custom OUs, special licenses, external workflows), the Pro plan includes an onboarding session where we configure it with you. No external consultancy.",
+
   "features.eyebrow": "Product",
   "features.title": "The whole lifecycle in one panel",
   "features.subtitle":
@@ -307,7 +365,7 @@ const en: Record<keyof typeof es_419, string> = {
     "Roles + groups + per-service permissions. Redis cache 5 min for low latency.",
   "features.vault.title": "Vault per tenant",
   "features.vault.desc":
-    "Infisical self-hosted. Each company has its own project — real cross-tenant secret isolation.",
+    "Infisical self-hosted. Each company has its own project, real cross-tenant secret isolation.",
   "features.audit.title": "Immutable audit log",
   "features.audit.desc":
     "PL/pgSQL triggers block UPDATE/DELETE. Retention 18 months tenant, 5 years platform.",
@@ -364,7 +422,7 @@ const en: Record<keyof typeof es_419, string> = {
   "footer.link.aup": "AUP",
   "footer.link.cookies": "Cookies",
   "footer.link.subprocessors": "Sub-processors",
-  "footer.copyright": "Mekovault SpA — Santiago, Chile",
+  "footer.copyright": "Mekovault SpA, Santiago, Chile",
 
   "compliance.gdpr": "GDPR compliant (EU 2016/679)",
   "compliance.chile": "Chile Ley 21.719 compliant",
@@ -464,7 +522,7 @@ const en: Record<keyof typeof es_419, string> = {
     "Automate corporate identity lifecycle so IT teams stop operating and start designing.",
   "about.pillar.focus.title": "Focus",
   "about.pillar.focus.desc":
-    "We start in Chile — CLP pricing, Chilean invoicing, Spanish support. LATAM afterwards.",
+    "We start in Chile: CLP pricing, Chilean invoicing, Spanish support. LATAM afterwards.",
   "about.pillar.ambition.title": "Ambition",
   "about.pillar.ambition.desc":
     "Be the regional standard for identity management in SMB and mid-market. No dependency on external integrators.",
@@ -472,7 +530,7 @@ const en: Record<keyof typeof es_419, string> = {
   "about.why.p1":
     "The starting point was a real customer. An IT Manager in Santiago managing ~200 Google Workspace accounts with a form, a spreadsheet and ~20 Apps Script files. The contradiction was clear: a modern company running artisanal processes.",
   "about.why.p2":
-    "The diagnosis was simple. Global IAM products focus on enterprises that already have a dedicated team. For everyone else — 50, 100, 200, 500 people — there's no simple, local, accessible option.",
+    "The diagnosis was simple. Global IAM products focus on enterprises that already have a dedicated team. For everyone else (50, 100, 200, 500 people), there's no simple, local, accessible option.",
   "about.why.p3":
     "Mekovault is that option. Real multi-tenant (RLS + per-tenant vault), immutable audit, async workers with retries, and a service palette that grows by modules. It's not just a provisioning tool: it's the identity infrastructure LATAM companies need.",
   "about.cta.title": "Want to meet the team?",
@@ -526,6 +584,34 @@ const pt_BR: Record<keyof typeof es_419, string> = {
   "hero.trust.latam": "Dados na LATAM",
 
   "integrations.title": "Integrações nativas",
+
+  "compare.eyebrow": "Antes vs depois",
+  "compare.title": "O mesmo onboarding, duas realidades",
+  "compare.subtitle":
+    "Move o slider e vê o mesmo caso resolvido de duas formas. Os números vêm de dados medidos com clientes.",
+
+  "faq.eyebrow": "Objeções honestas",
+  "faq.title": "O que os IT Managers perguntam antes de assinar",
+  "faq.subtitle":
+    "Coletado de mais de 40 conversas com IT Managers de empresas de 30 a 500 pessoas no Chile e LATAM.",
+  "faq.trial.q": "Posso testar sem comprometer dados reais?",
+  "faq.trial.a":
+    "Sim. O trial de 14 dias cria um tenant isolado com RLS, sem tocar seu Google Workspace ou MS Entra em produção. No fim do trial, você migra e conserva tudo, ou o tenant é totalmente excluído (dados e logs) sem resíduo.",
+  "faq.security.q": "Quão seguro é terceirizar a gestão de identidades?",
+  "faq.security.a":
+    "O Mekovault não guarda as contas: as orquestra. Os tokens OAuth do seu Google/MS ficam no Infisical self hosted, um projeto separado por empresa. Isolamento cross tenant real, não uma flag no ORM. Toda mudança fica em um audit log imutável com timestamp assinado.",
+  "faq.lockin.q": "Vendor lock in? Posso sair?",
+  "faq.lockin.a":
+    "Zero lock in. Suas contas vivem no Google Workspace ou MS Entra, não no Mekovault. Se você sair amanhã, seus usuários seguem ativos no provider como estavam. Exportamos todo o histórico (accounts_history, audit logs, tickets) em JSON ou CSV com um clique.",
+  "faq.stack.q": "Funciona se minha empresa usa MS 365 no lugar de Google?",
+  "faq.stack.a":
+    "Sim. Os adapters de Google Workspace e Microsoft Entra são intercambiáveis. Um mesmo tenant pode ter os dois (empresa mista pós aquisição) com provisioning cross provider.",
+  "faq.support.q": "O suporte é em português? Horário LATAM?",
+  "faq.support.a":
+    "Sim aos dois. A equipe está em Santiago, o suporte responde em espanhol, português e inglês em horário UTC-3 a UTC-4. Os planos Pro e Enterprise incluem resposta em até 4 horas úteis.",
+  "faq.setup.q": "Quanto tempo leva para começar? Preciso de consultoria?",
+  "faq.setup.a":
+    "Wizard de 15 min se você já tem Google Workspace admin. Se seu setup tem regras diferentes (OUs custom, licenças especiais, workflows externos), o plano Pro inclui uma sessão de onboarding onde configuramos junto com você. Zero consultoria externa.",
 
   "features.eyebrow": "Produto",
   "features.title": "Todo o ciclo de vida em um painel",
@@ -600,7 +686,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
   "footer.link.aup": "AUP",
   "footer.link.cookies": "Cookies",
   "footer.link.subprocessors": "Sub-processadores",
-  "footer.copyright": "Mekovault SpA — Santiago, Chile",
+  "footer.copyright": "Mekovault SpA, Santiago, Chile",
 
   "compliance.gdpr": "Conformidade com o RGPD (UE 2016/679)",
   "compliance.chile": "Conforme Ley 21.719 · Chile",
@@ -701,7 +787,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
     "Automatizar o ciclo de vida de identidades corporativas para que equipes de IT parem de operar e comecem a desenhar.",
   "about.pillar.focus.title": "Foco",
   "about.pillar.focus.desc":
-    "Começamos pelo Chile — preços em CLP, notas chilenas, suporte em espanhol. LATAM depois.",
+    "Começamos pelo Chile: preços em CLP, notas chilenas, suporte em espanhol. LATAM depois.",
   "about.pillar.ambition.title": "Ambição",
   "about.pillar.ambition.desc":
     "Ser o padrão regional para gestão de identidades em SMB e mid-market. Sem dependência de integradores externos.",
@@ -709,7 +795,7 @@ const pt_BR: Record<keyof typeof es_419, string> = {
   "about.why.p1":
     "O ponto de partida foi um cliente concreto. Um IT Manager em Santiago que gerenciava ~200 contas do Google Workspace com um formulário, uma planilha e ~20 arquivos de Apps Script. A contradição era clara: uma empresa moderna executando proceseres artesanais.",
   "about.why.p2":
-    "O diagnóstico foi simples. Os produtos globais de IAM focam em enterprises que já têm equipe dedicada. Para todos os outros — 50, 100, 200, 500 pessoas — não há opção simples, local e acessível.",
+    "O diagnóstico foi simples. Os produtos globais de IAM focam em enterprises que já têm equipe dedicada. Para todos os outros (50, 100, 200, 500 pessoas), não há opção simples, local e acessível.",
   "about.why.p3":
     "O Mekovault é essa opção. Multi-tenant real (RLS + vault por tenant), audit imutável, workers assíncronos com retries, e uma paleta de serviços que cresce por módulos. Não é só uma ferramenta de provisioning: é a infraestrutura de identidade que as empresas de LATAM precisam.",
   "about.cta.title": "Quer conhecer o time?",

@@ -10,7 +10,7 @@ import { cn } from "@/lib/cn";
  * Badges de compliance en el footer:
  * - RGPD siempre visible (regulación UE aplicable a cualquier cliente con
  *   users en UE).
- * - Ley 21.719 (Chile) con banderita chilena — solo cuando locale=es-419
+ * - Ley 21.719 (Chile) con banderita chilena, solo cuando locale=es-419
  *   (audiencia relevante).
  */
 export function ComplianceBadges({ className }: { className?: string }) {

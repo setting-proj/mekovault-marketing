@@ -25,8 +25,11 @@
   --color-brand-sky: #90e0ef;
   --color-brand-mist: #caf0f8;
 
+  /* Type trio (10k-websites lesson):
+     sans = body silencioso, heading = display fresca, mono = labels/eyebrows */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-heading: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-display), "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: var(--font-mono), ui-monospace, "SF Mono", Menlo, monospace;
 
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -51,6 +54,9 @@
   --primary-foreground: #ffffff;
   --accent: #00b4d8;
   --accent-foreground: #03045e;
+  /* Whisper level (10k-websites lesson §2): para glows, borders sutiles, particles */
+  --accent-muted: rgb(0 180 216 / 0.14);
+  --accent-glow: rgb(0 180 216 / 0.28);
 }
 
 .dark {
@@ -65,6 +71,8 @@
   --primary-foreground: #03045e;
   --accent: #0077b6;
   --accent-foreground: #ffffff;
+  --accent-muted: rgb(0 180 216 / 0.22);
+  --accent-glow: rgb(0 180 216 / 0.38);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -80,6 +88,8 @@
     --primary-foreground: #03045e;
     --accent: #0077b6;
     --accent-foreground: #ffffff;
+    --accent-muted: rgb(0 180 216 / 0.22);
+    --accent-glow: rgb(0 180 216 / 0.38);
   }
 }
 
@@ -101,8 +111,16 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
-    font-weight: 600;
+    letter-spacing: -0.015em;
+    /* Instrument Serif es display peso 400 — el "peso" viene del tamaño
+       y del contraste editorial, no del stroke width */
+    font-weight: 400;
+    /* Optical sizing para display face: mejor rendering en tamaños grandes */
+    font-optical-sizing: auto;
+  }
+  /* Eyebrows / labels / metadata: mono para textura editorial */
+  .font-mono, code, kbd, samp, pre {
+    font-family: var(--font-mono);
   }
   ::selection {
     background: color-mix(in oklab, var(--color-brand-cyan) 40%, transparent);
@@ -154,6 +172,20 @@
   background-size: 42px 42px;
 }
 
+/* Card lift + accent glow — hover unificado en todo el sitio
+   (10k-websites lesson: whole-site-animated standard) */
+@utility card-lift {
+  transition: transform 320ms cubic-bezier(0.2, 0.65, 0.3, 1),
+              box-shadow 320ms ease,
+              border-color 320ms ease;
+}
+@utility card-lift-hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -12px var(--accent-glow),
+              0 0 0 1px color-mix(in oklab, var(--accent) 30%, transparent);
+  border-color: color-mix(in oklab, var(--accent) 40%, var(--border));
+}
+
 @keyframes brand-pulse {
   0%, 100% { opacity: 0.5; }
   50%      { opacity: 0.9; }
@@ -162,5 +194,34 @@
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(-6px); }
 }
+@keyframes brand-drift {
+  0%    { transform: translate3d(0, 0, 0); }
+  100%  { transform: translate3d(-42px, -42px, 0); } /* matches grid-size for seamless loop */
+}
+@keyframes reveal-up {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
 @utility animate-brand-pulse { animation: brand-pulse 3s ease-in-out infinite; }
 @utility animate-brand-float { animation: brand-float 6s ease-in-out infinite; }
+@utility animate-brand-drift { animation: brand-drift 40s linear infinite; }
+@utility animate-reveal-up { animation: reveal-up 0.7s cubic-bezier(0.2, 0.65, 0.3, 1) both; }
+
+/* ============================================================
+   Reduced motion — respetar preferencia del sistema.
+   Final states siempre visibles, drives detenidos.
+   (10k-websites lesson: reduced motion honored globalmente)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  html {
+    scroll-behavior: auto !important;
+  }
+}

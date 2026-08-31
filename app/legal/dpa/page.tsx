@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Acuerdo de tratamiento de datos (DPA)",
   description:
-    "Data Processing Agreement plantilla — cumple RGPD Art. 28 + Ley 21.719 de Chile.",
+    "Data Processing Agreement plantilla: cumple RGPD Art. 28 + Ley 21.719 de Chile.",
 };
 
 export default function DPAPage() {
@@ -12,7 +12,7 @@ export default function DPAPage() {
       <h1>Acuerdo de Tratamiento de Datos (DPA)</h1>
       <p className="text-sm text-muted-foreground">
         Versión 1.0 · Vigencia: 2026 · Este documento es una <strong>plantilla</strong>{" "}
-        de referencia — para operar con un cliente lo firmamos como anexo al contrato de servicio.
+        de referencia. Para operar con un cliente lo firmamos como anexo al contrato de servicio.
       </p>
 
       <h2>1. Partes</h2>

@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * /pricing — Precios en vivo del catálogo de apps.
+ * /pricing: Precios en vivo del catálogo de apps.
  *
  * Fetch desde `/api/v1/public/apps-catalog` (sin auth, cache 60s).
  * Cambios hechos en /superadmin/apps se propagan acá en máx. 60s.
@@ -243,7 +243,7 @@ export default function PricingPage() {
                 <div className="sticky bottom-4 mx-auto mt-8 flex max-w-3xl items-center justify-between gap-4 rounded-2xl border bg-brand-gradient p-6 text-white shadow-[var(--shadow-glow-cyan)]">
                   <div>
                     <p className="text-xs uppercase tracking-widest opacity-80">
-                      Tu selección — {selectedCount} app
+                      Tu selección: {selectedCount} app
                       {selectedCount === 1 ? "" : "s"}
                     </p>
                     <p className="font-heading text-3xl font-semibold">

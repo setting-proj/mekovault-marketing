@@ -18,6 +18,9 @@ import {
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading, EyebrowBadge } from "@/components/Section";
+import { Reveal } from "@/components/Reveal";
+import { TimelineCompare } from "@/components/TimelineCompare";
+import { FAQ } from "@/components/FAQ";
 import { useT } from "@/lib/i18n/I18nProvider";
 
 export default function Home() {
@@ -110,6 +113,24 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Interactive moment: comparativa manual vs Mekovault
+          (10k-websites §6: cada página tiene UN interactive moment memorable) */}
+      <Section className="relative border-t">
+        <div aria-hidden className="pointer-events-none absolute inset-0 grid-lines opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+        <Container className="relative">
+          <SectionHeading
+            eyebrow={t("compare.eyebrow")}
+            title={t("compare.title")}
+            desc={t("compare.subtitle")}
+          />
+          <Reveal>
+            <div className="mx-auto mt-10 max-w-4xl">
+              <TimelineCompare />
+            </div>
+          </Reveal>
+        </Container>
+      </Section>
+
       {/* Logos */}
       <Section compact className="border-t bg-background/60">
         <Container>
@@ -140,36 +161,24 @@ export default function Home() {
           />
 
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <Feature
-              icon={<Zap />}
-              title={t("features.async.title")}
-              desc={t("features.async.desc")}
-            />
-            <Feature
-              icon={<Workflow />}
-              title={t("features.approvals.title")}
-              desc={t("features.approvals.desc")}
-            />
-            <Feature
-              icon={<Users />}
-              title={t("features.rbac.title")}
-              desc={t("features.rbac.desc")}
-            />
-            <Feature
-              icon={<KeySquare />}
-              title={t("features.vault.title")}
-              desc={t("features.vault.desc")}
-            />
-            <Feature
-              icon={<ShieldCheck />}
-              title={t("features.audit.title")}
-              desc={t("features.audit.desc")}
-            />
-            <Feature
-              icon={<LineChart />}
-              title={t("features.metrics.title")}
-              desc={t("features.metrics.desc")}
-            />
+            <Reveal delay={0}>
+              <Feature icon={<Zap />} title={t("features.async.title")} desc={t("features.async.desc")} />
+            </Reveal>
+            <Reveal delay={60}>
+              <Feature icon={<Workflow />} title={t("features.approvals.title")} desc={t("features.approvals.desc")} />
+            </Reveal>
+            <Reveal delay={120}>
+              <Feature icon={<Users />} title={t("features.rbac.title")} desc={t("features.rbac.desc")} />
+            </Reveal>
+            <Reveal delay={180}>
+              <Feature icon={<KeySquare />} title={t("features.vault.title")} desc={t("features.vault.desc")} />
+            </Reveal>
+            <Reveal delay={240}>
+              <Feature icon={<ShieldCheck />} title={t("features.audit.title")} desc={t("features.audit.desc")} />
+            </Reveal>
+            <Reveal delay={300}>
+              <Feature icon={<LineChart />} title={t("features.metrics.title")} desc={t("features.metrics.desc")} />
+            </Reveal>
           </div>
         </Container>
       </Section>
@@ -183,10 +192,18 @@ export default function Home() {
           />
 
           <div className="mt-14 grid gap-6 lg:grid-cols-4">
-            <Step n={1} title={t("how.step1.title")} desc={t("how.step1.desc")} />
-            <Step n={2} title={t("how.step2.title")} desc={t("how.step2.desc")} />
-            <Step n={3} title={t("how.step3.title")} desc={t("how.step3.desc")} />
-            <Step n={4} title={t("how.step4.title")} desc={t("how.step4.desc")} />
+            <Reveal delay={0}>
+              <Step n={1} title={t("how.step1.title")} desc={t("how.step1.desc")} />
+            </Reveal>
+            <Reveal delay={80}>
+              <Step n={2} title={t("how.step2.title")} desc={t("how.step2.desc")} />
+            </Reveal>
+            <Reveal delay={160}>
+              <Step n={3} title={t("how.step3.title")} desc={t("how.step3.desc")} />
+            </Reveal>
+            <Reveal delay={240}>
+              <Step n={4} title={t("how.step4.title")} desc={t("how.step4.desc")} />
+            </Reveal>
           </div>
         </Container>
       </Section>
@@ -267,6 +284,29 @@ export default function Home() {
         </Container>
       </Section>
 
+      {/* FAQ: objeciones reales de IT Managers (10k-websites §6) */}
+      <Section id="faq" className="border-t bg-muted/30">
+        <Container>
+          <SectionHeading
+            eyebrow={t("faq.eyebrow")}
+            title={t("faq.title")}
+            desc={t("faq.subtitle")}
+          />
+          <div className="mt-12">
+            <FAQ
+              items={[
+                { q: t("faq.trial.q"), a: t("faq.trial.a") },
+                { q: t("faq.security.q"), a: t("faq.security.a") },
+                { q: t("faq.lockin.q"), a: t("faq.lockin.a") },
+                { q: t("faq.stack.q"), a: t("faq.stack.a") },
+                { q: t("faq.support.q"), a: t("faq.support.a") },
+                { q: t("faq.setup.q"), a: t("faq.setup.a") },
+              ]}
+            />
+          </div>
+        </Container>
+      </Section>
+
       {/* CTA final */}
       <Section className="border-t">
         <Container size="narrow">
@@ -317,12 +357,13 @@ function Feature({
   title: string;
   desc: string;
 }) {
+  // Card lift + accent glow unificado (10k-websites: whole-site animated)
   return (
-    <div className="group relative overflow-hidden rounded-2xl border bg-card p-6 transition-all hover:border-primary/40 hover:shadow-[var(--shadow-glow)]">
+    <div className="group relative overflow-hidden rounded-2xl border bg-card p-6 card-lift hover:card-lift-hover">
       <div className="mb-4 inline-flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform group-hover:scale-110 [&_svg]:size-5">
         {icon}
       </div>
-      <h3 className="font-heading text-base font-semibold tracking-tight">
+      <h3 className="font-heading text-xl tracking-tight">
         {title}
       </h3>
       <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
@@ -340,11 +381,11 @@ function Step({
   desc: string;
 }) {
   return (
-    <div className="relative rounded-2xl border bg-card p-6">
-      <div className="mb-4 inline-flex size-9 items-center justify-center rounded-lg bg-brand-gradient font-heading text-sm font-semibold text-white">
+    <div className="relative rounded-2xl border bg-card p-6 card-lift hover:card-lift-hover">
+      <div className="mb-4 inline-flex size-9 items-center justify-center rounded-lg bg-brand-gradient text-sm font-semibold text-white font-mono">
         {n}
       </div>
-      <h3 className="font-heading text-base font-semibold tracking-tight">
+      <h3 className="font-heading text-xl tracking-tight">
         {title}
       </h3>
       <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
@@ -370,7 +411,7 @@ function ServiceCard({
   return (
     <div
       className={
-        "relative overflow-hidden rounded-2xl border p-6 " +
+        "relative overflow-hidden rounded-2xl border p-6 card-lift hover:card-lift-hover " +
         (muted ? "bg-muted/40" : "bg-card")
       }
     >
