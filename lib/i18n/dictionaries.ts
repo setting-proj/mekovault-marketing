@@ -26,18 +26,16 @@ const es_419 = {
   "nav.signup": "Empezar gratis",
 
   // Landing hero
-  "hero.eyebrow": "Trial 90 días · Sin límites · Sin tarjeta",
-  "hero.title.pre": "Identidades corporativas,",
-  "hero.title.hl1": "automatizadas",
-  "hero.title.and": "y",
-  "hero.title.hl2": "auditadas",
+  "hero.eyebrow": "Trial 14 días. Sin tarjeta.",
+  "hero.title.line1": "Contratás a alguien un lunes.",
+  "hero.title.line2": "Su cuenta está operativa a las 9:15.",
   "hero.subtitle":
-    "Mekovault reemplaza el flujo manual de altas, bajas y cambios en Google Workspace, Microsoft Entra y otros directorios por un portal self-service con aprobaciones, workers async y auditoría inmutable.",
-  "hero.cta.signup": "Crear cuenta gratis",
-  "hero.cta.customer": "Ya soy cliente",
-  "hero.trust.sla": "99.9% SLA",
-  "hero.trust.rls": "Multi-tenant + RLS",
-  "hero.trust.latam": "Datos en LATAM",
+    "Provisioning para Google Workspace, Microsoft Entra y las apps que usan tus equipos. Aprobaciones, audit log inmutable y offboarding en cascada. Desde una consola, con las personas de tu equipo que vos autorices.",
+  "hero.cta.signup": "Empezar el trial",
+  "hero.cta.customer": "Ver cómo funciona",
+  "hero.trust.sla": "99.9% SLA en Pro",
+  "hero.trust.rls": "RLS por tenant en Postgres",
+  "hero.trust.latam": "Backups y logs en LATAM",
 
   // Integrations strip
   "integrations.title": "Integraciones nativas",
@@ -47,6 +45,50 @@ const es_419 = {
   "compare.title": "El mismo onboarding, dos realidades",
   "compare.subtitle":
     "Movés el slider y ves el mismo caso resuelto de dos formas. Los números vienen de mediciones reales con clientes.",
+
+  // Workflow (products page interactive moment)
+  "workflow.eyebrow": "Un onboarding real de punta a punta",
+  "workflow.title": "6 pasos, 12 segundos, todos los servicios que participan",
+  "workflow.subtitle":
+    "Hacé click en cada paso para ver qué servicio del backend lo ejecuta. Los nombres son los reales, los tiempos son los medidos.",
+
+  // Timeline (about page interactive moment)
+  "about.timeline.eyebrow": "Cómo llegamos hasta acá",
+  "about.timeline.title": "5 hitos con fechas y números reales",
+  "about.timeline.subtitle":
+    "Sin roadmap corporativo con emojis. Lo que efectivamente pasó, cuándo, y cuánto costó.",
+  "timeline.m1.date": "Mar 2024",
+  "timeline.m1.title": "El caso que gatilló todo",
+  "timeline.m1.metric": "200 cuentas, 20 archivos Apps Script",
+  "timeline.m1.detail":
+    "Un IT Manager en una empresa de logística en Santiago gestiona 200 cuentas Google Workspace con un formulario Google, una hoja de cálculo y 20 archivos de Apps Script. Un onboarding le toma 3 horas. Un offboarding suele olvidar revocar accesos a Slack.",
+  "timeline.m2.date": "Jul 2024",
+  "timeline.m2.title": "Prototipo interno",
+  "timeline.m2.metric": "6 semanas · 1 developer",
+  "timeline.m2.detail":
+    "Reemplazamos los 20 archivos de Apps Script por un servicio Python que hace el mismo trabajo con un webhook. El onboarding baja a 40 minutos. El cliente sigue usando su Google Workspace de siempre.",
+  "timeline.m3.date": "Nov 2024",
+  "timeline.m3.title": "Multi-tenant + RLS",
+  "timeline.m3.metric": "svc-tenancy + svc-auth + Infisical",
+  "timeline.m3.detail":
+    "Refactor completo a multi-tenant con Row-Level Security en Postgres. Cada empresa se aísla a nivel de tabla, no de flag. Los tokens OAuth de cada tenant viven en un proyecto separado de Infisical self-hosted.",
+  "timeline.m4.date": "Abr 2026",
+  "timeline.m4.title": "Portal + addons + billing",
+  "timeline.m4.metric": "svc-billing + MercadoPago + Brevo",
+  "timeline.m4.detail":
+    "Portal self-service, catálogo de addons vendibles por separado, facturación mensual con MercadoPago Chile, notificaciones vía Brevo. El IT Manager delega provisioning a su equipo con permissions granulares.",
+  "timeline.m5.date": "Ago 2026",
+  "timeline.m5.title": "Sistema de tickets V2",
+  "timeline.m5.metric": "7 tipos + audit + cascade block",
+  "timeline.m5.detail":
+    "Bloqueo con cascade a cuentas linkeadas (Diego con 3 correos en 3 dominios se cierra en uno). Password reset con lookup de recovery email. Aliases con validación anti-duplicado. Todo con audit log firmado.",
+
+  // Founder quote (breakout editorial en features)
+  "founder.quote":
+    "El cliente que gatilló Mekovault gestionaba 200 cuentas de Google Workspace con un formulario, una hoja de cálculo y 20 archivos de Apps Script pegados con cinta. Cada onboarding tomaba media tarde. Cada offboarding olvidaba algo. No hicimos falta imaginar un producto: tuvimos que mirar bien ese caso.",
+  "founder.name": "Jorge, fundador",
+  "founder.role": "Ex IT Manager",
+  "founder.date": "Santiago, 2026",
 
   // FAQ
   "faq.eyebrow": "Objeciones honestas",
@@ -307,18 +349,16 @@ const en: Record<keyof typeof es_419, string> = {
   "nav.login": "Sign in",
   "nav.signup": "Start free",
 
-  "hero.eyebrow": "90-day trial · No limits · No card",
-  "hero.title.pre": "Corporate identities,",
-  "hero.title.hl1": "automated",
-  "hero.title.and": "and",
-  "hero.title.hl2": "audited",
+  "hero.eyebrow": "14 day trial. No card.",
+  "hero.title.line1": "You hire someone on a Monday.",
+  "hero.title.line2": "Their account is running by 9:15.",
   "hero.subtitle":
-    "Mekovault replaces the manual flow of hires, leaves and changes in Google Workspace, Microsoft Entra and other directories with a self-service portal, approvals, async workers and immutable audit.",
-  "hero.cta.signup": "Create free account",
-  "hero.cta.customer": "I'm a customer",
-  "hero.trust.sla": "99.9% SLA",
-  "hero.trust.rls": "Multi-tenant + RLS",
-  "hero.trust.latam": "Data in LATAM",
+    "Provisioning for Google Workspace, Microsoft Entra and the apps your teams actually use. Approvals, immutable audit log and cascading offboarding. From one console, run by the people on your team you authorise.",
+  "hero.cta.signup": "Start the trial",
+  "hero.cta.customer": "See how it works",
+  "hero.trust.sla": "99.9% SLA on Pro",
+  "hero.trust.rls": "Per-tenant RLS in Postgres",
+  "hero.trust.latam": "Backups and logs in LATAM",
 
   "integrations.title": "Native integrations",
 
@@ -326,6 +366,47 @@ const en: Record<keyof typeof es_419, string> = {
   "compare.title": "The same onboarding, two realities",
   "compare.subtitle":
     "Move the slider and watch the same case solved two ways. Numbers come from measured client data.",
+
+  "workflow.eyebrow": "A real onboarding end to end",
+  "workflow.title": "6 steps, 12 seconds, all the services involved",
+  "workflow.subtitle":
+    "Click each step to see which backend service runs it. Service names are the real ones, timings are the measured ones.",
+
+  "about.timeline.eyebrow": "How we got here",
+  "about.timeline.title": "5 milestones with real dates and numbers",
+  "about.timeline.subtitle":
+    "Not a corporate roadmap with emojis. What actually happened, when, and how much it cost.",
+  "timeline.m1.date": "Mar 2024",
+  "timeline.m1.title": "The case that started everything",
+  "timeline.m1.metric": "200 accounts, 20 Apps Script files",
+  "timeline.m1.detail":
+    "An IT Manager at a logistics company in Santiago runs 200 Google Workspace accounts with a Google Form, a spreadsheet and 20 Apps Script files. One onboarding takes 3 hours. One offboarding usually forgets to revoke Slack access.",
+  "timeline.m2.date": "Jul 2024",
+  "timeline.m2.title": "Internal prototype",
+  "timeline.m2.metric": "6 weeks · 1 developer",
+  "timeline.m2.detail":
+    "We replaced the 20 Apps Script files with a Python service doing the same job via a webhook. Onboarding drops to 40 minutes. The client keeps using their existing Google Workspace.",
+  "timeline.m3.date": "Nov 2024",
+  "timeline.m3.title": "Multi-tenant + RLS",
+  "timeline.m3.metric": "svc-tenancy + svc-auth + Infisical",
+  "timeline.m3.detail":
+    "Full refactor to multi-tenant with Row-Level Security in Postgres. Each company is isolated at the table level, not at a flag. OAuth tokens per tenant live in a separate project in self-hosted Infisical.",
+  "timeline.m4.date": "Apr 2026",
+  "timeline.m4.title": "Portal + addons + billing",
+  "timeline.m4.metric": "svc-billing + MercadoPago + Brevo",
+  "timeline.m4.detail":
+    "Self-service portal, catalog of addons sold separately, monthly invoicing with MercadoPago Chile, notifications via Brevo. The IT Manager delegates provisioning to their team with granular permissions.",
+  "timeline.m5.date": "Aug 2026",
+  "timeline.m5.title": "Tickets system V2",
+  "timeline.m5.metric": "7 types + audit + cascade block",
+  "timeline.m5.detail":
+    "Cascade block to linked accounts (Diego with 3 emails in 3 domains closes as one). Password reset with recovery email lookup. Aliases with anti-duplicate validation. All with signed audit log.",
+
+  "founder.quote":
+    "The client that triggered Mekovault ran 200 Google Workspace accounts with a form, a spreadsheet and 20 Apps Script files taped together. Each onboarding took half an afternoon. Each offboarding forgot something. We didn't have to imagine a product: we had to look at that case carefully.",
+  "founder.name": "Jorge, founder",
+  "founder.role": "Former IT Manager",
+  "founder.date": "Santiago, 2026",
 
   "faq.eyebrow": "Honest objections",
   "faq.title": "What IT Managers ask before signing",
@@ -570,18 +651,16 @@ const pt_BR: Record<keyof typeof es_419, string> = {
   "nav.login": "Entrar",
   "nav.signup": "Começar grátis",
 
-  "hero.eyebrow": "Trial 90 dias · Sem limites · Sem cartão",
-  "hero.title.pre": "Identidades corporativas,",
-  "hero.title.hl1": "automatizadas",
-  "hero.title.and": "e",
-  "hero.title.hl2": "auditadas",
+  "hero.eyebrow": "Trial 14 dias. Sem cartão.",
+  "hero.title.line1": "Você contrata alguém numa segunda.",
+  "hero.title.line2": "A conta dele já funciona às 9:15.",
   "hero.subtitle":
-    "O Mekovault substitui o fluxo manual de admissões, desligamentos e alterações no Google Workspace, Microsoft Entra e outros diretórios por um portal self-service com aprovações, workers assíncronos e auditoria imutável.",
-  "hero.cta.signup": "Criar conta grátis",
-  "hero.cta.customer": "Já sou cliente",
-  "hero.trust.sla": "SLA 99,9%",
-  "hero.trust.rls": "Multi-tenant + RLS",
-  "hero.trust.latam": "Dados na LATAM",
+    "Provisioning para Google Workspace, Microsoft Entra e os apps que suas equipes realmente usam. Aprovações, audit log imutável e offboarding em cascata. De um único console, com as pessoas do seu time que você autorizar.",
+  "hero.cta.signup": "Começar o trial",
+  "hero.cta.customer": "Ver como funciona",
+  "hero.trust.sla": "SLA 99,9% no Pro",
+  "hero.trust.rls": "RLS por tenant no Postgres",
+  "hero.trust.latam": "Backups e logs em LATAM",
 
   "integrations.title": "Integrações nativas",
 
@@ -589,6 +668,47 @@ const pt_BR: Record<keyof typeof es_419, string> = {
   "compare.title": "O mesmo onboarding, duas realidades",
   "compare.subtitle":
     "Move o slider e vê o mesmo caso resolvido de duas formas. Os números vêm de dados medidos com clientes.",
+
+  "workflow.eyebrow": "Um onboarding real de ponta a ponta",
+  "workflow.title": "6 passos, 12 segundos, todos os serviços envolvidos",
+  "workflow.subtitle":
+    "Clique em cada passo para ver qual serviço do backend o executa. Os nomes são os reais, os tempos são os medidos.",
+
+  "about.timeline.eyebrow": "Como chegamos aqui",
+  "about.timeline.title": "5 marcos com datas e números reais",
+  "about.timeline.subtitle":
+    "Não é um roadmap corporativo com emojis. O que aconteceu de fato, quando, e quanto custou.",
+  "timeline.m1.date": "Mar 2024",
+  "timeline.m1.title": "O caso que começou tudo",
+  "timeline.m1.metric": "200 contas, 20 arquivos Apps Script",
+  "timeline.m1.detail":
+    "Um IT Manager em uma empresa de logística em Santiago gerencia 200 contas Google Workspace com um Google Form, uma planilha e 20 arquivos de Apps Script. Um onboarding leva 3 horas. Um offboarding costuma esquecer de revogar acesso ao Slack.",
+  "timeline.m2.date": "Jul 2024",
+  "timeline.m2.title": "Protótipo interno",
+  "timeline.m2.metric": "6 semanas · 1 developer",
+  "timeline.m2.detail":
+    "Substituímos os 20 arquivos de Apps Script por um serviço Python que faz o mesmo trabalho via webhook. Onboarding cai para 40 minutos. O cliente continua usando seu Google Workspace de sempre.",
+  "timeline.m3.date": "Nov 2024",
+  "timeline.m3.title": "Multi-tenant + RLS",
+  "timeline.m3.metric": "svc-tenancy + svc-auth + Infisical",
+  "timeline.m3.detail":
+    "Refactor completo para multi-tenant com Row-Level Security no Postgres. Cada empresa se isola no nível de tabela, não de flag. Os tokens OAuth de cada tenant vivem num projeto separado de Infisical self-hosted.",
+  "timeline.m4.date": "Abr 2026",
+  "timeline.m4.title": "Portal + addons + billing",
+  "timeline.m4.metric": "svc-billing + MercadoPago + Brevo",
+  "timeline.m4.detail":
+    "Portal self-service, catálogo de addons vendidos separadamente, faturamento mensal com MercadoPago Chile, notificações via Brevo. O IT Manager delega provisioning para sua equipe com permissions granulares.",
+  "timeline.m5.date": "Ago 2026",
+  "timeline.m5.title": "Sistema de tickets V2",
+  "timeline.m5.metric": "7 tipos + audit + cascade block",
+  "timeline.m5.detail":
+    "Bloqueio com cascade para contas linkeadas (Diego com 3 emails em 3 domínios se fecha em um). Password reset com lookup de recovery email. Aliases com validação anti-duplicado. Tudo com audit log assinado.",
+
+  "founder.quote":
+    "O cliente que originou o Mekovault gerenciava 200 contas do Google Workspace com um formulário, uma planilha e 20 arquivos de Apps Script colados com fita. Cada onboarding levava metade de uma tarde. Cada offboarding esquecia algo. Não precisamos imaginar um produto: precisamos olhar bem esse caso.",
+  "founder.name": "Jorge, fundador",
+  "founder.role": "Ex IT Manager",
+  "founder.date": "Santiago, 2026",
 
   "faq.eyebrow": "Objeções honestas",
   "faq.title": "O que os IT Managers perguntam antes de assinar",

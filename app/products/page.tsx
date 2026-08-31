@@ -18,6 +18,8 @@ import {
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
+import { Reveal } from "@/components/Reveal";
+import { WorkflowDiagram } from "@/components/WorkflowDiagram";
 import { useT } from "@/lib/i18n/I18nProvider";
 
 const SERVICES = [
@@ -164,9 +166,31 @@ export default function ProductsPage() {
         </Container>
       </Section>
 
-      <Section compact>
+      {/* Workflow interactivo: onboarding real de punta a punta con timing
+          real y nombres de servicios reales. Interactive moment de /products
+          (10k-websites §6). */}
+      <Section className="border-t">
         <Container>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <SectionHeading
+            eyebrow={t("workflow.eyebrow")}
+            title={t("workflow.title")}
+            desc={t("workflow.subtitle")}
+          />
+          <Reveal>
+            <div className="mt-10">
+              <WorkflowDiagram />
+            </div>
+          </Reveal>
+        </Container>
+      </Section>
+
+      <Section compact className="border-t">
+        <Container>
+          <SectionHeading
+            eyebrow={t("services.eyebrow")}
+            title={t("services.title")}
+          />
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s) => (
               <ServiceCard key={s.title} {...s} />
             ))}

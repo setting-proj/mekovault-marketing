@@ -37,18 +37,24 @@ export default function Home() {
 
         <Container className="relative pt-16 pb-24 sm:pt-24 sm:pb-32">
           <div className="mx-auto max-w-3xl text-center">
-            <EyebrowBadge>
-              <span className="size-1.5 rounded-full bg-current animate-brand-pulse" />
+            {/* Eyebrow: mono, sin dot pulsando (rompe pattern AI-obvious de
+                los "trust badges" con puntito animado que se usan en cada SaaS) */}
+            <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
               {t("hero.eyebrow")}
-            </EyebrowBadge>
+            </span>
 
-            <h1 className="mt-6 text-balance font-heading text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
-              {t("hero.title.pre")}{" "}
-              <span className="text-brand-gradient">{t("hero.title.hl1")}</span>{" "}
-              {t("hero.title.and")}{" "}
-              <span className="text-brand-gradient">{t("hero.title.hl2")}</span>.
+            {/* Título en 2 líneas asimétricas: primera declaración concreta,
+                segunda promesa en italic serif con gradient. Sin paralelismo
+                perfecto "verb + and + verb" que grita AI. */}
+            <h1 className="mt-8 text-balance leading-[1.05] tracking-tight">
+              <span className="block font-heading text-4xl sm:text-5xl md:text-6xl">
+                {t("hero.title.line1")}
+              </span>
+              <span className="mt-2 block font-heading italic text-4xl sm:text-5xl md:text-6xl text-brand-gradient">
+                {t("hero.title.line2")}
+              </span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground">
+            <p className="mx-auto mt-8 max-w-2xl text-pretty text-lg text-muted-foreground">
               {t("hero.subtitle")}
             </p>
 
@@ -60,12 +66,15 @@ export default function Home() {
               >
                 {t("hero.cta.signup")} <ArrowRight />
               </LinkButton>
-              <LinkButton href="/products" variant="outline" size="lg">
-                {t("nav.product")}
-              </LinkButton>
+              <Link
+                href="#features"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors"
+              >
+                {t("hero.cta.customer")} →
+              </Link>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-xs text-muted-foreground">
               <TrustDot color="emerald" label={t("hero.trust.sla")} />
               <TrustDot color="cyan" label={t("hero.trust.rls")} />
               <TrustDot color="deep" label={t("hero.trust.latam")} />
@@ -80,13 +89,11 @@ export default function Home() {
             />
             <div className="glass relative rounded-2xl p-3 shadow-[var(--shadow-glow)] animate-brand-float">
               <div className="rounded-xl bg-card p-5">
-                <div className="flex items-center gap-2 border-b pb-3">
-                  <span className="size-2.5 rounded-full bg-red-400/60" />
-                  <span className="size-2.5 rounded-full bg-amber-400/60" />
-                  <span className="size-2.5 rounded-full bg-emerald-400/60" />
-                  <span className="ml-3 text-xs text-muted-foreground">
-                    app.mekovault.com/admin/access-profiles
-                  </span>
+                {/* URL bar simplificada: sin dots macOS que gritan "SaaS mockup". */}
+                <div className="flex items-center gap-2 border-b pb-3 font-mono text-xs text-muted-foreground">
+                  <span className="text-emerald-500">●</span>
+                  <span>app.mekovault.com/moov/workspace/users</span>
+                  <span className="ml-auto text-[10px] opacity-60">hace 47s</span>
                 </div>
                 <div className="grid gap-4 pt-5 sm:grid-cols-3">
                   <MockStat label={t("mock.acc_active")} value="1,284" delta="+34" />
@@ -95,8 +102,8 @@ export default function Home() {
                 </div>
                 <div className="mt-5 rounded-lg border bg-muted/40 p-4">
                   <div className="mb-3 flex items-center justify-between text-xs">
-                    <span className="font-medium">
-                      {t("mock.onboarding_of")} maria@empresa.cl
+                    <span className="font-medium font-mono">
+                      {t("mock.onboarding_of")} maria.jara@moov.cl
                     </span>
                     <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-300">
                       {t("mock.status_completed")}
@@ -160,26 +167,41 @@ export default function Home() {
             desc={t("features.subtitle")}
           />
 
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <Reveal delay={0}>
-              <Feature icon={<Zap />} title={t("features.async.title")} desc={t("features.async.desc")} />
+          {/* Grid asimétrico: 1 hero card + 5 secundarias + quote breakout.
+              Rompe el pattern "3x2 idéntico" que grita template AI-marketing. */}
+          <div className="mt-14 grid gap-4 md:grid-cols-6 md:auto-rows-min">
+            {/* Feature destacada: 4/6 cols, doble alto de contenido, iconografía distinta */}
+            <Reveal delay={0} className="md:col-span-4 md:row-span-2">
+              <FeatureHero
+                icon={<Zap />}
+                title={t("features.async.title")}
+                desc={t("features.async.desc")}
+              />
             </Reveal>
-            <Reveal delay={60}>
+            {/* Aprobaciones + RBAC en columna vertical */}
+            <Reveal delay={80} className="md:col-span-2">
               <Feature icon={<Workflow />} title={t("features.approvals.title")} desc={t("features.approvals.desc")} />
             </Reveal>
-            <Reveal delay={120}>
+            <Reveal delay={160} className="md:col-span-2">
               <Feature icon={<Users />} title={t("features.rbac.title")} desc={t("features.rbac.desc")} />
             </Reveal>
-            <Reveal delay={180}>
+            {/* Row 2: 3 features en línea */}
+            <Reveal delay={240} className="md:col-span-2">
               <Feature icon={<KeySquare />} title={t("features.vault.title")} desc={t("features.vault.desc")} />
             </Reveal>
-            <Reveal delay={240}>
+            <Reveal delay={320} className="md:col-span-2">
               <Feature icon={<ShieldCheck />} title={t("features.audit.title")} desc={t("features.audit.desc")} />
             </Reveal>
-            <Reveal delay={300}>
+            <Reveal delay={400} className="md:col-span-2">
               <Feature icon={<LineChart />} title={t("features.metrics.title")} desc={t("features.metrics.desc")} />
             </Reveal>
           </div>
+
+          {/* Founder quote: breakout editorial. Historia real que aparece
+              también en /about, pero acá se muestra como pull-quote. */}
+          <Reveal delay={100}>
+            <FounderQuote t={t} />
+          </Reveal>
         </Container>
       </Section>
 
@@ -314,11 +336,20 @@ export default function Home() {
             style={{ boxShadow: "var(--shadow-glow-cyan)" }}
           >
             <div aria-hidden className="absolute inset-0 grid-lines opacity-20" />
+            {/* Local scrim para legibilidad del texto sobre el gradient
+                (10k-websites §10: legibility system contra el "worst frame" del bg) */}
+            <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
             <div className="relative">
-              <h2 className="text-balance font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h2
+                className="text-balance font-heading text-3xl tracking-tight sm:text-4xl"
+                style={{ textShadow: "0 2px 12px rgb(0 0 0 / 0.35)" }}
+              >
                 {t("cta.title")}
               </h2>
-              <p className="mx-auto mt-3 max-w-xl text-white/85">
+              <p
+                className="mx-auto mt-3 max-w-xl text-white"
+                style={{ textShadow: "0 1px 6px rgb(0 0 0 / 0.4)" }}
+              >
                 {t("cta.subtitle")}
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -359,7 +390,7 @@ function Feature({
 }) {
   // Card lift + accent glow unificado (10k-websites: whole-site animated)
   return (
-    <div className="group relative overflow-hidden rounded-2xl border bg-card p-6 card-lift hover:card-lift-hover">
+    <div className="group relative h-full overflow-hidden rounded-2xl border bg-card p-6 card-lift hover:card-lift-hover">
       <div className="mb-4 inline-flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform group-hover:scale-110 [&_svg]:size-5">
         {icon}
       </div>
@@ -367,6 +398,98 @@ function Feature({
         {title}
       </h3>
       <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
+    </div>
+  );
+}
+
+/**
+ * FeatureHero: variante grande de Feature. Destaca UNA capability sobre el resto.
+ * Layout distinto (icon extra + mini-diagrama de flow) para romper la simetría del grid.
+ */
+function FeatureHero({
+  icon,
+  title,
+  desc,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <div className="group relative h-full overflow-hidden rounded-2xl border bg-card p-8 card-lift hover:card-lift-hover">
+      {/* Grid pattern sutil de fondo */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 grid-dot opacity-25 [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_60%)]" />
+      <div className="relative">
+        <div className="mb-5 inline-flex size-14 items-center justify-center rounded-2xl bg-brand-gradient text-white shadow-[var(--shadow-glow-cyan)] transition-transform group-hover:scale-105 [&_svg]:size-7">
+          {icon}
+        </div>
+        <h3 className="font-heading text-2xl sm:text-3xl italic tracking-tight text-brand-gradient">
+          {title}
+        </h3>
+        <p className="mt-3 max-w-lg text-base text-muted-foreground leading-relaxed">
+          {desc}
+        </p>
+        {/* Mini diagrama de flow: comunica "workflow async" visualmente */}
+        <div className="mt-6 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+          <FlowChip>request</FlowChip>
+          <FlowArrow />
+          <FlowChip>queue</FlowChip>
+          <FlowArrow />
+          <FlowChip>worker</FlowChip>
+          <FlowArrow />
+          <FlowChip highlight>provider</FlowChip>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FlowChip({ children, highlight = false }: { children: React.ReactNode; highlight?: boolean }) {
+  return (
+    <span
+      className={
+        "rounded-md px-2 py-0.5 " +
+        (highlight
+          ? "bg-primary/15 text-primary border border-primary/30"
+          : "bg-muted/60 border border-border")
+      }
+    >
+      {children}
+    </span>
+  );
+}
+
+function FlowArrow() {
+  return <span aria-hidden className="text-border">→</span>;
+}
+
+/**
+ * FounderQuote: pull-quote editorial con la historia de origen del proyecto.
+ * Rompe el patrón de "cards de features" con un bloque tipográfico distinto.
+ * Sin foto para no fake un testimonio; la voz es del founder, atribuida.
+ */
+function FounderQuote({ t }: { t: ReturnType<typeof useT> }) {
+  return (
+    <div className="mt-14 relative overflow-hidden rounded-2xl border bg-gradient-to-br from-card via-card to-primary/5 p-8 sm:p-12">
+      <div aria-hidden className="absolute -right-8 -top-8 size-40 rounded-full bg-brand-gradient opacity-10 blur-3xl" />
+      <div className="relative grid gap-6 md:grid-cols-[auto_1fr] md:items-center">
+        {/* Comilla tipográfica en display serif, sin icon lucide (evita cliché SaaS) */}
+        <div className="font-heading text-7xl leading-none text-primary/40 italic select-none" aria-hidden>
+          &ldquo;
+        </div>
+        <div>
+          <p className="font-heading text-xl sm:text-2xl italic leading-snug text-balance">
+            {t("founder.quote")}
+          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            <span>{t("founder.name")}</span>
+            <span aria-hidden className="text-border">·</span>
+            <span>{t("founder.role")}</span>
+            <span aria-hidden className="text-border">·</span>
+            <span>{t("founder.date")}</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -5,6 +5,8 @@ import { ArrowRight, Building2, Compass, Mountain } from "lucide-react";
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
+import { Reveal } from "@/components/Reveal";
+import { Timeline } from "@/components/Timeline";
 import { useT } from "@/lib/i18n/I18nProvider";
 
 export default function AboutPage() {
@@ -54,13 +56,63 @@ export default function AboutPage() {
       <Section className="border-t bg-muted/30">
         <Container size="narrow">
           <div className="prose prose-neutral max-w-none dark:prose-invert">
-            <h2 className="font-heading text-2xl font-semibold tracking-tight">
+            <h2 className="font-heading text-3xl italic tracking-tight">
               {t("about.why.title")}
             </h2>
             <p className="mt-4 text-muted-foreground">{t("about.why.p1")}</p>
             <p className="mt-4 text-muted-foreground">{t("about.why.p2")}</p>
             <p className="mt-4 text-muted-foreground">{t("about.why.p3")}</p>
           </div>
+        </Container>
+      </Section>
+
+      {/* Timeline interactivo: hitos del proyecto con detalles reales.
+          Interactive moment de /about (10k-websites §6). */}
+      <Section className="border-t">
+        <Container size="wide">
+          <SectionHeading
+            eyebrow={t("about.timeline.eyebrow")}
+            title={t("about.timeline.title")}
+            desc={t("about.timeline.subtitle")}
+          />
+          <Reveal>
+            <div className="mx-auto mt-4 max-w-4xl">
+              <Timeline
+                milestones={[
+                  {
+                    date: t("timeline.m1.date"),
+                    title: t("timeline.m1.title"),
+                    detail: t("timeline.m1.detail"),
+                    metric: t("timeline.m1.metric"),
+                  },
+                  {
+                    date: t("timeline.m2.date"),
+                    title: t("timeline.m2.title"),
+                    detail: t("timeline.m2.detail"),
+                    metric: t("timeline.m2.metric"),
+                  },
+                  {
+                    date: t("timeline.m3.date"),
+                    title: t("timeline.m3.title"),
+                    detail: t("timeline.m3.detail"),
+                    metric: t("timeline.m3.metric"),
+                  },
+                  {
+                    date: t("timeline.m4.date"),
+                    title: t("timeline.m4.title"),
+                    detail: t("timeline.m4.detail"),
+                    metric: t("timeline.m4.metric"),
+                  },
+                  {
+                    date: t("timeline.m5.date"),
+                    title: t("timeline.m5.title"),
+                    detail: t("timeline.m5.detail"),
+                    metric: t("timeline.m5.metric"),
+                  },
+                ]}
+              />
+            </div>
+          </Reveal>
         </Container>
       </Section>
 
