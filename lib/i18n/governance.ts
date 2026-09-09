@@ -404,6 +404,7 @@ const es_CL: GovernanceContent = {
               ["Mínimo", "24 meses"],
               ["Máximo", "84 meses"],
               ["Configuración", "Por tenant, dentro de ese rango"],
+              ["Eliminación del tenant", "Se borra junto con el tenant, o a los 24 meses, lo que ocurra primero"],
               [
                 "Purga",
                 "Semanal, solo de filas fuera del período configurado. Cada batch purgado deja constancia en la auditoría.",
@@ -1062,6 +1063,7 @@ const en_US: GovernanceContent = {
               ["Minimum", "24 months"],
               ["Maximum", "84 months"],
               ["Configuration", "Per tenant, within that range"],
+              ["Tenant deletion", "Deleted with the tenant, or after 24 months, whichever comes first"],
               [
                 "Purge",
                 "Weekly, only of rows outside the configured period. Every purged batch is recorded in the audit trail.",
@@ -1681,6 +1683,7 @@ const pt_BR: GovernanceContent = {
               ["Mínimo", "24 meses"],
               ["Máximo", "84 meses"],
               ["Configuração", "Por tenant, dentro dessa faixa"],
+              ["Exclusão do tenant", "Apagado junto com o tenant, ou após 24 meses, o que ocorrer primeiro"],
               [
                 "Expurgo",
                 "Semanal, apenas de linhas fora do período configurado. Cada lote expurgado fica registrado na auditoria.",

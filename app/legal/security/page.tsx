@@ -293,8 +293,8 @@ export default function SecurityPage() {
         <code>UPDATE</code> y <code>DELETE</code>. Ni el equipo de Mekovault
         con acceso root puede modificar un registro individual. La única forma
         de purgar es el <em>retention worker</em> con reglas explícitas
-        publicadas —hoy: retención de 24 meses, planeado configurable por
-        Cliente en Hito 7— que corre con <code>SECURITY DEFINER</code> y deja
+        publicadas —retención mínima de 24 meses, configurable por Cliente
+        hasta 84, o hasta la eliminación del tenant, lo que ocurra primero— que corre con <code>SECURITY DEFINER</code> y deja
         constancia del batch purgado.
       </p>
 
@@ -392,10 +392,12 @@ export default function SecurityPage() {
           la conexión y el catálogo de identidades.
         </li>
         <li>
-          El <code>credential_usage_log</code> del tenant se conserva 24 meses
-          adicionales por obligaciones de auditabilidad (Ley 21.719 art. 12,
-          RGPD art. 30). El Cliente puede solicitar antes su hash pseudónimo
-          si su política interna lo requiere.
+          El <code>credential_usage_log</code> del tenant se conserva hasta la
+          eliminación del tenant o 24 meses, lo que ocurra primero (Ley 21.719
+          art. 12, RGPD art. 30). Al eliminar el tenant se borra junto con el
+          resto de sus datos; Mekovault conserva solo un registro propio con
+          contadores y sin datos personales. El Cliente puede solicitar antes
+          su hash pseudónimo si su política interna lo requiere.
         </li>
       </ul>
 
