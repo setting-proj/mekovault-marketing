@@ -7,15 +7,14 @@ import { useI18n } from "@/lib/i18n/I18nProvider";
 import { cn } from "@/lib/cn";
 
 /**
- * Badges de compliance en el footer:
- * - RGPD siempre visible (regulación UE aplicable a cualquier cliente con
- *   users en UE).
- * - Ley 21.719 (Chile) con banderita chilena, solo cuando locale=es-419
- *   (audiencia relevante).
+ * Badges de cumplimiento en el footer:
+ * - RGPD siempre visible.
+ * - Ley 21.719 (Chile) con banderita chilena, solo para la audiencia
+ *   chilena (locale es-CL).
  */
 export function ComplianceBadges({ className }: { className?: string }) {
   const { locale, t } = useI18n();
-  const showChile = locale === "es-419";
+  const showChile = locale === "es-CL";
 
   return (
     <div

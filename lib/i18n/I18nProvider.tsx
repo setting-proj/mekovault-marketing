@@ -2,8 +2,8 @@
 
 /**
  * I18n provider del sitio de marketing.
- * Espejo del provider del portal — mismo pattern (localStorage + cookie
- * + Accept-Language detection).
+ * El locale inicial viene del server (cookie + Accept-Language). En el
+ * cliente solo se respeta un override guardado en localStorage.
  */
 
 import {
@@ -17,10 +17,11 @@ import {
 
 import {
   DEFAULT_LOCALE,
-  LOCALES,
   type Locale,
   type TranslationKey,
   dictionaries,
+  htmlLang,
+  normalizeLocale,
 } from "./dictionaries";
 
 const STORAGE_KEY = "mekovault_locale";
@@ -33,22 +34,6 @@ type I18nCtx = {
 };
 
 const Ctx = createContext<I18nCtx | null>(null);
-
-function normalizeToSupported(raw: string | undefined): Locale {
-  if (!raw) return DEFAULT_LOCALE;
-  const lower = raw.toLowerCase();
-  const direct = LOCALES.find((l) => l.toLowerCase() === lower);
-  if (direct) return direct;
-  const lang = lower.split("-")[0];
-  if (lang === "es") return "es-419";
-  if (lang === "pt") return "pt-BR";
-  if (lang === "en") return "en";
-  return DEFAULT_LOCALE;
-}
-
-// (detectLocale client-side ya no es necesario: el server lo hace vía
-// detectLocaleServer y lo pasa como prop `initialLocale`. Mantenemos
-// solo la lectura de localStorage por si el user cambió en otra sesión.)
 
 function interpolate(str: string, vars?: Record<string, string | number>) {
   if (!vars) return str;
@@ -65,7 +50,6 @@ export function I18nProvider({
   /**
    * Locale detectado server-side (cookie + Accept-Language). Cuando viene
    * pasado desde el layout, el HTML ya salió en este idioma y no hay flash.
-   * Fallback DEFAULT_LOCALE por compatibilidad.
    */
   initialLocale?: Locale;
 }) {
@@ -73,16 +57,15 @@ export function I18nProvider({
 
   useEffect(() => {
     // Sincronizar SOLO con localStorage (por si el user cambió locale en
-    // otra sesión y hay override client-side). Si no hay override, el locale
-    // del server sigue siendo el correcto y no forzamos re-render.
+    // otra sesión). Si no hay override, el locale del server es el correcto.
     if (typeof window === "undefined") return;
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
       if (stored) {
-        const norm = normalizeToSupported(stored);
-        if (norm !== locale) {
+        const norm = normalizeLocale(stored);
+        if (norm && norm !== locale) {
           setLocaleState(norm);
-          document.documentElement.lang = norm;
+          document.documentElement.lang = htmlLang(norm);
         }
       }
     } catch {
@@ -100,7 +83,7 @@ export function I18nProvider({
     }
     const oneYear = 60 * 60 * 24 * 365;
     document.cookie = `${COOKIE_KEY}=${next}; path=/; max-age=${oneYear}; samesite=lax`;
-    document.documentElement.lang = next;
+    document.documentElement.lang = htmlLang(next);
   }, []);
 
   const t = useCallback<I18nCtx["t"]>(

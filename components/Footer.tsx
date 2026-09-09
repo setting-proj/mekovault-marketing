@@ -14,6 +14,7 @@ export function Footer() {
       links: [
         { href: "/products", label: t("footer.link.services") },
         { href: "/pricing", label: t("footer.link.pricing") },
+        { href: "/governance", label: t("footer.link.governance") },
         { href: "https://app.mekovault.com", label: t("footer.link.portal") },
       ],
     },
@@ -22,6 +23,7 @@ export function Footer() {
       links: [
         { href: "/about", label: t("footer.link.about") },
         { href: "/contact", label: t("footer.link.contact") },
+        { href: "/partners", label: t("footer.link.partners") },
         { href: "mailto:cloud@mekovault.com", label: "cloud@mekovault.com" },
       ],
     },
@@ -30,6 +32,7 @@ export function Footer() {
       links: [
         { href: "/legal/terms", label: t("footer.link.terms") },
         { href: "/legal/privacy", label: t("footer.link.privacy") },
+        { href: "/legal/security", label: t("footer.link.security") },
         { href: "/legal/dpa", label: t("footer.link.dpa") },
         { href: "/legal/aup", label: t("footer.link.aup") },
         { href: "/legal/cookies", label: t("footer.link.cookies") },
@@ -48,7 +51,7 @@ export function Footer() {
               {t("footer.tagline")}
             </p>
             <p className="mt-6 text-xs text-muted-foreground">
-              {t("footer.dataResidency")}
+              {t("footer.note")}
             </p>
           </div>
 
@@ -79,7 +82,7 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col items-start justify-between gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {t("footer.copyright")}</p>
-          <p className="font-mono">v1.0 · mekovault.com</p>
+          <p className="font-mono">mekovault.com</p>
         </div>
       </div>
     </footer>

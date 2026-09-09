@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { LegalLangNotice } from "@/components/LegalLangNotice";
 
 const LEGAL_NAV = [
   { href: "/legal/terms", label: "Términos" },
   { href: "/legal/privacy", label: "Privacidad" },
   { href: "/legal/security", label: "Seguridad" },
-  { href: "/legal/dpa", label: "DPA" },
-  { href: "/legal/aup", label: "AUP" },
+  { href: "/legal/dpa", label: "Tratamiento de datos" },
+  { href: "/legal/aup", label: "Uso aceptable" },
   { href: "/legal/cookies", label: "Cookies" },
-  { href: "/legal/sub-processors", label: "Sub-procesadores" },
+  { href: "/legal/sub-processors", label: "Proveedores" },
 ];
 
 export default function LegalLayout({
@@ -35,7 +36,11 @@ export default function LegalLayout({
             ))}
           </nav>
         </aside>
-        <article className="prose prose-neutral max-w-none dark:prose-invert prose-h1:font-heading prose-h1:tracking-tight prose-h2:font-heading prose-h2:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+        <article
+          lang="es"
+          className="prose prose-neutral max-w-none dark:prose-invert prose-h1:font-heading prose-h1:tracking-tight prose-h2:font-heading prose-h2:tracking-tight prose-a:text-primary prose-a:no-underline hover:prose-a:underline"
+        >
+          <LegalLangNotice />
           {children}
         </article>
       </div>

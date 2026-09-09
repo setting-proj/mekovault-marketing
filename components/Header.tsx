@@ -13,6 +13,7 @@ export function Header() {
   const NAV = [
     { href: "/products", label: t("nav.product") },
     { href: "/pricing", label: t("nav.pricing") },
+    { href: "/governance", label: t("nav.governance") },
     { href: "/about", label: t("nav.about") },
     { href: "/contact", label: t("nav.contact") },
   ];

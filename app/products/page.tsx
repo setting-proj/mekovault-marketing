@@ -3,16 +3,12 @@
 import {
   ArrowRight,
   Check,
-  Cloud,
-  KeySquare,
-  MailCheck,
-  ShieldCheck,
+  ClipboardCheck,
+  FileClock,
+  KeyRound,
   Ticket,
-  Video,
-  ClipboardList,
-  BellRing,
-  Building2,
-  CreditCard,
+  UserMinus,
+  UserPlus,
 } from "lucide-react";
 
 import { Container } from "@/components/Container";
@@ -22,143 +18,54 @@ import { Reveal } from "@/components/Reveal";
 import { WorkflowDiagram } from "@/components/WorkflowDiagram";
 import { useT } from "@/lib/i18n/I18nProvider";
 
-const SERVICES = [
-  {
-    icon: <Cloud />,
-    status: "available" as const,
-    title: "Super Workspace",
-    desc: "Gestión de cuentas en Google Workspace y Microsoft Entra. Alta, suspensión, reactivación, delete, cambio de OU y reset de password como operaciones async.",
-    bullets: [
-      "Adapters de Google Admin SDK + Microsoft Graph SDK",
-      "Workers con reintentos exponenciales, circuit breaker y DLQ",
-      "Sync incremental de tenant_users cada 5 minutos",
-      "Health checks periódicos + estado por conexión",
-    ],
-  },
-  {
-    icon: <MailCheck />,
-    status: "available" as const,
-    title: "Notifications Engine",
-    desc: "Emails transaccionales multi-idioma con quiet hours por timezone, business days y holidays. Cada tenant puede override el sender y los templates.",
-    bullets: [
-      "Backend Brevo SMTP + tenant SMTP override",
-      "Templates es / en / pt, editables desde el portal",
-      "Quiet hours + business_days_bitmask + país (holidays)",
-      "Worker quiet_hours_dispatcher para dispatch diferido",
-    ],
-  },
-  {
-    icon: <Ticket />,
-    status: "available" as const,
-    title: "Requests & Tickets",
-    desc: "Solicitudes con state machine, Access Profiles (plantillas de acceso), scheduled requests para altas programadas y bulk CSV para altas masivas.",
-    bullets: [
-      "State machine: draft → submitted → approved → completed",
-      "Access Profiles con expand_profile_to_items idempotente",
-      "Bulk CSV: 1 request con N items validados",
-      "Scheduled requests promovidos por worker cada 60s",
-    ],
-  },
-  {
-    icon: <ClipboardList />,
-    status: "available" as const,
-    title: "Audit & Compliance",
-    desc: "Audit log inmutable con triggers PL/pgSQL, retención larga por tabla, y viewer con filtros y export CSV para compliance.",
-    bullets: [
-      "Triggers bloquean UPDATE / DELETE",
-      "Retención 18 meses tenant, 5 años platform",
-      "Filtros por actor / target / acción / rango",
-      "Export CSV bajo demanda",
-    ],
-  },
-  {
-    icon: <ShieldCheck />,
-    status: "available" as const,
-    title: "Identity Core",
-    desc: "El núcleo: auth (JWT RS256, MFA TOTP, OAuth), RBAC multi-tenant con RLS, y un vault por tenant en Infisical self-hosted.",
-    bullets: [
-      "JWT RS256 firmado por svc-auth, validado cross-service",
-      "MFA TOTP con recovery codes single-use",
-      "RBAC engine con cache Redis 5 min",
-      "Infisical project per tenant · aislamiento real",
-    ],
-  },
-  {
-    icon: <CreditCard />,
-    status: "available" as const,
-    title: "Billing con MercadoPago",
-    desc: "6 tiers seed en CLP nativo con FX USD→CLP cacheado, prorrateo día-a-día y plan anual con 15% de descuento. Integración con MercadoPago Chile.",
-    bullets: [
-      "6 planes en CLP con excedentes por cuenta gestionada",
-      "FX Frankfurter cache 6h + fallback",
-      "Daily meter worker (02:00 UTC) snapshot MANAGED",
-      "MercadoPago preapproval + webhook HMAC",
-    ],
-  },
-  {
-    icon: <BellRing />,
-    status: "available" as const,
-    title: "SuperAdmin & Resellers",
-    desc: "Vista cross-tenant para el operador de la plataforma: dashboards, control de MFA enforcement, resellers con budget alerts y suspension automática.",
-    bullets: [
-      "Dashboards por tenant / billing / audit",
-      "Enforce MFA a nivel plataforma",
-      "Resellers con presupuesto + auto-suspensión",
-      "Email templates por reseller",
-    ],
-  },
-  {
-    icon: <Building2 />,
-    status: "available" as const,
-    title: "Onboarding & Wizard",
-    desc: "Wizard de conexión guiado, con help drawer contextual para Service Account (Google) y App Registration (Microsoft).",
-    bullets: [
-      "3 pasos + drawer con enlaces oficiales",
-      "Validación de dominio y permisos",
-      "Testing de conexión en vivo",
-      "Trial gestionado por account management",
-    ],
-  },
-  {
-    icon: <Video />,
-    status: "roadmap" as const,
-    title: "Super Rooms",
-    desc: "Gestión de salas de Google Meet compartidas: pool centralizado, reservas por evento y auto-cleanup al final del día.",
-    bullets: [
-      "Pool de rooms + calendario",
-      "Reservas atómicas + cancelación",
-      "Auto-cleanup post-evento",
-      "Q4 2026",
-    ],
-  },
-  {
-    icon: <KeySquare />,
-    status: "roadmap" as const,
-    title: "Super Audit",
-    desc: "Auditorías periódicas sobre el directorio: cuentas huérfanas, roles sobredimensionados, licencias sin uso, offboardings incompletos.",
-    bullets: [
-      "Checks agendables por tenant",
-      "Reportes exportables PDF / CSV",
-      "Alertas cuando algo se degrada",
-      "Q4 2026",
-    ],
-  },
-];
-
 export default function ProductsPage() {
   const t = useT();
+
+  const CAPABILITIES = [
+    { icon: <UserPlus />, title: t("products.cap.1.title"), desc: t("products.cap.1.desc") },
+    { icon: <UserMinus />, title: t("products.cap.2.title"), desc: t("products.cap.2.desc") },
+    { icon: <ClipboardCheck />, title: t("products.cap.3.title"), desc: t("products.cap.3.desc") },
+    { icon: <KeyRound />, title: t("products.cap.4.title"), desc: t("products.cap.4.desc") },
+    { icon: <FileClock />, title: t("products.cap.5.title"), desc: t("products.cap.5.desc") },
+  ];
+
+  const ADDONS = [
+    {
+      icon: <UserMinus />,
+      title: t("svc.workspace.title"),
+      official: t("svc.workspace.official"),
+      desc: t("svc.workspace.desc"),
+      bullets: [t("svc.workspace.b1"), t("svc.workspace.b2"), t("svc.workspace.b3")],
+      featured: true,
+    },
+    {
+      icon: <Ticket />,
+      title: t("svc.tickets.title"),
+      official: t("svc.tickets.official"),
+      desc: t("svc.tickets.desc"),
+      bullets: [t("svc.tickets.b1"), t("svc.tickets.b2"), t("svc.tickets.b3")],
+      featured: false,
+    },
+    {
+      icon: <FileClock />,
+      title: t("svc.audit.title"),
+      official: t("svc.audit.official"),
+      desc: t("svc.audit.desc"),
+      bullets: [t("svc.audit.b1"), t("svc.audit.b2"), t("svc.audit.b3")],
+      featured: false,
+    },
+  ];
+
   return (
     <>
       <Section compact>
         <Container>
           <SectionHeading
-            eyebrow={t("features.eyebrow")}
+            eyebrow={t("products.eyebrow")}
             title={
               <>
                 {t("products.title.pre")}{" "}
-                <span className="text-brand-gradient">
-                  {t("products.title.hl")}
-                </span>
+                <span className="text-brand-gradient">{t("products.title.hl")}</span>
               </>
             }
             desc={t("products.subtitle")}
@@ -166,10 +73,28 @@ export default function ProductsPage() {
         </Container>
       </Section>
 
-      {/* Workflow interactivo: onboarding real de punta a punta con timing
-          real y nombres de servicios reales. Interactive moment de /products
-          (10k-websites §6). */}
-      <Section className="border-t">
+      {/* Qué hace por tu empresa */}
+      <Section compact className="border-t">
+        <Container>
+          <SectionHeading eyebrow={t("products.cap.eyebrow")} title={t("products.cap.title")} />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {CAPABILITIES.map((c, i) => (
+              <Reveal key={c.title} delay={i * 60}>
+                <div className="h-full rounded-2xl border bg-card p-5 card-lift hover:card-lift-hover">
+                  <div className="mb-3 inline-flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary [&_svg]:size-5">
+                    {c.icon}
+                  </div>
+                  <h3 className="font-heading text-lg tracking-tight">{c.title}</h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{c.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* Una salida de principio a fin */}
+      <Section className="border-t bg-muted/30">
         <Container>
           <SectionHeading
             eyebrow={t("workflow.eyebrow")}
@@ -184,15 +109,17 @@ export default function ProductsPage() {
         </Container>
       </Section>
 
-      <Section compact className="border-t">
+      {/* Módulos */}
+      <Section className="border-t">
         <Container>
           <SectionHeading
-            eyebrow={t("services.eyebrow")}
-            title={t("services.title")}
+            eyebrow={t("products.addons.eyebrow")}
+            title={t("products.addons.title")}
+            desc={t("products.addons.subtitle")}
           />
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((s) => (
-              <ServiceCard key={s.title} {...s} />
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {ADDONS.map((s) => (
+              <AddonCard key={s.title} {...s} status={t("svc.status.available")} />
             ))}
           </div>
         </Container>
@@ -204,15 +131,9 @@ export default function ProductsPage() {
           <h2 className="font-heading text-3xl font-semibold tracking-tight">
             {t("products.cta.title")}
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            {t("products.cta.subtitle")}
-          </p>
+          <p className="mt-3 text-muted-foreground">{t("products.cta.subtitle")}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <LinkButton
-              href="https://app.mekovault.com/signup"
-              external
-              size="lg"
-            >
+            <LinkButton href="https://app.mekovault.com/signup" external size="lg">
               {t("products.cta.signup")} <ArrowRight />
             </LinkButton>
             <LinkButton href="/contact" size="lg" variant="outline">
@@ -225,52 +146,42 @@ export default function ProductsPage() {
   );
 }
 
-function ServiceCard({
+function AddonCard({
   icon,
   status,
   title,
+  official,
   desc,
   bullets,
+  featured,
 }: {
   icon: React.ReactNode;
-  status: "available" | "roadmap";
+  status: string;
   title: string;
+  official: string;
   desc: string;
   bullets: string[];
+  featured: boolean;
 }) {
-  const isRoadmap = status === "roadmap";
   return (
     <div
       className={
-        "relative overflow-hidden rounded-2xl border p-6 transition-all " +
-        (isRoadmap ? "bg-muted/40" : "bg-card hover:border-primary/40")
+        "relative overflow-hidden rounded-2xl border bg-card p-6 transition-all hover:border-primary/40 " +
+        (featured ? "border-primary/40" : "")
       }
     >
       <div className="mb-4 flex items-start justify-between gap-3">
         <div className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary [&_svg]:size-5">
           {icon}
         </div>
-        <span
-          className={
-            "inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[11px] font-medium " +
-            (isRoadmap
-              ? "border border-border text-muted-foreground"
-              : "bg-emerald-100 text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-300")
-          }
-        >
-          <span
-            className={
-              "size-1.5 rounded-full " +
-              (isRoadmap ? "bg-muted-foreground/50" : "bg-emerald-500")
-            }
-          />
-          {isRoadmap ? "Roadmap" : "Disponible"}
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-medium text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-300">
+          <span className="size-1.5 rounded-full bg-emerald-500" />
+          {status}
         </span>
       </div>
-      <h3 className="font-heading text-lg font-semibold tracking-tight">
-        {title}
-      </h3>
-      <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
+      <h3 className="font-heading text-lg font-semibold tracking-tight">{title}</h3>
+      <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">{official}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
       <ul className="mt-4 space-y-1.5 text-sm">
         {bullets.map((b) => (
           <li key={b} className="flex items-start gap-2">

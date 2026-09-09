@@ -3,25 +3,28 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  ShieldCheck,
-  Zap,
-  Users,
-  Workflow,
-  KeySquare,
-  LineChart,
-  Cloud,
-  MailCheck,
-  Ticket,
+  BadgeDollarSign,
   Check,
+  ClipboardCheck,
+  Cloud,
+  EyeOff,
+  FileClock,
+  Smile,
+  Ticket,
+  UserMinus,
+  UserPlus,
+  Wallet,
 } from "lucide-react";
 
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
-import { Section, SectionHeading, EyebrowBadge } from "@/components/Section";
+import { Section, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { TimelineCompare } from "@/components/TimelineCompare";
+import { LeakCalculator } from "@/components/LeakCalculator";
 import { FAQ } from "@/components/FAQ";
 import { useT } from "@/lib/i18n/I18nProvider";
+import { formatCLP, mainAppPrice } from "@/lib/catalog";
 
 export default function Home() {
   const t = useT();
@@ -37,15 +40,10 @@ export default function Home() {
 
         <Container className="relative pt-16 pb-24 sm:pt-24 sm:pb-32">
           <div className="mx-auto max-w-3xl text-center">
-            {/* Eyebrow: mono, sin dot pulsando (rompe pattern AI-obvious de
-                los "trust badges" con puntito animado que se usan en cada SaaS) */}
             <span className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-3 py-1 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
               {t("hero.eyebrow")}
             </span>
 
-            {/* Título en 2 líneas asimétricas: primera declaración concreta,
-                segunda promesa con gradient tech. Sin paralelismo
-                perfecto "verb + and + verb" que grita AI. */}
             <h1 className="mt-8 text-balance leading-[1.05] tracking-tight">
               <span className="block font-heading text-4xl sm:text-5xl md:text-6xl">
                 {t("hero.title.line1")}
@@ -59,29 +57,25 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-              <LinkButton
-                href="https://app.mekovault.com/signup"
-                external
-                size="lg"
-              >
+              <LinkButton href="https://app.mekovault.com/signup" external size="lg">
                 {t("hero.cta.signup")} <ArrowRight />
               </LinkButton>
               <Link
-                href="#features"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors"
+                href="#calculadora"
+                className="text-sm font-medium text-muted-foreground underline decoration-primary/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-primary"
               >
-                {t("hero.cta.customer")} →
+                {t("hero.cta.calc")} →
               </Link>
             </div>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-xs text-muted-foreground">
-              <TrustDot color="emerald" label={t("hero.trust.sla")} />
-              <TrustDot color="cyan" label={t("hero.trust.rls")} />
-              <TrustDot color="deep" label={t("hero.trust.latam")} />
+              <TrustDot color="emerald" label={t("hero.trust.1")} />
+              <TrustDot color="cyan" label={t("hero.trust.2")} />
+              <TrustDot color="deep" label={t("hero.trust.3")} />
             </div>
           </div>
 
-          {/* Mock dashboard */}
+          {/* Mock dashboard: una salida resuelta, con la licencia liberada */}
           <div className="relative mx-auto mt-16 max-w-5xl">
             <div
               aria-hidden
@@ -89,30 +83,29 @@ export default function Home() {
             />
             <div className="glass relative rounded-2xl p-3 shadow-[var(--shadow-glow)] animate-brand-float">
               <div className="rounded-xl bg-card p-5">
-                {/* URL bar simplificada: sin dots macOS que gritan "SaaS mockup". */}
                 <div className="flex items-center gap-2 border-b pb-3 font-mono text-xs text-muted-foreground">
                   <span className="text-emerald-500">●</span>
-                  <span>app.mekovault.com/moov/workspace/users</span>
-                  <span className="ml-auto text-[10px] opacity-60">hace 47s</span>
+                  <span>app.mekovault.com</span>
+                  <span className="ml-auto text-[10px] opacity-60">{t("mock.ago")}</span>
                 </div>
                 <div className="grid gap-4 pt-5 sm:grid-cols-3">
-                  <MockStat label={t("mock.acc_active")} value="1,284" delta="+34" />
-                  <MockStat label={t("mock.req_today")} value="47" delta="+12" />
-                  <MockStat label={t("mock.sla_met")} value="99.9%" delta="30d" />
+                  <MockStat label={t("mock.acc_active")} value="132" delta="+3" />
+                  <MockStat label={t("mock.left_year")} value="18" delta="18/18" />
+                  <MockStat label={t("mock.licenses_freed")} value="18" delta="USD 1.296" />
                 </div>
                 <div className="mt-5 rounded-lg border bg-muted/40 p-4">
                   <div className="mb-3 flex items-center justify-between text-xs">
-                    <span className="font-medium font-mono">
-                      {t("mock.onboarding_of")} maria.jara@moov.cl
+                    <span className="font-mono font-medium">
+                      {t("mock.offboarding_of")} c.rojas@tuempresa.cl
                     </span>
                     <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-300">
                       {t("mock.status_completed")}
                     </span>
                   </div>
-                  <MockStep label={t("mock.step_hr")} />
-                  <MockStep label={t("mock.step_gaccount")} />
-                  <MockStep label={t("mock.step_groups")} />
-                  <MockStep label={t("mock.step_notify")} />
+                  <MockStep label={t("mock.step_1")} />
+                  <MockStep label={t("mock.step_2")} />
+                  <MockStep label={t("mock.step_3")} />
+                  <MockStep label={t("mock.step_4")} />
                 </div>
               </div>
             </div>
@@ -120,7 +113,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Logos */}
+      {/* Funciona con */}
       <Section compact className="border-t bg-background/60">
         <Container>
           <p className="text-center text-xs uppercase tracking-widest text-muted-foreground">
@@ -129,58 +122,90 @@ export default function Home() {
           <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm font-medium text-muted-foreground">
             <span>Google Workspace</span>
             <span className="text-border">·</span>
-            <span>Microsoft Entra ID</span>
-            <span className="text-border">·</span>
-            <span>Google Meet</span>
-            <span className="text-border">·</span>
-            <span>MercadoPago</span>
-            <span className="text-border">·</span>
-            <span>Infisical Vault</span>
+            <span>Microsoft 365</span>
           </div>
         </Container>
       </Section>
 
-      {/* Features */}
-      <Section id="features" className="border-t">
+      {/* Problema: la fuga */}
+      <Section className="border-t">
         <Container>
           <SectionHeading
-            eyebrow={t("features.eyebrow")}
-            title={t("features.title")}
-            desc={t("features.subtitle")}
+            eyebrow={t("problem.eyebrow")}
+            title={t("problem.title")}
+            desc={t("problem.subtitle")}
+          />
+          <div className="mt-14 grid gap-4 md:grid-cols-3">
+            <Reveal delay={0}>
+              <ProblemCard icon={<BadgeDollarSign />} title={t("problem.c1.title")} desc={t("problem.c1.desc")} highlight />
+            </Reveal>
+            <Reveal delay={80}>
+              <ProblemCard icon={<FileClock />} title={t("problem.c2.title")} desc={t("problem.c2.desc")} />
+            </Reveal>
+            <Reveal delay={160}>
+              <ProblemCard icon={<EyeOff />} title={t("problem.c3.title")} desc={t("problem.c3.desc")} />
+            </Reveal>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Calculadora */}
+      <Section id="calculadora" className="relative scroll-mt-20 border-t bg-muted/30">
+        <div aria-hidden className="pointer-events-none absolute inset-0 grid-lines opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
+        <Container className="relative">
+          <SectionHeading
+            eyebrow={t("calc.eyebrow")}
+            title={t("calc.title")}
+            desc={t("calc.subtitle")}
+          />
+          <Reveal>
+            <div className="mx-auto mt-10 max-w-4xl">
+              <LeakCalculator />
+            </div>
+          </Reveal>
+        </Container>
+      </Section>
+
+      {/* Beneficios */}
+      <Section id="beneficios" className="border-t">
+        <Container>
+          <SectionHeading
+            eyebrow={t("benefits.eyebrow")}
+            title={t("benefits.title")}
+            desc={t("benefits.subtitle")}
           />
 
-          {/* Grid asimétrico: 1 hero card + 5 secundarias + quote breakout.
-              Rompe el pattern "3x2 idéntico" que grita template AI-marketing. */}
-          <div className="mt-14 grid gap-4 md:grid-cols-6 md:auto-rows-min">
-            {/* Feature destacada: 4/6 cols, doble alto de contenido, iconografía distinta */}
+          <div className="mt-14 grid gap-4 md:auto-rows-min md:grid-cols-6">
             <Reveal delay={0} className="md:col-span-4 md:row-span-2">
               <FeatureHero
-                icon={<Zap />}
-                title={t("features.async.title")}
-                desc={t("features.async.desc")}
+                icon={<Wallet />}
+                title={t("benefits.b1.title")}
+                desc={t("benefits.b1.desc")}
+                flow={[
+                  t("benefits.flow.1"),
+                  t("benefits.flow.2"),
+                  t("benefits.flow.3"),
+                  t("benefits.flow.4"),
+                ]}
               />
             </Reveal>
-            {/* Aprobaciones + RBAC en columna vertical */}
             <Reveal delay={80} className="md:col-span-2">
-              <Feature icon={<Workflow />} title={t("features.approvals.title")} desc={t("features.approvals.desc")} />
+              <Feature icon={<UserPlus />} title={t("benefits.b2.title")} desc={t("benefits.b2.desc")} />
             </Reveal>
             <Reveal delay={160} className="md:col-span-2">
-              <Feature icon={<Users />} title={t("features.rbac.title")} desc={t("features.rbac.desc")} />
+              <Feature icon={<ClipboardCheck />} title={t("benefits.b3.title")} desc={t("benefits.b3.desc")} />
             </Reveal>
-            {/* Row 2: 3 features en línea */}
             <Reveal delay={240} className="md:col-span-2">
-              <Feature icon={<KeySquare />} title={t("features.vault.title")} desc={t("features.vault.desc")} />
+              <Feature icon={<FileClock />} title={t("benefits.b4.title")} desc={t("benefits.b4.desc")} />
             </Reveal>
             <Reveal delay={320} className="md:col-span-2">
-              <Feature icon={<ShieldCheck />} title={t("features.audit.title")} desc={t("features.audit.desc")} />
+              <Feature icon={<Cloud />} title={t("benefits.b5.title")} desc={t("benefits.b5.desc")} />
             </Reveal>
             <Reveal delay={400} className="md:col-span-2">
-              <Feature icon={<LineChart />} title={t("features.metrics.title")} desc={t("features.metrics.desc")} />
+              <Feature icon={<Smile />} title={t("benefits.b6.title")} desc={t("benefits.b6.desc")} />
             </Reveal>
           </div>
 
-          {/* Founder quote: breakout editorial. Historia real que aparece
-              también en /about, pero acá se muestra como pull-quote. */}
           <Reveal delay={100}>
             <FounderQuote t={t} />
           </Reveal>
@@ -193,6 +218,7 @@ export default function Home() {
           <SectionHeading
             eyebrow={t("how.eyebrow")}
             title={t("how.title")}
+            desc={t("how.subtitle")}
           />
 
           <div className="mt-14 grid gap-6 lg:grid-cols-4">
@@ -212,9 +238,7 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* Compare: interactive moment ahora DESPUÉS de Features+How (post-feedback:
-          antes estaba justo después del hero, cuando el visitante todavía no
-          entendía qué es Mekovault). */}
+      {/* Antes y después */}
       <Section className="relative border-t">
         <div aria-hidden className="pointer-events-none absolute inset-0 grid-lines opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
         <Container className="relative">
@@ -231,7 +255,7 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* Servicios */}
+      {/* Módulos */}
       <Section className="border-t">
         <Container>
           <SectionHeading
@@ -240,63 +264,43 @@ export default function Home() {
             desc={t("services.subtitle")}
           />
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
             <ServiceCard
-              icon={<Cloud />}
+              icon={<UserMinus />}
               status={t("svc.status.available")}
               title={t("svc.workspace.title")}
+              official={t("svc.workspace.official")}
               desc={t("svc.workspace.desc")}
-              bullets={[
-                t("svc.workspace.b1"),
-                t("svc.workspace.b2"),
-                t("svc.workspace.b3"),
-              ]}
-            />
-            <ServiceCard
-              icon={<MailCheck />}
-              status={t("svc.status.available")}
-              title={t("svc.notifications.title")}
-              desc={t("svc.notifications.desc")}
-              bullets={[
-                t("svc.notifications.b1"),
-                t("svc.notifications.b2"),
-                t("svc.notifications.b3"),
-              ]}
+              bullets={[t("svc.workspace.b1"), t("svc.workspace.b2"), t("svc.workspace.b3")]}
+              featured
             />
             <ServiceCard
               icon={<Ticket />}
               status={t("svc.status.available")}
               title={t("svc.tickets.title")}
+              official={t("svc.tickets.official")}
               desc={t("svc.tickets.desc")}
-              bullets={[
-                t("svc.tickets.b1"),
-                t("svc.tickets.b2"),
-                t("svc.tickets.b3"),
-              ]}
+              bullets={[t("svc.tickets.b1"), t("svc.tickets.b2"), t("svc.tickets.b3")]}
             />
             <ServiceCard
-              icon={<KeySquare />}
-              status={t("svc.status.roadmap")}
-              title={t("svc.roadmap.title")}
-              desc={t("svc.roadmap.desc")}
-              bullets={[
-                t("svc.roadmap.b1"),
-                t("svc.roadmap.b2"),
-                t("svc.roadmap.b3"),
-              ]}
-              muted
+              icon={<FileClock />}
+              status={t("svc.status.available")}
+              title={t("svc.audit.title")}
+              official={t("svc.audit.official")}
+              desc={t("svc.audit.desc")}
+              bullets={[t("svc.audit.b1"), t("svc.audit.b2"), t("svc.audit.b3")]}
             />
           </div>
         </Container>
       </Section>
 
-      {/* Pricing preview */}
+      {/* Precios (preview) */}
       <Section className="border-t bg-muted/30">
         <Container>
           <SectionHeading
             eyebrow={t("pricing.eyebrow")}
             title={t("pricing.title")}
-            desc={t("pricing.subtitle")}
+            desc={t("pricing.subtitle", { price: `${formatCLP(mainAppPrice())} CLP` })}
           />
 
           <div className="mt-12 flex justify-center">
@@ -307,7 +311,7 @@ export default function Home() {
         </Container>
       </Section>
 
-      {/* FAQ: objeciones reales de IT Managers (10k-websites §6) */}
+      {/* FAQ */}
       <Section id="faq" className="border-t bg-muted/30">
         <Container>
           <SectionHeading
@@ -318,12 +322,12 @@ export default function Home() {
           <div className="mt-12">
             <FAQ
               items={[
-                { q: t("faq.trial.q"), a: t("faq.trial.a") },
+                { q: t("faq.it.q"), a: t("faq.it.a") },
                 { q: t("faq.security.q"), a: t("faq.security.a") },
-                { q: t("faq.lockin.q"), a: t("faq.lockin.a") },
-                { q: t("faq.stack.q"), a: t("faq.stack.a") },
-                { q: t("faq.support.q"), a: t("faq.support.a") },
+                { q: t("faq.leave.q"), a: t("faq.leave.a") },
+                { q: t("faq.ms.q"), a: t("faq.ms.a") },
                 { q: t("faq.setup.q"), a: t("faq.setup.a") },
+                { q: t("faq.support.q"), a: t("faq.support.a") },
               ]}
             />
           </div>
@@ -333,12 +337,11 @@ export default function Home() {
       {/* CTA final */}
       <Section className="border-t">
         <Container size="narrow">
-          <div className="relative overflow-hidden rounded-3xl border bg-brand-gradient p-10 text-center text-white sm:p-14"
+          <div
+            className="relative overflow-hidden rounded-3xl border bg-brand-gradient p-10 text-center text-white sm:p-14"
             style={{ boxShadow: "var(--shadow-glow-cyan)" }}
           >
             <div aria-hidden className="absolute inset-0 grid-lines opacity-20" />
-            {/* Local scrim para legibilidad del texto sobre el gradient
-                (10k-websites §10: legibility system contra el "worst frame" del bg) */}
             <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
             <div className="relative">
               <h2
@@ -362,11 +365,7 @@ export default function Home() {
                 >
                   {t("cta.signup")} <ArrowRight />
                 </LinkButton>
-                <LinkButton
-                  href="/pricing"
-                  size="lg"
-                  variant="white"
-                >
+                <LinkButton href="/pricing" size="lg" variant="white">
                   {t("cta.pricing")}
                 </LinkButton>
               </div>
@@ -380,6 +379,35 @@ export default function Home() {
 
 /* ------------------------------------------------------------ */
 
+function ProblemCard({
+  icon,
+  title,
+  desc,
+  highlight = false,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  highlight?: boolean;
+}) {
+  return (
+    <div
+      className={
+        "group relative h-full overflow-hidden rounded-2xl border p-6 card-lift hover:card-lift-hover " +
+        (highlight ? "border-primary/40 bg-primary/5" : "bg-card")
+      }
+    >
+      <div className="mb-4 inline-flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary [&_svg]:size-5">
+        {icon}
+      </div>
+      <h3 className={"font-heading text-xl tracking-tight " + (highlight ? "text-brand-gradient" : "")}>
+        {title}
+      </h3>
+      <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
+    </div>
+  );
+}
+
 function Feature({
   icon,
   title,
@@ -389,56 +417,46 @@ function Feature({
   title: string;
   desc: string;
 }) {
-  // Card lift + accent glow unificado (10k-websites: whole-site animated)
   return (
     <div className="group relative h-full overflow-hidden rounded-2xl border bg-card p-6 card-lift hover:card-lift-hover">
       <div className="mb-4 inline-flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform group-hover:scale-110 [&_svg]:size-5">
         {icon}
       </div>
-      <h3 className="font-heading text-xl tracking-tight">
-        {title}
-      </h3>
+      <h3 className="font-heading text-xl tracking-tight">{title}</h3>
       <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
     </div>
   );
 }
 
-/**
- * FeatureHero: variante grande de Feature. Destaca UNA capability sobre el resto.
- * Layout distinto (icon extra + mini-diagrama de flow) para romper la simetría del grid.
- */
 function FeatureHero({
   icon,
   title,
   desc,
+  flow,
 }: {
   icon: React.ReactNode;
   title: string;
   desc: string;
+  flow: string[];
 }) {
   return (
     <div className="group relative h-full overflow-hidden rounded-2xl border bg-card p-8 card-lift hover:card-lift-hover">
-      {/* Grid pattern sutil de fondo */}
       <div aria-hidden className="pointer-events-none absolute inset-0 grid-dot opacity-25 [mask-image:radial-gradient(ellipse_at_top_right,black,transparent_60%)]" />
       <div className="relative">
         <div className="mb-5 inline-flex size-14 items-center justify-center rounded-2xl bg-brand-gradient text-white shadow-[var(--shadow-glow-cyan)] transition-transform group-hover:scale-105 [&_svg]:size-7">
           {icon}
         </div>
-        <h3 className="font-heading text-2xl sm:text-3xl tracking-tight text-brand-gradient">
+        <h3 className="font-heading text-2xl tracking-tight text-brand-gradient sm:text-3xl">
           {title}
         </h3>
-        <p className="mt-3 max-w-lg text-base text-muted-foreground leading-relaxed">
-          {desc}
-        </p>
-        {/* Mini diagrama de flow: comunica "workflow async" visualmente */}
+        <p className="mt-3 max-w-lg text-base leading-relaxed text-muted-foreground">{desc}</p>
         <div className="mt-6 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-          <FlowChip>request</FlowChip>
-          <FlowArrow />
-          <FlowChip>queue</FlowChip>
-          <FlowArrow />
-          <FlowChip>worker</FlowChip>
-          <FlowArrow />
-          <FlowChip highlight>provider</FlowChip>
+          {flow.map((label, i) => (
+            <span key={label} className="contents">
+              {i > 0 && <FlowArrow />}
+              <FlowChip highlight={i === flow.length - 1}>{label}</FlowChip>
+            </span>
+          ))}
         </div>
       </div>
     </div>
@@ -451,8 +469,8 @@ function FlowChip({ children, highlight = false }: { children: React.ReactNode; 
       className={
         "rounded-md px-2 py-0.5 " +
         (highlight
-          ? "bg-primary/15 text-primary border border-primary/30"
-          : "bg-muted/60 border border-border")
+          ? "border border-primary/30 bg-primary/15 text-primary"
+          : "border border-border bg-muted/60")
       }
     >
       {children}
@@ -464,21 +482,14 @@ function FlowArrow() {
   return <span aria-hidden className="text-border">→</span>;
 }
 
-/**
- * FounderQuote: pull-quote editorial con la historia de origen del proyecto.
- * Rompe el patrón de "cards de features" con un bloque tipográfico distinto.
- * Sin foto para no fake un testimonio; la voz es del founder, atribuida.
- */
 function FounderQuote({ t }: { t: ReturnType<typeof useT> }) {
   return (
-    <div className="mt-14 relative overflow-hidden rounded-2xl border bg-gradient-to-br from-card via-card to-primary/5 p-8 sm:p-12">
+    <div className="relative mt-14 overflow-hidden rounded-2xl border bg-gradient-to-br from-card via-card to-primary/5 p-8 sm:p-12">
       <div aria-hidden className="absolute -right-8 -top-8 size-40 rounded-full bg-brand-gradient opacity-10 blur-3xl" />
       <div className="relative grid gap-6 md:grid-cols-[auto_1fr] md:items-center">
-        {/* Comilla tipográfica en display serif, sin icon lucide (evita cliché SaaS) */}
-        {/* Barra vertical accent en vez de comilla serif italic (tech, no editorial) */}
-        <div aria-hidden className="hidden md:block h-24 w-1 rounded-full bg-brand-gradient" />
+        <div aria-hidden className="hidden h-24 w-1 rounded-full bg-brand-gradient md:block" />
         <div>
-          <p className="font-heading text-xl sm:text-2xl leading-snug text-balance">
+          <p className="text-balance font-heading text-xl leading-snug sm:text-2xl">
             {t("founder.quote")}
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
@@ -494,23 +505,13 @@ function FounderQuote({ t }: { t: ReturnType<typeof useT> }) {
   );
 }
 
-function Step({
-  n,
-  title,
-  desc,
-}: {
-  n: number;
-  title: string;
-  desc: string;
-}) {
+function Step({ n, title, desc }: { n: number; title: string; desc: string }) {
   return (
     <div className="relative rounded-2xl border bg-card p-6 card-lift hover:card-lift-hover">
-      <div className="mb-4 inline-flex size-9 items-center justify-center rounded-lg bg-brand-gradient text-sm font-semibold text-white font-mono">
+      <div className="mb-4 inline-flex size-9 items-center justify-center rounded-lg bg-brand-gradient font-mono text-sm font-semibold text-white">
         {n}
       </div>
-      <h3 className="font-heading text-xl tracking-tight">
-        {title}
-      </h3>
+      <h3 className="font-heading text-xl tracking-tight">{title}</h3>
       <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
     </div>
   );
@@ -520,53 +521,42 @@ function ServiceCard({
   icon,
   status,
   title,
+  official,
   desc,
   bullets,
-  muted = false,
+  featured = false,
 }: {
   icon: React.ReactNode;
   status: string;
   title: string;
+  official: string;
   desc: string;
   bullets: string[];
-  muted?: boolean;
+  featured?: boolean;
 }) {
   return (
     <div
       className={
         "relative overflow-hidden rounded-2xl border p-6 card-lift hover:card-lift-hover " +
-        (muted ? "bg-muted/40" : "bg-card")
+        (featured ? "border-primary/40 bg-card" : "bg-card")
       }
     >
       <div className="mb-4 flex items-start justify-between gap-3">
         <div className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary [&_svg]:size-5">
           {icon}
         </div>
-        <span
-          className={
-            "inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[11px] font-medium " +
-            (muted
-              ? "border border-border text-muted-foreground"
-              : "bg-emerald-100 text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-300")
-          }
-        >
-          <span
-            className={
-              "size-1.5 rounded-full " +
-              (muted ? "bg-muted-foreground/50" : "bg-emerald-500")
-            }
-          />
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-medium text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-300">
+          <span className="size-1.5 rounded-full bg-emerald-500" />
           {status}
         </span>
       </div>
-      <h3 className="font-heading text-xl font-semibold tracking-tight">
-        {title}
-      </h3>
-      <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
+      <h3 className="font-heading text-xl font-semibold tracking-tight">{title}</h3>
+      <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">{official}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{desc}</p>
       <ul className="mt-4 space-y-1.5 text-sm">
         {bullets.map((b) => (
           <li key={b} className="flex items-start gap-2">
-            <Check className="mt-0.5 size-4 text-primary" />
+            <Check className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>{b}</span>
           </li>
         ))}
@@ -575,19 +565,9 @@ function ServiceCard({
   );
 }
 
-function TrustDot({
-  color,
-  label,
-}: {
-  color: "emerald" | "cyan" | "deep";
-  label: string;
-}) {
+function TrustDot({ color, label }: { color: "emerald" | "cyan" | "deep"; label: string }) {
   const cls =
-    color === "emerald"
-      ? "bg-emerald-500"
-      : color === "cyan"
-        ? "bg-[#00b4d8]"
-        : "bg-[#0077b6]";
+    color === "emerald" ? "bg-emerald-500" : color === "cyan" ? "bg-[#00b4d8]" : "bg-[#0077b6]";
   return (
     <span className="inline-flex items-center gap-1.5">
       <span className={"size-1.5 rounded-full " + cls} />
@@ -596,25 +576,13 @@ function TrustDot({
   );
 }
 
-function MockStat({
-  label,
-  value,
-  delta,
-}: {
-  label: string;
-  value: string;
-  delta: string;
-}) {
+function MockStat({ label, value, delta }: { label: string; value: string; delta: string }) {
   return (
     <div className="rounded-lg border bg-muted/30 p-4">
       <p className="text-xs text-muted-foreground">{label}</p>
       <div className="mt-1 flex items-baseline gap-2">
-        <span className="font-heading text-2xl font-semibold tracking-tight">
-          {value}
-        </span>
-        <span className="text-xs font-medium text-emerald-600 dark:text-emerald-400">
-          {delta}
-        </span>
+        <span className="font-heading text-2xl font-semibold tracking-tight">{value}</span>
+        <span className="text-xs font-medium text-emerald-600 dark:text-emerald-400">{delta}</span>
       </div>
     </div>
   );
@@ -624,13 +592,7 @@ function MockStep({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-2 py-1 text-xs">
       <span className="flex size-4 items-center justify-center rounded-full bg-emerald-500 text-white">
-        <svg
-          viewBox="0 0 24 24"
-          className="size-2.5"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={3.5}
-        >
+        <svg viewBox="0 0 24 24" className="size-2.5" fill="none" stroke="currentColor" strokeWidth={3.5}>
           <path d="m5 12 5 5L20 7" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </span>

@@ -8,8 +8,8 @@ import { useI18n } from "@/lib/i18n/I18nProvider";
 import { cn } from "@/lib/cn";
 
 /**
- * Dropdown de idiomas simple (sin dep externa de dropdown-menu).
- * Toggle click-outside via useEffect handler.
+ * Dropdown de idiomas. Muestra SOLO bandera + nombre natural del idioma
+ * (nunca códigos tipo "ES-419" o "PT-BR").
  */
 export function LanguageSwitcher() {
   const { locale, setLocale, t } = useI18n();
@@ -21,12 +21,14 @@ export function LanguageSwitcher() {
       <button
         onClick={() => setOpen(!open)}
         aria-label={t("lang.switcher_label")}
+        aria-haspopup="listbox"
+        aria-expanded={open}
         title={t("lang.switcher_label")}
         className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-border bg-card px-2.5 text-xs font-medium transition-colors hover:bg-muted"
       >
-        <Globe className="size-4" />
-        <span className="hidden sm:inline">{current.flag}</span>
-        <span className="ml-0.5 hidden sm:inline">{locale.toUpperCase()}</span>
+        <Globe className="size-4 sm:hidden" />
+        <span aria-hidden className="hidden sm:inline">{current.flag}</span>
+        <span className="hidden sm:inline">{current.native}</span>
       </button>
 
       {open && (
@@ -36,13 +38,19 @@ export function LanguageSwitcher() {
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
-          <div className="absolute right-0 top-full z-20 mt-1 w-48 overflow-hidden rounded-lg border bg-card shadow-lg">
+          <div
+            role="listbox"
+            className="absolute right-0 top-full z-20 mt-1 w-56 overflow-hidden rounded-lg border bg-card shadow-lg"
+          >
             {LOCALES.map((l) => {
               const label = LOCALE_LABELS[l];
               const isActive = l === locale;
               return (
                 <button
                   key={l}
+                  role="option"
+                  aria-selected={isActive}
+                  lang={l}
                   onClick={() => {
                     setLocale(l);
                     setOpen(false);
@@ -52,7 +60,7 @@ export function LanguageSwitcher() {
                     isActive && "font-semibold text-primary",
                   )}
                 >
-                  <span>{label.flag}</span> {label.native}
+                  <span aria-hidden>{label.flag}</span> {label.native}
                 </button>
               );
             })}

@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 
-// Requerido con output: "export" (Next 15 static export)
 export const dynamic = "force-static";
 
 const BASE = "https://mekovault.com";
@@ -13,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/pricing",
     "/about",
     "/contact",
+    "/partners",
+    "/governance",
     "/legal/terms",
     "/legal/privacy",
     "/legal/security",
