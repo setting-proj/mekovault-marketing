@@ -247,6 +247,7 @@ const esCL = {
   "footer.link.pricing": "Precios",
   "footer.link.governance": "Gobernanza y arquitectura",
   "footer.link.status": "Estado del servicio",
+  "footer.link.docs": "Documentación",
   "footer.link.portal": "Entrar al panel",
   "footer.link.about": "Nosotros",
   "footer.link.contact": "Contacto",
