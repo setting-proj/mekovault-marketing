@@ -220,6 +220,7 @@ const ptBR: Dictionary = {
   "footer.link.services": "Produto",
   "footer.link.pricing": "Preços",
   "footer.link.governance": "Governança e arquitetura",
+  "footer.link.status": "Status do serviço",
   "footer.link.portal": "Entrar no painel",
   "footer.link.about": "Sobre",
   "footer.link.contact": "Contato",

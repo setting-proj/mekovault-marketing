@@ -15,6 +15,7 @@ export function Footer() {
         { href: "/products", label: t("footer.link.services") },
         { href: "/pricing", label: t("footer.link.pricing") },
         { href: "/governance", label: t("footer.link.governance") },
+        { href: "/status", label: t("footer.link.status") },
         { href: "https://app.mekovault.com", label: t("footer.link.portal") },
       ],
     },

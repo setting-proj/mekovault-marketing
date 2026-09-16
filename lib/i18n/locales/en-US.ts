@@ -219,6 +219,7 @@ const enUS: Dictionary = {
   "footer.link.services": "Product",
   "footer.link.pricing": "Pricing",
   "footer.link.governance": "Governance and architecture",
+  "footer.link.status": "Service status",
   "footer.link.portal": "Go to the dashboard",
   "footer.link.about": "About",
   "footer.link.contact": "Contact",
