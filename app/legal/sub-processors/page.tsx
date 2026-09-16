@@ -56,6 +56,19 @@ export default function SubProcessorsPage() {
         seguridad equivalentes a los nuestros.
       </p>
 
+      <h2>Eliminación de datos al cerrar una cuenta</h2>
+      <p>
+        Cuando un cliente elimina su organización, Mekovault ejecuta un proceso de
+        borrado encolado y auditado: se revocan las credenciales delegadas, se
+        eliminan el proyecto de secretos (Infisical), los datos de la base de
+        datos y el registro de correos enviados. Brevo solo procesa el envío
+        transaccional y no conserva contactos ni contenido por cuenta nuestra.
+        Los registros operativos (Loki/Grafana) contienen identificadores
+        técnicos, no datos de negocio, y se eliminan por la retención acotada del
+        sistema de observabilidad. El administrador recibe un correo con el
+        detalle de cada paso al completarse.
+      </p>
+
       <div className="not-prose mt-8 overflow-hidden rounded-2xl border bg-card">
         <table className="w-full text-sm">
           <thead>
