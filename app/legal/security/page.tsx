@@ -408,7 +408,8 @@ export default function SecurityPage() {
       <ul>
         <li>
           <strong>SOC 2 Type II</strong> — controles CC6 (accesos), CC7
-          (monitoreo), CC8 (change management). Certificación planeada 2027.
+          (monitoreo), CC8 (change management). Sin certificación planificada por ahora:
+          usamos el marco como guía de controles, no como promesa de auditoría.
         </li>
         <li>
           <strong>ISO/IEC 27001</strong> — controles A.5 (información), A.8
