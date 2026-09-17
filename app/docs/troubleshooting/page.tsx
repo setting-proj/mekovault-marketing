@@ -33,6 +33,15 @@ export default function Troubleshooting() {
         está validado.
       </p>
 
+      <h2>Los correos salen desde Mekovault y no desde mi dominio</h2>
+      <p>
+        En Remitentes elegiste "Gmail API con la delegación de tu Workspace", pero la delegación
+        no incluye el ámbito <code>gmail.send</code> o la dirección no es un buzón real de tu
+        Google Workspace. Agrega el ámbito en la consola de Google (Delegación de todo el dominio,
+        misma fila del cliente de Mekovault) y vuelve a enviar una prueba. Mientras tanto los
+        correos salen por Mekovault con tu dirección visible y el motivo queda en el registro.
+      </p>
+
       <h2>Una operación programada no ocurrió</h2>
       <p>
         Mira el Calendario de operaciones: cada alta, bloqueo o vencimiento aparece con su estado

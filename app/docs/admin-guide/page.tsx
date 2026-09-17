@@ -60,7 +60,10 @@ export default function AdminGuide() {
       <h2>Remitentes y plantillas</h2>
       <p>
         Configura desde qué dirección salen los correos por contexto (altas, bajas, contraseñas,
-        soporte) y envía una prueba. Las plantillas de correo se personalizan por idioma.
+        soporte) y envía una prueba. Puedes elegir que salgan por el relay de Mekovault con tu
+        dirección visible, o directamente desde tu dominio por Gmail API usando la misma
+        delegación que ya autorizaste (requiere el ámbito <code>gmail.send</code>). Las
+        plantillas de correo se personalizan por idioma.
       </p>
 
       <h2>Plantillas de acceso</h2>
