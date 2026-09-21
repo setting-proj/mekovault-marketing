@@ -578,6 +578,118 @@ const ptBR: Dictionary = {
     "Nem sempre. Na maioria das plataformas uma conta bloqueada continua sendo cobrada até a licença ser liberada e a quantidade contratada ser reduzida, e esse último passo é feito pela sua empresa na tela de pagamentos de cada plataforma. O Controle de licenças (em breve) libera a licença e avisa a tempo o que reduzir.",
   "pricing_page.model_note":
     "Administrar contas tem um preço fixo conforme o número de plataformas conectadas. O Controle de licenças será um adicional conforme as licenças que gerenciarmos para você. Enquanto adicionamos plataformas, vamos conversar sobre o seu caso: cloud@mekovault.com.",
+
+  // ========== Páginas /platforms y /license-control (2026-09-21) ==========
+  "nav.platforms":
+    "Plataformas",
+  "footer.link.platforms":
+    "Plataformas",
+  "footer.link.license_control":
+    "Controle de licenças",
+  "common.learn_more":
+    "Saiba mais",
+  "pf.eyebrow":
+    "Plataformas",
+  "pf.title.pre":
+    "Todas as plataformas que você paga por pessoa,",
+  "pf.title.hl":
+    "em um só lugar.",
+  "pf.subtitle":
+    "E-mail, chat, projetos, vendas, suporte, código. Cada pessoa da sua empresa tem uma conta em cada uma, e cada conta é criada, bloqueada e paga separadamente. A Mekovault junta tudo.",
+  "pf.how.eyebrow":
+    "Como resolvemos",
+  "pf.how.title":
+    "Automático onde dá. Guiado onde não dá.",
+  "pf.how.auto.title":
+    "Conexão automática",
+  "pf.how.auto.desc":
+    "A Mekovault fala direto com a plataforma: cria, bloqueia e desliga as contas, e traz o inventário de quem tem o quê.",
+  "pf.how.guided.title":
+    "Tarefa guiada",
+  "pf.how.guided.desc":
+    "Algumas plataformas não permitem automatizar, ou só permitem no plano mais caro. Nesses casos, a Mekovault atribui a tarefa a quem administra essa plataforma na sua empresa, com instruções e prazo, e pede evidência ao concluir.",
+  "pf.how.any.title":
+    "Qualquer outra plataforma",
+  "pf.how.any.desc":
+    "Se você usa algo que não está na lista, você mesmo registra com o responsável. Entra do mesmo jeito na saída de cada pessoa.",
+  "pf.never.title":
+    "O que nunca fazemos",
+  "pf.never.desc":
+    "Não usamos robôs que se passam por uma pessoa no navegador, nem guardamos a senha pessoal de um administrador. Se uma plataforma não oferece uma forma oficial de fazer algo, uma pessoa da sua equipe faz, e fica registrado.",
+  "pf.cta.title":
+    "Falta alguma plataforma que você usa?",
+  "pf.cta.subtitle":
+    "Conte qual. Priorizamos pelo que nossos clientes usam.",
+  "pf.cta.contact":
+    "Fale com a gente",
+  "pf.cta.license":
+    "Ver Controle de licenças",
+  "lc.eyebrow":
+    "Controle de licenças · em breve",
+  "lc.title.pre":
+    "Bloquear uma conta",
+  "lc.title.hl":
+    "nem sempre interrompe a cobrança.",
+  "lc.subtitle":
+    "Na maioria das plataformas, a conta de quem já saiu continua sendo paga até alguém liberar a licença e reduzir a quantidade contratada. Quase ninguém faz isso a tempo. O Controle de licenças cuida disso.",
+  "lc.steps.eyebrow":
+    "O que faz",
+  "lc.steps.title":
+    "Três coisas que hoje quase ninguém faz a tempo",
+  "lc.s1.title":
+    "Libera a licença",
+  "lc.s1.desc":
+    "Quando uma pessoa sai, além de bloquear a conta ele remove a licença, depois de transferir o que é da empresa. A exclusão definitiva espera o prazo que você definir.",
+  "lc.s2.title":
+    "Avisa o que reduzir, e até quando",
+  "lc.s2.desc":
+    "Mostra quantas licenças pagas estão sem uso em cada plataforma, quanto custam por mês e até que data você pode reduzi-las, com os passos exatos daquela plataforma.",
+  "lc.s3.title":
+    "Deixa tudo medido",
+  "lc.s3.desc":
+    "Todo mês você vê quantas licenças foram liberadas, quantas você reduziu e quanto deixou de pagar. Sem planilhas.",
+  "lc.table.eyebrow":
+    "Plataforma por plataforma",
+  "lc.table.title":
+    "Bloquear uma conta interrompe a cobrança?",
+  "lc.table.subtitle":
+    "Verificamos na documentação de cada plataforma. Na maioria, a resposta é não.",
+  "lc.table.col.platform":
+    "Plataforma",
+  "lc.table.col.block":
+    "Bloquear basta?",
+  "lc.table.col.todo":
+    "O que é preciso para parar de pagar",
+  "lc.yes":
+    "Sim",
+  "lc.no":
+    "Não",
+  "lc.effect.auto":
+    "Nada mais: ao desativar a conta, a cobrança cai sozinha.",
+  "lc.effect.next_cycle":
+    "Liberar o assento e reduzir a quantidade contratada. Vale a partir do próximo ciclo de cobrança (em planos anuais, na renovação).",
+  "lc.effect.renewal":
+    "Liberar a licença e reduzir a quantidade contratada. A redução só vale na renovação.",
+  "lc.effect.google":
+    "Suspender não basta. No plano flexível é preciso excluir ou arquivar a conta; no plano anual, a quantidade só cai na renovação.",
+  "lc.q.monthly":
+    "plano mensal",
+  "lc.source":
+    "fonte",
+  "lc.table.note":
+    "Conforme a documentação pública de cada plataforma em setembro de 2026. As condições mudam e dependem do seu contrato: confirme antes de decidir.",
+  "lc.honest.title":
+    "O que não prometemos",
+  "lc.honest.desc":
+    "Nenhuma plataforma permite que um terceiro reduza a quantidade que você contratou: esse último passo é feito pela sua empresa, na tela de pagamentos de cada plataforma. O Controle de licenças deixa todo o resto feito e avisa a tempo, com os passos exatos.",
+  "lc.cta.title":
+    "Quer saber quanto você está pagando a mais?",
+  "lc.cta.subtitle":
+    "O Controle de licenças começa com Google Workspace e Microsoft 365. Fale com a gente e avisamos assim que estiver disponível.",
+  "lc.cta.contact":
+    "Me avisem quando estiver pronto",
+  "lc.cta.platforms":
+    "Ver plataformas",
 };
 
 export default ptBR;

@@ -13,6 +13,8 @@ export function Footer() {
       title: t("footer.col.product"),
       links: [
         { href: "/products", label: t("footer.link.services") },
+        { href: "/platforms", label: t("footer.link.platforms") },
+        { href: "/license-control", label: t("footer.link.license_control") },
         { href: "/pricing", label: t("footer.link.pricing") },
         { href: "/governance", label: t("footer.link.governance") },
         { href: "/status", label: t("footer.link.status") },

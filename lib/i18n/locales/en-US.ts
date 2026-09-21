@@ -577,6 +577,118 @@ const enUS: Dictionary = {
     "Not always. On most platforms a blocked account keeps being charged until the license is released and the purchased quantity is reduced, and that last step is done by your company on each platform's billing page. License Control (coming soon) releases the license and tells you in time what to reduce.",
   "pricing_page.model_note":
     "Account management has a fixed price based on how many platforms you connect. License Control will be an add-on based on the licenses we manage for you. While we add platforms, let's talk about your case: cloud@mekovault.com.",
+
+  // ========== Páginas /platforms y /license-control (2026-09-21) ==========
+  "nav.platforms":
+    "Platforms",
+  "footer.link.platforms":
+    "Platforms",
+  "footer.link.license_control":
+    "License Control",
+  "common.learn_more":
+    "Learn more",
+  "pf.eyebrow":
+    "Platforms",
+  "pf.title.pre":
+    "Every platform you pay for per seat,",
+  "pf.title.hl":
+    "in one place.",
+  "pf.subtitle":
+    "Email, chat, projects, sales, support, code. Each person in your company has an account on every one of them, and each account is created, blocked and paid for separately. Mekovault brings them together.",
+  "pf.how.eyebrow":
+    "How we handle it",
+  "pf.how.title":
+    "Automatic where possible. Guided where it isn't.",
+  "pf.how.auto.title":
+    "Automatic connection",
+  "pf.how.auto.desc":
+    "Mekovault talks directly to the platform: it creates, blocks and offboards accounts, and brings in the inventory of who has what.",
+  "pf.how.guided.title":
+    "Guided task",
+  "pf.how.guided.desc":
+    "Some platforms don't allow automation, or only allow it on their most expensive plan. There, Mekovault assigns the task to whoever manages that platform in your company, with instructions and a deadline, and asks for evidence when it's closed.",
+  "pf.how.any.title":
+    "Any other platform",
+  "pf.how.any.desc":
+    "If you use something that isn't on the list, you register it yourself with its owner. It's included in every departure just the same.",
+  "pf.never.title":
+    "What we never do",
+  "pf.never.desc":
+    "We don't use bots that pose as a person in the browser, and we don't store an administrator's personal password. If a platform doesn't offer an official way to do something, a person on your team does it, and it's recorded.",
+  "pf.cta.title":
+    "Is a platform you use missing?",
+  "pf.cta.subtitle":
+    "Tell us which one. We prioritize by what our customers use.",
+  "pf.cta.contact":
+    "Write to us",
+  "pf.cta.license":
+    "See License Control",
+  "lc.eyebrow":
+    "License Control · coming soon",
+  "lc.title.pre":
+    "Blocking an account",
+  "lc.title.hl":
+    "doesn't always stop the charge.",
+  "lc.subtitle":
+    "On most platforms, the account of someone who already left keeps being paid for until someone releases its license and reduces the purchased quantity. Almost nobody does it in time. License Control takes care of it.",
+  "lc.steps.eyebrow":
+    "What it does",
+  "lc.steps.title":
+    "Three things almost nobody does in time today",
+  "lc.s1.title":
+    "Releases the license",
+  "lc.s1.desc":
+    "When someone leaves, besides blocking their account it removes the license, after transferring whatever belongs to the company. Permanent deletion waits for the period you define.",
+  "lc.s2.title":
+    "Tells you what to reduce, and by when",
+  "lc.s2.desc":
+    "It tells you how many paid licenses are unused on each platform, what they cost per month and the date by which you can reduce them, with that platform's exact steps.",
+  "lc.s3.title":
+    "Keeps it measured",
+  "lc.s3.desc":
+    "Every month you see how many licenses were released, how many you reduced and how much you stopped paying. No spreadsheets.",
+  "lc.table.eyebrow":
+    "Platform by platform",
+  "lc.table.title":
+    "Does blocking an account stop the charge?",
+  "lc.table.subtitle":
+    "We checked each platform's documentation. For most of them, the answer is no.",
+  "lc.table.col.platform":
+    "Platform",
+  "lc.table.col.block":
+    "Is blocking enough?",
+  "lc.table.col.todo":
+    "What it takes to stop paying",
+  "lc.yes":
+    "Yes",
+  "lc.no":
+    "No",
+  "lc.effect.auto":
+    "Nothing else: once the account is deactivated, the charge drops on its own.",
+  "lc.effect.next_cycle":
+    "Release the seat and reduce the purchased quantity. It takes effect from the next billing cycle (on annual plans, at renewal).",
+  "lc.effect.renewal":
+    "Release the license and reduce the purchased quantity. The reduction only takes effect at renewal.",
+  "lc.effect.google":
+    "Suspending isn't enough. On the flexible plan you have to delete or archive the account; on the annual plan, the quantity only drops at renewal.",
+  "lc.q.monthly":
+    "monthly plan",
+  "lc.source":
+    "source",
+  "lc.table.note":
+    "Based on each platform's public documentation as of September 2026. Terms change and depend on your contract: confirm them before deciding.",
+  "lc.honest.title":
+    "What we don't promise",
+  "lc.honest.desc":
+    "No platform lets a third party reduce the quantity you purchased: that last step is done by your company, on each platform's billing page. License Control gets everything else done and reminds you in time, with the exact steps.",
+  "lc.cta.title":
+    "Want to know how much you're overpaying?",
+  "lc.cta.subtitle":
+    "License Control starts with Google Workspace and Microsoft 365. Write to us and we'll let you know as soon as it's available.",
+  "lc.cta.contact":
+    "Let me know when it's ready",
+  "lc.cta.platforms":
+    "See platforms",
 };
 
 export default enUS;

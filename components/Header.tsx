@@ -12,6 +12,7 @@ export function Header() {
   const t = useT();
   const NAV = [
     { href: "/products", label: t("nav.product") },
+    { href: "/platforms", label: t("nav.platforms") },
     { href: "/pricing", label: t("nav.pricing") },
     { href: "/governance", label: t("nav.governance") },
     { href: "/about", label: t("nav.about") },

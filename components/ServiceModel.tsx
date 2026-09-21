@@ -7,7 +7,8 @@
  * nada se muestra como disponible si no lo está.
  */
 
-import { BellRing, CalendarClock, Check, ClipboardCheck, Users, Wallet } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, BellRing, CalendarClock, Check, ClipboardCheck, Users, Wallet } from "lucide-react";
 
 import { Container } from "@/components/Container";
 import { Section, SectionHeading } from "@/components/Section";
@@ -59,6 +60,7 @@ export function TwoServicesSection({ className }: { className?: string }) {
       title: t("two.a.title"),
       desc: t("two.a.desc"),
       bullets: [t("two.a.b1"), t("two.a.b2"), t("two.a.b3")],
+      href: "/platforms",
     },
     {
       icon: <Wallet />,
@@ -66,6 +68,7 @@ export function TwoServicesSection({ className }: { className?: string }) {
       title: t("two.b.title"),
       desc: t("two.b.desc"),
       bullets: [t("two.b.b1"), t("two.b.b2"), t("two.b.b3")],
+      href: "/license-control",
     },
   ];
   return (
@@ -91,6 +94,12 @@ export function TwoServicesSection({ className }: { className?: string }) {
                   </li>
                 ))}
               </ul>
+              <Link
+                href={c.href}
+                className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary underline-offset-4 hover:underline"
+              >
+                {t("common.learn_more")} <ArrowRight className="size-4" />
+              </Link>
             </div>
           ))}
         </div>

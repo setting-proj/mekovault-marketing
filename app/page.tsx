@@ -126,7 +126,7 @@ export default function Home() {
             <span>Microsoft 365</span>
             <span className="text-border">·</span>
             <Link
-              href="#plataformas"
+              href="/platforms"
               className="underline decoration-primary/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-primary"
             >
               {t("status.soon")}: Slack, Jira, Zoom… →
