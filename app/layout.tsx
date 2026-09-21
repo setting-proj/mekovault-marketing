@@ -59,6 +59,8 @@ export async function generateMetadata(): Promise<Metadata> {
       "Microsoft 365",
       "cuentas de correo",
       "licencias",
+      "control de licencias",
+      "plataformas por usuario",
       "altas y bajas",
       "onboarding",
       "offboarding",

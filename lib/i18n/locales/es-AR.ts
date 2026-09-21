@@ -7,18 +7,18 @@
 import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
-  "meta.title": "Mekovault · Control de cuentas y licencias sin TI",
+  "meta.title": "Mekovault · Las cuentas de tu gente, en todas tus plataformas",
   "meta.description":
-    "Altas, bajas y solicitudes de cuentas de Google Workspace y Microsoft 365 en un solo lugar. Dejá de pagar licencias de gente que ya no está. Gratis 90 días.",
+    "Creá, bloqueá y dá de baja las cuentas de tu equipo en Google Workspace, Microsoft 365 y las demás plataformas que pagás por persona, desde un solo lugar. Y controlá lo que pagás en licencias. Gratis 90 días.",
 
   "nav.signup": "Empezá gratis",
 
   // Hero
   "hero.eyebrow": "Gratis 90 días · sin tarjeta · sin TI",
   "hero.title.line1": "Alguien se va de la empresa.",
-  "hero.title.line2": "Su licencia se sigue pagando.",
+  "hero.title.line2": "Sus cuentas siguen abiertas. Y se siguen pagando.",
   "hero.subtitle":
-    "Mekovault ordena las altas, bajas y solicitudes de cuentas de Google Workspace y Microsoft 365. Cada ingreso y cada salida queda resuelto el mismo día, y vos ves exactamente qué estás pagando y por quién. Sin sumar un sueldo de administrador de cuentas.",
+    "Mekovault administra las cuentas de tu gente en las plataformas que pagás por persona: correo, chat, proyectos, ventas, soporte. Cada ingreso y cada salida se resuelve desde un solo lugar, con aprobación y registro. Y pronto, con Control de licencias, vas a ver qué estás pagando de más y cómo dejar de pagarlo.",
   "hero.cta.signup": "Empezá gratis 90 días",
   "hero.cta.calc": "Calculá cuánto se te está yendo",
   "hero.trust.1": "Sin tarjeta para arrancar",
@@ -28,7 +28,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "mock.step_1": "Aviso de RR. HH. recibido",
   "mock.step_3": "Correo derivado a su jefe",
 
-  "integrations.title": "Funciona con lo que ya usás",
+  "integrations.title": "Las plataformas que tu empresa paga por persona",
 
   // Problem
   "problem.title": "Sin un proceso de altas y bajas, la plata se va sola",
@@ -55,32 +55,32 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "calc.assumption":
     "Asumimos que una cuenta olvidada se sigue pagando 6 meses en promedio antes de que alguien la cierre. Es una estimación conservadora.",
   "calc.cta": "Dejá de pagar esto: empezá gratis",
-  "calc.compare": "Mekovault cuesta menos que eso. Y además te ordena todo lo demás.",
+  "calc.compare": "Mekovault cierra esa fuga: bloquea las cuentas el mismo día y pronto, con Control de licencias, te va a mostrar qué licencias liberar y reducir.",
 
   // Benefits
   "benefits.subtitle":
     "Pensado para empresas sin un administrador de cuentas. Lo usa la persona de administración, de RR. HH. o el mismo gerente.",
   "benefits.b1.desc":
-    "Cuando una persona se va, su cuenta se bloquea, su mail pasa a su jefe y la licencia se libera. Todo el mismo día, sin depender de que alguien se acuerde. Cada mes ves cuántas licencias pagás y a quién corresponden.",
+    "Cuando una persona sale, sus cuentas se bloquean en las plataformas conectadas y su correo pasa a su jefatura, el mismo día y sin depender de que alguien se acuerde. Donde una plataforma no permite hacerlo automático, Mekovault le asigna la tarea a su responsable y guarda la evidencia.",
   "benefits.b2.desc":
     "La persona nueva llega el lunes y su mail ya funciona. Con su firma, sus grupos y sus accesos según el puesto.",
   "benefits.b3.desc":
     "Un jefe pide una cuenta o un acceso. Quien corresponde aprueba con un click. Nadie crea cuentas por su cuenta.",
   "benefits.b5.desc":
-    "Funciona con los dos, también si tu empresa usa una mezcla. Sin cambiar nada de lo que ya tenés.",
+    "Hoy funciona con Google Workspace y Microsoft 365. Estamos sumando las plataformas que más usan las empresas: chat, proyectos, ventas, soporte y código. Sin cambiar nada de lo que ya tenés.",
   "benefits.b6.desc":
     "Un formulario para pedir, un botón para aprobar. Si tu equipo usa mail, sabe usar Mekovault.",
 
   // How
-  "how.step1.title": "Conectá tu Google Workspace o Microsoft 365",
-  "how.step1.desc": "Diez minutos con una guía paso a paso. Si te trabás, te ayudamos por videollamada.",
+  "how.step1.title": "Conectá tus plataformas",
+  "how.step1.desc": "Arrancá con Google Workspace o Microsoft 365: diez minutos con una guía paso a paso. Las demás se suman desde el mismo panel. Si te trabás, te ayudamos por videollamada.",
   "how.step2.title": "Definí quién pide y quién aprueba",
   "how.step2.desc": "Por ejemplo: RR. HH. pide, el gerente de área aprueba. Lo cambiás cuando quieras.",
   "how.step3.desc":
     "Se llena un formulario simple. Mekovault crea, bloquea o modifica la cuenta y avisa a quien corresponde.",
-  "how.step4.title": "Ves cuánto gastás y en quién",
+  "how.step4.title": "Ves quién tiene qué, y cuánto cuesta",
   "how.step4.desc":
-    "Un panel con las cuentas activas, las que se fueron y las licencias que liberaste este mes.",
+    "Un panel con las cuentas de cada persona en cada plataforma, las salidas resueltas y pronto, con Control de licencias, las licencias que podés dejar de pagar.",
 
   // Compare
   "compare.subtitle":
@@ -98,7 +98,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   // Services
   "services.title": "Arrancá con la gestión de cuentas. Sumá el resto cuando lo necesites.",
   "services.subtitle": "Cada módulo se contrata por separado y se activa desde tu panel. Sin contratos largos.",
-  "svc.workspace.b3": "Panel con lo que pagás y por quién",
+  "svc.workspace.b3": "Panel con las cuentas de cada persona",
   "svc.tickets.desc":
     "Un formulario para pedir cuentas o accesos y un flujo de aprobación. Ideal si varios jefes piden cosas.",
   "svc.tickets.b3": "Ingresos masivos desde una planilla",
@@ -119,7 +119,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
     "Mekovault solo puede crear, bloquear y modificar cuentas. No lee mails ni archivos, y no pide permisos para hacerlo. Tus credenciales se guardan cifradas y separadas de las de otros clientes, y cada acción queda registrada con fecha y responsable. Cumplimos la Ley 25.326 de protección de datos personales.",
   "faq.leave.q": "¿Qué pasa con mis cuentas si dejo de usar Mekovault?",
   "faq.leave.a":
-    "Nada. Las cuentas siguen viviendo en tu Google Workspace o Microsoft 365, como siempre. Si te vas mañana, todo queda tal cual y te llevás el historial en Excel.",
+    "Nada. Las cuentas siguen viviendo en tus plataformas, como siempre. Si te vas mañana, todo queda tal cual y te llevás el historial en Excel.",
   "faq.ms.q": "Mi empresa usa Microsoft 365, no Google. ¿Sirve igual?",
   "faq.setup.a":
     "Diez minutos para conectar tu Google Workspace o Microsoft 365 con la guía. La primera solicitud la hacés ese mismo día. No hay proyecto de implementación ni consultora.",
@@ -134,20 +134,20 @@ const overrides: Partial<Record<TranslationKey, string>> = {
 
   // Footer / misc
   "footer.tagline":
-    "Altas, bajas y solicitudes de cuentas de Google Workspace y Microsoft 365 en un solo lugar. Para empresas que no tienen un administrador de cuentas y quieren control del gasto.",
+    "Las cuentas de tu gente en todas tus plataformas, desde un solo lugar, y control de lo que pagas en licencias. Para empresas que no tienen un administrador de cuentas.",
   "notfound.desc": "La dirección que buscás no existe o la movimos.",
 
   // Products
   "products.subtitle":
-    "Mekovault administra las cuentas de Google Workspace y Microsoft 365 de tu empresa: quién entra, quién se va, quién pide qué y cuánto cuesta.",
+    "Mekovault administra las cuentas de tu equipo en las plataformas que pagás por persona: quién entra, quién sale, quién pide qué y cuánto cuesta. Hoy con Google Workspace y Microsoft 365; las demás, en camino.",
   "products.cap.1.desc":
     "La persona nueva tiene mail, grupos y accesos desde el primer día. RR. HH. llena un formulario y listo.",
   "products.cap.2.desc":
-    "Se bloquea el acceso, el mail pasa al jefe, se quitan los grupos y se libera la licencia. Todo el mismo día.",
+    "Se bloquea el acceso en las plataformas conectadas, el correo pasa a la jefatura y se quitan los grupos. Todo el mismo día, con registro.",
   "products.cap.3.desc":
     "Un jefe pide una cuenta nueva, un alias o un cambio de puesto. Se aprueba con un click y se ejecuta solo.",
   "workflow.subtitle":
-    "Así se resuelve la salida de una persona desde que RR. HH. avisa hasta que la licencia deja de pagarse. Hacé click en cada paso.",
+    "Así se resuelve la salida de una persona desde que RR. HH. avisa hasta que todo queda registrado. Hacé click en cada paso.",
   "wf.s1.actor": "RR. HH.",
   "wf.s1.detail":
     "La persona de RR. HH. indica quién se va y en qué fecha. Puede ser hoy o dentro de dos semanas: Mekovault espera a la fecha indicada.",
@@ -197,7 +197,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "about.why.p1":
     "El punto de partida fue una empresa concreta en Santiago. Cerca de 200 cuentas de Google, un formulario, una planilla y una persona que hacía todo a mano cuando tenía tiempo. Cada ingreso llevaba media tarde. Cada salida se olvidaba de algo.",
   "about.why.p3":
-    "Mekovault es esa opción. Se conecta en minutos, lo usa gente sin perfil técnico, y desde el primer mes te muestra cuánto dejaste de pagar en licencias de gente que ya no está.",
+    "Mekovault es esa opción. Se conecta en minutos, lo usa gente sin perfil técnico, y te muestra, persona por persona, qué cuentas tiene tu empresa y cuáles ya no deberían existir.",
   "about.cta.title": "¿Querés conversar?",
   "about.cta.desc": "Escribinos y coordinamos una reunión corta. Te contamos qué hacemos y qué te podemos resolver.",
   "about.cta.contact": "Contactanos",

@@ -16,6 +16,7 @@ import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { WorkflowDiagram } from "@/components/WorkflowDiagram";
+import { HrTriggersSection, PlatformsSection, TwoServicesSection } from "@/components/ServiceModel";
 import { useT } from "@/lib/i18n/I18nProvider";
 
 export default function ProductsPage() {
@@ -73,6 +74,9 @@ export default function ProductsPage() {
         </Container>
       </Section>
 
+      {/* Dos servicios */}
+      <TwoServicesSection className="border-t" />
+
       {/* Qué hace por tu empresa */}
       <Section compact className="border-t">
         <Container>
@@ -108,6 +112,10 @@ export default function ProductsPage() {
           </Reveal>
         </Container>
       </Section>
+
+      {/* Plataformas y sistemas de personas */}
+      <PlatformsSection className="border-t" />
+      <HrTriggersSection className="border-t bg-muted/30" />
 
       {/* Módulos */}
       <Section className="border-t">

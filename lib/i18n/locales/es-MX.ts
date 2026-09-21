@@ -8,13 +8,13 @@ import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
   "meta.description":
-    "Altas, bajas y solicitudes de cuentas de Google Workspace y Microsoft 365 en un solo lugar. Deja de pagar licencias de colaboradores que ya no están. Gratis 90 días.",
+    "Crea, bloquea y da de baja las cuentas de tu equipo en Google Workspace, Microsoft 365 y las demás plataformas que pagas por persona, desde un solo lugar. Y controla lo que pagas en licencias. Gratis 90 días.",
 
   // Hero
   "hero.title.line1": "Un colaborador deja la empresa.",
-  "hero.title.line2": "Su licencia se sigue pagando.",
+  "hero.title.line2": "Sus cuentas siguen abiertas. Y se siguen pagando.",
   "hero.subtitle":
-    "Mekovault ordena las altas, bajas y solicitudes de cuentas de Google Workspace y Microsoft 365. Cada ingreso y cada salida queda resuelto el mismo día, y tú ves exactamente qué estás pagando y por quién. Sin sumar a alguien a la nómina para administrar cuentas.",
+    "Mekovault administra las cuentas de tu gente en las plataformas que pagas por persona: correo, chat, proyectos, ventas, soporte. Cada ingreso y cada salida se resuelve desde un solo lugar, con aprobación y registro. Y pronto, con Control de licencias, verás qué estás pagando de más y cómo dejar de pagarlo.",
   "hero.trust.2": "No necesitas un área de sistemas",
 
   "mock.step_1": "Aviso de RR. HH. recibido",
@@ -44,9 +44,9 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   // Benefits
   "benefits.subtitle":
     "Pensado para empresas sin un administrador de cuentas. Lo usa la persona de administración, de RR. HH. o el mismo director.",
-  "benefits.b1.title": "Nadie paga por un colaborador que ya no está",
+  "benefits.b1.title": "Nadie queda con accesos después de irse",
   "benefits.b1.desc":
-    "Cuando un colaborador sale, su cuenta se bloquea, su correo pasa a su jefe y la licencia se libera. Todo el mismo día, sin depender de que alguien se acuerde. Cada mes ves cuántas licencias pagas y a quién corresponden.",
+    "Cuando una persona sale, sus cuentas se bloquean en las plataformas conectadas y su correo pasa a su jefe directo, el mismo día y sin depender de que alguien se acuerde. Donde una plataforma no permite hacerlo automático, Mekovault le asigna la tarea a su responsable y guarda la evidencia.",
   "benefits.flow.1": "Sale un colaborador",
   "benefits.b2.desc":
     "El colaborador nuevo llega el lunes y su correo ya funciona. Con su firma, sus grupos y sus accesos según el puesto.",
@@ -73,7 +73,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
 
   // Services
   "svc.workspace.b1": "Altas listas el primer día",
-  "svc.workspace.b2": "Bajas completas: acceso, correo, licencia",
+  "svc.workspace.b2": "Salidas completas: acceso, correo y grupos",
   "svc.tickets.desc":
     "Un formulario para pedir cuentas o accesos y un flujo de aprobación. Ideal si varios jefes piden cosas.",
   "svc.tickets.b3": "Altas masivas desde una hoja de cálculo",
@@ -96,12 +96,12 @@ const overrides: Partial<Record<TranslationKey, string>> = {
     "El colaborador nuevo tiene correo, grupos y accesos desde el primer día. RR. HH. llena un formulario y listo.",
   "products.cap.2.title": "Bajas",
   "products.cap.2.desc":
-    "Se bloquea el acceso, el correo pasa al jefe, se quitan los grupos y se libera la licencia. Todo el mismo día.",
+    "Se bloquea el acceso en las plataformas conectadas, el correo pasa a su jefe directo y se quitan los grupos. Todo el mismo día, con registro.",
   "products.cap.3.desc":
     "Un jefe pide una cuenta nueva, un alias o un cambio de puesto. Se aprueba con un clic y se ejecuta solo.",
   "workflow.eyebrow": "Una baja de principio a fin",
   "workflow.subtitle":
-    "Así se resuelve la baja de un colaborador desde que RR. HH. avisa hasta que la licencia deja de pagarse. Haz clic en cada paso.",
+    "Así se resuelve la salida de una persona desde que Recursos Humanos avisa hasta que todo queda registrado. Haz clic en cada paso.",
   "wf.s1.actor": "RR. HH.",
   "wf.s1.action": "Avisa la baja",
   "wf.s1.detail":
@@ -121,7 +121,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "calc.subtitle":
     "Tres datos y una estimación honesta. Ajusta los valores a tu empresa.",
   "calc.cta": "Deja de pagar esto: empieza gratis",
-  "calc.compare": "Mekovault cuesta menos que eso. Y además te ordena todo lo demás.",
+  "calc.compare": "Mekovault cierra esa fuga: bloquea las cuentas el mismo día y pronto, con Control de licencias, te mostrará qué licencias liberar y reducir.",
 
   // Pricing (home)
   "pricing.title": "Menos de lo que se te está yendo",
@@ -158,7 +158,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "about.why.p2":
     "Miramos alrededor y era lo mismo en todas partes. Las herramientas grandes de este tipo están hechas para corporativos con áreas de sistemas. Para una empresa de 50, 100 o 300 colaboradores no había nada simple, local ni accesible.",
   "about.why.p3":
-    "Mekovault es esa opción. Se conecta en minutos, lo usa gente sin perfil técnico, y desde el primer mes te muestra cuánto dejaste de pagar en licencias de colaboradores que ya no están.",
+    "Mekovault es esa opción. Se conecta en minutos, lo usa gente sin perfil técnico, y te muestra, persona por persona, qué cuentas tiene tu empresa y cuáles ya no deberían existir.",
   "timeline.m2.metric": "Adiós a la hoja de cálculo",
   "timeline.m2.detail":
     "Reemplazamos la hoja de cálculo y los parches por un sistema que hacía el mismo trabajo, pero siempre igual y sin olvidar pasos. La empresa siguió usando su Google Workspace de siempre.",

@@ -6,9 +6,9 @@
 import type { Dictionary } from "./es-CL";
 
 const ptBR: Dictionary = {
-  "meta.title": "Mekovault · Controle de contas e licenças sem TI",
+  "meta.title": "Mekovault · As contas da sua equipe, em todas as suas plataformas",
   "meta.description":
-    "Admissões, desligamentos e solicitações de contas do Google Workspace e Microsoft 365 em um só lugar. Pare de pagar licenças de quem já saiu. Grátis por 90 dias.",
+    "Crie, bloqueie e desligue as contas da sua equipe no Google Workspace, Microsoft 365 e nas outras plataformas que você paga por pessoa, em um só lugar. E controle o que você paga em licenças. Grátis por 90 dias.",
 
   "nav.product": "Produto",
   "nav.pricing": "Preços",
@@ -21,9 +21,9 @@ const ptBR: Dictionary = {
 
   "hero.eyebrow": "Grátis por 90 dias · sem cartão · sem TI",
   "hero.title.line1": "Alguém sai da empresa.",
-  "hero.title.line2": "A licença continua sendo paga.",
+  "hero.title.line2": "As contas continuam abertas. E continuam sendo pagas.",
   "hero.subtitle":
-    "O Mekovault organiza as admissões, desligamentos e solicitações de contas do Google Workspace e Microsoft 365. Cada entrada e cada saída é resolvida no mesmo dia, e você vê exatamente o que está pagando e por quem. Sem contratar um administrador de contas.",
+    "A Mekovault administra as contas da sua equipe nas plataformas que você paga por pessoa: e-mail, chat, projetos, vendas, suporte. Cada entrada e cada saída é resolvida em um só lugar, com aprovação e registro. E em breve, com o Controle de licenças, você verá o que está pagando a mais e como parar de pagar.",
   "hero.cta.signup": "Comece grátis por 90 dias",
   "hero.cta.calc": "Calcule quanto está vazando",
   "hero.trust.1": "Sem cartão para começar",
@@ -32,16 +32,16 @@ const ptBR: Dictionary = {
 
   "mock.acc_active": "Contas ativas",
   "mock.left_year": "Saídas este ano",
-  "mock.licenses_freed": "Licenças liberadas",
+  "mock.requests_done": "Solicitações resolvidas",
   "mock.ago": "há 47 s",
   "mock.offboarding_of": "Saída ·",
   "mock.status_completed": "concluída",
   "mock.step_1": "Aviso do RH recebido",
-  "mock.step_2": "Acesso bloqueado",
+  "mock.step_2": "Acesso bloqueado nas plataformas",
   "mock.step_3": "E-mail encaminhado ao gestor",
-  "mock.step_4": "Licença liberada: não é mais cobrada",
+  "mock.step_4": "Tudo registrado, com data e responsável",
 
-  "integrations.title": "Funciona com o que você já usa",
+  "integrations.title": "As plataformas que sua empresa paga por pessoa",
 
   "problem.eyebrow": "O gasto que ninguém vê",
   "problem.title": "Sem um processo de admissão e desligamento, o dinheiro vai embora sozinho",
@@ -71,19 +71,19 @@ const ptBR: Dictionary = {
   "calc.assumption":
     "Assumimos que uma conta esquecida continua sendo paga por 6 meses em média antes de alguém fechá-la. É uma estimativa conservadora.",
   "calc.cta": "Pare de pagar isso: comece grátis",
-  "calc.compare": "O Mekovault custa menos que isso. E ainda organiza todo o resto.",
+  "calc.compare": "A Mekovault fecha esse vazamento: bloqueia as contas no mesmo dia e em breve, com o Controle de licenças, mostrará quais licenças liberar e reduzir.",
 
   "benefits.eyebrow": "O que muda com o Mekovault",
-  "benefits.title": "Mais fácil de administrar. E, acima de tudo, controle do gasto.",
+  "benefits.title": "Um só lugar para todas as contas. E controle do que você paga.",
   "benefits.subtitle":
     "Pensado para empresas sem administrador de contas. Quem usa é a pessoa do administrativo, do RH ou o próprio gestor.",
-  "benefits.b1.title": "Ninguém paga por quem já saiu",
+  "benefits.b1.title": "Ninguém fica com acesso depois de sair",
   "benefits.b1.desc":
-    "Quando uma pessoa sai, a conta é bloqueada, o e-mail vai para o gestor e a licença é liberada. Tudo no mesmo dia, sem depender de alguém lembrar. Todo mês você vê quantas licenças paga e de quem são.",
+    "Quando uma pessoa sai, as contas dela são bloqueadas nas plataformas conectadas e o e-mail passa para a liderança, no mesmo dia e sem depender de alguém lembrar. Onde uma plataforma não permite automatizar, a Mekovault atribui a tarefa ao responsável e guarda a evidência.",
   "benefits.flow.1": "Alguém sai",
   "benefits.flow.2": "RH avisa",
   "benefits.flow.3": "Acesso bloqueado",
-  "benefits.flow.4": "Licença liberada",
+  "benefits.flow.4": "Fica registrado",
   "benefits.b2.title": "Admissões em minutos, não em dias",
   "benefits.b2.desc":
     "A pessoa nova chega na segunda e o e-mail já funciona. Com assinatura, grupos e acessos de acordo com o cargo.",
@@ -93,9 +93,9 @@ const ptBR: Dictionary = {
   "benefits.b4.title": "Tudo fica registrado",
   "benefits.b4.desc":
     "Quem pediu, quem aprovou e quando foi feito. Quando alguém perguntar, a resposta está ali.",
-  "benefits.b5.title": "Google Workspace e Microsoft 365",
+  "benefits.b5.title": "Google, Microsoft e as próximas",
   "benefits.b5.desc":
-    "Funciona com os dois, inclusive se a sua empresa usa uma mistura. Sem mudar nada do que você já tem.",
+    "Hoje funciona com Google Workspace e Microsoft 365. Estamos adicionando as plataformas que as empresas mais usam: chat, projetos, vendas, suporte e código. Sem mudar nada do que você já tem.",
   "benefits.b6.title": "Sem treinamento",
   "benefits.b6.desc":
     "Um formulário para pedir, um botão para aprovar. Se a sua equipe usa e-mail, sabe usar o Mekovault.",
@@ -103,16 +103,16 @@ const ptBR: Dictionary = {
   "how.eyebrow": "Como funciona",
   "how.title": "Quatro passos e pronto",
   "how.subtitle": "Sem projeto de implantação. Sem consultoria.",
-  "how.step1.title": "Conecte seu Google Workspace ou Microsoft 365",
-  "how.step1.desc": "Dez minutos com um guia passo a passo. Se travar, ajudamos por videochamada.",
+  "how.step1.title": "Conecte suas plataformas",
+  "how.step1.desc": "Comece com Google Workspace ou Microsoft 365: dez minutos com um guia passo a passo. As demais são adicionadas no mesmo painel. Se travar, ajudamos por videochamada.",
   "how.step2.title": "Defina quem pede e quem aprova",
   "how.step2.desc": "Por exemplo: o RH pede, o gestor da área aprova. Mude quando quiser.",
   "how.step3.title": "Cada admissão ou desligamento é uma solicitação",
   "how.step3.desc":
-    "Preenche-se um formulário simples. O Mekovault cria, bloqueia ou altera a conta e avisa quem precisa saber.",
-  "how.step4.title": "Veja quanto gasta e com quem",
+    "Preenche-se um formulário simples. A Mekovault cria, bloqueia ou altera as contas e avisa quem precisa saber.",
+  "how.step4.title": "Veja quem tem o quê, e quanto custa",
   "how.step4.desc":
-    "Um painel com as contas ativas, quem saiu e as licenças que você liberou este mês.",
+    "Um painel com as contas de cada pessoa em cada plataforma, as saídas resolvidas e em breve, com o Controle de licenças, as licenças que você pode parar de pagar.",
 
   "compare.eyebrow": "Antes e depois",
   "compare.title": "O mesmo desligamento, de duas formas",
@@ -139,9 +139,9 @@ const ptBR: Dictionary = {
   "compare.r5.step": "Grupos e arquivos são removidos",
   "compare.r5.manual": "Um por um, se lembrarem",
   "compare.r5.meko": "Tudo de uma vez",
-  "compare.r6.step": "A licença é liberada",
+  "compare.r6.step": "A licença deixa de ser paga",
   "compare.r6.manual": "Descoberta meses depois na fatura",
-  "compare.r6.meko": "Deixa de ser cobrada no mesmo dia",
+  "compare.r6.meko": "O Controle de licenças libera e avisa o que reduzir (em breve)",
   "compare.r7.step": "Fica registrado",
   "compare.r7.manual": "Numa planilha, às vezes",
   "compare.r7.meko": "Sempre, com data e responsável",
@@ -160,10 +160,10 @@ const ptBR: Dictionary = {
   "svc.workspace.title": "Gestão de contas",
   "svc.workspace.official": "Super Workspace",
   "svc.workspace.desc":
-    "O produto principal. Admissões, desligamentos e alterações de contas no Google Workspace e Microsoft 365, com as licenças sob controle.",
+    "O produto principal. Entradas, saídas e mudanças de contas no Google Workspace e Microsoft 365.",
   "svc.workspace.b1": "Admissões prontas no primeiro dia",
-  "svc.workspace.b2": "Desligamentos completos: acesso, e-mail, licença",
-  "svc.workspace.b3": "Painel com o que você paga e por quem",
+  "svc.workspace.b2": "Saídas completas: acesso, e-mail e grupos",
+  "svc.workspace.b3": "Painel com as contas de cada pessoa",
   "svc.tickets.title": "Solicitações e aprovações",
   "svc.tickets.official": "Requests & Tickets",
   "svc.tickets.desc":
@@ -195,7 +195,7 @@ const ptBR: Dictionary = {
     "O Mekovault só pode criar, bloquear e alterar contas. Não lê e-mails nem arquivos, e não pede permissão para isso. Suas credenciais ficam criptografadas e separadas das de outros clientes, e cada ação fica registrada com data e responsável. Seguimos a LGPD.",
   "faq.leave.q": "O que acontece com minhas contas se eu parar de usar o Mekovault?",
   "faq.leave.a":
-    "Nada. As contas continuam no seu Google Workspace ou Microsoft 365, como sempre. Se você sair amanhã, tudo fica como está e você leva o histórico em Excel.",
+    "Nada. As contas continuam nas suas plataformas, como sempre. Se você sair amanhã, tudo fica como está e você leva o histórico em Excel.",
   "faq.ms.q": "Minha empresa usa Microsoft 365, não Google. Funciona mesmo assim?",
   "faq.ms.a":
     "Sim. Funciona com Google Workspace, com Microsoft 365 e com empresas que usam os dois, por exemplo depois de uma fusão.",
@@ -212,7 +212,7 @@ const ptBR: Dictionary = {
   "cta.pricing": "Ver preços",
 
   "footer.tagline":
-    "Admissões, desligamentos e solicitações de contas do Google Workspace e Microsoft 365 em um só lugar. Para empresas sem administrador de contas que querem controle do gasto.",
+    "As contas da sua equipe em todas as suas plataformas, em um só lugar, e controle do que você paga em licenças. Para empresas que não têm um administrador de contas.",
   "footer.note": "A Mekovault SpA é uma empresa chilena. Seus dados são tratados conforme nossa política de privacidade.",
   "footer.col.product": "Produto",
   "footer.col.company": "Empresa",
@@ -250,7 +250,7 @@ const ptBR: Dictionary = {
   "products.title.pre": "Todas as contas da sua empresa,",
   "products.title.hl": "sob controle.",
   "products.subtitle":
-    "O Mekovault administra as contas do Google Workspace e Microsoft 365 da sua empresa: quem entra, quem sai, quem pede o quê e quanto custa.",
+    "A Mekovault administra as contas da sua equipe nas plataformas que você paga por pessoa: quem entra, quem sai, quem pede o quê e quanto custa. Hoje com Google Workspace e Microsoft 365; as demais estão a caminho.",
   "products.cap.eyebrow": "O que faz pela sua empresa",
   "products.cap.title": "Cinco coisas feitas à mão hoje, ou que não são feitas",
   "products.cap.1.title": "Admissões",
@@ -258,7 +258,7 @@ const ptBR: Dictionary = {
     "A pessoa nova tem e-mail, grupos e acessos desde o primeiro dia. O RH preenche um formulário e pronto.",
   "products.cap.2.title": "Desligamentos",
   "products.cap.2.desc":
-    "O acesso é bloqueado, o e-mail vai para o gestor, os grupos são removidos e a licença é liberada. Tudo no mesmo dia.",
+    "O acesso é bloqueado nas plataformas conectadas, o e-mail passa para a liderança e os grupos são removidos. Tudo no mesmo dia, com registro.",
   "products.cap.3.title": "Solicitações",
   "products.cap.3.desc":
     "Um gestor pede uma conta nova, um alias ou uma mudança de cargo. Aprova-se com um clique e é executado sozinho.",
@@ -271,7 +271,7 @@ const ptBR: Dictionary = {
   "workflow.eyebrow": "Um desligamento do início ao fim",
   "workflow.title": "Seis passos que hoje levam semanas. Com o Mekovault, um dia.",
   "workflow.subtitle":
-    "É assim que a saída de uma pessoa é resolvida desde o aviso do RH até a licença deixar de ser cobrada. Clique em cada passo.",
+    "É assim que a saída de uma pessoa é resolvida, desde o aviso do RH até tudo ficar registrado. Clique em cada passo.",
   "workflow.step_of": "passo {n} de {total}",
   "wf.s1.actor": "RH",
   "wf.s1.action": "Avisa a saída",
@@ -287,7 +287,7 @@ const ptBR: Dictionary = {
   "wf.s3.action": "Bloqueia o acesso",
   "wf.s3.service": "Automático",
   "wf.s3.detail":
-    "No dia da saída, a conta fica bloqueada. A pessoa não consegue mais entrar no e-mail, nos arquivos nem na agenda, de nenhum dispositivo.",
+    "No dia da saída, a conta fica bloqueada nas plataformas conectadas. A pessoa não consegue mais entrar no e-mail, nos arquivos nem na agenda, de nenhum dispositivo.",
   "wf.s4.actor": "Mekovault",
   "wf.s4.action": "Encaminha e-mail e arquivos",
   "wf.s4.service": "Automático",
@@ -295,14 +295,14 @@ const ptBR: Dictionary = {
     "Os e-mails que chegarem são encaminhados ao gestor e os arquivos ficam disponíveis para quem foi definido. Nada da empresa se perde.",
   "wf.s5.actor": "Mekovault",
   "wf.s5.action": "Libera a licença",
-  "wf.s5.service": "Automático",
+  "wf.s5.service": "Controle de licenças · em breve",
   "wf.s5.detail":
-    "Quando não é mais preciso manter a conta, ela é removida e a licença deixa de ser cobrada. É o passo que hoje quase ninguém faz, e o que mais custa.",
+    "Bloquear uma conta nem sempre interrompe a cobrança. O Controle de licenças libera a licença quando a conta não precisa mais ser mantida e avisa, com data, quanto reduzir antes da próxima renovação. É o passo que quase ninguém faz hoje, e o que mais custa.",
   "wf.s6.actor": "Mekovault",
   "wf.s6.action": "Deixa tudo registrado",
   "wf.s6.service": "Histórico",
   "wf.s6.detail":
-    "Quem avisou, quem aprovou, que dia foi bloqueado e quando a licença foi liberada. Fica guardado e não pode ser apagado.",
+    "Quem avisou, quem aprovou e em que dia cada conta foi bloqueada. Fica guardado e não pode ser apagado.",
   "products.addons.eyebrow": "Módulos",
   "products.addons.title": "Ative só o que a sua empresa precisa",
   "products.addons.subtitle":
@@ -377,7 +377,7 @@ const ptBR: Dictionary = {
   "about.why.p2":
     "Olhamos em volta e era igual em todo lugar. As grandes ferramentas desse tipo são feitas para corporações com equipes de TI. Para uma empresa de 50, 100 ou 300 pessoas não havia nada simples, local nem acessível.",
   "about.why.p3":
-    "O Mekovault é essa opção. Conecta em minutos, é usado por gente sem perfil técnico, e desde o primeiro mês mostra quanto você deixou de pagar em licenças de quem já saiu.",
+    "A Mekovault é essa opção. Conecta em minutos, é usada por pessoas sem perfil técnico e mostra, pessoa por pessoa, quais contas a sua empresa tem e quais já não deveriam existir.",
   "about.timeline.eyebrow": "Como chegamos aqui",
   "about.timeline.title": "O projeto em cinco momentos",
   "about.timeline.subtitle": "Os momentos em que o produto tomou forma, em ordem.",
@@ -504,6 +504,80 @@ const ptBR: Dictionary = {
   "partners.faq.q4.a": "América Latina, Espanha e Estados Unidos. Se estiver em outro país, escreva para a gente e avaliamos.",
   "partners.faq.q5.q": "Posso colocar minha marca no portal?",
   "partners.faq.q5.a": "Sim. No Gold com seu logo e suas cores. No Platinum com seu próprio domínio, sem a marca Mekovault visível.",
+
+  // ========== Modelo 2026-09: plataformas + control de licencias ==========
+  "status.today":
+    "Disponível hoje",
+  "status.soon":
+    "Em breve",
+  "status.guided":
+    "Com tarefa guiada · em breve",
+  "two.eyebrow":
+    "Dois serviços",
+  "two.title":
+    "Administrar as contas é uma coisa. Parar de pagá-las é outra.",
+  "two.subtitle":
+    "Na maioria das plataformas, uma conta bloqueada continua sendo cobrada. Por isso são dois serviços, e você contrata o que precisar.",
+  "two.a.title":
+    "Administração de contas",
+  "two.a.desc":
+    "Criar, bloquear, reativar e desligar as contas da sua equipe nas plataformas conectadas, em um só lugar.",
+  "two.a.b1":
+    "Solicitações com aprovação e registro",
+  "two.a.b2":
+    "Saídas no mesmo dia, em todas as plataformas conectadas",
+  "two.a.b3":
+    "Um preço fixo conforme o número de plataformas conectadas",
+  "two.b.title":
+    "Controle de licenças",
+  "two.b.desc":
+    "Para sua empresa parar de pagar por contas que não usa mais: não só bloquear, mas liberar a licença e reduzir o contratado a tempo.",
+  "two.b.b1":
+    "Licenças compradas, atribuídas e sem uso, por plataforma",
+  "two.b.b2":
+    "Libera a licença quando a pessoa sai",
+  "two.b.b3":
+    "Avisa, com data, o que reduzir antes da renovação",
+  "platforms.eyebrow":
+    "Plataformas",
+  "platforms.title":
+    "As plataformas que você paga por pessoa, em um só lugar",
+  "platforms.subtitle":
+    "Começamos pelas que podem ser automatizadas de verdade. Onde uma plataforma não permite, ou só permite no plano mais caro, a Mekovault organiza a tarefa: responsável, instruções, prazo e evidência.",
+  "platforms.group.hr":
+    "Sistemas de RH (avisam entradas e saídas)",
+  "platforms.note":
+    "As marcas pertencem aos seus donos. A Mekovault não é afiliada a essas empresas.",
+  "hr.eyebrow":
+    "Opcional",
+  "hr.title":
+    "Conecte seu sistema de RH, se quiser",
+  "hr.subtitle":
+    "Seu sistema de RH pode avisar a Mekovault quando alguém entra, muda de cargo ou sai. Você decide o que acontece com cada aviso.",
+  "hr.m1.title":
+    "Só avisar",
+  "hr.m1.desc":
+    "Um e-mail chega a quem você definir. Nada mais.",
+  "hr.m2.title":
+    "Criar uma solicitação",
+  "hr.m2.desc":
+    "Alguém aprova antes de qualquer coisa acontecer. É o que recomendamos.",
+  "hr.m3.title":
+    "Executar na data",
+  "hr.m3.desc":
+    "O bloqueio fica agendado para o dia e a hora da saída, com um e-mail para antecipar ou cancelar.",
+  "hr.note":
+    "Se você não conectar nenhum, tudo funciona igual com solicitações.",
+  "faq.platforms.q":
+    "Com quais plataformas funciona?",
+  "faq.platforms.a":
+    "Hoje, com Google Workspace e Microsoft 365. Estamos adicionando as plataformas que as empresas pagam por pessoa: chat, projetos, vendas, suporte e código. Para as que não permitem automatizar, ou só permitem no plano mais caro, a Mekovault organiza a tarefa com um responsável e guarda a evidência.",
+  "faq.licenses.q":
+    "Se eu bloquear uma conta, paro de pagar a licença?",
+  "faq.licenses.a":
+    "Nem sempre. Na maioria das plataformas uma conta bloqueada continua sendo cobrada até a licença ser liberada e a quantidade contratada ser reduzida, e esse último passo é feito pela sua empresa na tela de pagamentos de cada plataforma. O Controle de licenças (em breve) libera a licença e avisa a tempo o que reduzir.",
+  "pricing_page.model_note":
+    "Administrar contas tem um preço fixo conforme o número de plataformas conectadas. O Controle de licenças será um adicional conforme as licenças que gerenciarmos para você. Enquanto adicionamos plataformas, vamos conversar sobre o seu caso: cloud@mekovault.com.",
 };
 
 export default ptBR;

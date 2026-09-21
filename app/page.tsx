@@ -23,6 +23,7 @@ import { Reveal } from "@/components/Reveal";
 import { TimelineCompare } from "@/components/TimelineCompare";
 import { LeakCalculator } from "@/components/LeakCalculator";
 import { FAQ } from "@/components/FAQ";
+import { HrTriggersSection, PlatformsSection, TwoServicesSection } from "@/components/ServiceModel";
 import { useT } from "@/lib/i18n/I18nProvider";
 import { formatCLP, mainAppPrice } from "@/lib/catalog";
 
@@ -75,7 +76,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Mock dashboard: una salida resuelta, con la licencia liberada */}
+          {/* Mock dashboard: una salida resuelta y registrada */}
           <div className="relative mx-auto mt-16 max-w-5xl">
             <div
               aria-hidden
@@ -91,7 +92,7 @@ export default function Home() {
                 <div className="grid gap-4 pt-5 sm:grid-cols-3">
                   <MockStat label={t("mock.acc_active")} value="132" delta="+3" />
                   <MockStat label={t("mock.left_year")} value="18" delta="18/18" />
-                  <MockStat label={t("mock.licenses_freed")} value="18" delta="USD 1.296" />
+                  <MockStat label={t("mock.requests_done")} value="214" delta="100 %" />
                 </div>
                 <div className="mt-5 rounded-lg border bg-muted/40 p-4">
                   <div className="mb-3 flex items-center justify-between text-xs">
@@ -123,6 +124,13 @@ export default function Home() {
             <span>Google Workspace</span>
             <span className="text-border">·</span>
             <span>Microsoft 365</span>
+            <span className="text-border">·</span>
+            <Link
+              href="#plataformas"
+              className="underline decoration-primary/40 underline-offset-4 transition-colors hover:text-foreground hover:decoration-primary"
+            >
+              {t("status.soon")}: Slack, Jira, Zoom… →
+            </Link>
           </div>
         </Container>
       </Section>
@@ -165,6 +173,9 @@ export default function Home() {
           </Reveal>
         </Container>
       </Section>
+
+      {/* Dos servicios: administrar y dejar de pagar */}
+      <TwoServicesSection className="border-t" />
 
       {/* Beneficios */}
       <Section id="beneficios" className="border-t">
@@ -212,6 +223,9 @@ export default function Home() {
         </Container>
       </Section>
 
+      {/* Plataformas con su estado real */}
+      <PlatformsSection className="border-t bg-muted/30" />
+
       {/* Cómo funciona */}
       <Section className="border-t bg-muted/30">
         <Container>
@@ -254,6 +268,9 @@ export default function Home() {
           </Reveal>
         </Container>
       </Section>
+
+      {/* Sistemas de personas como aviso opcional */}
+      <HrTriggersSection className="border-t bg-muted/30" />
 
       {/* Módulos */}
       <Section className="border-t">
@@ -325,6 +342,8 @@ export default function Home() {
                 { q: t("faq.it.q"), a: t("faq.it.a") },
                 { q: t("faq.security.q"), a: t("faq.security.a") },
                 { q: t("faq.leave.q"), a: t("faq.leave.a") },
+                { q: t("faq.platforms.q"), a: t("faq.platforms.a") },
+                { q: t("faq.licenses.q"), a: t("faq.licenses.a") },
                 { q: t("faq.ms.q"), a: t("faq.ms.a") },
                 { q: t("faq.setup.q"), a: t("faq.setup.a") },
                 { q: t("faq.support.q"), a: t("faq.support.a") },

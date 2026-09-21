@@ -218,6 +218,9 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
             {t("pricing_page.currency_note")}
             {!live && <> {t("pricing_page.reference_note")}</>}
           </p>
+          <p className="mx-auto mt-4 max-w-2xl rounded-xl border bg-card px-4 py-3 text-center text-sm text-muted-foreground">
+            {t("pricing_page.model_note")}
+          </p>
 
           {/* Total */}
           {selected.size > 0 && (
