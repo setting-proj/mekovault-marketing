@@ -605,6 +605,7 @@ const esCL = {
     "Ver plataformas",
 
   // ========== Rediseño 2026-09-30: el panel es el sitio ==========
+  "marquee.label": "Pensado para las plataformas que pagas por persona",
   "hero.cta.how": "Ver cómo funciona",
   "panel.url": "app.mekovault.com/tu-empresa/tickets/centro",
   "panel.nav.ops": "Operaciones",

@@ -156,6 +156,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "partners.faq.q2.a": "Sí. Mientras el cliente siga activo y pagando cada mes, vos seguís cobrando tu porcentaje. Si el cliente cancela en los primeros 30 días, la comisión de ese mes se revierte.",
   "partners.faq.q4.a": "Latinoamérica, España y Estados Unidos. Si estás en otro país, escribinos y lo evaluamos.",
   "partners.faq.q5.a": "Sí. En Gold con tu logo y colores. En Platinum con tu propio dominio, sin la marca Mekovault visible.",
+  "marquee.label": "Pensado para las plataformas que pagás por persona",
 };
 
 const esAR: Dictionary = { ...esCL, ...overrides };

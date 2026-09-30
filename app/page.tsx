@@ -22,6 +22,7 @@ import { Reveal } from "@/components/Reveal";
 import { LeakCalculator } from "@/components/LeakCalculator";
 import { FAQ } from "@/components/FAQ";
 import { WorkflowDiagram } from "@/components/WorkflowDiagram";
+import { LogoMarquee } from "@/components/LogoMarquee";
 import { RequestsCenterPanel } from "@/components/panels/RequestsCenterPanel";
 import { TicketDetailPanel } from "@/components/panels/TicketDetailPanel";
 import { LicensesPanel } from "@/components/panels/LicensesPanel";
@@ -67,6 +68,9 @@ export default function Home() {
           </div>
         </Container>
       </section>
+
+      {/* Plataformas que se pagan por persona */}
+      <LogoMarquee />
 
       {/* 2. Cuando alguien entra o sale (navy) */}
       <Section tone="navy" id="salida">

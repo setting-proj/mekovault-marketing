@@ -570,6 +570,7 @@ const ptBR: Dictionary = {
     "Ver plataformas",
 
   // ========== Rediseño 2026-09-30: el panel es el sitio ==========
+  "marquee.label": "Feito para as plataformas que você paga por pessoa",
   "hero.cta.how": "Ver como funciona",
   "panel.url": "app.mekovault.com/sua-empresa/tickets/central",
   "panel.nav.ops": "Operações",

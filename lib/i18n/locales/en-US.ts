@@ -569,6 +569,7 @@ const enUS: Dictionary = {
     "See platforms",
 
   // ========== Rediseño 2026-09-30: el panel es el sitio ==========
+  "marquee.label": "Built for the platforms you pay for per seat",
   "hero.cta.how": "See how it works",
   "panel.url": "app.mekovault.com/your-company/tickets/center",
   "panel.nav.ops": "Operations",

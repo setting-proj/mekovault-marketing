@@ -114,6 +114,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "partners.subtitle":
     "Despachos contables, consultoras y empresas de servicios: lleva Mekovault a las empresas que ya te contratan. Nosotros hacemos la parte técnica, tú cierras el negocio y cobras entre 5 % y 10 % mensual por cliente.",
   "partners.form.customers_ph": "Ej: 25 empresas, principalmente pymes de 20 a 200 colaboradores",
+  "marquee.label": "Pensado para las plataformas que pagas por persona",
 };
 
 const esMX: Dictionary = { ...esCL, ...overrides };
