@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
@@ -86,35 +86,30 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
             }
             desc={t("pricing_page.subtitle")}
           />
-          <div className="mx-auto mt-6 flex flex-wrap items-center justify-center gap-2 text-xs">
-            <span className="inline-flex items-center gap-1.5 rounded-full border bg-card px-4 py-1.5">
-              <Sparkles className="size-3.5 text-primary" />
-              {t("pricing_page.trial_badge")}
-            </span>
-          </div>
+          <p className="mt-6 text-sm font-semibold text-[#33507a]">{t("pricing_page.trial_badge")}</p>
         </Container>
       </Section>
 
       {/* Descuento por módulos */}
       <Section compact>
         <Container size="wide">
-          <div className="mx-auto max-w-3xl rounded-2xl border bg-muted/30 p-6">
-            <h3 className="mb-3 text-center text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+          <div className="rounded-[12px] border border-[#c9dde8] bg-[#f7fbfd] p-6">
+            <h3 className="mb-4 text-sm font-bold text-[#0077b6]">
               {t("pricing_page.bundle.title")}
             </h3>
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-wrap items-center gap-3">
               {curveKeys.map((n) => {
                 const active = count === n || (n === maxKey && count >= n);
                 return (
                   <div
                     key={n}
-                    className={`rounded-xl border bg-card px-4 py-3 text-center ${
-                      active ? "border-primary shadow-[var(--shadow-glow)]" : ""
+                    className={`min-w-[140px] rounded-[10px] border bg-white px-4 py-3 ${
+                      active ? "border-[#0077b6]" : "border-[#dbeaf2]"
                     }`}
                   >
-                    <p className="font-heading text-lg font-semibold">{bundleLabel(n)}</p>
-                    <p className="text-2xl font-bold text-primary">{curve[String(n)] ?? 0}%</p>
-                    <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                    <p className="text-sm font-bold text-[#03045e]">{bundleLabel(n)}</p>
+                    <p className="text-2xl font-extrabold text-[#03045e]">{curve[String(n)] ?? 0}%</p>
+                    <p className="text-xs font-semibold text-[#5b7390]">
                       {t("pricing_page.bundle.off")}
                     </p>
                   </div>
@@ -152,31 +147,31 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
                   type="button"
                   aria-pressed={isSelected || Boolean(includedBy)}
                   onClick={() => toggle(app.slug)}
-                  className={`group relative flex flex-col overflow-hidden rounded-2xl border p-6 text-left transition-all ${
+                  className={`group relative flex flex-col overflow-hidden rounded-[12px] border p-6 text-left transition-colors ${
                     isSelected || includedBy
-                      ? "border-primary/60 bg-primary/5 shadow-[var(--shadow-glow)]"
-                      : "bg-card hover:border-primary/40"
+                      ? "border-[#0077b6] bg-[#f7fbfd]"
+                      : "border-[#c9dde8] bg-white hover:border-[#0077b6]"
                   }`}
                 >
                   {app.status === "beta" && (
-                    <span className="absolute right-4 top-4 rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-semibold uppercase text-amber-800 dark:bg-amber-500/15 dark:text-amber-300">
+                    <span className="absolute right-4 top-4 rounded-full bg-[#ffedd5] px-2.5 py-1 text-xs font-bold text-[#9a3412]">
                       Beta
                     </span>
                   )}
                   <div
-                    className={`mb-3 inline-flex size-11 items-center justify-center rounded-xl transition-transform group-hover:scale-110 ${
-                      isSelected || includedBy ? "bg-primary text-white" : "bg-primary/10 text-primary"
+                    className={`mb-3 inline-flex size-7 items-center justify-center rounded-md border ${
+                      isSelected || includedBy ? "border-[#0077b6] bg-[#0077b6] text-white" : "border-[#c9dde8] bg-white text-transparent"
                     }`}
                   >
-                    <Check className="size-5" />
+                    <Check className="size-4" strokeWidth={3} />
                   </div>
-                  <h3 className="font-heading text-lg font-semibold tracking-tight">{name}</h3>
-                  <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+                  <h3 className="text-[20px] font-extrabold tracking-[-0.02em] text-[#03045e]">{name}</h3>
+                  <p className="text-xs font-bold text-[#5b7390]">
                     {app.name}
                   </p>
                   {pitch && <p className="mt-2 text-sm text-muted-foreground">{pitch}</p>}
                   {bundledNames.length > 0 && (
-                    <p className="mt-2 text-xs text-emerald-700 dark:text-emerald-400">
+                    <p className="mt-2 text-xs font-semibold text-[#166534]">
                       + {bundledNames.join(", ")} · {t("svc.status.included").toLowerCase()}
                     </p>
                   )}
@@ -184,7 +179,7 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
                     {includedBy ? (
                       <>
                         <div className="flex items-baseline gap-2">
-                          <span className="font-heading text-3xl font-semibold tracking-tight">$0</span>
+                          <span className="text-3xl font-extrabold tracking-[-0.02em] text-[#03045e]">$0</span>
                           <span className="text-xs text-muted-foreground">{t("pricing_page.per_month")}</span>
                         </div>
                         <p className="mt-1 text-xs text-emerald-700 dark:text-emerald-400">
@@ -195,7 +190,7 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
                     ) : (
                       <>
                         <div className="flex items-baseline gap-2">
-                          <span className="font-heading text-3xl font-semibold tracking-tight">
+                          <span className="text-3xl font-extrabold tracking-[-0.02em] text-[#03045e]">
                             {formatCLP(net)}
                           </span>
                           <span className="text-xs text-muted-foreground">{t("pricing_page.per_month")}</span>
@@ -214,22 +209,22 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
             })}
           </div>
 
-          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-muted-foreground">
+          <p className="mt-6 max-w-2xl text-xs text-[#5b7390]">
             {t("pricing_page.currency_note")}
             {!live && <> {t("pricing_page.reference_note")}</>}
           </p>
-          <p className="mx-auto mt-4 max-w-2xl rounded-xl border bg-card px-4 py-3 text-center text-sm text-muted-foreground">
+          <p className="mt-4 max-w-2xl rounded-[10px] border border-dashed border-[#c9dde8] px-4 py-3 text-sm text-[#33507a]">
             {t("pricing_page.model_note")}
           </p>
 
           {/* Total */}
           {selected.size > 0 && (
-            <div className="sticky bottom-4 mx-auto mt-8 flex max-w-3xl flex-wrap items-center justify-between gap-4 rounded-2xl border bg-brand-gradient p-6 text-white shadow-[var(--shadow-glow-cyan)]">
+            <div className="sticky bottom-4 mt-8 flex flex-wrap items-center justify-between gap-4 rounded-[12px] bg-[#03045e] p-6 text-white shadow-window">
               <div>
-                <p className="text-xs uppercase tracking-widest opacity-80">
+                <p className="text-sm font-bold text-[#90e0ef]">
                   {t("pricing_page.selection", { n: selected.size })}
                 </p>
-                <p className="font-heading text-3xl font-semibold">
+                <p className="text-3xl font-extrabold">
                   {formatCLP(totalMonthly)}
                   <span className="ml-1 text-sm opacity-80">{t("pricing_page.per_month")}</span>
                 </p>
@@ -264,7 +259,7 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
       {/* CTA */}
       <Section className="border-t bg-muted/30">
         <Container size="narrow" className="text-center">
-          <h2 className="font-heading text-3xl font-semibold tracking-tight">
+          <h2 className="text-3xl font-extrabold tracking-[-0.02em] text-[#03045e]">
             {t("pricing_page.cta.title")}
           </h2>
           <div className="mt-6">

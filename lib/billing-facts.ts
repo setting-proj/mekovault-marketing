@@ -1,5 +1,5 @@
 /**
- * ¿Bloquear una cuenta deja de cobrarla? — hechos por plataforma.
+ * ¿Bloquear una cuenta deja de cobrarla? Hechos por plataforma.
  *
  * REGLA: aquí entra SOLO lo verificado en la documentación pública del proveedor
  * (investigación del 2026-09-20; detalle y enlaces en MEKOVAULT_EXPANSION_SAAS.md §3,
@@ -33,12 +33,6 @@ export const BILLING_FACTS: BillingFact[] = [
     blockStopsBilling: false,
     effect: "google",
     source: "https://knowledge.workspace.google.com/admin/users/suspend-a-user-temporarily",
-  },
-  {
-    platform: "Microsoft 365",
-    blockStopsBilling: false,
-    effect: "renewal",
-    source: "https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/remove-former-employee-step-6",
   },
   {
     platform: "Slack",

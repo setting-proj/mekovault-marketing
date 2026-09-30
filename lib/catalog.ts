@@ -37,7 +37,7 @@ export const FALLBACK_CATALOG: Catalog = {
       name: "Super Workspace",
       short_pitch: "Onboarding, cambios y offboarding desde un panel.",
       description:
-        "Onboarding, cambios y offboarding de usuarios en Google Workspace y Microsoft Entra desde un panel.",
+        "Onboarding, cambios y offboarding de usuarios en Google Workspace desde un panel.",
       category: "identity_provisioning",
       status: "ga",
       base_price_clp_monthly: 49900,

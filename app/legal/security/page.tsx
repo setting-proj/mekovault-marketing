@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Políticas de Seguridad — Mekovault",
+  title: "Políticas de Seguridad · Mekovault",
   description:
-    "Cómo Mekovault protege las credenciales de directorio, aísla tenants y audita cada uso del Service Account de Google Workspace y App Registration de Microsoft Entra.",
+    "Cómo Mekovault protege las credenciales de directorio, aísla tenants y audita cada uso del Service Account de Google Workspace.",
 };
 
 export default function SecurityPage() {
@@ -16,17 +16,17 @@ export default function SecurityPage() {
       </p>
 
       <p>
-        Mekovault gestiona el ciclo de vida de identidades en Google Workspace,
-        Microsoft Entra y otros directorios corporativos. Para funcionar,
-        recibe credenciales muy sensibles (Service Accounts, App Registrations
-        con permisos de administración global). Este documento describe cómo
+        Mekovault gestiona el ciclo de vida de identidades en Google Workspace
+        y en otras plataformas que se conecten en el futuro. Para funcionar,
+        recibe credenciales muy sensibles (Service Accounts con permisos de
+        administración). Este documento describe cómo
         las almacenamos, cómo las usamos, y cómo el Cliente puede auditar cada
         uso.
       </p>
 
       <p>
         Está redactado como referencia para equipos de seguridad, auditores y
-        compradores enterprise. Complementa —no reemplaza— la{" "}
+        compradores enterprise. Complementa, no reemplaza, la{" "}
         <Link href="/legal/privacy">Política de Privacidad</Link>, los{" "}
         <Link href="/legal/terms">Términos</Link> y el{" "}
         <Link href="/legal/dpa">DPA</Link>.
@@ -44,12 +44,8 @@ export default function SecurityPage() {
           Domain-Wide Delegation.
         </li>
         <li>
-          <strong>Microsoft Entra ID (Azure AD):</strong> Client Secret y
-          Client/Tenant ID de una App Registration con Application permissions.
-        </li>
-        <li>
-          Cualquier otra credencial de integración con Okta, JumpCloud, HRIS o
-          IdP futuro que Mekovault soporte.
+          Cualquier otra credencial de integración con otras plataformas,
+          sistemas de personas o directorios que Mekovault soporte en el futuro.
         </li>
       </ul>
 
@@ -75,7 +71,7 @@ export default function SecurityPage() {
             Infisical
           </a>{" "}
           en red privada Tailscale, no expuesta a Internet público. Contiene
-          los valores reales (JSON completo del SA, secretos de la App).
+          los valores reales (por ejemplo, el JSON completo del Service Account).
         </li>
       </ul>
       <p>
@@ -109,7 +105,7 @@ export default function SecurityPage() {
         <li>
           <strong>En tránsito:</strong> TLS 1.2+ obligatorio en todas las
           conexiones (HTTPS del portal, PostgreSQL con SSL, canal Mekovault →
-          Infisical, canal Mekovault → Google/Microsoft). No aceptamos
+          Infisical, canal Mekovault → Google). No aceptamos
           conexiones no cifradas.
         </li>
         <li>
@@ -156,35 +152,35 @@ export default function SecurityPage() {
         Wizard de conexión y la reproducimos acá:
       </p>
 
-      <h4>Google Workspace — Domain-Wide Delegation</h4>
+      <h4>Google Workspace: Domain-Wide Delegation</h4>
       <ul>
         <li>
-          <code>admin.directory.user</code> — crear, suspender, reactivar,
+          <code>admin.directory.user</code>: crear, suspender, reactivar,
           modificar usuarios.
         </li>
         <li>
-          <code>admin.directory.user.security</code> — reset de contraseña y
+          <code>admin.directory.user.security</code>: reset de contraseña y
           cierre de sesiones activas (SSO revocation).
         </li>
         <li>
-          <code>admin.directory.orgunit</code> — mover usuarios entre OU
+          <code>admin.directory.orgunit</code>: mover usuarios entre OU
           durante onboarding/offboarding.
         </li>
         <li>
-          <code>admin.directory.group</code> — crear/eliminar grupos y listas
+          <code>admin.directory.group</code>: crear/eliminar grupos y listas
           de distribución.
         </li>
         <li>
-          <code>admin.directory.group.member</code> — agregar/quitar miembros
+          <code>admin.directory.group.member</code>: agregar/quitar miembros
           a grupos.
         </li>
         <li>
-          <code>admin.directory.domain.readonly</code> — solo lectura del
+          <code>admin.directory.domain.readonly</code>: solo lectura del
           listado de dominios (para validar que el SA opera sobre el dominio
           correcto).
         </li>
         <li>
-          <code>admin.directory.customer.readonly</code> — solo lectura de los
+          <code>admin.directory.customer.readonly</code>: solo lectura de los
           datos de la cuenta de cliente Google (para reportes agregados).
         </li>
       </ul>
@@ -194,34 +190,13 @@ export default function SecurityPage() {
         lee correos ni archivos.
       </p>
 
-      <h4>Microsoft Entra — Application permissions</h4>
-      <ul>
-        <li>
-          <code>User.ReadWrite.All</code> — lifecycle de usuarios.
-        </li>
-        <li>
-          <code>Group.ReadWrite.All</code> — creación y gestión de grupos.
-        </li>
-        <li>
-          <code>Directory.ReadWrite.All</code> — modificaciones estructurales
-          menores del directorio.
-        </li>
-        <li>
-          <code>AdministrativeUnit.Read.All</code> — solo lectura de unidades
-          administrativas para segmentación.
-        </li>
-        <li>
-          <code>User.RewritePassword.All</code> —{" "}
-          <strong>opcional</strong>, solo si el Cliente desea que Mekovault
-          resetee contraseñas desde el portal. Sin este permiso las demás
-          operaciones funcionan; el reset queda deshabilitado y los usuarios
-          usan el Self-Service Password Reset de Microsoft.
-        </li>
-      </ul>
+      <h4>Otras plataformas</h4>
       <p>
-        <strong>No solicitamos:</strong> permisos <em>Delegated</em>, acceso a
-        Exchange (Mail.*, Calendars.*), Teams messages, SharePoint content ni
-        políticas de Conditional Access.
+        Cuando se conecte una plataforma nueva, publicaremos en esta misma
+        sección la lista exacta de permisos que solicita antes de que esté
+        disponible para los Clientes. El criterio es el mismo: solo permisos
+        de administración de cuentas, nunca acceso al contenido de las
+        personas.
       </p>
 
       <h3>3.2 Nunca en logs, nunca fuera del proceso</h3>
@@ -293,8 +268,8 @@ export default function SecurityPage() {
         <code>UPDATE</code> y <code>DELETE</code>. Ni el equipo de Mekovault
         con acceso root puede modificar un registro individual. La única forma
         de purgar es el <em>retention worker</em> con reglas explícitas
-        publicadas —retención mínima de 24 meses, configurable por Cliente
-        hasta 84, o hasta la eliminación del tenant, lo que ocurra primero— que corre con <code>SECURITY DEFINER</code> y deja
+        publicadas (retención mínima de 24 meses, configurable por Cliente
+        hasta 84, o hasta la eliminación del tenant, lo que ocurra primero) que corre con <code>SECURITY DEFINER</code> y deja
         constancia del batch purgado.
       </p>
 
@@ -336,8 +311,8 @@ export default function SecurityPage() {
           clave SSH personal. No hay cuentas compartidas.
         </li>
         <li>
-          Ningún miembro del equipo de Mekovault necesita —ni tiene por
-          defecto— la capacidad de descifrar secretos individuales de un
+          Ningún miembro del equipo de Mekovault necesita, ni tiene por
+          defecto, la capacidad de descifrar secretos individuales de un
           Cliente para operar la plataforma.
         </li>
         <li>
@@ -407,31 +382,27 @@ export default function SecurityPage() {
       </p>
       <ul>
         <li>
-          <strong>SOC 2 Type II</strong> — controles CC6 (accesos), CC7
+          <strong>SOC 2 Type II</strong>: controles CC6 (accesos), CC7
           (monitoreo), CC8 (change management). Sin certificación planificada por ahora:
           usamos el marco como guía de controles, no como promesa de auditoría.
         </li>
         <li>
-          <strong>ISO/IEC 27001</strong> — controles A.5 (información), A.8
+          <strong>ISO/IEC 27001</strong>: controles A.5 (información), A.8
           (activos), A.9 (accesos), A.12 (operaciones), A.16 (incidentes).
         </li>
         <li>
-          <strong>GDPR / RGPD (UE 2016/679)</strong> — arts. 25 (privacy by
+          <strong>GDPR / RGPD (UE 2016/679)</strong>: arts. 25 (privacy by
           design), 30 (registro de actividades), 32 (seguridad del
           tratamiento), 33 (notificación).
         </li>
         <li>
-          <strong>Ley 21.719 (Chile)</strong> — arts. 12 (registro de
+          <strong>Ley 21.719 (Chile)</strong>: arts. 12 (registro de
           actividades), 33 (notificación de brechas), 34 (medidas de
           seguridad).
         </li>
         <li>
-          <strong>Google Workspace</strong> — condiciones de uso del{" "}
+          <strong>Google Workspace</strong>: condiciones de uso del{" "}
           <em>Admin SDK Directory API</em> y del programa de Marketplace.
-        </li>
-        <li>
-          <strong>Microsoft Entra</strong> — condiciones del{" "}
-          <em>Microsoft Graph API</em> y del <em>Trust Center</em>.
         </li>
       </ul>
 
@@ -445,7 +416,7 @@ export default function SecurityPage() {
           Copia de nuestro <em>DPA</em> firmable (Data Processing Agreement).
         </li>
         <li>
-          Cuestionario de seguridad (CAIQ, VSA, SIG Lite) —lo respondemos en
+          Cuestionario de seguridad (CAIQ, VSA, SIG Lite): lo respondemos en
           ≤ 5 días hábiles.
         </li>
         <li>

@@ -7,69 +7,26 @@
 import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
-  "meta.description":
-    "Crea, bloquea y da de baja las cuentas de tu equipo en Google Workspace, Microsoft 365 y las demás plataformas que pagas por persona, desde un solo lugar. Y controla lo que pagas en licencias. Gratis 90 días.",
 
   // Hero
-  "hero.title.line1": "Un colaborador deja la empresa.",
-  "hero.title.line2": "Sus cuentas siguen abiertas. Y se siguen pagando.",
-  "hero.subtitle":
-    "Mekovault administra las cuentas de tu gente en las plataformas que pagas por persona: correo, chat, proyectos, ventas, soporte. Cada ingreso y cada salida se resuelve desde un solo lugar, con aprobación y registro. Y pronto, con Control de licencias, verás qué estás pagando de más y cómo dejar de pagarlo.",
-  "hero.trust.2": "No necesitas un área de sistemas",
 
-  "mock.step_1": "Aviso de RR. HH. recibido",
-  "mock.step_3": "Correo redirigido a su jefe",
 
   // Problem
-  "problem.title": "Sin un proceso de altas y bajas, el dinero se va solo",
-  "problem.subtitle":
-    "En una empresa de 50 a 500 colaboradores entra y sale gente todo el año. Cada cuenta que nadie cierra sigue costando entre 7 y 25 dólares al mes. Nadie se da cuenta porque la factura llega igual.",
-  "problem.c1.title": "Entre 500 y 1,000 dólares al mes",
-  "problem.c1.desc":
-    "Es lo que suele irse en licencias de colaboradores que ya no están. Son entre 9 y 18 mil pesos cada mes, más de 100 mil pesos al año, en cuentas que nadie usa.",
-  "problem.c2.title": "Nadie es dueño del proceso",
-  "problem.c2.desc":
-    "RR. HH. avisa por correo, alguien de administración crea la cuenta cuando puede, y la baja depende de que alguien se acuerde. Sin un responsable, la cuenta queda abierta.",
-  "problem.c3.desc":
-    "Un colaborador que ya no trabaja contigo sigue entrando a su correo, a los archivos y al calendario. Es un gasto, y también un riesgo que preferirías no tener.",
 
   // Calculator
   "calc.people": "Colaboradores en la empresa",
   "calc.turnover.hint": "Porcentaje de colaboradores que sale en un año. En México suele estar entre 15 % y 35 %.",
-  "calc.cost.hint": "Google Workspace o Microsoft 365 cuestan entre 7 y 25 dólares por colaborador al mes.",
   "calc.leavers": "{n} colaboradores salen al año",
   "calc.assumption":
     "Asumimos que una cuenta olvidada se sigue pagando 6 meses en promedio antes de que alguien la dé de baja. Es una estimación conservadora.",
 
   // Benefits
-  "benefits.subtitle":
-    "Pensado para empresas sin un administrador de cuentas. Lo usa la persona de administración, de RR. HH. o el mismo director.",
-  "benefits.b1.title": "Nadie queda con accesos después de irse",
-  "benefits.b1.desc":
-    "Cuando una persona sale, sus cuentas se bloquean en las plataformas conectadas y su correo pasa a su jefe directo, el mismo día y sin depender de que alguien se acuerde. Donde una plataforma no permite hacerlo automático, Mekovault le asigna la tarea a su responsable y guarda la evidencia.",
-  "benefits.flow.1": "Sale un colaborador",
-  "benefits.b2.desc":
-    "El colaborador nuevo llega el lunes y su correo ya funciona. Con su firma, sus grupos y sus accesos según el puesto.",
-  "benefits.b3.desc":
-    "Un jefe pide una cuenta o un acceso. Quien corresponde aprueba con un clic. Nadie crea cuentas por su cuenta.",
-  "benefits.b6.desc":
-    "Un formulario para pedir, un botón para aprobar. Si tu equipo usa correo, sabe usar Mekovault.",
 
   // How
-  "how.step2.desc": "Por ejemplo: RR. HH. pide, el director de área aprueba. Lo cambias cuando quieras.",
-  "how.step3.title": "Cada alta o baja es una solicitud",
 
   // Compare
-  "compare.title": "La misma baja de un colaborador, de dos formas",
-  "compare.subtitle":
-    "Siete cosas que hay que hacer cuando un colaborador deja la empresa. Mueve el control y mira cuál se parece a tu empresa hoy.",
-  "compare.r1.step": "RR. HH. avisa la baja",
-  "compare.r2.meko": "Un clic del jefe",
-  "compare.r4.step": "El correo pasa al jefe",
 
   // Founder
-  "founder.quote":
-    "La empresa que originó Mekovault tenía cerca de 200 cuentas de Google y las manejaba con un formulario y una hoja de cálculo. Cada alta tomaba media tarde. Cada baja olvidaba algo, y ese algo se seguía pagando. No inventamos un producto: ordenamos ese problema.",
 
   // Services
   "svc.workspace.b1": "Altas listas el primer día",
@@ -99,19 +56,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
     "Se bloquea el acceso en las plataformas conectadas, el correo pasa a su jefe directo y se quitan los grupos. Todo el mismo día, con registro.",
   "products.cap.3.desc":
     "Un jefe pide una cuenta nueva, un alias o un cambio de puesto. Se aprueba con un clic y se ejecuta solo.",
-  "workflow.eyebrow": "Una baja de principio a fin",
-  "workflow.subtitle":
-    "Así se resuelve la salida de una persona desde que Recursos Humanos avisa hasta que todo queda registrado. Haz clic en cada paso.",
-  "wf.s1.actor": "RR. HH.",
-  "wf.s1.action": "Avisa la baja",
-  "wf.s1.detail":
-    "La persona de RR. HH. indica quién sale y en qué fecha. Puede ser hoy o dentro de dos semanas: Mekovault espera a la fecha indicada.",
-  "wf.s2.actor": "Jefe",
-  "wf.s2.action": "Aprueba con un clic",
-  "wf.s2.detail":
-    "El jefe del área recibe un correo y aprueba. Ahí mismo decide a quién redirigir el correo del colaborador que sale.",
-  "wf.s3.detail":
-    "El día de la baja, la cuenta queda bloqueada. El colaborador ya no puede entrar a su correo, a los archivos ni al calendario, desde ningún dispositivo.",
+  "workflow.eyebrow": "Una solicitud de principio a fin",
   "wf.s4.action": "Redirige el correo y los archivos",
   "wf.s4.detail":
     "Los correos que lleguen se reenvían al jefe y los archivos quedan disponibles para quien se definió. No se pierde nada de la empresa.",
@@ -121,10 +66,8 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "calc.subtitle":
     "Tres datos y una estimación honesta. Ajusta los valores a tu empresa.",
   "calc.cta": "Deja de pagar esto: empieza gratis",
-  "calc.compare": "Mekovault cierra esa fuga: bloquea las cuentas el mismo día y pronto, con Control de licencias, te mostrará qué licencias liberar y reducir.",
 
   // Pricing (home)
-  "pricing.title": "Menos de lo que se te está yendo",
   "pricing.subtitle":
     "Desde {price} al mes por empresa. Gratis los primeros 90 días, sin tarjeta.",
 
@@ -135,7 +78,6 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "cta.signup": "Empieza gratis 90 días",
 
   // Vocabulario: planilla → hoja de cálculo, plata → dinero
-  "compare.r7.manual": "En una hoja de cálculo, a veces",
   "about.title.hl": "pierden dinero",
   "timeline.m1.detail":
     "Una empresa con 200 cuentas de Google las manejaba con un formulario, una hoja de cálculo y mucha paciencia. Las altas tomaban horas. Las bajas dejaban cuentas abiertas que se descubrían meses después, en la factura.",

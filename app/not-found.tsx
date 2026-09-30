@@ -13,7 +13,7 @@ export default function NotFound() {
       <p className="font-mono text-xs uppercase tracking-widest text-primary">
         404
       </p>
-      <h1 className="mt-4 font-heading text-4xl font-semibold tracking-tight">
+      <h1 className="mt-4 text-4xl font-extrabold tracking-[-0.02em] text-[#03045e]">
         {t("notfound.title")}
       </h1>
       <p className="mt-3 max-w-md text-muted-foreground">{t("notfound.desc")}</p>

@@ -7,97 +7,38 @@
 import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
-  "meta.title": "Mekovault · Las cuentas de tu gente, en todas tus plataformas",
-  "meta.description":
-    "Creá, bloqueá y dá de baja las cuentas de tu equipo en Google Workspace, Microsoft 365 y las demás plataformas que pagás por persona, desde un solo lugar. Y controlá lo que pagás en licencias. Gratis 90 días.",
 
   "nav.signup": "Empezá gratis",
 
   // Hero
-  "hero.eyebrow": "Gratis 90 días · sin tarjeta · sin TI",
-  "hero.title.line1": "Alguien se va de la empresa.",
-  "hero.title.line2": "Sus cuentas siguen abiertas. Y se siguen pagando.",
-  "hero.subtitle":
-    "Mekovault administra las cuentas de tu gente en las plataformas que pagás por persona: correo, chat, proyectos, ventas, soporte. Cada ingreso y cada salida se resuelve desde un solo lugar, con aprobación y registro. Y pronto, con Control de licencias, vas a ver qué estás pagando de más y cómo dejar de pagarlo.",
   "hero.cta.signup": "Empezá gratis 90 días",
-  "hero.cta.calc": "Calculá cuánto se te está yendo",
   "hero.trust.1": "Sin tarjeta para arrancar",
-  "hero.trust.2": "No necesitás TI",
   "hero.trust.3": "Cancelás cuando quieras",
 
-  "mock.step_1": "Aviso de RR. HH. recibido",
-  "mock.step_3": "Correo derivado a su jefe",
 
-  "integrations.title": "Las plataformas que tu empresa paga por persona",
 
   // Problem
-  "problem.title": "Sin un proceso de altas y bajas, la plata se va sola",
-  "problem.subtitle":
-    "En una empresa de 50 a 500 personas entra y sale gente todo el año. Cada cuenta que nadie cierra sigue costando entre 7 y 25 dólares por mes. Nadie se da cuenta porque la factura llega igual.",
-  "problem.c1.title": "Entre 500 y 1.000 dólares por mes",
-  "problem.c1.desc":
-    "Es lo que suele irse en licencias de gente que ya no está. Al año son entre 6.000 y 12.000 dólares en cuentas que nadie usa. Más que un aguinaldo.",
-  "problem.c2.title": "Nadie es dueño del proceso",
-  "problem.c2.desc":
-    "RR. HH. avisa por mail, alguien de administración crea la cuenta cuando puede, y la baja depende de que alguien se acuerde. Sin un responsable, la cuenta queda abierta.",
-  "problem.c3.title": "Accesos abiertos después de la salida",
-  "problem.c3.desc":
-    "Una persona que ya no trabaja con vos sigue entrando a su mail, a los archivos y al calendario. Es un gasto, y también un riesgo que preferirías no tener.",
 
   // Calculator
   "calc.title": "¿Cuánto se te está yendo?",
   "calc.subtitle": "Tres datos y una estimación honesta. Ajustá los valores a tu empresa.",
   "calc.turnover.hint": "Porcentaje de personas que se va en un año. En Argentina suele estar entre 15 % y 30 %.",
   "calc.cost": "Costo por licencia por mes (USD)",
-  "calc.cost.hint": "Google Workspace o Microsoft 365 cuestan entre 7 y 25 dólares por persona por mes.",
   "calc.leavers": "{n} personas se van por año",
   "calc.result.monthly": "≈ {v} por mes que estás pagando de más",
   "calc.assumption":
     "Asumimos que una cuenta olvidada se sigue pagando 6 meses en promedio antes de que alguien la cierre. Es una estimación conservadora.",
   "calc.cta": "Dejá de pagar esto: empezá gratis",
-  "calc.compare": "Mekovault cierra esa fuga: bloquea las cuentas el mismo día y pronto, con Control de licencias, te va a mostrar qué licencias liberar y reducir.",
 
   // Benefits
-  "benefits.subtitle":
-    "Pensado para empresas sin un administrador de cuentas. Lo usa la persona de administración, de RR. HH. o el mismo gerente.",
-  "benefits.b1.desc":
-    "Cuando una persona sale, sus cuentas se bloquean en las plataformas conectadas y su correo pasa a su jefatura, el mismo día y sin depender de que alguien se acuerde. Donde una plataforma no permite hacerlo automático, Mekovault le asigna la tarea a su responsable y guarda la evidencia.",
-  "benefits.b2.desc":
-    "La persona nueva llega el lunes y su mail ya funciona. Con su firma, sus grupos y sus accesos según el puesto.",
-  "benefits.b3.desc":
-    "Un jefe pide una cuenta o un acceso. Quien corresponde aprueba con un click. Nadie crea cuentas por su cuenta.",
-  "benefits.b5.desc":
-    "Hoy funciona con Google Workspace y Microsoft 365. Estamos sumando las plataformas que más usan las empresas: chat, proyectos, ventas, soporte y código. Sin cambiar nada de lo que ya tenés.",
-  "benefits.b6.desc":
-    "Un formulario para pedir, un botón para aprobar. Si tu equipo usa mail, sabe usar Mekovault.",
 
   // How
-  "how.step1.title": "Conectá tus plataformas",
-  "how.step1.desc": "Arrancá con Google Workspace o Microsoft 365: diez minutos con una guía paso a paso. Las demás se suman desde el mismo panel. Si te trabás, te ayudamos por videollamada.",
-  "how.step2.title": "Definí quién pide y quién aprueba",
-  "how.step2.desc": "Por ejemplo: RR. HH. pide, el gerente de área aprueba. Lo cambiás cuando quieras.",
-  "how.step3.desc":
-    "Se llena un formulario simple. Mekovault crea, bloquea o modifica la cuenta y avisa a quien corresponde.",
-  "how.step4.title": "Ves quién tiene qué, y cuánto cuesta",
-  "how.step4.desc":
-    "Un panel con las cuentas de cada persona en cada plataforma, las salidas resueltas y pronto, con Control de licencias, las licencias que podés dejar de pagar.",
 
   // Compare
-  "compare.subtitle":
-    "Siete cosas que hay que hacer cuando alguien deja la empresa. Mové el control y fijate cuál se parece a tu empresa hoy.",
-  "compare.r1.step": "RR. HH. avisa la salida",
-  "compare.r1.manual": "Un mail que alguien tiene que leer",
-  "compare.r2.manual": "Se busca la autorización en el mail",
-  "compare.r2.meko": "Un click del jefe",
-  "compare.r4.step": "El mail pasa al jefe",
 
   // Founder
-  "founder.quote":
-    "La empresa que originó Mekovault tenía cerca de 200 cuentas de Google y las manejaba con un formulario y una planilla. Cada ingreso llevaba media tarde. Cada salida se olvidaba de algo, y ese algo se seguía pagando. No inventamos un producto: ordenamos ese problema.",
 
   // Services
-  "services.title": "Arrancá con la gestión de cuentas. Sumá el resto cuando lo necesites.",
-  "services.subtitle": "Cada módulo se contrata por separado y se activa desde tu panel. Sin contratos largos.",
   "svc.workspace.b3": "Panel con las cuentas de cada persona",
   "svc.tickets.desc":
     "Un formulario para pedir cuentas o accesos y un flujo de aprobación. Ideal si varios jefes piden cosas.",
@@ -107,7 +48,6 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "svc.audit.b2": "Descargá el historial en Excel",
 
   // Pricing preview
-  "pricing.title": "Menos de lo que se te está yendo",
   "pricing.subtitle": "Desde {price} por mes por empresa. Gratis los primeros 90 días, sin tarjeta.",
 
   // FAQ
@@ -120,9 +60,6 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "faq.leave.q": "¿Qué pasa con mis cuentas si dejo de usar Mekovault?",
   "faq.leave.a":
     "Nada. Las cuentas siguen viviendo en tus plataformas, como siempre. Si te vas mañana, todo queda tal cual y te llevás el historial en Excel.",
-  "faq.ms.q": "Mi empresa usa Microsoft 365, no Google. ¿Sirve igual?",
-  "faq.setup.a":
-    "Diez minutos para conectar tu Google Workspace o Microsoft 365 con la guía. La primera solicitud la hacés ese mismo día. No hay proyecto de implementación ni consultora.",
   "faq.support.q": "¿El soporte es en español y en horario de Argentina?",
   "faq.support.a":
     "Sí. El equipo está en Santiago de Chile, misma zona horaria que Buenos Aires, y responde en español en horario hábil. También atendemos en portugués e inglés.",
@@ -133,36 +70,19 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "cta.signup": "Empezá gratis 90 días",
 
   // Footer / misc
-  "footer.tagline":
-    "Las cuentas de tu gente en todas tus plataformas, desde un solo lugar, y control de lo que pagas en licencias. Para empresas que no tienen un administrador de cuentas.",
   "notfound.desc": "La dirección que buscás no existe o la movimos.",
 
   // Products
-  "products.subtitle":
-    "Mekovault administra las cuentas de tu equipo en las plataformas que pagás por persona: quién entra, quién sale, quién pide qué y cuánto cuesta. Hoy con Google Workspace y Microsoft 365; las demás, en camino.",
   "products.cap.1.desc":
     "La persona nueva tiene mail, grupos y accesos desde el primer día. RR. HH. llena un formulario y listo.",
   "products.cap.2.desc":
     "Se bloquea el acceso en las plataformas conectadas, el correo pasa a la jefatura y se quitan los grupos. Todo el mismo día, con registro.",
   "products.cap.3.desc":
     "Un jefe pide una cuenta nueva, un alias o un cambio de puesto. Se aprueba con un click y se ejecuta solo.",
-  "workflow.subtitle":
-    "Así se resuelve la salida de una persona desde que RR. HH. avisa hasta que todo queda registrado. Hacé click en cada paso.",
-  "wf.s1.actor": "RR. HH.",
-  "wf.s1.detail":
-    "La persona de RR. HH. indica quién se va y en qué fecha. Puede ser hoy o dentro de dos semanas: Mekovault espera a la fecha indicada.",
-  "wf.s2.actor": "Jefe",
-  "wf.s2.service": "Aviso por mail",
-  "wf.s2.detail":
-    "El jefe del área recibe un mail y aprueba. Ahí mismo decide a quién derivar el mail de la persona que se va.",
-  "wf.s3.detail":
-    "El día de la salida, la cuenta queda bloqueada. La persona ya no puede entrar a su mail, a los archivos ni al calendario, desde ningún dispositivo.",
   "wf.s4.action": "Deriva el mail y los archivos",
   "wf.s4.detail":
     "Los mails que lleguen se reenvían al jefe y los archivos quedan disponibles para quien se definió. No se pierde nada de la empresa.",
   "products.cta.title": "¿Querés verlo con las cuentas de tu empresa?",
-  "products.cta.subtitle":
-    "Creá tu cuenta y conectá Google Workspace o Microsoft 365 con la guía. Gratis 90 días.",
   "products.cta.signup": "Empezá gratis 90 días",
 
   // Pricing page

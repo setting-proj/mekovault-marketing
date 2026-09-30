@@ -51,7 +51,7 @@ export function WorkflowDiagram() {
       onMouseEnter={() => setAutoplay(false)}
     >
       <div className="relative">
-        <div aria-hidden className="absolute left-4 top-2 bottom-2 w-px bg-border" />
+        <div aria-hidden className="absolute left-4 top-2 bottom-2 w-px bg-[#dbeaf2]" />
         <ol className="relative space-y-1">
           {steps.map((s, i) => {
             const active = selected === i;
@@ -66,39 +66,35 @@ export function WorkflowDiagram() {
                   }}
                   className={cn(
                     "group flex w-full items-start gap-3 rounded-lg px-2 py-2 text-left transition-colors",
-                    active ? "bg-primary/5" : "hover:bg-muted/50",
+                    active ? "bg-[#f2f8fb]" : "hover:bg-[#f7fbfd]",
                   )}
                 >
                   <span
                     className={cn(
-                      "relative mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border-2 bg-background transition-all",
-                      active
-                        ? "border-primary shadow-[0_0_0_4px_var(--accent-muted)]"
-                        : past
-                          ? "border-primary/60"
-                          : "border-border",
+                      "relative mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border-2 bg-white transition-all",
+                      active ? "border-[#0077b6]" : past ? "border-[#0077b6]/60" : "border-[#c9dde8]",
                     )}
                   >
                     <span
                       className={cn(
                         "size-1.5 rounded-full",
-                        active ? "bg-primary" : past ? "bg-primary/60" : "bg-transparent",
+                        active ? "bg-[#0077b6]" : past ? "bg-[#0077b6]/60" : "bg-transparent",
                       )}
                     />
                   </span>
                   <div className="min-w-0 flex-1">
                     <div
                       className={cn(
-                        "font-mono text-[10px] uppercase tracking-widest",
-                        active ? "text-primary" : "text-muted-foreground",
+                        "text-xs font-bold",
+                        active ? "text-[#0077b6]" : "text-[#5b7390]",
                       )}
                     >
                       {s.actor}
                     </div>
                     <div
                       className={cn(
-                        "text-sm",
-                        active ? "font-medium text-foreground" : "text-muted-foreground",
+                        "text-[15px]",
+                        active ? "font-bold text-[#03045e]" : "font-semibold text-[#33507a]",
                       )}
                     >
                       {s.action}
@@ -111,20 +107,17 @@ export function WorkflowDiagram() {
         </ol>
       </div>
 
-      <div className="glass relative overflow-hidden rounded-2xl p-6 sm:p-8">
-        <div aria-hidden className="pointer-events-none absolute inset-0 grid-dot opacity-20 [mask-image:radial-gradient(ellipse_at_bottom_right,black,transparent_60%)]" />
-        <div className="relative">
-          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <span className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-              {t("workflow.step_of", { n: selected + 1, total: STEP_IDS.length })}
-            </span>
-            <span className="font-mono text-xs text-primary/80">{current.service}</span>
-          </div>
-          <h3 className="mt-3 font-heading text-2xl tracking-tight">{current.action}</h3>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            {current.detail}
-          </p>
+      <div className="rounded-[12px] border border-[#c9dde8] bg-[#f7fbfd] p-6 sm:p-8">
+        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+          <span className="text-xs font-bold text-[#5b7390]">
+            {t("workflow.step_of", { n: selected + 1, total: STEP_IDS.length })}
+          </span>
+          <span className="text-xs font-bold text-[#0077b6]">{current.service}</span>
         </div>
+        <h3 className="mt-3 text-2xl font-extrabold tracking-[-0.02em] text-[#03045e]">{current.action}</h3>
+        <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-[#33507a]">
+          {current.detail}
+        </p>
       </div>
     </div>
   );

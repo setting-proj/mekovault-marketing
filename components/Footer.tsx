@@ -46,22 +46,22 @@ export function Footer() {
   ];
 
   return (
-    <footer className="mt-24 border-t bg-card/40">
-      <div className="mx-auto max-w-6xl px-6 py-14">
+    <footer className="border-t border-[#dbeaf2] bg-[#f7fbfd]">
+      <div className="mx-auto max-w-[1280px] px-4 py-14 sm:px-6 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
             <Logo />
-            <p className="mt-4 text-sm text-muted-foreground">
+            <p className="mt-4 text-sm leading-relaxed text-[#33507a]">
               {t("footer.tagline")}
             </p>
-            <p className="mt-6 text-xs text-muted-foreground">
+            <p className="mt-6 text-xs leading-relaxed text-[#5b7390]">
               {t("footer.note")}
             </p>
           </div>
 
           {COLS.map((col) => (
             <div key={col.title}>
-              <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground">
+              <h4 className="text-[13px] font-extrabold text-[#03045e]">
                 {col.title}
               </h4>
               <ul className="mt-4 space-y-2 text-sm">
@@ -69,7 +69,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-muted-foreground transition-colors hover:text-foreground"
+                      className="font-semibold text-[#33507a] transition-colors hover:text-[#03045e]"
                     >
                       {link.label}
                     </Link>
@@ -80,13 +80,13 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 border-t pt-6">
+        <div className="mt-10 border-t border-[#dbeaf2] pt-6">
           <ComplianceBadges />
         </div>
 
-        <div className="mt-8 flex flex-col items-start justify-between gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
+        <div className="mt-8 flex flex-col items-start justify-between gap-3 text-xs font-semibold text-[#5b7390] sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {t("footer.copyright")}</p>
-          <p className="font-mono">mekovault.com</p>
+          <p>mekovault.com</p>
         </div>
       </div>
     </footer>

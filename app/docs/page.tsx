@@ -13,7 +13,7 @@ export default function DocsIndex() {
       <ul>
         <li>
           <Link href="/docs/getting-started">Primeros pasos</Link>: crear la organización, conectar
-          Google Workspace o Microsoft 365 y dar acceso al equipo.
+          Google Workspace y dar acceso al equipo.
         </li>
         <li>
           <Link href="/docs/admin-guide">Guía del administrador</Link>: personas y roles, productos,

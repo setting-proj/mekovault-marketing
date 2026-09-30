@@ -11,7 +11,7 @@ export default function GettingStarted() {
 
       <h2>1. Crea tu organización</h2>
       <ol>
-        <li>Entra en <code>app.mekovault.com</code> con tu cuenta de Google o Microsoft de la empresa.</li>
+        <li>Entra en <code>app.mekovault.com</code> con tu cuenta de Google de la empresa.</li>
         <li>
           El asistente crea la organización con el dominio de tu correo. Si tu dominio ya pertenece
           a una organización, no se crea otra: pide acceso a tu administrador.
@@ -19,7 +19,7 @@ export default function GettingStarted() {
         <li>Quien crea la organización queda como <strong>Administrador</strong>.</li>
       </ol>
 
-      <h2>2. Conecta Google Workspace o Microsoft 365</h2>
+      <h2>2. Conecta Google Workspace</h2>
       <p>
         Mekovault necesita una credencial delegada para leer el directorio y crear, bloquear o
         reactivar cuentas. El asistente muestra paso a paso qué copiar en la consola de

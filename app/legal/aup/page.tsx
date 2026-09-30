@@ -27,7 +27,7 @@ export default function AUPPage() {
           sistema de emails.
         </li>
         <li>
-          Utilizar los conectores (Google Workspace / Microsoft Entra) para
+          Utilizar los conectores (Google Workspace u otras plataformas) para
           exfiltrar información sin justificación operativa.
         </li>
         <li>

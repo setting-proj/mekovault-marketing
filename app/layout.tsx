@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,25 +8,11 @@ import { detectLocaleServer } from "@/lib/i18n/detectLocale.server";
 import { dictionaries, htmlLang } from "@/lib/i18n/dictionaries";
 import "./globals.css";
 
-// Type trio:
-//   Display: Space Grotesk · Body: Inter · Mono: JetBrains Mono.
-const inter = Inter({
-  variable: "--font-inter",
+// Una sola tipografía para todo el sitio (dirección A: el panel es el sitio).
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -56,7 +42,6 @@ export async function generateMetadata(): Promise<Metadata> {
     applicationName: "Mekovault",
     keywords: [
       "Google Workspace",
-      "Microsoft 365",
       "cuentas de correo",
       "licencias",
       "control de licencias",
@@ -88,10 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f7fbfd" },
-    { media: "(prefers-color-scheme: dark)", color: "#010226" },
-  ],
+  themeColor: "#ffffff",
 };
 
 export default async function RootLayout({
@@ -102,13 +84,11 @@ export default async function RootLayout({
   const locale = await detectLocaleServer();
 
   return (
-    <html lang={htmlLang(locale)} suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased min-h-screen bg-background text-foreground`}
-      >
+    <html lang={htmlLang(locale)} className={manrope.variable} suppressHydrationWarning>
+      <body className="antialiased min-h-screen bg-background text-foreground">
         <I18nProvider initialLocale={locale}>
           <Header />
-          <div className="pt-16">{children}</div>
+          <div className="pt-[72px]">{children}</div>
           <Footer />
         </I18nProvider>
       </body>

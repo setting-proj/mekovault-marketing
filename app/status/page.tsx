@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * /status — estado de la plataforma (fila 16 de pendientes).
+ * /status: estado de la plataforma (fila 16 de pendientes).
  *
  * Página propia, sin proveedor externo: consulta desde el navegador los
  * healthz públicos de la app y la API cada 60 s y muestra el estado. Si el
@@ -75,7 +75,7 @@ export default function StatusPage() {
     <main style={{ maxWidth: 760, margin: "0 auto", padding: "48px 20px" }}>
       <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Estado de Mekovault</h1>
       <p style={{ color: "#6b7280", marginBottom: 24 }}>
-        Comprobación en vivo desde tu navegador cada 60 segundos. Última: {results.app?.at ? new Date(results.app.at).toLocaleTimeString() : "—"}.
+        Comprobación en vivo desde tu navegador cada 60 segundos. Última: {results.app?.at ? new Date(results.app.at).toLocaleTimeString() : "sin datos"}.
       </p>
       <div
         style={{
@@ -98,7 +98,7 @@ export default function StatusPage() {
               <div>
                 <div style={{ fontWeight: 600 }}>{t.label}</div>
                 <div style={{ fontSize: 12, color: "#6b7280" }}>
-                  {r.ms !== null ? `${r.ms} ms` : "—"}
+                  {r.ms !== null ? `${r.ms} ms` : "sin dato"}
                   {r.code ? ` · HTTP ${r.code}` : ""}
                 </div>
                 <div style={{ display: "flex", gap: 2, marginTop: 6 }}>

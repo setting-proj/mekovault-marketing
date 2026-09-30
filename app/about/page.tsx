@@ -56,7 +56,7 @@ export default function AboutPage() {
       <Section className="border-t bg-muted/30">
         <Container size="narrow">
           <div className="prose prose-neutral max-w-none dark:prose-invert">
-            <h2 className="font-heading text-3xl tracking-tight">
+            <h2 className="text-3xl font-extrabold tracking-[-0.02em] text-[#03045e]">
               {t("about.why.title")}
             </h2>
             <p className="mt-4 text-muted-foreground">{t("about.why.p1")}</p>
@@ -118,7 +118,7 @@ export default function AboutPage() {
 
       <Section className="border-t">
         <Container size="narrow" className="text-center">
-          <h2 className="font-heading text-3xl font-semibold tracking-tight">
+          <h2 className="text-3xl font-extrabold tracking-[-0.02em] text-[#03045e]">
             {t("about.cta.title")}
           </h2>
           <p className="mt-3 text-muted-foreground">{t("about.cta.desc")}</p>
@@ -152,10 +152,10 @@ function Pillar({
 }) {
   return (
     <div className="rounded-2xl border bg-card p-6">
-      <div className="mb-4 inline-flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary [&_svg]:size-5">
+      <div className="mb-4 inline-flex text-[#0077b6] [&_svg]:size-6">
         {icon}
       </div>
-      <h3 className="font-heading text-lg font-semibold tracking-tight">
+      <h3 className="text-lg font-extrabold tracking-[-0.02em] text-[#03045e]">
         {title}
       </h3>
       <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>

@@ -25,8 +25,8 @@ export default function TermsPage() {
       <h2>2. Descripción del servicio</h2>
       <p>
         Mekovault provee una plataforma multi-tenant en la nube que automatiza
-        el lifecycle de identidades en Google Workspace, Microsoft Entra y otros
-        directorios: altas, bajas, cambios, auditoría y notificaciones.
+        el lifecycle de identidades en Google Workspace y otras plataformas
+        conectadas: altas, bajas, cambios, auditoría y notificaciones.
       </p>
 
       <h2>3. Cuenta y responsabilidad</h2>

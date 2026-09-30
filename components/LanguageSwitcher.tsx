@@ -24,7 +24,7 @@ export function LanguageSwitcher() {
         aria-haspopup="listbox"
         aria-expanded={open}
         title={t("lang.switcher_label")}
-        className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-border bg-card px-2.5 text-xs font-medium transition-colors hover:bg-muted"
+        className="inline-flex h-9 items-center gap-1.5 rounded-md border border-[#dbeaf2] bg-white px-2.5 text-xs font-semibold text-[#1e3a5f] transition-colors hover:border-[#c9dde8]"
       >
         <Globe className="size-4 sm:hidden" />
         <span aria-hidden className="hidden sm:inline">{current.flag}</span>
@@ -40,7 +40,7 @@ export function LanguageSwitcher() {
           />
           <div
             role="listbox"
-            className="absolute right-0 top-full z-20 mt-1 w-56 overflow-hidden rounded-lg border bg-card shadow-lg"
+            className="absolute right-0 top-full z-20 mt-1 w-56 overflow-hidden rounded-lg border border-[#c9dde8] bg-white shadow-window"
           >
             {LOCALES.map((l) => {
               const label = LOCALE_LABELS[l];
@@ -56,7 +56,7 @@ export function LanguageSwitcher() {
                     setOpen(false);
                   }}
                   className={cn(
-                    "flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-muted",
+                    "flex w-full items-center gap-2 px-3 py-2 text-left text-sm font-semibold hover:bg-[#f7fbfd]",
                     isActive && "font-semibold text-primary",
                   )}
                 >

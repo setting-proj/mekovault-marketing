@@ -32,7 +32,7 @@ export default function DPAPage() {
         Este DPA regula el tratamiento de datos personales que Mekovault
         realiza <em>por cuenta y en nombre del Cliente</em> como consecuencia
         de la prestación de servicios (gestión de identidades corporativas
-        en Google Workspace, Microsoft Entra y otros directorios).
+        en Google Workspace y otras plataformas).
       </p>
 
       <h2>3. Categorías de datos tratados</h2>

@@ -63,7 +63,7 @@ export function Timeline({ milestones }: { milestones: Milestone[] }) {
                   )}
                 />
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-widest">
+              <span className="text-xs font-bold">
                 {m.date}
               </span>
             </button>
@@ -74,11 +74,11 @@ export function Timeline({ milestones }: { milestones: Milestone[] }) {
       {/* Detalle del hito seleccionado */}
       <div className="mt-8 rounded-2xl border bg-card p-6 sm:p-8">
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-          <h3 className="font-heading text-2xl tracking-tight text-brand-gradient">
+          <h3 className="text-2xl font-extrabold tracking-[-0.02em] text-[#0077b6]">
             {current.title}
           </h3>
           {current.metric && (
-            <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            <span className="text-xs font-bold text-[#5b7390]">
               {current.metric}
             </span>
           )}

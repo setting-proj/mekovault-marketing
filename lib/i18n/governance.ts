@@ -236,7 +236,7 @@ const es_CL: GovernanceContent = {
               ["`svc-notifications`", "Correo y notificaciones a usuarios"],
               [
                 "addons",
-                "Módulos conectores. Ejemplo: `super-workspace`, que opera sobre Google Workspace y Microsoft 365",
+                "Módulos conectores. Ejemplo: `super-workspace`, que opera sobre Google Workspace",
               ],
             ],
           },
@@ -259,7 +259,7 @@ const es_CL: GovernanceContent = {
       blocks: [
         {
           type: "p",
-          text: "Los usuarios de Mekovault (administradores de TI, aprobadores, resellers) se autentican con OAuth de Google o Microsoft, o con email y contraseña. La sesión está diseñada para que un token robado sirva poco tiempo y sea revocable.",
+          text: "Los usuarios de Mekovault (administradores de TI, aprobadores, resellers) se autentican con OAuth de Google o con email y contraseña. La sesión está diseñada para que un token robado sirva poco tiempo y sea revocable.",
         },
         {
           type: "table",
@@ -269,7 +269,7 @@ const es_CL: GovernanceContent = {
             rows: [
               [
                 "Métodos de acceso",
-                "OAuth con Google o Microsoft, o email y contraseña",
+                "OAuth con Google, o email y contraseña",
               ],
               [
                 "Token de acceso",
@@ -345,7 +345,7 @@ const es_CL: GovernanceContent = {
       blocks: [
         {
           type: "p",
-          text: "Para operar sobre su directorio, Mekovault recibe credenciales con permisos de administración: el JSON de una Service Account de Google con delegación a nivel de dominio, o los datos de una App Registration de Microsoft Entra ID (client id, tenant id y client secret). Son el activo más sensible que manejamos.",
+          text: "Para operar sobre su directorio, Mekovault recibe credenciales con permisos de administración: el JSON de una Service Account de Google con delegación a nivel de dominio. Son el activo más sensible que manejamos.",
         },
         {
           type: "ul",
@@ -358,7 +358,7 @@ const es_CL: GovernanceContent = {
         { type: "h3", text: "Registro inmutable de cada uso" },
         {
           type: "p",
-          text: "Cada llamada a Google o Microsoft con las credenciales del cliente deja una fila en la tabla `credential_usage_log`.",
+          text: "Cada llamada a Google con las credenciales del cliente deja una fila en la tabla `credential_usage_log`.",
         },
         {
           type: "table",
@@ -367,7 +367,7 @@ const es_CL: GovernanceContent = {
             head: ["Campo", "Contenido"],
             rows: [
               ["Tenant", "`company_id` del cliente dueño de la credencial"],
-              ["Proveedor", "Google Workspace o Microsoft Entra ID"],
+              ["Proveedor", "Google Workspace"],
               [
                 "Operación",
                 "Acción ejecutada, por ejemplo `create_user`, `suspend_user`, `add_group_member`",
@@ -451,31 +451,6 @@ const es_CL: GovernanceContent = {
         {
           type: "p",
           text: "Las llamadas se hacen con la Service Account impersonando al administrador delegado que el cliente designa al conectar el dominio. Ese administrador queda registrado en cada fila de `credential_usage_log`.",
-        },
-        {
-          type: "table",
-          table: {
-            caption: "Microsoft Entra ID (Microsoft Graph, permisos de aplicación)",
-            head: ["Permiso", "Para qué se usa"],
-            rows: [
-              [
-                "`User.ReadWrite.All`",
-                "Crear, actualizar, deshabilitar y eliminar usuarios; asignar contraseña inicial.",
-              ],
-              [
-                "`Group.ReadWrite.All`",
-                "Crear grupos y gestionar su membresía.",
-              ],
-              [
-                "`Directory.ReadWrite.All`",
-                "Operaciones de directorio que los dos permisos anteriores no cubren, por ejemplo lecturas de estructura necesarias para validar una alta.",
-              ],
-            ],
-          },
-        },
-        {
-          type: "p",
-          text: "En Microsoft se usa el flujo de client credentials: la aplicación actúa con sus propios permisos, sin sesión de un usuario. Los permisos son de tipo Application y requieren consentimiento de un administrador global del cliente al conectar.",
         },
       ],
     },
@@ -645,7 +620,7 @@ const es_CL: GovernanceContent = {
               ],
               [
                 "Expiración de secretos",
-                "Avisa a los administradores 30, 7 y 0 días antes de que caduque una credencial de proveedor (por ejemplo, un client secret de Entra ID).",
+                "Avisa a los administradores 30, 7 y 0 días antes de que caduque una credencial de proveedor.",
               ],
               [
                 "Purga del registro de uso",
@@ -735,7 +710,7 @@ const es_CL: GovernanceContent = {
       },
       {
         q: "¿Cómo pruebo que no usaron mis permisos para otra cosa?",
-        a: "Con `credential_usage_log`: cada llamada a Google o Microsoft con sus credenciales queda registrada con operación, scopes, quién la originó, motivo, resultado y latencia. La tabla no admite UPDATE ni DELETE. Puede exportarla en CSV o JSON firmado con HMAC-SHA256 y verificar la firma con el id de clave incluido.",
+        a: "Con `credential_usage_log`: cada llamada a Google con sus credenciales queda registrada con operación, scopes, quién la originó, motivo, resultado y latencia. La tabla no admite UPDATE ni DELETE. Puede exportarla en CSV o JSON firmado con HMAC-SHA256 y verificar la firma con el id de clave incluido.",
       },
       {
         q: "¿Un token de sesión robado sirve para algo?",
@@ -910,7 +885,7 @@ const en_US: GovernanceContent = {
               ["`svc-notifications`", "Email and user notifications"],
               [
                 "addons",
-                "Connector modules. Example: `super-workspace`, which operates on Google Workspace and Microsoft 365",
+                "Connector modules. Example: `super-workspace`, which operates on Google Workspace",
               ],
             ],
           },
@@ -933,7 +908,7 @@ const en_US: GovernanceContent = {
       blocks: [
         {
           type: "p",
-          text: "Mekovault users (IT administrators, approvers, resellers) authenticate with Google or Microsoft OAuth, or with email and password. The session is designed so that a stolen token is short-lived and revocable.",
+          text: "Mekovault users (IT administrators, approvers, resellers) authenticate with Google OAuth or with email and password. The session is designed so that a stolen token is short-lived and revocable.",
         },
         {
           type: "table",
@@ -941,7 +916,7 @@ const en_US: GovernanceContent = {
             caption: "Session parameters",
             head: ["Mechanism", "Detail"],
             rows: [
-              ["Sign-in methods", "OAuth with Google or Microsoft, or email and password"],
+              ["Sign-in methods", "OAuth with Google, or email and password"],
               [
                 "Access token",
                 "JWT signed with RS256, 15-minute lifetime, with role and MFA-state claims",
@@ -1007,7 +982,7 @@ const en_US: GovernanceContent = {
       blocks: [
         {
           type: "p",
-          text: "To operate on your directory, Mekovault receives credentials with administrative permissions: the JSON of a Google Service Account with domain-wide delegation, or the details of a Microsoft Entra ID App Registration (client id, tenant id and client secret). They are the most sensitive asset we handle.",
+          text: "To operate on your directory, Mekovault receives credentials with administrative permissions: the JSON of a Google Service Account with domain-wide delegation. They are the most sensitive asset we handle.",
         },
         {
           type: "ul",
@@ -1020,7 +995,7 @@ const en_US: GovernanceContent = {
         { type: "h3", text: "Immutable record of every use" },
         {
           type: "p",
-          text: "Every call to Google or Microsoft with a customer's credentials writes a row to the `credential_usage_log` table.",
+          text: "Every call to Google with a customer's credentials writes a row to the `credential_usage_log` table.",
         },
         {
           type: "table",
@@ -1029,7 +1004,7 @@ const en_US: GovernanceContent = {
             head: ["Field", "Content"],
             rows: [
               ["Tenant", "`company_id` of the customer owning the credential"],
-              ["Provider", "Google Workspace or Microsoft Entra ID"],
+              ["Provider", "Google Workspace"],
               [
                 "Operation",
                 "Action executed, for example `create_user`, `suspend_user`, `add_group_member`",
@@ -1110,28 +1085,6 @@ const en_US: GovernanceContent = {
         {
           type: "p",
           text: "Calls are made with the Service Account impersonating the delegated administrator the customer designates when connecting the domain. That administrator is recorded in every `credential_usage_log` row.",
-        },
-        {
-          type: "table",
-          table: {
-            caption: "Microsoft Entra ID (Microsoft Graph, application permissions)",
-            head: ["Permission", "What it is used for"],
-            rows: [
-              [
-                "`User.ReadWrite.All`",
-                "Create, update, disable and delete users; set an initial password.",
-              ],
-              ["`Group.ReadWrite.All`", "Create groups and manage their membership."],
-              [
-                "`Directory.ReadWrite.All`",
-                "Directory operations not covered by the two permissions above, for example structural reads needed to validate a new account.",
-              ],
-            ],
-          },
-        },
-        {
-          type: "p",
-          text: "Microsoft is accessed with the client credentials flow: the application acts with its own permissions, without a user session. The permissions are of type Application and require consent from a global administrator of the customer when connecting.",
         },
       ],
     },
@@ -1292,7 +1245,7 @@ const en_US: GovernanceContent = {
               ],
               [
                 "Secret expiration",
-                "Warns administrators 30, 7 and 0 days before a provider credential expires (for example, an Entra ID client secret).",
+                "Warns administrators 30, 7 and 0 days before a provider credential expires.",
               ],
               [
                 "Usage log purge",
@@ -1381,7 +1334,7 @@ const en_US: GovernanceContent = {
       },
       {
         q: "How do I prove my permissions were not used for something else?",
-        a: "With `credential_usage_log`: every call to Google or Microsoft with your credentials is recorded with operation, scopes, originator, reason, result and latency. The table accepts neither UPDATE nor DELETE. You can export it as CSV or JSON signed with HMAC-SHA256 and verify the signature with the included key id.",
+        a: "With `credential_usage_log`: every call to Google with your credentials is recorded with operation, scopes, originator, reason, result and latency. The table accepts neither UPDATE nor DELETE. You can export it as CSV or JSON signed with HMAC-SHA256 and verify the signature with the included key id.",
       },
       {
         q: "Is a stolen session token useful for anything?",
@@ -1530,7 +1483,7 @@ const pt_BR: GovernanceContent = {
               ["`svc-notifications`", "E-mail e notificações aos usuários"],
               [
                 "addons",
-                "Módulos conectores. Exemplo: `super-workspace`, que opera sobre Google Workspace e Microsoft 365",
+                "Módulos conectores. Exemplo: `super-workspace`, que opera sobre Google Workspace",
               ],
             ],
           },
@@ -1553,7 +1506,7 @@ const pt_BR: GovernanceContent = {
       blocks: [
         {
           type: "p",
-          text: "Os usuários do Mekovault (administradores de TI, aprovadores, revendedores) se autenticam com OAuth do Google ou da Microsoft, ou com e-mail e senha. A sessão foi desenhada para que um token roubado sirva por pouco tempo e seja revogável.",
+          text: "Os usuários do Mekovault (administradores de TI, aprovadores, revendedores) se autenticam com OAuth do Google ou com e-mail e senha. A sessão foi desenhada para que um token roubado sirva por pouco tempo e seja revogável.",
         },
         {
           type: "table",
@@ -1561,7 +1514,7 @@ const pt_BR: GovernanceContent = {
             caption: "Parâmetros de sessão",
             head: ["Mecanismo", "Detalhe"],
             rows: [
-              ["Métodos de acesso", "OAuth com Google ou Microsoft, ou e-mail e senha"],
+              ["Métodos de acesso", "OAuth com Google, ou e-mail e senha"],
               [
                 "Token de acesso",
                 "JWT assinado com RS256, validade de 15 minutos, com claims de papel e de estado do MFA",
@@ -1627,7 +1580,7 @@ const pt_BR: GovernanceContent = {
       blocks: [
         {
           type: "p",
-          text: "Para operar no seu diretório, o Mekovault recebe credenciais com permissões de administração: o JSON de uma Service Account do Google com delegação em todo o domínio, ou os dados de um App Registration do Microsoft Entra ID (client id, tenant id e client secret). São o ativo mais sensível que manipulamos.",
+          text: "Para operar no seu diretório, o Mekovault recebe credenciais com permissões de administração: o JSON de uma Service Account do Google com delegação em todo o domínio. São o ativo mais sensível que manipulamos.",
         },
         {
           type: "ul",
@@ -1640,7 +1593,7 @@ const pt_BR: GovernanceContent = {
         { type: "h3", text: "Registro imutável de cada uso" },
         {
           type: "p",
-          text: "Cada chamada ao Google ou à Microsoft com as credenciais do cliente grava uma linha na tabela `credential_usage_log`.",
+          text: "Cada chamada ao Google com as credenciais do cliente grava uma linha na tabela `credential_usage_log`.",
         },
         {
           type: "table",
@@ -1649,7 +1602,7 @@ const pt_BR: GovernanceContent = {
             head: ["Campo", "Conteúdo"],
             rows: [
               ["Tenant", "`company_id` do cliente dono da credencial"],
-              ["Provedor", "Google Workspace ou Microsoft Entra ID"],
+              ["Provedor", "Google Workspace"],
               [
                 "Operação",
                 "Ação executada, por exemplo `create_user`, `suspend_user`, `add_group_member`",
@@ -1730,28 +1683,6 @@ const pt_BR: GovernanceContent = {
         {
           type: "p",
           text: "As chamadas são feitas com a Service Account personificando o administrador delegado que o cliente designa ao conectar o domínio. Esse administrador fica registrado em cada linha de `credential_usage_log`.",
-        },
-        {
-          type: "table",
-          table: {
-            caption: "Microsoft Entra ID (Microsoft Graph, permissões de aplicação)",
-            head: ["Permissão", "Para que é usada"],
-            rows: [
-              [
-                "`User.ReadWrite.All`",
-                "Criar, atualizar, desabilitar e excluir usuários; definir senha inicial.",
-              ],
-              ["`Group.ReadWrite.All`", "Criar grupos e gerenciar sua composição."],
-              [
-                "`Directory.ReadWrite.All`",
-                "Operações de diretório não cobertas pelas duas permissões anteriores, por exemplo leituras de estrutura necessárias para validar uma admissão.",
-              ],
-            ],
-          },
-        },
-        {
-          type: "p",
-          text: "Na Microsoft usa-se o fluxo de client credentials: a aplicação atua com suas próprias permissões, sem sessão de usuário. As permissões são do tipo Application e exigem consentimento de um administrador global do cliente ao conectar.",
         },
       ],
     },
@@ -1912,7 +1843,7 @@ const pt_BR: GovernanceContent = {
               ],
               [
                 "Expiração de segredos",
-                "Avisa os administradores 30, 7 e 0 dias antes de uma credencial de provedor expirar (por exemplo, um client secret do Entra ID).",
+                "Avisa os administradores 30, 7 e 0 dias antes de uma credencial de provedor expirar.",
               ],
               [
                 "Expurgo do registro de uso",
@@ -2001,7 +1932,7 @@ const pt_BR: GovernanceContent = {
       },
       {
         q: "Como provo que minhas permissões não foram usadas para outra coisa?",
-        a: "Com `credential_usage_log`: cada chamada ao Google ou à Microsoft com suas credenciais fica registrada com operação, scopes, quem originou, motivo, resultado e latência. A tabela não aceita UPDATE nem DELETE. Você pode exportá-la em CSV ou JSON assinado com HMAC-SHA256 e verificar a assinatura com o id de chave incluído.",
+        a: "Com `credential_usage_log`: cada chamada ao Google com suas credenciais fica registrada com operação, scopes, quem originou, motivo, resultado e latência. A tabela não aceita UPDATE nem DELETE. Você pode exportá-la em CSV ou JSON assinado com HMAC-SHA256 e verificar a assinatura com o id de chave incluído.",
       },
       {
         q: "Um token de sessão roubado serve para algo?",

@@ -102,11 +102,11 @@ export default function PartnersPage() {
       <Section compact>
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-primary/5 px-4 py-1 text-xs">
+            <div className="mb-4 inline-flex items-center gap-2 text-sm font-bold text-[#0077b6]">
               <Sparkles className="size-3.5 text-primary" />
               {t("partners.eyebrow")}
             </div>
-            <h1 className="font-heading text-4xl font-semibold tracking-tight sm:text-5xl">
+            <h1 className="text-4xl font-extrabold tracking-[-0.02em] text-[#03045e] sm:text-5xl">
               {t("partners.title.pre")}{" "}
               <span className="text-brand-gradient">{t("partners.title.hl")}</span>
             </h1>
@@ -138,10 +138,10 @@ export default function PartnersPage() {
               const Icon = s.icon;
               return (
                 <div key={s.title} className="rounded-2xl border bg-card p-6">
-                  <div className="mb-4 inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <div className="mb-4 inline-flex text-[#0077b6] [&_svg]:size-6">
                     <Icon className="size-6" />
                   </div>
-                  <h3 className="font-heading text-lg font-semibold">{s.title}</h3>
+                  <h3 className="text-lg font-extrabold tracking-[-0.02em] text-[#03045e]">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
                 </div>
               );
@@ -167,11 +167,11 @@ export default function PartnersPage() {
                 }`}
               >
                 <div className="mb-4 flex items-center justify-between">
-                  <h3 className="font-heading text-2xl font-semibold">{tier.name}</h3>
+                  <h3 className="text-2xl font-extrabold tracking-[-0.02em] text-[#03045e]">{tier.name}</h3>
                   <span className="size-8 rounded-full" style={{ backgroundColor: tier.color }} aria-hidden />
                 </div>
                 <div className="mb-4">
-                  <div className="font-heading text-3xl font-semibold">{tier.commission}</div>
+                  <div className="text-3xl font-extrabold tracking-[-0.02em] text-[#03045e]">{tier.commission}</div>
                   <div className="text-xs text-muted-foreground">{t("partners.tiers.commission")}</div>
                 </div>
                 <div className="mb-6 text-xs text-muted-foreground">
@@ -263,10 +263,10 @@ function ApplicationForm() {
   if (submitted) {
     return (
       <div className="mx-auto mt-12 max-w-lg rounded-2xl border border-emerald-300 bg-emerald-50/50 p-8 text-center dark:border-emerald-500/30 dark:bg-emerald-500/10">
-        <div className="mx-auto mb-4 inline-flex size-12 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-500/20">
+        <div className="mx-auto mb-4 inline-flex text-[#166534]">
           <Check className="size-6 text-emerald-700 dark:text-emerald-300" />
         </div>
-        <h3 className="font-heading text-xl font-semibold">{t("partners.form.success.title")}</h3>
+        <h3 className="text-xl font-extrabold tracking-[-0.02em] text-[#03045e]">{t("partners.form.success.title")}</h3>
         <p className="mt-2 text-sm text-muted-foreground">
           {t("partners.form.success.desc")}{" "}
           <a href="mailto:partners@mekovault.com" className="text-primary hover:underline">

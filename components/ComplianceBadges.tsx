@@ -19,13 +19,13 @@ export function ComplianceBadges({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex flex-wrap items-center justify-center gap-2 text-xs",
+        "flex flex-wrap items-center gap-2 text-xs",
         className,
       )}
     >
       <Link
         href="/legal/privacy"
-        className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/40 px-3 py-1 text-muted-foreground transition-colors hover:text-foreground"
+        className="inline-flex items-center gap-1.5 rounded-md border border-[#c9dde8] bg-white px-3 py-1 font-semibold text-[#33507a] transition-colors hover:text-[#03045e]"
         title={t("compliance.gdpr")}
       >
         <ShieldCheck className="size-3 text-primary" />
@@ -35,7 +35,7 @@ export function ComplianceBadges({ className }: { className?: string }) {
       {showChile && (
         <Link
           href="/legal/privacy"
-          className="inline-flex items-center gap-1.5 rounded-full border border-border bg-muted/40 px-3 py-1 text-muted-foreground transition-colors hover:text-foreground"
+          className="inline-flex items-center gap-1.5 rounded-md border border-[#c9dde8] bg-white px-3 py-1 font-semibold text-[#33507a] transition-colors hover:text-[#03045e]"
           title={t("compliance.chile")}
         >
           <ChileFlag />

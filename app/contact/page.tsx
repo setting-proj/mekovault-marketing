@@ -157,7 +157,7 @@ function ContactCard({
 }) {
   const inner = (
     <div className="rounded-2xl border bg-card p-6 transition-colors hover:border-primary/40">
-      <div className="mb-3 inline-flex size-9 items-center justify-center rounded-lg bg-primary/10 text-primary [&_svg]:size-4">
+      <div className="mb-3 inline-flex text-[#0077b6] [&_svg]:size-5">
         {icon}
       </div>
       <p className="text-xs text-muted-foreground">{title}</p>

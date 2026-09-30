@@ -15,7 +15,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
     <Container className="py-14">
       <div className="grid gap-10 lg:grid-cols-[220px_1fr]">
         <aside className="lg:sticky lg:top-24 lg:h-fit">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+          <p className="mb-3 text-sm font-bold text-[#0077b6]">
             Documentación
           </p>
           <nav className="flex flex-col gap-0.5">

@@ -21,7 +21,6 @@ export interface Platform {
 
 export const PLATFORMS: Platform[] = [
   { name: "Google Workspace", status: "today" },
-  { name: "Microsoft 365", status: "today" },
 
   { name: "Jira y Confluence", status: "soon" },
   { name: "Slack", status: "soon" },
