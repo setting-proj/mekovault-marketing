@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/contact",
     "/partners",
+    "/account-governance",
     "/governance",
     "/legal/terms",
     "/legal/privacy",

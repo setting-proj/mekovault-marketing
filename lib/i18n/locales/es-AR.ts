@@ -9,6 +9,7 @@ import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 const overrides: Partial<Record<TranslationKey, string>> = {
 
   "nav.signup": "Empezá gratis",
+  "agov.cta.signup": "Empezá gratis 90 días",
 
   // Hero
   "hero.cta.signup": "Empezá gratis 90 días",

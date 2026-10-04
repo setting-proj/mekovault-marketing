@@ -21,7 +21,7 @@ export function Header() {
     { href: "/products", label: t("nav.product") },
     { href: "/platforms", label: t("nav.platforms") },
     { href: "/pricing", label: t("nav.pricing") },
-    { href: "/governance", label: t("nav.governance_short") },
+    { href: "/account-governance", label: t("nav.governance_short") },
     { href: "/about", label: t("nav.about") },
     { href: "/contact", label: t("nav.contact") },
   ];

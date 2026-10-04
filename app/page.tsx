@@ -72,6 +72,26 @@ export default function Home() {
       {/* Plataformas que se pagan por persona */}
       <LogoMarquee />
 
+      {/* 1b. Gobernanza: todo nace en la nómina (Jorge, 2026-10-03) */}
+      <Section id="gobernanza" tone="panel" className="scroll-mt-20 border-b border-[#dbeaf2]">
+        <Container className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:items-center lg:gap-16">
+          <div className="flex flex-col gap-7">
+            <SectionHeading eyebrow={t("gov.home.eyebrow")} title={t("gov.home.title")} desc={t("gov.home.desc")} />
+            <ul className="flex flex-col gap-4">
+              <Bullet strong={t("gov.home.b1.strong")} rest={t("gov.home.b1.rest")} />
+              <Bullet strong={t("gov.home.b2.strong")} rest={t("gov.home.b2.rest")} />
+              <Bullet strong={t("gov.home.b3.strong")} rest={t("gov.home.b3.rest")} />
+            </ul>
+            <ArrowLink href="/account-governance" className="text-base">
+              {t("gov.home.link")}
+            </ArrowLink>
+          </div>
+          <Reveal>
+            <GovernanceOriginCard />
+          </Reveal>
+        </Container>
+      </Section>
+
       {/* 2. Cuando alguien entra o sale (navy) */}
       <Section tone="navy" id="salida">
         <Container className="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,520px)] lg:items-start lg:gap-16">
@@ -236,6 +256,41 @@ function Figure({ value, label }: { value: string; label: string }) {
     <div className="flex flex-col gap-2">
       <div className="text-[34px] font-extrabold leading-none tracking-[-0.03em] text-[#03045e] sm:text-[40px]">{value}</div>
       <p className="max-w-[300px] text-[15px] leading-relaxed text-[#33507a]">{label}</p>
+    </div>
+  );
+}
+
+/** Tarjeta del inicio: una persona que deja la organización y lo que sigue cobrando. Datos de ejemplo. */
+function GovernanceOriginCard() {
+  const t = useT();
+  const rows: Array<{ name: string; ok: boolean }> = [
+    { name: "Google Workspace", ok: true },
+    { name: "Slack", ok: true },
+    { name: "Figma", ok: false },
+    { name: "Adobe Creative Cloud", ok: false },
+    { name: "Canva", ok: true },
+  ];
+  return (
+    <div className="rounded-2xl border border-[#dbeaf2] bg-white p-5 shadow-[0_18px_50px_-30px_rgba(3,4,94,0.35)]">
+      <div className="flex items-start justify-between gap-4 border-b border-[#e8f1f6] pb-4">
+        <div>
+          <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0077b6]">{t("agov.panel.origin")}</p>
+          <p className="mt-1 text-[16px] font-extrabold text-[#03045e]">{t("agov.panel.person")}</p>
+          <p className="text-[13px] text-[#33507a]">{t("agov.panel.person_meta")}</p>
+        </div>
+        <span className="shrink-0 rounded-full bg-[#fde8e6] px-3 py-1 text-[12px] font-bold text-[#c0392b]">{t("agov.panel.badge")}</span>
+      </div>
+      <ul className="divide-y divide-[#e8f1f6]">
+        {rows.map((r) => (
+          <li key={r.name} className="flex items-center justify-between py-3">
+            <span className="text-[14.5px] font-semibold text-[#03045e]">{r.name}</span>
+            <span className={r.ok ? "text-[13px] font-semibold text-[#1f7f4f]" : "text-[13px] font-semibold text-[#c0392b]"}>
+              {r.ok ? t("agov.panel.closed") : t("agov.panel.still_paying")}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 rounded-xl bg-[#f7fbfd] p-3 text-[13px] leading-relaxed text-[#0a4a73]">{t("agov.panel.note")}</p>
     </div>
   );
 }
