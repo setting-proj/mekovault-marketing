@@ -791,7 +791,7 @@ const ptBR: Dictionary = {
   "agov.roles.4.title": "Evidência pronta para mostrar",
   "agov.roles.4.desc": "Registro imutável de 365 dias com IP e navegador, relatório de saída por pessoa e exportação completa. O que um auditor pede já existe.",
   "agov.end.title": "Governe as contas de onde elas nascem",
-  "agov.end.desc": "Conecte seu Google Workspace em uma tarde, deixe o RH pedir e veja quantas contas ainda estavam cobrando.",
+  "agov.end.desc": "Conecte seu Google Workspace em uma tarde, envie sua folha de pagamento (ou conecte o BUK) e o Mapa de vazamentos mostra, com o custo mensal, quais contas e licenças continuam sendo pagas por pessoas que já saíram.",
   "agov.end.security": "Como é construído e protegido",
   "gov.home.eyebrow": "Governança",
   "gov.home.title": "Tudo nasce na folha de pagamento. E tudo se governa a partir dela.",

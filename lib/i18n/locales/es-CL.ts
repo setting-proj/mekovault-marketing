@@ -826,7 +826,7 @@ const esCL = {
   "agov.roles.4.title": "Evidencia lista para mostrar",
   "agov.roles.4.desc": "Registro inmutable de 365 días con IP y navegador, informe de salida por persona y exportación completa. Lo que un auditor pide, ya existe.",
   "agov.end.title": "Gobierna las cuentas desde donde nacen",
-  "agov.end.desc": "Conecta tu Google Workspace en una tarde, deja que Personas pida, y mira cuántas cuentas se seguían cobrando.",
+  "agov.end.desc": "Conecta tu Google Workspace en una tarde, sube tu nómina (o conecta BUK) y el Mapa de fugas te muestra, con el costo mensual, qué cuentas y licencias se siguen pagando por gente que ya no está.",
   "agov.end.security": "Cómo está construido y protegido",
   "gov.home.eyebrow": "Gobernanza",
   "gov.home.title": "Todo nace en la nómina. Y todo se gobierna desde ahí.",

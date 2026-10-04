@@ -790,7 +790,7 @@ const enUS: Dictionary = {
   "agov.roles.4.title": "Evidence ready to show",
   "agov.roles.4.desc": "Immutable 365-day log with IP and browser, an exit report per person and a full export. What an auditor asks for already exists.",
   "agov.end.title": "Govern accounts from where they are born",
-  "agov.end.desc": "Connect your Google Workspace in an afternoon, let HR request, and see how many accounts were still billing.",
+  "agov.end.desc": "Connect your Google Workspace in an afternoon, upload your payroll (or connect BUK) and the Leak Map shows you, with the monthly cost, which accounts and licenses are still being paid for people who are gone.",
   "agov.end.security": "How it is built and protected",
   "gov.home.eyebrow": "Governance",
   "gov.home.title": "Everything starts in payroll. And everything is governed from there.",
