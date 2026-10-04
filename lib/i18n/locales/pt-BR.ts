@@ -6,8 +6,8 @@
 import type { Dictionary } from "./es-CL";
 
 const ptBR: Dictionary = {
-  "meta.title": "Mekovault · Controle suas contas e licenças sem depender de TI",
-  "meta.description": "Quem administra, o RH ou o próprio gestor cria, bloqueia e libera contas nas plataformas da empresa em um só lugar. Cada solicitação fica executada e registrada. Grátis por 90 dias.",
+  "meta.title": "Mekovault · Governo de contas, licenças e credenciais: tudo nasce na folha de pagamento",
+  "meta.description": "Governança das contas, licenças e credenciais de serviços da sua empresa: tudo nasce na folha de pagamento e se governa a partir dela. Quando alguém deixa a organização, nada continua cobrando. Sem depender de TI nem do Suporte.",
 
   "nav.product": "Produto",
   "nav.pricing": "Preços",
@@ -18,9 +18,9 @@ const ptBR: Dictionary = {
   "nav.login": "Entrar",
   "nav.signup": "Comece grátis",
 
-  "hero.title.line1": "Controle suas contas e licenças.",
-  "hero.title.line2": "Sem depender de TI nem do Suporte.",
-  "hero.subtitle": "Quem administra, o RH ou o próprio gestor cria, bloqueia e libera contas nas plataformas da empresa em um só lugar. Cada solicitação fica executada e registrada.",
+  "hero.title.line1": "Tudo nasce na folha de pagamento.",
+  "hero.title.line2": "E tudo se governa a partir dela.",
+  "hero.subtitle": "Governo de contas, licenças e credenciais de serviços: cada conta existe porque uma pessoa entrou na empresa e é encerrada quando ela muda de função ou deixa a organização. O RH pede, a Mekovault executa e a evidência fica. Sem depender de TI nem do Suporte.",
   "hero.cta.signup": "Comece grátis por 90 dias",
   "hero.trust.1": "Sem cartão para começar",
   "hero.trust.2": "Instala em uma tarde",

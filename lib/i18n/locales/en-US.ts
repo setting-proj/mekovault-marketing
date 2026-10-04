@@ -5,8 +5,8 @@
 import type { Dictionary } from "./es-CL";
 
 const enUS: Dictionary = {
-  "meta.title": "Mekovault · Control your accounts and licenses without depending on IT",
-  "meta.description": "Whoever administers, HR or the manager creates, blocks and releases accounts on the company's platforms from one place. Every request is executed and recorded. Free for 90 days.",
+  "meta.title": "Mekovault · Governance of accounts, licenses and credentials: everything starts in payroll",
+  "meta.description": "Governance of your company's accounts, licenses and service credentials: everything starts in payroll and is governed from there. When someone leaves the organization, nothing keeps billing. Without depending on IT or Support.",
 
   "nav.product": "Product",
   "nav.pricing": "Pricing",
@@ -17,9 +17,9 @@ const enUS: Dictionary = {
   "nav.login": "Sign in",
   "nav.signup": "Start free",
 
-  "hero.title.line1": "Control your accounts and licenses.",
-  "hero.title.line2": "Without depending on IT or Support.",
-  "hero.subtitle": "Whoever administers, HR or the manager creates, blocks and releases accounts on the company's platforms from one place. Every request is executed and recorded.",
+  "hero.title.line1": "Everything starts in payroll.",
+  "hero.title.line2": "And everything is governed from there.",
+  "hero.subtitle": "Governance of accounts, licenses and service credentials: every account exists because a person joined the company, and it is closed when they change roles or leave the organization. HR requests, Mekovault executes and the evidence stays. Without depending on IT or Support.",
   "hero.cta.signup": "Start free for 90 days",
   "hero.trust.1": "No card to start",
   "hero.trust.2": "Set up in an afternoon",

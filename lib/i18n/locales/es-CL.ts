@@ -10,8 +10,8 @@
 
 const esCL = {
   // ========== Meta ==========
-  "meta.title": "Mekovault · Controla tus cuentas y licencias sin depender de IT",
-  "meta.description": "Quien administra, Personas o el mismo gerente crea, bloquea y libera cuentas en las plataformas de la empresa desde un solo lugar. Cada solicitud queda ejecutada y registrada. Gratis 90 días.",
+  "meta.title": "Mekovault · Gobierno de cuentas, licencias y credenciales: todo nace en la nómina",
+  "meta.description": "Gobernanza de las cuentas, licencias y credenciales de servicios de tu empresa: todo nace en la nómina y se gobierna desde ahí. Cuando alguien deja la organización, nada se sigue cobrando. Sin depender de IT ni de Soporte.",
 
   // ========== Header nav ==========
   "nav.product": "Producto",
@@ -24,9 +24,9 @@ const esCL = {
   "nav.signup": "Empieza gratis",
 
   // ========== Home: hero ==========
-  "hero.title.line1": "Controla tus cuentas y licencias.",
-  "hero.title.line2": "Sin depender de IT ni de Soporte.",
-  "hero.subtitle": "Quien administra, Personas o el mismo gerente crea, bloquea y libera cuentas en las plataformas de la empresa desde un solo lugar. Cada solicitud queda ejecutada y registrada.",
+  "hero.title.line1": "Todo nace en la nómina.",
+  "hero.title.line2": "Y todo se gobierna desde ahí.",
+  "hero.subtitle": "Gobierno de cuentas, licencias y credenciales de servicios: cada cuenta existe porque una persona entró a la empresa, y se cierra cuando cambia de rol o deja la organización. Personas pide, Mekovault lo ejecuta y queda la evidencia. Sin depender de IT ni de Soporte.",
   "hero.cta.signup": "Empieza gratis 90 días",
   "hero.trust.1": "Sin tarjeta para partir",
   "hero.trust.2": "Se instala en una tarde",
