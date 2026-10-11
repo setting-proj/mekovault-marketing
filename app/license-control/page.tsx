@@ -88,7 +88,7 @@ export default function LicenseControlPage() {
                       <a
                         href={f.source}
                         target="_blank"
-                        rel="noopener noreferrer nofollow"
+                        rel="noopener noreferrer"
                         className="whitespace-nowrap text-xs font-semibold text-[#0077b6] underline underline-offset-2 hover:text-[#03045e]"
                       >
                         ({t("lc.source")})

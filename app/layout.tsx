@@ -1,11 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
+import Script from "next/script";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { I18nProvider } from "@/lib/i18n/I18nProvider";
-import { detectLocaleServer } from "@/lib/i18n/detectLocale.server";
+import { currentPathServer, detectLocaleServer } from "@/lib/i18n/detectLocale.server";
 import { dictionaries, htmlLang } from "@/lib/i18n/dictionaries";
+import { SITE_URL } from "@/lib/i18n/routing";
+import { pageMetadata } from "@/lib/seo";
 import "./globals.css";
 
 // Una sola tipografía para todo el sitio (dirección A: el panel es el sitio).
@@ -16,59 +20,27 @@ const manrope = Manrope({
   display: "swap",
 });
 
-const siteUrl = "https://mekovault.com";
-
-const OG_LOCALE: Record<string, string> = {
-  "es-CL": "es_CL",
-  "es-AR": "es_AR",
-  "es-MX": "es_MX",
-  "en-US": "en_US",
-  "pt-BR": "pt_BR",
-};
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GSC_TOKEN = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await detectLocaleServer();
+  const path = await currentPathServer();
   const dict = dictionaries[locale];
-  const title = dict["meta.title"];
-  const description = dict["meta.description"];
-
+  const base = pageMetadata({
+    locale,
+    path,
+    title: dict["seo.home.title"],
+    description: dict["seo.home.description"],
+  });
   return {
-    metadataBase: new URL(siteUrl),
-    title: {
-      default: title,
-      template: "%s · Mekovault",
-    },
-    description,
+    ...base,
+    // Las páginas que no definen su propio título reciben "<título> · Mekovault".
+    title: { default: dict["seo.home.title"], template: "%s · Mekovault" },
     applicationName: "Mekovault",
-    keywords: [
-      "Google Workspace",
-      "cuentas de correo",
-      "licencias",
-      "control de licencias",
-      "plataformas por usuario",
-      "altas y bajas",
-      "onboarding",
-      "offboarding",
-      "pymes",
-      "Chile",
-      "Latinoamérica",
-    ],
     authors: [{ name: "Mekovault SpA" }],
     creator: "Mekovault",
-    openGraph: {
-      title,
-      description,
-      url: siteUrl,
-      siteName: "Mekovault",
-      locale: OG_LOCALE[locale] ?? "es_CL",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-    robots: { index: true, follow: true },
+    verification: GSC_TOKEN ? { google: GSC_TOKEN } : undefined,
   };
 }
 
@@ -76,15 +48,59 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
+const ORGANIZATION = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "Mekovault",
+  legalName: "Mekovault SpA",
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon.svg`,
+  email: "cloud@mekovault.com",
+  address: { "@type": "PostalAddress", addressLocality: "Santiago", addressCountry: "CL" },
+  areaServed: ["CL", "AR", "MX", "ES", "BR", "US"],
+  sameAs: ["https://app.mekovault.com"],
+};
+
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // Detección server-side ANTES del render: el HTML sale en el locale
-  // correcto según cookie o Accept-Language. Sin flash en el cliente.
   const locale = await detectLocaleServer();
+  const dict = dictionaries[locale];
+
+  const software = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${SITE_URL}/#software`,
+    name: "Mekovault",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    description: dict["seo.home.description"],
+    url: SITE_URL,
+    inLanguage: locale,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    offers: {
+      "@type": "Offer",
+      price: "49900",
+      priceCurrency: "CLP",
+      description: dict["seo.offer.description"],
+      url: `${SITE_URL}/pricing`,
+    },
+  };
 
   return (
     <html lang={htmlLang(locale)} className={manrope.variable} suppressHydrationWarning>
+      <head>
+        <JsonLd data={[ORGANIZATION, software]} />
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga4" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{anonymize_ip:true});`}
+            </Script>
+          </>
+        )}
+      </head>
       <body className="antialiased min-h-screen bg-background text-foreground">
         <I18nProvider initialLocale={locale}>
           <Header />

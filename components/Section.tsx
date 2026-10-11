@@ -63,6 +63,7 @@ export function SectionHeading({
   center = false,
   className,
   tone = "light",
+  as: Heading = "h2",
 }: {
   eyebrow?: string;
   title: React.ReactNode;
@@ -70,6 +71,8 @@ export function SectionHeading({
   center?: boolean;
   className?: string;
   tone?: "light" | "dark";
+  /** "h1" en el primer título de una página (una sola vez por página). */
+  as?: "h1" | "h2";
 }) {
   const dark = tone === "dark";
   return (
@@ -81,14 +84,14 @@ export function SectionHeading({
       )}
     >
       {eyebrow && <EyebrowBadge tone={dark ? "cyan" : "blue"}>{eyebrow}</EyebrowBadge>}
-      <h2
+      <Heading
         className={cn(
           "text-balance text-[34px] font-extrabold leading-[1.08] tracking-[-0.025em] sm:text-[44px]",
           dark ? "text-white" : "text-[#03045e]",
         )}
       >
         {title}
-      </h2>
+      </Heading>
       {desc && (
         <p className={cn("text-pretty text-[17px] leading-[1.6]", dark ? "text-[#b9d7e6]" : "text-[#33507a]")}>
           {desc}

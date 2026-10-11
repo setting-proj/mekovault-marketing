@@ -9,7 +9,7 @@
  * página cae a es-CL sin romperse.
  */
 
-import Link from "next/link";
+import Link from "@/components/Link";
 import { ArrowRight, FileText } from "lucide-react";
 
 import { Container } from "@/components/Container";

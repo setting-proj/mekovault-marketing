@@ -1,4 +1,4 @@
-export const metadata = { title: "Problemas frecuentes · Mekovault" };
+export const metadata = { title: "Problemas frecuentes" };
 
 export default function Troubleshooting() {
   return (

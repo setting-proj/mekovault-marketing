@@ -142,11 +142,17 @@ export function HrTriggersSection({ className }: { className?: string }) {
             <p className="mt-8 text-xs font-bold text-[#5b7390]">{t("platforms.group.hr")}</p>
             <div className="mt-3 flex flex-wrap items-center gap-2">
               {HR_SOURCES.map((s) => (
-                <span key={s.name} className="rounded-lg border border-dashed border-[#c9dde8] bg-white px-3.5 py-2 text-sm font-semibold text-[#33507a]">
+                <span
+                  key={s.name}
+                  className={cn(
+                    "inline-flex items-center gap-2 rounded-lg border bg-white px-3.5 py-2 text-sm font-semibold text-[#33507a]",
+                    s.status === "today" ? "border-[#c9dde8]" : "border-dashed border-[#c9dde8]",
+                  )}
+                >
                   {s.name}
+                  <StatusPill status={s.status} />
                 </span>
               ))}
-              <StatusPill status="soon" />
             </div>
             <p className="mt-6 text-sm text-[#5b7390]">{t("hr.note")}</p>
           </div>

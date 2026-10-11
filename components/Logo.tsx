@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import { cn } from "@/lib/cn";
 
 /** Marca: cuadrado navy con el escudo en cyan claro. Sin gradiente ni sombra. */

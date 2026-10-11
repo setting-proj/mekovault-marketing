@@ -1,0 +1,55 @@
+# Mekovault
+
+> Mekovault cierra, abre y controla las cuentas, licencias y accesos de los empleados en Google Workspace y las plataformas que una empresa paga por persona (Slack, Zoom, Figma, Adobe, Canva y otras), sin depender de IT. Lo pide RRHH desde "Personas", Mekovault lo ejecuta a la hora y queda la evidencia 365 días. Hecho en Chile (Mekovault SpA, Santiago) para empresas de 10 a 500 personas en Chile, Argentina, México, España, Brasil y Estados Unidos. Un precio por empresa, sin costo por persona: desde $49.900 CLP al mes, gratis 90 días.
+
+Categoría: control de cuentas, licencias y suscripciones de la empresa (lo que en inglés se llama SaaS Management Platform con automatización de altas y bajas). Plataforma conectada hoy: Google Workspace. Nómina como origen de altas y bajas: BUK, Talana y Rankmi (opcional). Microsoft 365, Slack, Zoom y las demás plataformas se suman una por una; nada se anuncia como disponible antes de estarlo.
+
+## Producto
+
+- [Inicio](https://www.mekovault.com/): qué hace Mekovault cuando alguien entra o sale de la empresa.
+- [Producto](https://www.mekovault.com/products): altas el día de ingreso, bajas el último día con correo y archivos traspasados, licencias liberadas, evidencia.
+- [Plataformas](https://www.mekovault.com/platforms): qué plataformas administra y qué hace sola cada una.
+- [Control de licencias](https://www.mekovault.com/license-control): cuántas licencias compraste, cuántas usas y cuántas quedaron en cuentas bloqueadas.
+- [Gobierno de cuentas](https://www.mekovault.com/account-governance): origen único, responsable para cada cuenta, evidencia de 365 días.
+- [Precios](https://www.mekovault.com/pricing): un precio por empresa, módulos a elección, gratis 90 días.
+
+## Guías (español)
+
+- [Cómo dar de baja a un empleado en Google Workspace](https://www.mekovault.com/recursos/baja-empleado-google-workspace)
+- [Suspender, eliminar o archivar un usuario: cuál se sigue cobrando](https://www.mekovault.com/recursos/suspender-eliminar-o-archivar-usuario-google-workspace)
+- [Qué hacer con el correo de un empleado que se va](https://www.mekovault.com/recursos/correo-del-que-se-va)
+- [Offboarding digital: checklist de cuentas y accesos](https://www.mekovault.com/recursos/offboarding-digital)
+- [Desvinculación en Chile: finiquito y cierre de cuentas](https://www.mekovault.com/recursos/desvinculacion-chile-finiquito-y-cuentas)
+- [Las licencias que sigues pagando](https://www.mekovault.com/recursos/licencias-que-sigues-pagando)
+- [Aplicaciones con acceso a las cuentas de tu empresa](https://www.mekovault.com/recursos/aplicaciones-vinculadas)
+- [Alta de correo corporativo el primer día](https://www.mekovault.com/recursos/alta-de-cuentas-el-primer-dia)
+- [Gestión de accesos para pymes sin IT](https://www.mekovault.com/recursos/gestion-de-accesos-para-pymes)
+- [Qué es el control de cuentas y licencias](https://www.mekovault.com/recursos/que-es-el-control-de-cuentas-y-licencias)
+- [21 preguntas antes de contratar y qué responde Mekovault](https://www.mekovault.com/recursos/que-preguntar-antes-de-contratar)
+- [Mekovault vs Factorial](https://www.mekovault.com/recursos/mekovault-vs-factorial)
+- [Mekovault vs la consola de Google](https://www.mekovault.com/recursos/mekovault-vs-consola-de-google)
+- [Centro de ayuda](https://www.mekovault.com/ayuda): alias, cuentas genéricas, reactivar, cambio de dominio, delegar buzón, licencias de Zoom y Slack.
+- [Calculadora de licencias](https://www.mekovault.com/calculadora-licencias): cuánto se fuga en licencias de gente que ya no está.
+
+## Conectores de nómina
+
+- [BUK + Google Workspace](https://www.mekovault.com/conectores/buk)
+- [Talana + Google Workspace](https://www.mekovault.com/conectores/talana)
+- [Rankmi + Google Workspace](https://www.mekovault.com/conectores/rankmi)
+
+## Empresa y confianza
+
+- [Nosotros](https://www.mekovault.com/about)
+- [Seguridad y arquitectura](https://www.mekovault.com/governance)
+- [Documentación](https://www.mekovault.com/docs)
+- [Estado del servicio](https://www.mekovault.com/status)
+- [Partners](https://www.mekovault.com/partners)
+- [Privacidad](https://www.mekovault.com/legal/privacy) · [Términos](https://www.mekovault.com/legal/terms) · [Seguridad](https://www.mekovault.com/legal/security)
+
+## Otros idiomas
+
+- Argentina: https://www.mekovault.com/ar · México: https://www.mekovault.com/mx · English: https://www.mekovault.com/en · Português: https://www.mekovault.com/pt
+
+## Optional
+
+- [Texto completo para modelos de lenguaje](https://www.mekovault.com/llms-full.txt)

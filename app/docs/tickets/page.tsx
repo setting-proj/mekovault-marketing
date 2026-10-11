@@ -1,4 +1,4 @@
-export const metadata = { title: "Tickets y automatizaciones · Mekovault" };
+export const metadata = { title: "Tickets y automatizaciones" };
 
 export default function TicketsDocs() {
   return (

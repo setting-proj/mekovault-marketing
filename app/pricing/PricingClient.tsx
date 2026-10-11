@@ -77,6 +77,7 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
       <Section compact>
         <Container>
           <SectionHeading
+            as="h1"
             eyebrow={t("pricing.eyebrow")}
             title={
               <>

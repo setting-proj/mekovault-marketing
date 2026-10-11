@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { metadataFor } from "@/lib/pageMeta";
+import Link from "@/components/Link";
 import { Container } from "@/components/Container";
 import { LegalLangNotice } from "@/components/LegalLangNotice";
 
@@ -11,6 +12,8 @@ const LEGAL_NAV = [
   { href: "/legal/cookies", label: "Cookies" },
   { href: "/legal/sub-processors", label: "Proveedores" },
 ];
+
+export const generateMetadata = metadataFor("/legal/terms", "seo.legal.title", "seo.legal.description");
 
 export default function LegalLayout({
   children,

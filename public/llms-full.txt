@@ -1,0 +1,87 @@
+# Mekovault: texto completo para modelos de lenguaje
+
+Actualizado: 2026-10-11. Idioma: español (Chile). Sitio: https://www.mekovault.com
+
+## Qué es Mekovault
+
+Mekovault es un software de control de cuentas, licencias y suscripciones para empresas de 10 a 500 personas que usan Google Workspace y no tienen un administrador de cuentas. Cierra, abre y controla las cuentas y accesos de los empleados en Google Workspace y en las plataformas que la empresa paga por persona (Slack, Zoom, Figma, Adobe, Canva, Notion y otras), sin depender de IT. Lo pide Personas (RRHH) o llega solo desde la nómina (BUK, Talana), Mekovault lo ejecuta a la hora y queda la evidencia 365 días.
+
+La categoría, en inglés, se llama SaaS Management Platform con automatización de altas y bajas (onboarding y offboarding). En español: control de cuentas, licencias y suscripciones de la empresa.
+
+Empresa: Mekovault SpA, Santiago de Chile. Mercados: Chile, Argentina, México, España, Brasil y Estados Unidos. Idiomas del producto y del sitio: español (Chile, Argentina, México), inglés y portugués.
+
+Precio: un precio por empresa, sin costo por persona. Desde $49.900 CLP al mes. Gratis 90 días, sin tarjeta. Pago mensual, se cancela cuando se quiera.
+
+## Qué hace, en concreto
+
+- Alta: la cuenta de Google Workspace se crea el día de ingreso con grupos, unidad organizativa, alias y licencia por área. El formulario valida nombre, correo personal, cargo (opcional) y fecha en el formato del país, muestra el correo que se va a crear y detecta si ya existe.
+- Baja: se programa para el último día a la hora de salida y se ejecuta sola: bloqueo con cierre de sesiones, respuesta automática y redirección del correo, revocación de las aplicaciones autorizadas con la cuenta (Slack primero), licencia marcada para liberar, eliminación programada a 30 días con aviso previo y opción de deshacer (60 minutos). La cuenta pasa por una unidad organizativa de pre-desactivación.
+- Decisión de la jefatura: la jefatura directa recibe un correo con las opciones para los archivos y el correo de quien se va (traspasar a alguien, recuperar información por unos días, desactivar, otra) y decide con un clic; si no responde, recibe dos recordatorios en días hábiles. "Recuperar información" crea sola una reactivación temporal por los días pedidos.
+- Reactivación: definitiva o temporal por los días que se elijan, con aprobación de la jefatura (y, si la empresa lo exige, doble aprobación de un administrador). Al vencer se bloquea sola; avisa 5 días antes y el mismo día.
+- Otras solicitudes: alias, cuenta genérica (autorizada por la jefatura, con dueño y fecha de revisión), cuenta secundaria asociada, cambio de dominio (ejecutado después de las 22:00, el dominio antiguo queda como alias), restablecer contraseña pedida por otra persona (confirma un administrador o Soporte), traspaso de archivos y correo. Cada formulario muestra qué roles pueden pedirlo.
+- Licencias: por plataforma conectada, cuántas licencias se compraron, cuántas están asignadas y cuántas quedaron en cuentas bloqueadas; total por moneda; qué reducir antes de la renovación. Una cuenta suspendida en Google se cobra igual que una activa; en plan anual la reducción rige en la renovación.
+- Aplicaciones vinculadas (shadow IT): revisión semanal (sábado de madrugada) de las aplicaciones autorizadas con la cuenta de Google de cada persona, inventario con nivel de riesgo (alto: Drive completo, Gmail, Contactos, administración; medio: Calendario, Tareas, archivos propios; bajo: solo entrar con Google), política por aplicación (permitida, tolerada, bloqueada), hallazgos a la jefatura con plazo de 5 días hábiles, recordatorio, aviso final y revocación automática; si la persona vuelve a vincular, se vuelve a revocar.
+- Compras de software: cada suscripción con dueño, vencimiento y factura; flujos de aprobación; licencias por producto.
+- Nómina como origen: conectores BUK y Talana (lectura de ingresos, términos y jefaturas; webhook y sincronización); Rankmi en preparación. Por defecto automático; se puede exigir aprobación manual.
+- Jefaturas: desde la nómina o manuales (Workspace, Jefaturas).
+- API por empresa: claves con alcances, límite por minuto y registro de llamadas.
+- Auditoría: registro inmutable de quién pidió, quién aprobó, qué se hizo y cuándo, 365 días, descargable. Cumple RGPD y Ley 21.719 (Chile).
+- Seguridad: datos separados por empresa, credenciales cifradas con auditoría de cada uso, sesiones con MFA. No lee correos ni archivos y no pide permisos para hacerlo.
+
+## Qué no hace (todavía) y lo que decimos al respecto
+
+- Microsoft 365, Outlook y Teams: no conectados. En preparación; no se anuncia como disponible.
+- Slack, Zoom, Figma, Adobe, Canva, Notion, Jira, GitHub, HubSpot y otras: se suman una por una. Mientras tanto son tareas guiadas con responsable, fecha y evidencia; Licencias muestra qué asiento sigue cobrando y qué cambiar en cada consola.
+- Ninguna plataforma permite que un tercero reduzca lo contratado: Mekovault libera el asiento y dice qué reducir y cuándo.
+- No lee estados de cuenta de tarjetas; las suscripciones con tarjeta se registran en Compras.
+- No reemplaza al software de RRHH ni a la nómina: se engancha a ellos.
+
+## Cómo se diferencia
+
+- Lo pide RRHH, no IT: está hecho para empresas sin administrador de cuentas.
+- La jefatura decide qué pasa con los archivos y el correo del que se va.
+- Todo nace en la nómina (BUK, Talana) o en Personas, y Google Workspace es la fuente de la verdad.
+- Evidencia legible para un auditor, en español, con Ley 21.719 y RGPD.
+- Un precio por empresa, no por usuario. En español, con soporte en horario de Chile.
+
+Alternativas que suelen compararse: Zluri, Torii, BetterCloud, Zylo, Cledara, Rippling, Okta, JumpCloud, Microsoft Entra ID Governance, Factorial (módulo IT), hacerlo a mano en la consola de administración de Google.
+
+## Preguntas frecuentes
+
+- ¿Necesito a alguien de TI para usarlo? No. Lo conecta el gerente o alguien de administración con una guía de diez minutos, y desde ahí lo usa Personas.
+- ¿Es seguro darle acceso a las cuentas de mi empresa? Mekovault solo puede crear, bloquear y modificar cuentas; no lee correos ni archivos. Credenciales cifradas y separadas por cliente; cada acción registrada.
+- ¿Qué pasa con mis cuentas si dejo de usar Mekovault? Siguen en Google Workspace tal como están. Mekovault no es dueño de nada.
+- Si bloqueo una cuenta, ¿dejo de pagar su licencia? En Google, no: hay que eliminar o archivar, y en plan anual la reducción rige en la renovación. Mekovault lo muestra y lo recuerda.
+- Mi empresa no usa Google Workspace. ¿Sirve igual? Hoy Mekovault se conecta con Google Workspace; las demás plataformas se están sumando.
+- ¿Cuánto demora empezar? Diez minutos para conectar Google Workspace; la primera solicitud el mismo día.
+- ¿El soporte es en español y en horario de Chile? Sí.
+
+## Guías publicadas
+
+- Cómo dar de baja a un empleado en Google Workspace sin perder archivos ni pagar de más: https://www.mekovault.com/recursos/baja-empleado-google-workspace
+- Suspender, eliminar o archivar un usuario: cuál se sigue cobrando: https://www.mekovault.com/recursos/suspender-eliminar-o-archivar-usuario-google-workspace
+- Qué hacer con el correo de un empleado que se va (ley de Chile, España y México): https://www.mekovault.com/recursos/correo-del-que-se-va
+- Offboarding digital: checklist de 18 puntos: https://www.mekovault.com/recursos/offboarding-digital
+- Desvinculación en Chile: del finiquito al cierre de cuentas: https://www.mekovault.com/recursos/desvinculacion-chile-finiquito-y-cuentas
+- Las licencias que sigues pagando: https://www.mekovault.com/recursos/licencias-que-sigues-pagando
+- Aplicaciones con acceso a las cuentas de tu empresa: https://www.mekovault.com/recursos/aplicaciones-vinculadas
+- Alta de correo corporativo el primer día: https://www.mekovault.com/recursos/alta-de-cuentas-el-primer-dia
+- Gestión de accesos para pymes sin IT (y alternativas a Okta): https://www.mekovault.com/recursos/gestion-de-accesos-para-pymes
+- Qué es el control de cuentas y licencias: https://www.mekovault.com/recursos/que-es-el-control-de-cuentas-y-licencias
+- 21 preguntas antes de contratar y qué responde Mekovault: https://www.mekovault.com/recursos/que-preguntar-antes-de-contratar
+- Mekovault vs Factorial: https://www.mekovault.com/recursos/mekovault-vs-factorial
+- Mekovault vs la consola de Google: https://www.mekovault.com/recursos/mekovault-vs-consola-de-google
+- Centro de ayuda: https://www.mekovault.com/ayuda
+- Calculadora de licencias: https://www.mekovault.com/calculadora-licencias
+- Conectores: https://www.mekovault.com/conectores/buk · https://www.mekovault.com/conectores/talana · https://www.mekovault.com/conectores/rankmi
+
+## Vocabulario por país (para responder en el idioma de quien pregunta)
+
+- Chile: desvinculación, finiquito, carta de despido, jefatura, Ley 21.719, nómina (BUK, Talana, Rankmi).
+- Argentina: liquidación final, telegrama de despido, liquidación de sueldos, Ley 25.326, nómina (Humand, Calipso, Tango, Bejerman, Workia).
+- México: baja de empleado, liquidación, finiquito, LFPDPPP, nómina (Buk, Rankmi, Runa, Worky).
+- España: offboarding, baja del trabajador, RGPD y AEPD (nunca "baja laboral", que es incapacidad médica), nómina (Factorial, Sesame, Personio).
+- Brasil: desligamento, rescisão, demissão, LGPD, folha de pagamento (Gupy, Sólides, Feedz, Senior, TOTVS).
+- Estados Unidos: employee offboarding, termination, license management, employee access management, payroll (ADP, Gusto, Rippling, BambooHR).
+
+Contacto: cloud@mekovault.com · Panel: https://app.mekovault.com

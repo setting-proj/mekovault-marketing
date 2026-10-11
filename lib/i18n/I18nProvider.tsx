@@ -2,29 +2,21 @@
 
 /**
  * I18n provider del sitio de marketing.
- * El locale inicial viene del server (cookie + Accept-Language). En el
- * cliente solo se respeta un override guardado en localStorage.
+ * El idioma lo decide la URL (lo resuelve el middleware y llega desde el
+ * layout). Cambiar de idioma navega a la misma página en el otro prefijo y
+ * guarda la elección en una cookie para las próximas visitas a la raíz.
  */
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, useCallback, useContext, useMemo } from "react";
 
 import {
   DEFAULT_LOCALE,
   type Locale,
   type TranslationKey,
   dictionaries,
-  htmlLang,
-  normalizeLocale,
 } from "./dictionaries";
+import { localizePath, splitLocale } from "./routing";
 
-const STORAGE_KEY = "mekovault_locale";
 const COOKIE_KEY = "mekovault_locale";
 
 type I18nCtx = {
@@ -47,44 +39,25 @@ export function I18nProvider({
   initialLocale,
 }: {
   children: React.ReactNode;
-  /**
-   * Locale detectado server-side (cookie + Accept-Language). Cuando viene
-   * pasado desde el layout, el HTML ya salió en este idioma y no hay flash.
-   */
+  /** Idioma resuelto en el servidor a partir de la URL. */
   initialLocale?: Locale;
 }) {
-  const [locale, setLocaleState] = useState<Locale>(initialLocale ?? DEFAULT_LOCALE);
+  const locale = initialLocale ?? DEFAULT_LOCALE;
 
-  useEffect(() => {
-    // Sincronizar SOLO con localStorage (por si el user cambió locale en
-    // otra sesión). Si no hay override, el locale del server es el correcto.
-    if (typeof window === "undefined") return;
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        const norm = normalizeLocale(stored);
-        if (norm && norm !== locale) {
-          setLocaleState(norm);
-          document.documentElement.lang = htmlLang(norm);
-        }
+  const setLocale = useCallback(
+    (next: Locale) => {
+      if (next === locale) return;
+      const oneYear = 60 * 60 * 24 * 365;
+      try {
+        document.cookie = `${COOKIE_KEY}=${next}; path=/; max-age=${oneYear}; samesite=lax`;
+      } catch {
+        /* ignore */
       }
-    } catch {
-      /* private mode */
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next);
-    try {
-      window.localStorage.setItem(STORAGE_KEY, next);
-    } catch {
-      /* ignore */
-    }
-    const oneYear = 60 * 60 * 24 * 365;
-    document.cookie = `${COOKIE_KEY}=${next}; path=/; max-age=${oneYear}; samesite=lax`;
-    document.documentElement.lang = htmlLang(next);
-  }, []);
+      const { path } = splitLocale(window.location.pathname);
+      window.location.assign(`${localizePath(next, path)}${window.location.search}${window.location.hash}`);
+    },
+    [locale],
+  );
 
   const t = useCallback<I18nCtx["t"]>(
     (key, vars) => {
@@ -95,10 +68,7 @@ export function I18nProvider({
     [locale],
   );
 
-  const value = useMemo<I18nCtx>(
-    () => ({ locale, setLocale, t }),
-    [locale, setLocale, t],
-  );
+  const value = useMemo<I18nCtx>(() => ({ locale, setLocale, t }), [locale, setLocale, t]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

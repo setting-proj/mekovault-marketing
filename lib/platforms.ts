@@ -50,7 +50,7 @@ export const PLATFORMS: Platform[] = [
 
 /** Sistemas de personas: no se administran, avisan ingresos y salidas. */
 export const HR_SOURCES: Platform[] = [
-  { name: "Buk", status: "soon" },
-  { name: "Talana", status: "soon" },
+  { name: "Buk", status: "today" },
+  { name: "Talana", status: "today" },
   { name: "GeoVictoria", status: "soon" },
 ];

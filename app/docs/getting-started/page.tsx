@@ -1,4 +1,4 @@
-export const metadata = { title: "Primeros pasos · Mekovault" };
+export const metadata = { title: "Primeros pasos" };
 
 export default function GettingStarted() {
   return (

@@ -16,6 +16,7 @@ export default function AboutPage() {
       <Section compact>
         <Container size="narrow">
           <SectionHeading
+            as="h1"
             eyebrow={t("about.eyebrow")}
             title={
               <>

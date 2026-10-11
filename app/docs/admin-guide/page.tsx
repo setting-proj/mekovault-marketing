@@ -1,4 +1,4 @@
-export const metadata = { title: "Guía del administrador · Mekovault" };
+export const metadata = { title: "Guía del administrador" };
 
 export default function AdminGuide() {
   return (

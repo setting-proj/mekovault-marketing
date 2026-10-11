@@ -14,6 +14,7 @@ export default function ContactPage() {
       <Section compact>
         <Container size="narrow">
           <SectionHeading
+            as="h1"
             eyebrow={t("contact.eyebrow")}
             title={
               <>

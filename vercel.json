@@ -8,7 +8,14 @@
   "redirects": [
     { "source": "/app", "destination": "https://app.mekovault.com", "permanent": false },
     { "source": "/login", "destination": "https://app.mekovault.com/login", "permanent": false },
-    { "source": "/signup", "destination": "https://app.mekovault.com/signup", "permanent": false }
+    { "source": "/signup", "destination": "https://app.mekovault.com/signup", "permanent": false },
+    { "source": "/precios", "destination": "/pricing", "permanent": true },
+    { "source": "/plataformas", "destination": "/platforms", "permanent": true },
+    { "source": "/control-de-licencias", "destination": "/license-control", "permanent": true },
+    { "source": "/gobierno-de-cuentas", "destination": "/account-governance", "permanent": true },
+    { "source": "/producto", "destination": "/products", "permanent": true },
+    { "source": "/nosotros", "destination": "/about", "permanent": true },
+    { "source": "/contacto", "destination": "/contact", "permanent": true }
   ],
   "headers": [
     {
@@ -18,6 +25,19 @@
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    },
+    {
+      "source": "/((?!_next|api).*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/(llms.txt|llms-full.txt)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
       ]
     }
   ]

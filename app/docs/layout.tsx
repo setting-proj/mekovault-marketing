@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { metadataFor } from "@/lib/pageMeta";
+import Link from "@/components/Link";
 import { Container } from "@/components/Container";
 
 const DOCS_NAV = [
@@ -9,6 +10,8 @@ const DOCS_NAV = [
   { href: "/docs/troubleshooting", label: "Problemas frecuentes" },
   { href: "/governance", label: "Arquitectura y gobernanza" },
 ];
+
+export const generateMetadata = metadataFor("/docs", "seo.docs.title", "seo.docs.description");
 
 export default function DocsLayout({ children }: { children: React.ReactNode }) {
   return (
