@@ -79,13 +79,24 @@ export default async function RootLayout({
     url: SITE_URL,
     inLanguage: locale,
     publisher: { "@id": `${SITE_URL}/#organization` },
-    offers: {
-      "@type": "Offer",
-      price: "49900",
-      priceCurrency: "CLP",
-      description: dict["seo.offer.description"],
-      url: `${SITE_URL}/pricing`,
-    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: dict["tiers.free.name"],
+        price: "0",
+        priceCurrency: "CLP",
+        description: dict["tiers.free.who"],
+        url: `${SITE_URL}/pricing`,
+      },
+      {
+        "@type": "Offer",
+        name: dict["tiers.small.name"],
+        price: "49900",
+        priceCurrency: "CLP",
+        description: dict["seo.offer.description"],
+        url: `${SITE_URL}/pricing`,
+      },
+    ],
   };
 
   return (

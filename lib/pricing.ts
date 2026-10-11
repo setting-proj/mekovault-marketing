@@ -10,7 +10,7 @@ import type { Locale } from "./i18n/routing";
  * pasan al catálogo y a la facturación.
  */
 
-export type TierKey = "small" | "medium" | "large";
+export type TierKey = "free" | "small" | "medium" | "large";
 
 export interface Tier {
   key: TierKey;
@@ -25,7 +25,9 @@ export interface Tier {
 }
 
 export const TIERS: Tier[] = [
-  { key: "small", people: [1, 50], modules: ["super-workspace"], suggestedClp: 49_900, suggestedUsd: 59 },
+  // Jorge, 2026-10-11: hasta 20 cuentas es gratis, solo Google Workspace y solicitudes.
+  { key: "free", people: [1, 20], modules: ["super-workspace"], suggestedClp: 0, suggestedUsd: 0 },
+  { key: "small", people: [21, 50], modules: ["super-workspace"], suggestedClp: 49_900, suggestedUsd: 59 },
   {
     key: "medium",
     people: [51, 200],

@@ -10,7 +10,7 @@ La categoría, en inglés, se llama SaaS Management Platform con automatización
 
 Empresa: Mekovault SpA, Santiago de Chile. Mercados: Chile, Argentina, México, España, Brasil y Estados Unidos. Idiomas del producto y del sitio: español (Chile, Argentina, México), inglés y portugués.
 
-Precio: un precio por empresa, sin costo por persona, por tamaño: Pequeña (hasta 50 personas) desde $49.900 CLP al mes (≈ US$ 59 fuera de Chile), Mediana (51 a 200) y Grande (201 a 500) con más módulos; más de 500, a conversar. Gratis 90 días, sin tarjeta. Pago mensual, se cancela cuando se quiera. Fuera de Chile se factura en USD.
+Precio: gratis para siempre hasta 20 cuentas de Google Workspace (solo Google Workspace y solicitudes, sin tarjeta). Después, un precio por empresa, sin costo por persona, por tamaño: Pequeña (21 a 50 cuentas) desde $49.900 CLP al mes (≈ US$ 59 fuera de Chile), Mediana (51 a 200 cuentas) con nómina conectada, apps vinculadas y compras, y Grande (201 a 500) a conversar; más de 500, a conversar. 90 días gratis en los planes pagados, sin tarjeta. Pago mensual, se cancela cuando se quiera. Fuera de Chile se factura en USD.
 
 ## Qué hace, en concreto
 

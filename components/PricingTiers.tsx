@@ -10,6 +10,7 @@ import { FX_REFERENCE, TIERS, displayCurrency, formatPrice, type TierKey } from 
 import { cn } from "@/lib/cn";
 
 const TIER_I18N: Record<TierKey, { name: TranslationKey; who: TranslationKey; includes: TranslationKey[] }> = {
+  free: { name: "tiers.free.name", who: "tiers.free.who", includes: ["tiers.free.i1", "tiers.free.i2", "tiers.free.i3", "tiers.free.i4"] },
   small: { name: "tiers.small.name", who: "tiers.small.who", includes: ["tiers.small.i1", "tiers.small.i2", "tiers.small.i3", "tiers.small.i4"] },
   medium: { name: "tiers.medium.name", who: "tiers.medium.who", includes: ["tiers.medium.i1", "tiers.medium.i2", "tiers.medium.i3", "tiers.medium.i4"] },
   large: { name: "tiers.large.name", who: "tiers.large.who", includes: ["tiers.large.i1", "tiers.large.i2", "tiers.large.i3", "tiers.large.i4"] },
@@ -27,8 +28,8 @@ export function PricingTiers({ catalog }: { catalog: Catalog }) {
 
   return (
     <div>
-      <div className="grid gap-5 lg:grid-cols-3">
-        {TIERS.map((tier, idx) => {
+      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {TIERS.map((tier) => {
           const i18n = TIER_I18N[tier.key];
           const apps = tier.modules
             .map((slug) => catalog.items.find((a) => a.slug === slug))
@@ -38,7 +39,7 @@ export function PricingTiers({ catalog }: { catalog: Catalog }) {
           const chargeable = apps.filter((a) => !bundled.has(a.slug));
           const n = chargeable.length;
           const totalClp = chargeable.reduce((acc, a) => acc + calcNet(a.base_price_clp_monthly, n, curve), 0);
-          const featured = idx === 1;
+          const featured = tier.key === "small";
           const [from, to] = tier.people;
           return (
             <div
@@ -53,7 +54,15 @@ export function PricingTiers({ catalog }: { catalog: Catalog }) {
               <p className="mt-1 text-[14px] text-[#5b7390]">
                 {to === null ? t("tiers.people.from", { n: from }) : t("tiers.people.range", { a: from, b: to })}
               </p>
-              {tier.key === "large" ? (
+              {tier.key === "free" ? (
+                <>
+                  <div className="mt-6 flex items-baseline gap-2">
+                    <span className="text-[34px] font-extrabold tracking-[-0.02em] text-[#03045e]">{t("tiers.free.price")}</span>
+                    <span className="text-[13px] text-[#5b7390]">{t("pricing_page.per_month")}</span>
+                  </div>
+                  <p className="mt-1 text-[12px] font-semibold text-[#5b7390]">{t("tiers.free.desc")}</p>
+                </>
+              ) : tier.key === "large" ? (
                 <>
                   <div className="mt-6 flex items-baseline gap-2">
                     <span className="text-[34px] font-extrabold tracking-[-0.02em] text-[#03045e]">{t("tiers.talk")}</span>
@@ -97,6 +106,7 @@ export function PricingTiers({ catalog }: { catalog: Catalog }) {
         })}
       </div>
       <p className="mt-5 max-w-3xl text-[13px] leading-relaxed text-[#5b7390]">
+        {t("tiers.accounts_note")}{" "}
         {currency === "CLP"
           ? t("tiers.note.clp")
           : t("tiers.note.usd", { date: FX_REFERENCE.date })}{" "}

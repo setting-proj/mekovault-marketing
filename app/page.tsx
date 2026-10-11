@@ -20,6 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 /** Las 8 preguntas del inicio, para que Google y las IA las lean como FAQPage. */
 const FAQ_KEYS: Array<[TranslationKey, TranslationKey]> = [
+  ["faq.free.q", "faq.free.a"],
   ["faq.it.q", "faq.it.a"],
   ["faq.security.q", "faq.security.a"],
   ["faq.leave.q", "faq.leave.a"],

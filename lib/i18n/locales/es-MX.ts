@@ -69,7 +69,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
 
   // Pricing (home)
   "pricing.subtitle":
-    "Desde {price} al mes por empresa. Gratis los primeros 90 días, sin tarjeta.",
+    "Gratis hasta 20 cuentas. Después, desde {price} al mes por empresa, sin costo por persona.",
 
   // CTA final
   "cta.title": "Empieza hoy. En diez minutos tienes las cuentas bajo control.",

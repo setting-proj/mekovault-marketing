@@ -49,7 +49,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "svc.audit.b2": "Descargá el historial en Excel",
 
   // Pricing preview
-  "pricing.subtitle": "Desde {price} por mes por empresa. Gratis los primeros 90 días, sin tarjeta.",
+  "pricing.subtitle": "Gratis hasta 20 cuentas. Después, desde {price} por mes por empresa, sin costo por persona.",
 
   // FAQ
   "faq.title": "Lo que preguntan los dueños y gerentes antes de arrancar",
@@ -89,7 +89,7 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   // Pricing page
   "pricing_page.subtitle":
     "Elegí solo lo que necesitás. Cada módulo tiene un precio mensual fijo. Cuantos más módulos activás, más descuento en todos.",
-  "pricing_page.trial_badge": "Gratis 90 días · sin tarjeta · cancelás cuando quieras",
+  "pricing_page.trial_badge": "Gratis para siempre hasta 20 cuentas · 90 días gratis en los planes pagos · sin tarjeta",
   "pricing_page.select_hint": "Tocá un módulo para armar tu plan",
   "pricing_page.currency_note":
     "Precios de lista en pesos chilenos (CLP). Si estás en Argentina, escribinos y te cotizamos en dólares con factura.",

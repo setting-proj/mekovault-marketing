@@ -216,6 +216,7 @@ export function HomeView() {
           <SectionHeading eyebrow={t("faq.eyebrow")} title={t("faq.title")} desc={t("faq.subtitle")} />
           <FAQ
             items={[
+              { q: t("faq.free.q"), a: t("faq.free.a") },
               { q: t("faq.it.q"), a: t("faq.it.a") },
               { q: t("faq.security.q"), a: t("faq.security.a") },
               { q: t("faq.leave.q"), a: t("faq.leave.a") },
