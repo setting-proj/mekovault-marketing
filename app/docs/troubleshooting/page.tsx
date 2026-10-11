@@ -1,6 +1,12 @@
-export const metadata = { title: "Problemas frecuentes" };
+import type { Metadata } from "next";
+import { detectLocaleServer } from "@/lib/i18n/detectLocale.server";
+import { dictionaries } from "@/lib/i18n/dictionaries";
+import * as EN from "@/lib/content/docs/troubleshooting.en";
+import * as PT from "@/lib/content/docs/troubleshooting.pt";
+import { pageMetadata } from "@/lib/seo";
+const ES = { title: "Problemas frecuentes" };
 
-export default function Troubleshooting() {
+function SpanishBody() {
   return (
     <>
       <h1>Problemas frecuentes</h1>
@@ -56,4 +62,26 @@ export default function Troubleshooting() {
       </p>
     </>
   );
+}
+
+/** Versión por idioma: inglés y portugués traducidos; el resto, el original en español. */
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await detectLocaleServer();
+  const v = locale === "en-US" ? EN : locale === "pt-BR" ? PT : null;
+  const es = ES as { title: string; description?: string };
+  const title = v ? v.title : es.title;
+  return pageMetadata({
+    locale,
+    path: "/docs/troubleshooting",
+    title: title.includes("Mekovault") ? title : `${title} · Mekovault`,
+    description: v ? v.description : (es.description ?? dictionaries[locale]["seo.docs.description"]),
+    type: "article",
+  });
+}
+
+export default async function Page() {
+  const locale = await detectLocaleServer();
+  if (locale === "en-US") return <EN.default />;
+  if (locale === "pt-BR") return <PT.default />;
+  return <SpanishBody />;
 }

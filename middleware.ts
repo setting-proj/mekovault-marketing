@@ -29,6 +29,9 @@ export function middleware(req: NextRequest) {
   const seg = pathname.split("/")[1] ?? "";
   const requestHeaders = new Headers(req.headers);
 
+  // Las páginas no dependen de cookies ni de sesión: la CDN puede guardarlas una hora.
+  const CACHE = "public, s-maxage=3600, stale-while-revalidate=86400";
+
   const prefixed = PREFIX_TO_LOCALE[seg];
   if (prefixed) {
     const rest = pathname.slice(seg.length + 1) || "/";
@@ -36,7 +39,10 @@ export function middleware(req: NextRequest) {
     requestHeaders.set("x-mv-path", rest);
     const url = req.nextUrl.clone();
     url.pathname = rest;
-    return NextResponse.rewrite(url, { request: { headers: requestHeaders } });
+    const res = NextResponse.rewrite(url, { request: { headers: requestHeaders } });
+    res.headers.set("Cache-Control", CACHE);
+    res.headers.set("Vary", "Cookie");
+    return res;
   }
 
   if (req.method === "GET") {
@@ -50,5 +56,8 @@ export function middleware(req: NextRequest) {
 
   requestHeaders.set("x-mv-locale", DEFAULT_LOCALE);
   requestHeaders.set("x-mv-path", pathname);
-  return NextResponse.next({ request: { headers: requestHeaders } });
+  const res = NextResponse.next({ request: { headers: requestHeaders } });
+  res.headers.set("Cache-Control", CACHE);
+  res.headers.set("Vary", "Cookie");
+  return res;
 }

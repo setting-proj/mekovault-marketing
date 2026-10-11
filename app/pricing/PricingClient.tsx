@@ -6,6 +6,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
+import { PricingTiers } from "@/components/PricingTiers";
 import { useT } from "@/lib/i18n/I18nProvider";
 import {
   APP_I18N,
@@ -88,6 +89,16 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
             desc={t("pricing_page.subtitle")}
           />
           <p className="mt-6 text-sm font-semibold text-[#33507a]">{t("pricing_page.trial_badge")}</p>
+        </Container>
+      </Section>
+
+      {/* Por tamaño de empresa (plan de marketing 2026-10-11) */}
+      <Section compact tone="panel" className="border-y border-[#dbeaf2]">
+        <Container size="wide">
+          <SectionHeading eyebrow={t("tiers.eyebrow")} title={t("tiers.title")} desc={t("tiers.desc")} />
+          <div className="mt-10">
+            <PricingTiers catalog={catalog} />
+          </div>
         </Container>
       </Section>
 

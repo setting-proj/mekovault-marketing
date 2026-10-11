@@ -8,7 +8,8 @@ import { useI18n } from "@/lib/i18n/I18nProvider";
  */
 export function LegalLangNotice() {
   const { locale, t } = useI18n();
-  if (locale.startsWith("es")) return null;
+  // Inglés y portugués tienen traducción propia con su aviso; en español no hace falta.
+  if (locale) return null;
   return (
     <p className="mb-6 rounded-lg border bg-muted/40 px-3 py-2 text-xs text-muted-foreground">
       {t("legal.lang_notice")}

@@ -456,7 +456,7 @@ const ptBR: Dictionary = {
   "faq.licenses.a":
     "Nem sempre. Na maioria das plataformas uma conta bloqueada continua sendo cobrada até a licença ser liberada e a quantidade contratada ser reduzida, e esse último passo é feito pela sua empresa na tela de pagamentos de cada plataforma. O Controle de licenças (em breve) libera a licença e avisa a tempo o que reduzir.",
   "pricing_page.model_note":
-    "Administrar contas tem um preço fixo conforme o número de plataformas conectadas. O Controle de licenças será um adicional conforme as licenças que gerenciarmos para você. Enquanto adicionamos plataformas, vamos conversar sobre o seu caso: cloud@mekovault.com.",
+    "Um preço fixo por empresa conforme os módulos que você ativa, sem custo por pessoa nem por implantação. Mais de 500 pessoas ou várias empresas: vamos conversar em cloud@mekovault.com.",
 
   // ========== Páginas /platforms y /license-control (2026-09-21) ==========
   "nav.platforms":
@@ -504,7 +504,7 @@ const ptBR: Dictionary = {
   "pf.cta.license":
     "Ver Controle de licenças",
   "lc.eyebrow":
-    "Controle de licenças · em breve",
+    "Controle de licenças",
   "lc.title.pre":
     "Bloquear uma conta",
   "lc.title.hl":
@@ -563,9 +563,9 @@ const ptBR: Dictionary = {
     "Nenhuma plataforma permite que um terceiro reduza a quantidade que você contratou: esse último passo é feito pela sua empresa, na tela de pagamentos de cada plataforma. O Controle de licenças deixa todo o resto feito e avisa a tempo, com os passos exatos.",
   "lc.cta.title":
     "Quer saber quanto você está pagando a mais?",
-  "lc.cta.subtitle": "O Controle de licenças começa com Google Workspace. Fale com a gente e avisamos assim que estiver disponível.",
+  "lc.cta.subtitle": "O Controle de licenças funciona hoje com o Google Workspace e com as assinaturas registradas em Compras. As demais plataformas entram uma a uma; enquanto isso, dizemos exatamente o que mudar em cada console.",
   "lc.cta.contact":
-    "Me avisem quando estiver pronto",
+    "Comece grátis por 90 dias",
   "lc.cta.platforms":
     "Ver plataformas",
 
@@ -850,6 +850,74 @@ const ptBR: Dictionary = {
   "searches.q5": "Como conecto a folha de pagamento para que admissões e desligamentos rodem sozinhos?",
   "searches.q6": "O que perguntar a qualquer fornecedor antes de contratar?",
   "searches.link": "Ver todos os guias",
+
+  // ========== Precios por tamaño, contacto, nosotros, estado (2026-10-11, ola 2) ==========
+  "tiers.eyebrow": "Por tamanho de empresa",
+  "tiers.title": "Escolha pelo tamanho da sua empresa",
+  "tiers.desc": "Três configurações recomendadas. O preço é por empresa, não por pessoa: dentro de cada faixa você paga o mesmo com 20 ou com 200 pessoas.",
+  "tiers.small.name": "Pequena",
+  "tiers.small.who": "Até 50 pessoas",
+  "tiers.small.i1": "Admissões e desligamentos no Google Workspace no dia certo",
+  "tiers.small.i2": "E-mail redirecionado, arquivos transferidos, licença liberada",
+  "tiers.small.i3": "Licenças: compradas, em uso e em contas bloqueadas",
+  "tiers.small.i4": "Auditoria de 365 dias",
+  "tiers.medium.name": "Média",
+  "tiers.medium.who": "De 51 a 200 pessoas",
+  "tiers.medium.i1": "Tudo da Pequena",
+  "tiers.medium.i2": "Folha de pagamento conectada e gestores",
+  "tiers.medium.i3": "Solicitações com aprovação por papel e carga em massa",
+  "tiers.medium.i4": "Aplicativos conectados e compras de software",
+  "tiers.large.name": "Grande",
+  "tiers.large.who": "De 201 a 500 pessoas",
+  "tiers.large.i1": "Tudo da Média",
+  "tiers.large.i2": "API por empresa e dupla aprovação",
+  "tiers.large.i3": "Exportação de auditoria para auditores externos",
+  "tiers.large.i4": "Suporte prioritário",
+  "tiers.people.range": "{a} a {b} pessoas",
+  "tiers.people.from": "A partir de {n} pessoas",
+  "tiers.per_company": "por empresa ao mês, sem custo por pessoa",
+  "tiers.modules": "Módulos",
+  "tiers.note.clp": "Preços em pesos chilenos, impostos incluídos. O total vem do catálogo de módulos com seu desconto.",
+  "tiers.note.usd": "Referência em dólares ao câmbio de {date}; fora do Chile faturamos em USD por transferência ou cartão.",
+  "tiers.note.more": "Mais de 500 pessoas ou várias empresas: escreva para cloud@mekovault.com.",
+  "contact.after.title": "O que acontece depois de escrever",
+  "contact.after.s1.title": "Respondemos em um dia útil",
+  "contact.after.s1.desc": "Uma pessoa da equipe, não um robô. Se a pergunta for técnica, responde quem construiu aquela parte.",
+  "contact.after.s2.title": "Videochamada de 20 minutos, se quiser",
+  "contact.after.s2.desc": "Mostramos a Mekovault com uma empresa de exemplo e, se você já tem Google Workspace, conectamos com você na mesma chamada.",
+  "contact.after.s3.title": "Você testa grátis por 90 dias",
+  "contact.after.s3.desc": "Sem cartão e sem contrato. Se não servir, nada acontece: suas contas continuam no Google como estavam.",
+  "contact.hours.title": "Horários e canais",
+  "contact.hours.desc": "Segunda a sexta, das 9h às 19h no horário do Chile. Suporte a clientes por e-mail e pelo painel; urgências de clientes têm prioridade. Atendemos em português, espanhol e inglês.",
+  "contact.faq.q1": "Atendem fora do Chile?",
+  "contact.faq.a1": "Sim: Brasil, Argentina, México, Espanha e Estados Unidos. Fora do Chile, o faturamento é em dólares.",
+  "contact.faq.q2": "Posso pedir uma demonstração com meus próprios dados?",
+  "contact.faq.a2": "Sim. Conectamos seu Google Workspace na chamada e fazemos uma solicitação real com uma conta de teste, para você ver o que é encerrado, qual licença é liberada e o que fica registrado.",
+  "contact.faq.q3": "Trabalham com consultorias ou parceiros?",
+  "contact.faq.a3": "Sim. Há um programa de parceiros com comissão mensal para consultorias de RH, contadores e parceiros Google Workspace.",
+  "contact.faq.link": "Ver o programa de parceiros",
+  "about.believe.title": "No que acreditamos",
+  "about.believe.1.strong": "Tudo nasce na folha de pagamento.",
+  "about.believe.1.rest": "Uma conta existe porque uma pessoa entrou na empresa. Se as datas de entrada e saída já estão em Pessoas ou na folha, ninguém deveria ter que pedi-las por e-mail.",
+  "about.believe.2.strong": "O gestor decide, não a TI.",
+  "about.believe.2.rest": "O que acontece com os arquivos e o e-mail de quem sai, o gestor direto sabe. Nosso trabalho é perguntar a tempo e executar a decisão.",
+  "about.believe.3.strong": "Dizemos o que não fazemos.",
+  "about.believe.3.rest": "Nenhuma plataforma deixa um terceiro reduzir o que você contratou, e várias não permitem automatizar nada. Dizemos isso em cada página, e o que não dá para automatizar vira tarefa com evidência.",
+  "about.believe.4.strong": "Um preço por empresa.",
+  "about.believe.4.rest": "Cobrar por pessoa castiga a empresa que cresce. Cobramos por empresa, pelo tamanho, sem custo de implantação.",
+  "about.where.title": "Onde estamos",
+  "about.where.desc": "A Mekovault SpA fica em Santiago do Chile e a equipe trabalha remota. Atendemos Chile, Argentina, México, Espanha, Brasil e Estados Unidos em espanhol, inglês e português. Os servidores ficam nos Estados Unidos com cópias cifradas; onde os dados ficam está detalhado em Segurança e arquitetura.",
+  "about.where.link": "Ver segurança e arquitetura",
+  "status.what.title": "O que é verificado",
+  "status.what.desc": "Três coisas, a partir do seu navegador: se o aplicativo responde, se a API pública responde e se este site carrega. Se o seu navegador não alcançar alguma, aparece 'Sem resposta' mesmo com o serviço no ar; nesse caso, teste de outra rede.",
+  "status.incidents.title": "Como avisamos",
+  "status.incidents.desc": "Incidentes e manutenções programadas são avisados por e-mail aos administradores de cada organização, com hora de início, impacto e previsão de término, e depois um resumo da causa. Não há manutenção no horário comercial do Chile.",
+  "status.scheduled.title": "O que roda sozinho",
+  "status.scheduled.desc": "Admissões e desligamentos programados rodam na hora marcada por um processo com novas tentativas; se uma operação falha, a solicitação fica em 'requer atenção' com o motivo e um aviso é enviado. O calendário de operações de cada organização mostra cada execução com seu status.",
+  "status.links": "Como a Mekovault é construída e operada está em Segurança e arquitetura. Suporte a clientes: soporte@mekovault.com.",
+  "tiers.talk": "Vamos conversar",
+  "tiers.talk.desc": "Com mais de 200 pessoas confirmamos o plano com você: o mesmo preço por empresa, sem custo por pessoa.",
+  "tiers.talk.cta": "Escreva para nós",
 };
 
 export default ptBR;

@@ -25,6 +25,12 @@ type PageMeta = {
    * bajo /ar, /mx, /en y /pt apuntan su canónica a la versión chilena.
    */
   localized?: boolean;
+  /**
+   * Idiomas en los que existe la página (guías con variantes). Si se pasa,
+   * el hreflang solo declara esos; la canónica es la del idioma actual si
+   * está en la lista y, si no, la de es-CL.
+   */
+  availableLocales?: Locale[];
   noindex?: boolean;
 };
 
@@ -36,15 +42,13 @@ export function pageMetadata({
   description,
   type = "website",
   localized = true,
+  availableLocales,
   noindex = false,
 }: PageMeta): Metadata {
-  const canonical = localized ? absoluteUrl(locale, path) : absoluteUrl(DEFAULT_LOCALE, path);
+  const locales = availableLocales ?? (localized ? ALL_LOCALES : [DEFAULT_LOCALE]);
+  const canonical = locales.includes(locale) ? absoluteUrl(locale, path) : absoluteUrl(DEFAULT_LOCALE, path);
   const languages: Record<string, string> = {};
-  if (localized) {
-    for (const l of ALL_LOCALES) languages[HREFLANG[l]] = absoluteUrl(l, path);
-  } else {
-    languages[HREFLANG[DEFAULT_LOCALE]] = absoluteUrl(DEFAULT_LOCALE, path);
-  }
+  for (const l of locales) languages[HREFLANG[l]] = absoluteUrl(l, path);
   languages["x-default"] = absoluteUrl(DEFAULT_LOCALE, path);
 
   return {

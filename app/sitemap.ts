@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
 
-import { ALL_LOCALES, DEFAULT_LOCALE, HREFLANG, absoluteUrl } from "@/lib/i18n/routing";
-import { RESOURCE_SLUGS } from "@/lib/resources";
+import { CONTENT_BY_LOCALE } from "@/lib/content/recursos/index.generated";
+import { ALL_LOCALES, DEFAULT_LOCALE, HREFLANG, absoluteUrl, type Locale } from "@/lib/i18n/routing";
+import { CONNECTORS, RESOURCE_SLUGS, UPCOMING_PLATFORMS } from "@/lib/resources";
 
 export const dynamic = "force-static";
 
-/** Páginas que existen en los cinco idiomas. */
+/** Páginas que existen en todos los idiomas. */
 const LOCALIZED = [
   "/",
   "/products",
@@ -30,17 +31,15 @@ const LOCALIZED = [
   "/legal/aup",
   "/legal/cookies",
   "/legal/sub-processors",
+  "/recursos",
 ];
 
-/** Guías y ayuda: hoy solo en español de Chile (una URL, sin alternativas). */
+/** Páginas que hoy solo existen en español de Chile. */
 const SPANISH_ONLY = [
-  "/recursos",
-  ...RESOURCE_SLUGS.map((s) => `/recursos/${s}`),
   "/ayuda",
-  "/conectores/buk",
-  "/conectores/talana",
-  "/conectores/rankmi",
   "/calculadora-licencias",
+  ...CONNECTORS.map((c) => `/conectores/${c.slug}`),
+  ...UPCOMING_PLATFORMS.map((p) => `/plataformas/${p.slug}`),
 ];
 
 function priorityFor(path: string): number {
@@ -51,32 +50,35 @@ function priorityFor(path: string): number {
   return 0.7;
 }
 
+function entries(path: string, locales: Locale[], now: Date, freq: "monthly" | "yearly"): MetadataRoute.Sitemap {
+  const languages: Record<string, string> = {};
+  for (const l of locales) languages[HREFLANG[l]] = absoluteUrl(l, path);
+  languages["x-default"] = absoluteUrl(DEFAULT_LOCALE, path);
+  return locales.map((l) => ({
+    url: absoluteUrl(l, path),
+    lastModified: now,
+    changeFrequency: freq,
+    priority: l === DEFAULT_LOCALE ? priorityFor(path) : Math.max(0.3, priorityFor(path) - 0.2),
+    alternates: { languages },
+  }));
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const out: MetadataRoute.Sitemap = [];
 
   for (const path of LOCALIZED) {
-    const languages: Record<string, string> = {};
-    for (const l of ALL_LOCALES) languages[HREFLANG[l]] = absoluteUrl(l, path);
-    languages["x-default"] = absoluteUrl(DEFAULT_LOCALE, path);
-    for (const l of ALL_LOCALES) {
-      out.push({
-        url: absoluteUrl(l, path),
-        lastModified: now,
-        changeFrequency: path.startsWith("/legal") ? "yearly" : "monthly",
-        priority: l === DEFAULT_LOCALE ? priorityFor(path) : Math.max(0.3, priorityFor(path) - 0.2),
-        alternates: { languages },
-      });
-    }
+    out.push(...entries(path, ALL_LOCALES, now, path.startsWith("/legal") ? "yearly" : "monthly"));
+  }
+
+  // Guías: solo los idiomas en los que existe cada una.
+  for (const slug of RESOURCE_SLUGS) {
+    const available = Object.keys(CONTENT_BY_LOCALE[slug] ?? {}) as Locale[];
+    out.push(...entries(`/recursos/${slug}`, available.length ? available : [DEFAULT_LOCALE], now, "monthly"));
   }
 
   for (const path of SPANISH_ONLY) {
-    out.push({
-      url: absoluteUrl(DEFAULT_LOCALE, path),
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: priorityFor(path),
-    });
+    out.push({ url: absoluteUrl(DEFAULT_LOCALE, path), lastModified: now, changeFrequency: "monthly", priority: priorityFor(path) });
   }
 
   return out;

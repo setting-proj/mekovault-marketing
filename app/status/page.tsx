@@ -11,6 +11,9 @@
 
 import { useEffect, useState } from "react";
 
+import Link from "@/components/Link";
+import { useT } from "@/lib/i18n/I18nProvider";
+
 type Target = { key: string; label: string; url: string; expect?: number[] };
 
 const TARGETS: Target[] = [
@@ -28,6 +31,7 @@ function label(r: Result): { text: string; color: string } {
 }
 
 export default function StatusPage() {
+  const t = useT();
   const [results, setResults] = useState<Record<string, Result>>(
     Object.fromEntries(TARGETS.map((t) => [t.key, { ok: null, ms: null, code: null, at: null }])),
   );
@@ -112,6 +116,20 @@ export default function StatusPage() {
           );
         })}
       </div>
+      <section style={{ marginTop: 36, display: "grid", gap: 22 }}>
+        {(["what", "incidents", "scheduled"] as const).map((k) => (
+          <div key={k}>
+            <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 6 }}>{t(`status.${k}.title`)}</h2>
+            <p style={{ color: "#374151", lineHeight: 1.6 }}>{t(`status.${k}.desc`)}</p>
+          </div>
+        ))}
+        <p style={{ fontSize: 14, color: "#374151" }}>
+          {t("status.links")}{" "}
+          <Link href="/governance" style={{ color: "#0077b6", fontWeight: 600 }}>
+            /governance
+          </Link>
+        </p>
+      </section>
       <p style={{ marginTop: 28, fontSize: 13, color: "#6b7280" }}>
         Incidentes y mantenimientos se comunican por correo a los administradores de cada organización. Contacto: soporte@mekovault.com.
       </p>

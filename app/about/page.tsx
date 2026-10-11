@@ -117,6 +117,28 @@ export default function AboutPage() {
         </Container>
       </Section>
 
+      {/* En qué creemos + dónde estamos (plan de marketing 2026-10-11) */}
+      <Section className="border-t">
+        <Container size="narrow">
+          <h2 className="text-3xl font-extrabold tracking-[-0.02em] text-[#03045e]">{t("about.believe.title")}</h2>
+          <ul className="mt-8 grid gap-6 sm:grid-cols-2">
+            {(["1", "2", "3", "4"] as const).map((n) => (
+              <li key={n} className="rounded-[12px] border border-[#dbeaf2] bg-white p-6">
+                <p className="text-[17px] font-extrabold text-[#03045e]">{t(`about.believe.${n}.strong`)}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-[#33507a]">{t(`about.believe.${n}.rest`)}</p>
+              </li>
+            ))}
+          </ul>
+          <h2 className="mt-14 text-3xl font-extrabold tracking-[-0.02em] text-[#03045e]">{t("about.where.title")}</h2>
+          <p className="mt-4 text-[16px] leading-relaxed text-[#33507a]">{t("about.where.desc")}</p>
+          <div className="mt-4">
+            <LinkButton href="/governance" variant="outline">
+              {t("about.where.link")} <ArrowRight />
+            </LinkButton>
+          </div>
+        </Container>
+      </Section>
+
       <Section className="border-t">
         <Container size="narrow" className="text-center">
           <h2 className="text-3xl font-extrabold tracking-[-0.02em] text-[#03045e]">

@@ -42,6 +42,16 @@ const SEARCHES: Array<{ key: TranslationKey; href: string }> = [
   { key: "searches.q6", href: "/recursos/que-preguntar-antes-de-contratar" },
 ];
 
+/** En inglés y portugués se enlazan solo las guías que existen en ese idioma. */
+const SEARCHES_INTL: Array<{ key: TranslationKey; href: string }> = [
+  { key: "searches.q1", href: "/recursos/baja-empleado-google-workspace" },
+  { key: "searches.q2", href: "/recursos/offboarding-digital" },
+  { key: "searches.q3", href: "/recursos/licencias-que-sigues-pagando" },
+  { key: "searches.q4", href: "/recursos/aplicaciones-vinculadas" },
+  { key: "searches.q5", href: "/recursos/que-es-el-control-de-cuentas-y-licencias" },
+  { key: "searches.q6", href: "/recursos/que-preguntar-antes-de-contratar" },
+];
+
 export function HomeView() {
   const { t, locale } = useI18n();
   return (
@@ -85,12 +95,12 @@ export function HomeView() {
       <LogoMarquee />
 
       {/* 1a. Las preguntas que la gente busca (guías en español; plan de marketing 2026-10-11) */}
-      {locale.startsWith("es") && (
+      {(
         <Section id="preguntas" compact className="border-b border-[#dbeaf2] bg-white">
           <Container>
             <SectionHeading eyebrow={t("searches.eyebrow")} title={t("searches.title")} desc={t("searches.desc")} />
             <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {SEARCHES.map((s) => (
+              {(locale.startsWith("es") ? SEARCHES : SEARCHES_INTL).map((s) => (
                 <li key={s.href}>
                   <Link
                     href={s.href}

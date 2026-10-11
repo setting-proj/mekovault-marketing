@@ -135,7 +135,7 @@ export default function LicenseControlPage() {
           <h2 className="text-balance text-[30px] font-extrabold tracking-[-0.025em] text-[#03045e] sm:text-[36px]">{t("lc.cta.title")}</h2>
           <p className="mt-3 text-[17px] text-[#33507a]">{t("lc.cta.subtitle")}</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <LinkButton href="/contact" size="lg">
+            <LinkButton href="https://app.mekovault.com/signup" external size="lg">
               {t("lc.cta.contact")} <ArrowRight />
             </LinkButton>
             <LinkButton href="/platforms" size="lg" variant="outline">

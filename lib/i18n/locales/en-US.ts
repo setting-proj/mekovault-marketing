@@ -455,7 +455,7 @@ const enUS: Dictionary = {
   "faq.licenses.a":
     "Not always. On most platforms a blocked account keeps being charged until the license is released and the purchased quantity is reduced, and that last step is done by your company on each platform's billing page. License Control (coming soon) releases the license and tells you in time what to reduce.",
   "pricing_page.model_note":
-    "Account management has a fixed price based on how many platforms you connect. License Control will be an add-on based on the licenses we manage for you. While we add platforms, let's talk about your case: cloud@mekovault.com.",
+    "A fixed price per company based on the modules you enable, with no per-user or implementation fee. More than 500 people or several companies: let's talk at cloud@mekovault.com.",
 
   // ========== Páginas /platforms y /license-control (2026-09-21) ==========
   "nav.platforms":
@@ -503,7 +503,7 @@ const enUS: Dictionary = {
   "pf.cta.license":
     "See License Control",
   "lc.eyebrow":
-    "License Control · coming soon",
+    "License control",
   "lc.title.pre":
     "Blocking an account",
   "lc.title.hl":
@@ -562,9 +562,9 @@ const enUS: Dictionary = {
     "No platform lets a third party reduce the quantity you purchased: that last step is done by your company, on each platform's billing page. License Control gets everything else done and reminds you in time, with the exact steps.",
   "lc.cta.title":
     "Want to know how much you're overpaying?",
-  "lc.cta.subtitle": "License Control starts with Google Workspace. Write to us and we'll let you know as soon as it's available.",
+  "lc.cta.subtitle": "License control works today with Google Workspace and with the subscriptions registered in Purchases. The other platforms are added one by one; meanwhile we tell you exactly what to change in each console.",
   "lc.cta.contact":
-    "Let me know when it's ready",
+    "Start free for 90 days",
   "lc.cta.platforms":
     "See platforms",
 
@@ -849,6 +849,74 @@ const enUS: Dictionary = {
   "searches.q5": "How do I connect payroll so joiners and leavers run on their own?",
   "searches.q6": "What should I ask any vendor before signing?",
   "searches.link": "See all guides",
+
+  // ========== Precios por tamaño, contacto, nosotros, estado (2026-10-11, ola 2) ==========
+  "tiers.eyebrow": "By company size",
+  "tiers.title": "Pick by the size of your company",
+  "tiers.desc": "Three recommended setups. The price is per company, not per person: within each tier you pay the same with 20 or 200 people.",
+  "tiers.small.name": "Small",
+  "tiers.small.who": "Up to 50 people",
+  "tiers.small.i1": "Joiners and leavers in Google Workspace on the right day",
+  "tiers.small.i2": "Email redirected, files handed over, license released",
+  "tiers.small.i3": "Licenses: purchased, in use and on blocked accounts",
+  "tiers.small.i4": "365 days of audit evidence",
+  "tiers.medium.name": "Medium",
+  "tiers.medium.who": "51 to 200 people",
+  "tiers.medium.i1": "Everything in Small",
+  "tiers.medium.i2": "Payroll connected and managers",
+  "tiers.medium.i3": "Requests with role-based approval and bulk upload",
+  "tiers.medium.i4": "Connected apps and software purchases",
+  "tiers.large.name": "Large",
+  "tiers.large.who": "201 to 500 people",
+  "tiers.large.i1": "Everything in Medium",
+  "tiers.large.i2": "Company API and dual approval",
+  "tiers.large.i3": "Audit export for external auditors",
+  "tiers.large.i4": "Priority support",
+  "tiers.people.range": "{a} to {b} people",
+  "tiers.people.from": "From {n} people",
+  "tiers.per_company": "per company per month, no per-user fee",
+  "tiers.modules": "Modules",
+  "tiers.note.clp": "Prices in Chilean pesos, VAT included. The total comes from the module catalog with its discount.",
+  "tiers.note.usd": "USD reference at the exchange rate of {date}; outside Chile we bill in USD by bank transfer or card.",
+  "tiers.note.more": "More than 500 people or several companies: write to cloud@mekovault.com.",
+  "contact.after.title": "What happens after you write",
+  "contact.after.s1.title": "We reply within one business day",
+  "contact.after.s1.desc": "A person on the team, not a bot. If your question is technical, the person who built that part answers it.",
+  "contact.after.s2.title": "A 20-minute video call, if you want one",
+  "contact.after.s2.desc": "We show Mekovault with a sample company and, if you already have Google Workspace, we connect it with you on the same call.",
+  "contact.after.s3.title": "You try it free for 90 days",
+  "contact.after.s3.desc": "No card and no contract. If it is not for you, nothing happens: your accounts stay in Google exactly as they were.",
+  "contact.hours.title": "Hours and channels",
+  "contact.hours.desc": "Monday to Friday, 9:00 to 19:00 Chile time. Customer support by email and from the panel; customer emergencies first. We work in Spanish, English and Portuguese.",
+  "contact.faq.q1": "Do you serve companies outside Chile?",
+  "contact.faq.a1": "Yes: Argentina, Mexico, Spain, Brazil and the United States. Outside Chile we bill in US dollars.",
+  "contact.faq.q2": "Can I get a demo with my own data?",
+  "contact.faq.a2": "Yes. We connect your Google Workspace on the call and run a real request with a test account, so you see what gets closed, which license is released and what gets recorded.",
+  "contact.faq.q3": "Do you work with consultants or partners?",
+  "contact.faq.a3": "Yes. There is a partner program with a monthly commission for HR consultants, accountants and Google Workspace partners.",
+  "contact.faq.link": "See the partner program",
+  "about.believe.title": "What we believe",
+  "about.believe.1.strong": "Everything starts in payroll.",
+  "about.believe.1.rest": "An account exists because a person joined the company. If the joining and leaving dates are already in People or in payroll, nobody should have to request them by email.",
+  "about.believe.2.strong": "The manager decides, not IT.",
+  "about.believe.2.rest": "What happens to the files and email of someone who leaves is known by their direct manager. Our job is to ask on time and execute the decision.",
+  "about.believe.3.strong": "We say what we do not do.",
+  "about.believe.3.rest": "No platform lets a third party reduce what you contracted, and several allow no automation at all. We say so on every page, and what cannot be automated becomes a task with evidence.",
+  "about.believe.4.strong": "One price per company.",
+  "about.believe.4.rest": "Charging per person punishes the company that grows. We charge per company, by size, with no implementation fee.",
+  "about.where.title": "Where we are",
+  "about.where.desc": "Mekovault SpA is based in Santiago, Chile, and the team works remotely. We serve Chile, Argentina, Mexico, Spain, Brazil and the United States in Spanish, English and Portuguese. Servers are in the United States with encrypted backups; where data lives is detailed in Security and architecture.",
+  "about.where.link": "See security and architecture",
+  "status.what.title": "What is checked",
+  "status.what.desc": "Three things, from your browser: that the app responds, that the public API responds and that this site loads. If your browser cannot reach one of them, it shows 'No response' even if the service is up; try from another network in that case.",
+  "status.incidents.title": "How we notify",
+  "status.incidents.desc": "Incidents and scheduled maintenance are announced by email to the administrators of each organization, with start time, impact and estimated end, followed by a cause summary. No maintenance during Chilean office hours.",
+  "status.scheduled.title": "What runs on its own",
+  "status.scheduled.desc": "Scheduled joiners and leavers run at the set time by a process with retries; if an operation fails, the request is marked 'needs attention' with the reason and a notice is sent. Each organization's operations calendar shows every run with its status.",
+  "status.links": "How Mekovault is built and run is in Security and architecture. Customer support: soporte@mekovault.com.",
+  "tiers.talk": "Let's talk",
+  "tiers.talk.desc": "With more than 200 people we confirm the plan with you: still one price per company, no per-user fee.",
+  "tiers.talk.cta": "Write to us",
 };
 
 export default enUS;

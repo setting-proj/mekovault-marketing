@@ -28,6 +28,10 @@ Categoría: control de cuentas, licencias y suscripciones de la empresa (lo que 
 - [21 preguntas antes de contratar y qué responde Mekovault](https://www.mekovault.com/recursos/que-preguntar-antes-de-contratar)
 - [Mekovault vs Factorial](https://www.mekovault.com/recursos/mekovault-vs-factorial)
 - [Mekovault vs la consola de Google](https://www.mekovault.com/recursos/mekovault-vs-consola-de-google)
+- [Mekovault vs Cledara](https://www.mekovault.com/recursos/mekovault-vs-cledara)
+- [Mekovault vs Rippling](https://www.mekovault.com/recursos/mekovault-vs-rippling)
+- [Mekovault vs Zluri](https://www.mekovault.com/recursos/mekovault-vs-zluri)
+- [Mekovault vs un partner de Google Workspace](https://www.mekovault.com/recursos/mekovault-vs-partner-de-google)
 - [Centro de ayuda](https://www.mekovault.com/ayuda): alias, cuentas genéricas, reactivar, cambio de dominio, delegar buzón, licencias de Zoom y Slack.
 - [Calculadora de licencias](https://www.mekovault.com/calculadora-licencias): cuánto se fuga en licencias de gente que ya no está.
 
@@ -36,6 +40,12 @@ Categoría: control de cuentas, licencias y suscripciones de la empresa (lo que 
 - [BUK + Google Workspace](https://www.mekovault.com/conectores/buk)
 - [Talana + Google Workspace](https://www.mekovault.com/conectores/talana)
 - [Rankmi + Google Workspace](https://www.mekovault.com/conectores/rankmi)
+
+## Plataformas en preparación (no disponibles todavía)
+
+- [Microsoft 365, Outlook y Teams](https://www.mekovault.com/plataformas/microsoft-365)
+- [Slack](https://www.mekovault.com/plataformas/slack)
+- [Zoom](https://www.mekovault.com/plataformas/zoom)
 
 ## Empresa y confianza
 
@@ -48,7 +58,7 @@ Categoría: control de cuentas, licencias y suscripciones de la empresa (lo que 
 
 ## Otros idiomas
 
-- Argentina: https://www.mekovault.com/ar · México: https://www.mekovault.com/mx · English: https://www.mekovault.com/en · Português: https://www.mekovault.com/pt
+- Argentina: https://www.mekovault.com/ar · México: https://www.mekovault.com/mx · España: https://www.mekovault.com/es · English: https://www.mekovault.com/en · Português: https://www.mekovault.com/pt
 
 ## Optional
 

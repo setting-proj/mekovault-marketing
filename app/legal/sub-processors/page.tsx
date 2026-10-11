@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
+import { detectLocaleServer } from "@/lib/i18n/detectLocale.server";
+import { dictionaries } from "@/lib/i18n/dictionaries";
+import * as EN from "@/lib/content/legal/sub-processors.en";
+import * as PT from "@/lib/content/legal/sub-processors.pt";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const ES = {
   title: "Sub-procesadores",
   description:
     "Lista de proveedores que Mekovault utiliza para operar la plataforma.",
@@ -44,7 +49,7 @@ const SUBS = [
   },
 ];
 
-export default function SubProcessorsPage() {
+function SpanishBody() {
   return (
     <>
       <h1>Sub-procesadores</h1>
@@ -102,4 +107,26 @@ export default function SubProcessorsPage() {
       </p>
     </>
   );
+}
+
+/** Versión por idioma: inglés y portugués traducidos; el resto, el original en español. */
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await detectLocaleServer();
+  const v = locale === "en-US" ? EN : locale === "pt-BR" ? PT : null;
+  const es = ES as { title: string; description?: string };
+  const title = v ? v.title : es.title;
+  return pageMetadata({
+    locale,
+    path: "/legal/sub-processors",
+    title: title.includes("Mekovault") ? title : `${title} · Mekovault`,
+    description: v ? v.description : (es.description ?? dictionaries[locale]["seo.legal.description"]),
+    type: "article",
+  });
+}
+
+export default async function Page() {
+  const locale = await detectLocaleServer();
+  if (locale === "en-US") return <EN.default />;
+  if (locale === "pt-BR") return <PT.default />;
+  return <SpanishBody />;
 }

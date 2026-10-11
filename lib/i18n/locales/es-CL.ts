@@ -491,7 +491,7 @@ const esCL = {
   "faq.licenses.a":
     "No siempre. En la mayoría de las plataformas una cuenta bloqueada se sigue cobrando hasta que se libera la licencia y se reduce la cantidad contratada, y eso último lo hace tu empresa en la pantalla de pagos de cada plataforma. Control de licencias (próximamente) libera la licencia y te avisa a tiempo qué reducir.",
   "pricing_page.model_note":
-    "Administrar cuentas tiene un precio fijo según cuántas plataformas conectas. Control de licencias será un adicional según las licencias que gestionemos por ti. Mientras sumamos plataformas, conversemos tu caso: cloud@mekovault.com.",
+    "Un precio fijo por empresa según los módulos que actives, sin costo por persona ni por implementación. Si tienes más de 500 personas o varias empresas, conversemos: cloud@mekovault.com.",
 
   // ========== Páginas /platforms y /license-control (2026-09-21) ==========
   "nav.platforms":
@@ -539,7 +539,7 @@ const esCL = {
   "pf.cta.license":
     "Ver Control de licencias",
   "lc.eyebrow":
-    "Control de licencias · próximamente",
+    "Control de licencias",
   "lc.title.pre":
     "Bloquear una cuenta",
   "lc.title.hl":
@@ -598,9 +598,9 @@ const esCL = {
     "Ninguna plataforma permite que un tercero reduzca la cantidad que contrataste: ese último paso lo hace tu empresa, en la pantalla de pagos de cada plataforma. Control de licencias deja hecho todo lo demás y te lo recuerda a tiempo, con los pasos exactos.",
   "lc.cta.title":
     "¿Quieres saber cuánto estás pagando de más?",
-  "lc.cta.subtitle": "Control de licencias parte con Google Workspace. Escríbenos y te avisamos apenas esté disponible.",
+  "lc.cta.subtitle": "Control de licencias funciona hoy con Google Workspace y con las suscripciones registradas en Compras. Las demás plataformas se suman una por una; mientras tanto te decimos qué cambiar en cada consola.",
   "lc.cta.contact":
-    "Avísenme cuando esté",
+    "Empieza gratis 90 días",
   "lc.cta.platforms":
     "Ver plataformas",
 
@@ -885,6 +885,74 @@ const esCL = {
   "searches.q5": "¿Cómo conecto Buk o Talana para que las altas y bajas salgan solas?",
   "searches.q6": "¿Qué le pregunto a cualquier proveedor antes de contratar?",
   "searches.link": "Ver todas las guías",
+
+  // ========== Precios por tamaño, contacto, nosotros, estado (2026-10-11, ola 2) ==========
+  "tiers.eyebrow": "Por tamaño de empresa",
+  "tiers.title": "Elige por el tamaño de tu empresa",
+  "tiers.desc": "Tres configuraciones recomendadas. El precio es por empresa, no por persona: dentro de cada tramo pagas lo mismo con 20 o con 200 personas.",
+  "tiers.small.name": "Pequeña",
+  "tiers.small.who": "Hasta 50 personas",
+  "tiers.small.i1": "Altas y bajas en Google Workspace el día que corresponde",
+  "tiers.small.i2": "Correo redirigido, archivos traspasados, licencia liberada",
+  "tiers.small.i3": "Licencias: compradas, usadas y en cuentas bloqueadas",
+  "tiers.small.i4": "Auditoría de 365 días",
+  "tiers.medium.name": "Mediana",
+  "tiers.medium.who": "De 51 a 200 personas",
+  "tiers.medium.i1": "Todo lo de Pequeña",
+  "tiers.medium.i2": "Nómina conectada (BUK, Talana) y jefaturas",
+  "tiers.medium.i3": "Solicitudes con aprobación por rol y carga masiva",
+  "tiers.medium.i4": "Aplicaciones vinculadas y compras de software",
+  "tiers.large.name": "Grande",
+  "tiers.large.who": "De 201 a 500 personas",
+  "tiers.large.i1": "Todo lo de Mediana",
+  "tiers.large.i2": "API por empresa y doble aprobación",
+  "tiers.large.i3": "Exportación de auditoría para auditores externos",
+  "tiers.large.i4": "Soporte prioritario",
+  "tiers.people.range": "{a} a {b} personas",
+  "tiers.people.from": "Desde {n} personas",
+  "tiers.per_company": "por empresa al mes, sin costo por persona",
+  "tiers.modules": "Módulos",
+  "tiers.note.clp": "Precios en pesos chilenos, IVA incluido en la boleta o factura. El total sale del catálogo de módulos con su descuento.",
+  "tiers.note.usd": "Referencia en dólares al tipo de cambio del {date}; fuera de Chile facturamos en USD por transferencia o tarjeta.",
+  "tiers.note.more": "Más de 500 personas o varias empresas: escríbenos a cloud@mekovault.com.",
+  "contact.after.title": "Qué pasa después de escribir",
+  "contact.after.s1.title": "Te respondemos en un día hábil",
+  "contact.after.s1.desc": "Una persona del equipo, no un robot. Si tu pregunta es técnica, la responde quien construyó esa parte.",
+  "contact.after.s2.title": "Videollamada de 20 minutos, si quieres",
+  "contact.after.s2.desc": "Te mostramos Mekovault con una empresa de ejemplo y, si ya tienes Google Workspace, lo conectamos contigo en la misma llamada.",
+  "contact.after.s3.title": "Pruebas 90 días gratis",
+  "contact.after.s3.desc": "Sin tarjeta y sin contrato. Si no te sirve, no pasa nada: tus cuentas siguen en Google tal como estaban.",
+  "contact.hours.title": "Horarios y canales",
+  "contact.hours.desc": "Lunes a viernes de 9:00 a 19:00, hora de Chile. Soporte a clientes por correo y por el panel; urgencias de clientes con prioridad. Atendemos en español, inglés y portugués.",
+  "contact.faq.q1": "¿Atienden fuera de Chile?",
+  "contact.faq.a1": "Sí: Argentina, México, España, Brasil y Estados Unidos. La facturación fuera de Chile es en dólares.",
+  "contact.faq.q2": "¿Puedo pedir una demo con mis propios datos?",
+  "contact.faq.a2": "Sí. Conectamos tu Google Workspace en la llamada y hacemos una solicitud real con una cuenta de prueba, para que veas qué se cierra, qué licencia se libera y qué queda registrado.",
+  "contact.faq.q3": "¿Trabajan con consultoras o partners?",
+  "contact.faq.a3": "Sí. Hay un programa de partners con comisión mensual para consultoras de RRHH, contadores y partners de Google Workspace.",
+  "contact.faq.link": "Ver el programa de partners",
+  "about.believe.title": "En qué creemos",
+  "about.believe.1.strong": "Todo nace en la nómina.",
+  "about.believe.1.rest": "Una cuenta existe porque una persona entró a la empresa. Si el dato de ingreso y salida ya está en Personas o en la nómina, nadie debería tener que pedirlo por correo.",
+  "about.believe.2.strong": "La jefatura decide, no IT.",
+  "about.believe.2.rest": "Qué pasa con los archivos y el correo de quien se va lo sabe su jefatura directa. Nuestro trabajo es preguntárselo a tiempo y ejecutar lo que decida.",
+  "about.believe.3.strong": "Decimos lo que no hacemos.",
+  "about.believe.3.rest": "Ninguna plataforma deja que un tercero reduzca lo contratado, y varias no permiten automatizar nada. Lo decimos en cada página, y lo que no se puede automatizar queda como tarea con evidencia.",
+  "about.believe.4.strong": "Un precio por empresa.",
+  "about.believe.4.rest": "Cobrar por persona castiga a la empresa que crece. Cobramos por empresa, según el tamaño, y no hay costo por implementación.",
+  "about.where.title": "Dónde estamos",
+  "about.where.desc": "Mekovault SpA está en Santiago de Chile y el equipo trabaja remoto. Atendemos Chile, Argentina, México, España, Brasil y Estados Unidos en español, inglés y portugués. Los servidores están en Estados Unidos con copias cifradas; el detalle de dónde viven los datos está en Seguridad y arquitectura.",
+  "about.where.link": "Ver seguridad y arquitectura",
+  "status.what.title": "Qué se comprueba",
+  "status.what.desc": "Tres cosas, desde tu navegador: que la aplicación responda, que la API pública responda y que este sitio cargue. Si tu navegador no puede llegar a alguna, aquí sale 'Sin respuesta' aunque el servicio esté operativo; en ese caso prueba desde otra red.",
+  "status.incidents.title": "Cómo avisamos",
+  "status.incidents.desc": "Los incidentes y mantenimientos programados se avisan por correo a los administradores de cada organización, con hora de inicio, impacto y hora estimada de fin, y después un resumen de causa. No hay mantenimientos en horario de oficina de Chile.",
+  "status.scheduled.title": "Lo que corre solo",
+  "status.scheduled.desc": "Las altas y bajas programadas se ejecutan a la hora indicada por un proceso con reintentos; si una operación falla, la solicitud queda en 'requiere atención' con el motivo y se avisa. El calendario de operaciones de cada organización muestra cada ejecución con su estado.",
+  "status.links": "Cómo está construido y operado Mekovault, en Seguridad y arquitectura. Soporte a clientes: soporte@mekovault.com.",
+  "tiers.talk": "A conversar",
+  "tiers.talk.desc": "Con más de 200 personas confirmamos el plan contigo: mismo precio por empresa, sin costo por persona.",
+  "tiers.talk.cta": "Escríbenos",
 } as const;
 
 export type TranslationKey = keyof typeof esCL;

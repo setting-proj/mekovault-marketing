@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
+import { detectLocaleServer } from "@/lib/i18n/detectLocale.server";
+import { dictionaries } from "@/lib/i18n/dictionaries";
+import * as EN from "@/lib/content/docs/index.en";
+import * as PT from "@/lib/content/docs/index.pt";
+import { pageMetadata } from "@/lib/seo";
 import Link from "@/components/Link";
 
 
 
-export default function DocsIndex() {
+const ES = { title: "Documentación" };
+function SpanishBody() {
   return (
     <>
       <h1>Documentación</h1>
@@ -35,4 +42,26 @@ export default function DocsIndex() {
       </p>
     </>
   );
+}
+
+/** Versión por idioma: inglés y portugués traducidos; el resto, el original en español. */
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await detectLocaleServer();
+  const v = locale === "en-US" ? EN : locale === "pt-BR" ? PT : null;
+  const es = ES as { title: string; description?: string };
+  const title = v ? v.title : es.title;
+  return pageMetadata({
+    locale,
+    path: "/docs",
+    title: title.includes("Mekovault") ? title : `${title} · Mekovault`,
+    description: v ? v.description : (es.description ?? dictionaries[locale]["seo.docs.description"]),
+    type: "article",
+  });
+}
+
+export default async function Page() {
+  const locale = await detectLocaleServer();
+  if (locale === "en-US") return <EN.default />;
+  if (locale === "pt-BR") return <PT.default />;
+  return <SpanishBody />;
 }

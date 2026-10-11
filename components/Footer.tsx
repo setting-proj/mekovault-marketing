@@ -18,12 +18,8 @@ export function Footer() {
         { href: "/license-control", label: t("footer.link.license_control") },
         { href: "/pricing", label: t("footer.link.pricing") },
         { href: "/account-governance", label: t("footer.link.account_governance") },
-        ...(spanish
-          ? [
-              { href: "/recursos", label: t("footer.link.resources") },
-              { href: "/ayuda", label: t("footer.link.help") },
-            ]
-          : []),
+        { href: "/recursos", label: t("footer.link.resources") },
+        ...(spanish ? [{ href: "/ayuda", label: t("footer.link.help") }] : []),
         { href: "/governance", label: t("footer.link.governance") },
         { href: "/status", label: t("footer.link.status") },
         { href: "/docs", label: t("footer.link.docs") },

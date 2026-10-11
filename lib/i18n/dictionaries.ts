@@ -10,10 +10,11 @@
 import esCL, { type Dictionary, type TranslationKey } from "./locales/es-CL";
 import esAR from "./locales/es-AR";
 import esMX from "./locales/es-MX";
+import esES from "./locales/es-ES";
 import enUS from "./locales/en-US";
 import ptBR from "./locales/pt-BR";
 
-export const LOCALES = ["es-CL", "es-AR", "es-MX", "en-US", "pt-BR"] as const;
+export const LOCALES = ["es-CL", "es-AR", "es-MX", "es-ES", "en-US", "pt-BR"] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export const DEFAULT_LOCALE: Locale = "es-CL";
@@ -22,6 +23,7 @@ export const LOCALE_LABELS: Record<Locale, { native: string; flag: string }> = {
   "es-CL": { native: "Español (Chile)", flag: "🇨🇱" },
   "es-AR": { native: "Español (Argentina)", flag: "🇦🇷" },
   "es-MX": { native: "Español (México)", flag: "🇲🇽" },
+  "es-ES": { native: "Español (España)", flag: "🇪🇸" },
   "en-US": { native: "English (US)", flag: "🇺🇸" },
   "pt-BR": { native: "Português", flag: "🇧🇷" },
 };
@@ -32,6 +34,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
   "es-CL": esCL,
   "es-AR": esAR,
   "es-MX": esMX,
+  "es-ES": esES,
   "en-US": enUS,
   "pt-BR": ptBR,
 };
@@ -53,6 +56,7 @@ export function normalizeLocale(raw: string | undefined | null): Locale | null {
   if (lang === "es") {
     if (region === "ar") return "es-AR";
     if (region === "mx") return "es-MX";
+    if (region === "es") return "es-ES";
     return "es-CL";
   }
   if (lang === "pt") return "pt-BR";

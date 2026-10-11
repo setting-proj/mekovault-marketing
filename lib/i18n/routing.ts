@@ -13,7 +13,7 @@
 
 export const SITE_URL = "https://www.mekovault.com";
 
-export type Locale = "es-CL" | "es-AR" | "es-MX" | "en-US" | "pt-BR";
+export type Locale = "es-CL" | "es-AR" | "es-MX" | "es-ES" | "en-US" | "pt-BR";
 
 export const DEFAULT_LOCALE: Locale = "es-CL";
 
@@ -21,6 +21,7 @@ export const LOCALE_PREFIX: Record<Locale, string> = {
   "es-CL": "",
   "es-AR": "/ar",
   "es-MX": "/mx",
+  "es-ES": "/es",
   "en-US": "/en",
   "pt-BR": "/pt",
 };
@@ -28,11 +29,12 @@ export const LOCALE_PREFIX: Record<Locale, string> = {
 export const PREFIX_TO_LOCALE: Record<string, Locale> = {
   ar: "es-AR",
   mx: "es-MX",
+  es: "es-ES",
   en: "en-US",
   pt: "pt-BR",
 };
 
-export const ALL_LOCALES: Locale[] = ["es-CL", "es-AR", "es-MX", "en-US", "pt-BR"];
+export const ALL_LOCALES: Locale[] = ["es-CL", "es-AR", "es-MX", "es-ES", "en-US", "pt-BR"];
 
 /** Normaliza un tag (cookie, Accept-Language) a un locale soportado, sin diccionarios. */
 export function normalizeLocaleTag(raw: string | undefined | null): Locale | null {
@@ -45,6 +47,7 @@ export function normalizeLocaleTag(raw: string | undefined | null): Locale | nul
   if (lang === "es") {
     if (region === "ar") return "es-AR";
     if (region === "mx") return "es-MX";
+    if (region === "es") return "es-ES";
     return "es-CL";
   }
   if (lang === "pt") return "pt-BR";
@@ -79,6 +82,7 @@ export const HREFLANG: Record<Locale, string> = {
   "es-CL": "es-CL",
   "es-AR": "es-AR",
   "es-MX": "es-MX",
+  "es-ES": "es-ES",
   "en-US": "en-US",
   "pt-BR": "pt-BR",
 };
@@ -87,6 +91,7 @@ export const OG_LOCALE: Record<Locale, string> = {
   "es-CL": "es_CL",
   "es-AR": "es_AR",
   "es-MX": "es_MX",
+  "es-ES": "es_ES",
   "en-US": "en_US",
   "pt-BR": "pt_BR",
 };

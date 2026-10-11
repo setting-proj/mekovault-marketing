@@ -14,7 +14,7 @@ import { cn } from "@/lib/cn";
 
 /** Header plano: fondo blanco, borde inferior de 1 px, botón navy. */
 export function Header() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   // La ruta sin prefijo de idioma, para marcar el enlace activo.
   const pathname = splitLocale(usePathname() ?? "/").path;
   const [open, setOpen] = useState(false);
@@ -24,8 +24,7 @@ export function Header() {
     { href: "/platforms", label: t("nav.platforms") },
     { href: "/pricing", label: t("nav.pricing") },
     { href: "/account-governance", label: t("nav.governance_short") },
-    // Las guías existen en español: en inglés y portugués no se muestran en el menú.
-    ...(locale.startsWith("es") ? [{ href: "/recursos", label: t("nav.resources") }] : []),
+    { href: "/recursos", label: t("nav.resources") },
     { href: "/about", label: t("nav.about") },
     { href: "/contact", label: t("nav.contact") },
   ];
