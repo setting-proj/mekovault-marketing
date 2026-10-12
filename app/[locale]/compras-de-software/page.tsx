@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: { params: LocaleParams }): Pr
     path: PATH,
     title: dict["seo.compras.title"],
     description: dict["seo.compras.description"],
+    image: `${PATH}/opengraph-image`,
   });
 }
 

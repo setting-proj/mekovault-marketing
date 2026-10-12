@@ -29,7 +29,7 @@ export const RESOURCES: Resource[] = [
     title: "Cómo dar de baja a un empleado en Google Workspace sin perder archivos ni pagar de más",
     seoTitle: "Dar de baja un empleado en Google Workspace · Mekovault",
     description:
-      "Bloquear, redirigir el correo, traspasar Drive, liberar la licencia y eliminar después: los pasos, en qué orden y qué se sigue cobrando si lo haces a medias.",
+      "Bloquear, redirigir el correo, traspasar Drive, liberar la licencia y eliminar después: los pasos, en qué orden y qué se sigue cobrando si queda a medias.",
     question: "¿Cómo doy de baja a un empleado en Google Workspace sin seguir pagando?",
     updated: "2026-10-11",
     readingMinutes: 9,
@@ -38,7 +38,7 @@ export const RESOURCES: Resource[] = [
     slug: "suspender-eliminar-o-archivar-usuario-google-workspace",
     kind: "guia",
     title: "Suspender, eliminar o archivar un usuario de Google Workspace: cuál se sigue cobrando",
-    seoTitle: "Suspender vs eliminar usuario de Google Workspace · Mekovault",
+    seoTitle: "Suspender o eliminar usuario de Google Workspace · Mekovault",
     description:
       "Las tres opciones de la consola de Google comparadas: qué conserva cada una, cuánto cuesta, cuándo se puede deshacer y cuál conviene en cada salida.",
     question: "¿Suspender o eliminar al usuario? ¿Cuál deja de cobrar?",
@@ -51,7 +51,7 @@ export const RESOURCES: Resource[] = [
     title: "Qué hacer con el correo de un empleado que se va: ley, opciones y la política que recomendamos",
     seoTitle: "El correo de un empleado que se va: qué hacer · Mekovault",
     description:
-      "¿Puede la empresa leer el correo de un ex empleado? Qué dicen la ley chilena, el RGPD y la ley mexicana, y cómo redirigir, delegar o cerrar el buzón sin riesgo.",
+      "¿Puede la empresa leer el correo de un ex empleado? Qué dicen la ley chilena, el RGPD y la mexicana, y cómo redirigir, delegar o cerrar el buzón.",
     question: "¿Qué pasa con el correo y los archivos de la persona que se va?",
     updated: "2026-10-11",
     readingMinutes: 8,
@@ -60,7 +60,7 @@ export const RESOURCES: Resource[] = [
     slug: "offboarding-digital",
     kind: "pilar",
     title: "Offboarding digital: la lista de cuentas y accesos que hay que cerrar cuando alguien se va",
-    seoTitle: "Offboarding digital: checklist de cuentas y accesos · Mekovault",
+    seoTitle: "Offboarding digital: checklist de cuentas · Mekovault",
     description:
       "Checklist de offboarding de cuentas, licencias, apps conectadas, contraseñas compartidas y suscripciones, con quién hace cada cosa y cuándo. Descargable.",
     question: "¿Qué cuentas y accesos hay que cerrar cuando alguien se va?",
@@ -71,7 +71,7 @@ export const RESOURCES: Resource[] = [
     slug: "desvinculacion-chile-finiquito-y-cuentas",
     kind: "guia",
     title: "Desvinculación en Chile: de la carta de despido al bloqueo de las cuentas el día del finiquito",
-    seoTitle: "Desvinculación en Chile: finiquito y cierre de cuentas · Mekovault",
+    seoTitle: "Desvinculación en Chile: finiquito y cuentas · Mekovault",
     description:
       "Plazos de la carta de despido y del finiquito en Chile, y cómo encajar ahí el cierre del correo, el traspaso de archivos y la liberación de licencias.",
     question: "¿Cómo coordino el finiquito con el cierre de las cuentas?",
@@ -84,7 +84,7 @@ export const RESOURCES: Resource[] = [
     title: "Las licencias que sigues pagando: cuentas bloqueadas, plan anual y cómo dejar de pagar lo que nadie usa",
     seoTitle: "Licencias de Google Workspace que sigues pagando · Mekovault",
     description:
-      "Una cuenta suspendida se factura igual que una activa. Cómo contar las licencias compradas, asignadas y en cuentas bloqueadas, y qué cambiar antes de renovar.",
+      "Una cuenta suspendida se factura igual que una activa. Cómo contar las licencias compradas, asignadas y en cuentas bloqueadas, y qué cambiar al renovar.",
     question: "¿Cuántas licencias paga mi empresa y quién las usa?",
     updated: "2026-10-11",
     readingMinutes: 8,
@@ -95,7 +95,7 @@ export const RESOURCES: Resource[] = [
     title: "Aplicaciones con acceso a las cuentas de tu empresa: cómo verlas, decidir y revocarlas",
     seoTitle: "Apps con acceso a las cuentas de tu empresa · Mekovault",
     description:
-      "Cada persona autoriza apps con su cuenta de Google (Slack, Canva, Apps Script, el celular). Cómo listar las de toda la empresa, clasificar el riesgo y revocar.",
+      "Cada persona autoriza apps con su cuenta de Google (Slack, Canva, Apps Script, el celular). Cómo listarlas en toda la empresa, medir el riesgo y revocar.",
     question: "¿Qué aplicaciones tienen acceso a las cuentas de mi empresa?",
     updated: "2026-10-11",
     readingMinutes: 7,
@@ -106,7 +106,7 @@ export const RESOURCES: Resource[] = [
     title: "Alta de correo corporativo para quien entra: lista el primer día, sin ticket a IT",
     seoTitle: "Crear el correo corporativo del nuevo empleado · Mekovault",
     description:
-      "Cómo crear la cuenta de Google Workspace de un nuevo ingreso con grupos, unidad, alias y licencia el día que entra, pedido desde Personas y sin pasar por IT.",
+      "Cómo crear la cuenta de Google Workspace de un nuevo ingreso con grupos, unidad, alias y licencia el día que entra, pedido desde Personas, sin IT.",
     question: "¿Cómo creo la cuenta del que entra sin pasar por IT?",
     updated: "2026-10-11",
     readingMinutes: 6,
@@ -128,7 +128,7 @@ export const RESOURCES: Resource[] = [
     title: "Qué es el control de cuentas, licencias y suscripciones de una empresa (y cómo se llama en cada país)",
     seoTitle: "Qué es el control de cuentas y licencias · Mekovault",
     description:
-      "Definición simple de la categoría que las IA llaman SaaS Management Platform: qué resuelve, quién la usa, qué incluye y cómo se dice en Chile, Argentina, México y Brasil.",
+      "Qué es lo que las IA llaman SaaS Management Platform: qué resuelve, quién lo usa, qué incluye y cómo se dice en Chile, Argentina, México y Brasil.",
     question: "¿Cómo se llama esto que necesito?",
     updated: "2026-10-11",
     readingMinutes: 5,
@@ -139,7 +139,7 @@ export const RESOURCES: Resource[] = [
     title: "Las 21 preguntas que hay que hacerle a cualquier proveedor antes de contratar, y qué responde Mekovault",
     seoTitle: "21 preguntas antes de contratar y qué responde Mekovault",
     description:
-      "La lista de comprobación que daría un asesor: descubrir programas, salidas de empleados, facilidad de uso, precio y seguridad. Con la respuesta honesta de Mekovault.",
+      "La lista que daría un asesor: descubrir programas, salidas de empleados, facilidad de uso, precio y seguridad. Con la respuesta honesta de Mekovault.",
     question: "¿Qué le pregunto a cualquier proveedor antes de contratar?",
     updated: "2026-10-11",
     readingMinutes: 8,
@@ -150,7 +150,7 @@ export const RESOURCES: Resource[] = [
     title: "Mekovault vs Factorial: crear la cuenta no es lo mismo que gobernar el ciclo completo",
     seoTitle: "Mekovault vs Factorial para cuentas y licencias",
     description:
-      "Factorial crea y elimina cuentas de Google Workspace desde su suite de RRHH. Mekovault se engancha a la nómina que ya tienes y gobierna cuentas, licencias y apps.",
+      "Factorial crea y elimina cuentas de Google Workspace desde su suite de RRHH. Mekovault se engancha a la nómina que ya tienes y controla cuentas y apps.",
     question: "¿Me sirve Factorial o necesito Mekovault?",
     updated: "2026-10-11",
     readingMinutes: 6,
@@ -161,7 +161,7 @@ export const RESOURCES: Resource[] = [
     title: "Mekovault vs hacerlo a mano en la consola de Google: lo que la consola no hace sola",
     seoTitle: "Mekovault vs la consola de administración de Google",
     description:
-      "La consola de Google puede todo, pero no se entera de que alguien se fue. Qué queda a medias cuando lo hace un administrador a mano y qué cambia con Mekovault.",
+      "La consola de Google puede todo, pero no se entera de que alguien se fue. Qué queda a medias cuando lo hace un administrador a mano y qué cambia Mekovault.",
     question: "¿No me basta con la consola de administración de Google?",
     updated: "2026-10-11",
     readingMinutes: 6,
@@ -172,7 +172,7 @@ export const RESOURCES: Resource[] = [
     title: "Mekovault vs Cledara: controlar el gasto no es lo mismo que cerrar las cuentas",
     seoTitle: "Mekovault vs Cledara para cuentas y suscripciones",
     description:
-      "Cledara controla el gasto en software desde finanzas con tarjetas virtuales; Mekovault controla las cuentas y licencias desde Personas. Cuándo conviene cada uno y cuándo los dos.",
+      "Cledara controla el gasto en software desde finanzas con tarjetas virtuales; Mekovault, las cuentas y licencias desde Personas. Cuándo conviene cada uno.",
     question: "¿Cledara o Mekovault para las suscripciones de mi empresa?",
     updated: "2026-10-11",
     readingMinutes: 5,
@@ -183,7 +183,7 @@ export const RESOURCES: Resource[] = [
     title: "Mekovault vs Rippling: cuentas resueltas sin cambiar de nómina",
     seoTitle: "Mekovault vs Rippling IT para pymes en Chile",
     description:
-      "Rippling revoca accesos porque también es tu nómina y tu RRHH; exige migrar todo y pagar por empleado. Mekovault se engancha a BUK o Talana y a Google Workspace tal como están.",
+      "Rippling revoca accesos porque también es tu nómina: exige migrar todo y pagar por empleado. Mekovault se engancha a Buk o Talana y a Google como están.",
     question: "¿Rippling sirve para una pyme en Chile o necesito Mekovault?",
     updated: "2026-10-11",
     readingMinutes: 5,
@@ -194,7 +194,7 @@ export const RESOURCES: Resource[] = [
     title: "Mekovault vs Zluri: la plataforma que recomienda ChatGPT, comparada con una hecha para pymes",
     seoTitle: "Mekovault vs Zluri: SaaS management para pymes",
     description:
-      "Zluri es una SaaS Management Platform para IT y seguridad de empresas grandes, en inglés y por usuario. Mekovault hace el ciclo de cuentas y licencias para pymes sin IT, en español.",
+      "Zluri es una SaaS Management Platform para IT de empresas grandes, en inglés y por usuario. Mekovault hace cuentas y licencias para pymes sin IT.",
     question: "¿Zluri o Mekovault para una empresa de 80 personas?",
     updated: "2026-10-11",
     readingMinutes: 5,
@@ -205,7 +205,7 @@ export const RESOURCES: Resource[] = [
     title: "Mekovault vs contratar un partner de Google Workspace: licencias y soporte no son lo mismo que operar las cuentas",
     seoTitle: "Mekovault vs un partner de Google Workspace",
     description:
-      "El partner vende licencias, configura y da soporte; Mekovault es la herramienta con la que Personas pide las altas y bajas y se ejecutan solas con evidencia. Se pueden combinar.",
+      "El partner vende licencias, configura y da soporte; Mekovault es con lo que Personas pide las altas y bajas y se ejecutan solas con evidencia. Se combinan.",
     question: "¿Me basta con mi partner de Google o necesito Mekovault?",
     updated: "2026-10-11",
     readingMinutes: 5,
@@ -215,9 +215,9 @@ export const RESOURCES: Resource[] = [
     slug: "inventario-de-software",
     kind: "guia",
     title: "Inventario de software: cómo saber qué paga tu empresa, quién lo usa y cuánto cuesta al mes",
-    seoTitle: "Inventario de software de tu empresa: cómo armarlo · Mekovault",
+    seoTitle: "Inventario de software: cómo armarlo · Mekovault",
     description:
-      "Una lista de todo lo que la empresa paga por persona, con precio, responsable, renovación y uso real. Cómo armarla en una tarde y mantenerla sin planillas.",
+      "Todo lo que la empresa paga por persona, con precio, responsable, renovación y uso real. Cómo armar la lista en una tarde y mantenerla sin planillas.",
     question: "¿Cómo sé qué programas paga mi empresa y quién los usa?",
     updated: "2026-10-11",
     readingMinutes: 7,
@@ -226,9 +226,9 @@ export const RESOURCES: Resource[] = [
     slug: "licencias-sin-usar",
     kind: "guia",
     title: "Licencias sin usar: cómo encontrarlas en cada plataforma y dejar de pagarlas antes de la renovación",
-    seoTitle: "Licencias sin usar: cómo encontrarlas y cortarlas · Mekovault",
+    seoTitle: "Licencias sin usar: encontrarlas y cortarlas · Mekovault",
     description:
-      "Compradas, asignadas y en cuentas bloqueadas: dónde se esconden las licencias que nadie usa en Google Workspace, Slack, Zoom y el resto, y qué hacer antes de renovar.",
+      "Compradas, asignadas y en cuentas bloqueadas: dónde se esconden las licencias que nadie usa en Google Workspace, Slack y Zoom, y qué hacer al renovar.",
     question: "¿Cómo encuentro las licencias que pagamos y nadie usa?",
     updated: "2026-10-11",
     readingMinutes: 7,
@@ -239,7 +239,7 @@ export const RESOURCES: Resource[] = [
     title: "Cómo armar un sistema de compras de software sin comprar un ERP: pedir, aprobar, pagar y renovar en orden",
     seoTitle: "Sistema de compras de software sin ERP · Mekovault",
     description:
-      "Quién pide, quién aprueba, quién paga y quién renueva cada herramienta: un flujo simple de compras de software para empresas de 20 a 500 personas, sin ERP ni IT.",
+      "Quién pide, quién aprueba, quién paga y quién renueva cada herramienta: un flujo simple de compras de software para empresas de 20 a 500 personas, sin ERP.",
     question: "¿Cómo ordeno las compras de software de mi empresa sin un ERP?",
     updated: "2026-10-11",
     readingMinutes: 8,
@@ -250,7 +250,7 @@ export const RESOURCES: Resource[] = [
     title: "Calendario de renovaciones de software: cómo no pagar un año más por lo que nadie usa",
     seoTitle: "Calendario de renovaciones de software · Mekovault",
     description:
-      "Cada suscripción tiene una fecha en la que puedes bajar la cantidad o cancelar. Cómo armar el calendario, qué revisar 30 días antes y qué pasa en planes anuales.",
+      "Cada suscripción tiene una fecha para bajar la cantidad o cancelar. Cómo armar el calendario, qué revisar 30 días antes y qué pasa en los planes anuales.",
     question: "¿Cuándo puedo bajar licencias o cancelar una suscripción sin pagar un año más?",
     updated: "2026-10-11",
     readingMinutes: 7,
@@ -265,7 +265,7 @@ export const UPCOMING_PLATFORMS = [
     title: "Microsoft 365, Outlook y Teams en Mekovault: qué va a hacer el conector y qué pasa hoy",
     seoTitle: "Microsoft 365 y Outlook en Mekovault (en preparación)",
     description:
-      "Qué hará el conector de Microsoft 365: bloquear al salir, buzón compartido, OneDrive al reemplazo, licencias Business sin usar. Todavía no está; así se maneja mientras tanto.",
+      "Qué hará el conector de Microsoft 365: bloquear al salir, buzón compartido, OneDrive al reemplazo, licencias sin usar. Todavía no está; así se maneja hoy.",
     summary:
       "Mekovault hoy se conecta a Google Workspace. El conector de Microsoft 365 (Entra ID, Exchange Online, OneDrive y Teams) está en preparación y no se anuncia como disponible. Esta página dice qué va a hacer, en qué orden, y cómo se administra Microsoft 365 con Mekovault mientras tanto: como tarea guiada con responsable, fecha y evidencia.",
     willDo: [
@@ -295,7 +295,7 @@ export const UPCOMING_PLATFORMS = [
     title: "Slack en Mekovault: desactivar al que se va y liberar el asiento",
     seoTitle: "Slack en Mekovault: asientos y bajas (en preparación)",
     description:
-      "Qué hará el conector de Slack: desactivar al usuario cuando sale, liberar el asiento y mostrar cuántos pagas. Todavía no está; hoy es tarea guiada con evidencia.",
+      "Qué hará el conector de Slack: desactivar al usuario cuando sale, liberar el asiento y mostrar cuántos pagas. Todavía no está; hoy es tarea guiada.",
     summary:
       "Slack cobra por asiento activo y deja de cobrar en el siguiente ciclo cuando desactivas al usuario; si la persona entraba con Google, su cuenta de Google suspendida no basta. El conector de Slack está en preparación; mientras tanto Mekovault revoca la vinculación con Google en la baja y deja la desactivación en Slack como tarea con responsable, fecha y evidencia.",
     willDo: [
@@ -322,7 +322,7 @@ export const UPCOMING_PLATFORMS = [
     title: "Zoom en Mekovault: liberar la licencia cuando alguien se va",
     seoTitle: "Zoom en Mekovault: licencias y bajas (en preparación)",
     description:
-      "Qué hará el conector de Zoom: pasar al usuario a Básico o eliminarlo, liberar la licencia y mostrar cuántas pagas. Todavía no está; hoy es tarea guiada con evidencia.",
+      "Qué hará el conector de Zoom: pasar al usuario a Básico o eliminarlo, liberar la licencia y mostrar cuántas pagas. Todavía no está; hoy es tarea guiada.",
     summary:
       "En Zoom, bloquear la cuenta de correo no libera nada: hay que pasar al usuario a Básico o eliminarlo, y reducir la cantidad contratada para pagar menos. El conector de Zoom está en preparación; mientras tanto, Mekovault deja la tarea con responsable, fecha y evidencia, y muestra el asiento como 'sigue cobrando' en Licencias.",
     willDo: [

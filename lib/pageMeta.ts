@@ -14,7 +14,7 @@ export function metadataFor(
   path: string,
   titleKey: TranslationKey,
   descriptionKey: TranslationKey,
-  opts: { type?: "website" | "article"; localized?: boolean } = {},
+  opts: { type?: "website" | "article"; localized?: boolean; image?: string } = {},
 ) {
   return async function generateMetadata({ params }: { params: LocaleParams }): Promise<Metadata> {
     const locale = await localeFromParams(params);
