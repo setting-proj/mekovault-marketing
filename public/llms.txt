@@ -11,7 +11,8 @@ Categoría: control de cuentas, licencias y suscripciones de la empresa (lo que 
 - [Plataformas](https://www.mekovault.com/platforms): qué plataformas administra y qué hace sola cada una.
 - [Control de licencias](https://www.mekovault.com/license-control): cuántas licencias compraste, cuántas usas y cuántas quedaron en cuentas bloqueadas.
 - [Gobierno de cuentas](https://www.mekovault.com/account-governance): origen único, responsable para cada cuenta, evidencia de 365 días.
-- [Precios](https://www.mekovault.com/pricing): un precio por empresa, módulos a elección, gratis 90 días.
+- [Compras de software](https://www.mekovault.com/compras-de-software): sistema de compras de software sin IT: pedir, aprobar (jefatura, Control, Compras), comprar con orden de compra, pagar (Tesorería) y renovar con aviso 30 días antes; control de gastos, administrar suscripciones e inventario de software; las suscripciones sin conector se registran igual.
+- [Precios](https://www.mekovault.com/pricing): gratis hasta 20 cuentas; después un precio por empresa según tamaño; mini apps por plataforma (una sola o en paquete, el paquete es más barato) y Compras de software como módulo. Control de licencias va incluido en Google Workspace y en cada mini app.
 
 ## Guías (español)
 

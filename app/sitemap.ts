@@ -12,6 +12,7 @@ const LOCALIZED = [
   "/products",
   "/platforms",
   "/license-control",
+  "/compras-de-software",
   "/pricing",
   "/about",
   "/contact",

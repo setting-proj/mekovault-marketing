@@ -10,12 +10,14 @@
 import { ArrowRight, Check, X } from "lucide-react";
 
 import { Container } from "@/components/Container";
-import { LinkButton } from "@/components/Button";
+import { JsonLd } from "@/components/JsonLd";
+import { ArrowLink, LinkButton } from "@/components/Button";
 import { EyebrowBadge, Section, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { LicensesPanel } from "@/components/panels/LicensesPanel";
 import { BILLING_FACTS, type BillingEffect } from "@/lib/billing-facts";
-import { useT } from "@/lib/i18n/I18nProvider";
+import { useI18n } from "@/lib/i18n/I18nProvider";
+import type { TranslationKey } from "@/lib/i18n/dictionaries";
 
 const EFFECT_KEY = {
   auto: "lc.effect.auto",
@@ -24,8 +26,27 @@ const EFFECT_KEY = {
   google: "lc.effect.google",
 } as const satisfies Record<BillingEffect, string>;
 
+/** Preguntas con las palabras que la gente busca (Semrush 2026-10-11, plan 1.10). */
+const FAQ: Array<[TranslationKey, TranslationKey]> = [
+  ["lc.faq.1.q", "lc.faq.1.a"],
+  ["lc.faq.2.q", "lc.faq.2.a"],
+  ["lc.faq.3.q", "lc.faq.3.a"],
+  ["lc.faq.4.q", "lc.faq.4.a"],
+  ["lc.faq.5.q", "lc.faq.5.a"],
+];
+
 export default function LicenseControlPage() {
-  const t = useT();
+  const { t, locale } = useI18n();
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: locale,
+    mainEntity: FAQ.map(([q, a]) => ({
+      "@type": "Question",
+      name: t(q),
+      acceptedAnswer: { "@type": "Answer", text: t(a) },
+    })),
+  };
   const STEPS = [
     { n: 1, title: t("lc.s1.title"), desc: t("lc.s1.desc") },
     { n: 2, title: t("lc.s2.title"), desc: t("lc.s2.desc") },
@@ -126,6 +147,25 @@ export default function LicenseControlPage() {
               <p className="mt-1.5 text-[15px] leading-relaxed text-[#33507a]">{t("lc.honest.desc")}</p>
             </div>
           </div>
+        </Container>
+      </Section>
+
+      {/* Preguntas: gestión de licencias, licencias sin usar, inventario, renovaciones */}
+      <Section className="border-b border-[#dbeaf2]">
+        <Container>
+          <JsonLd data={faqLd} />
+          <SectionHeading eyebrow={t("lc.faq.eyebrow")} title={t("lc.faq.title")} />
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {FAQ.map(([q, a]) => (
+              <div key={q} className="rounded-[12px] border border-[#c9dde8] bg-white p-5 sm:p-6">
+                <h3 className="text-[17px] font-extrabold tracking-[-0.01em] text-[#03045e]">{t(q)}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-[#33507a]">{t(a)}</p>
+              </div>
+            ))}
+          </div>
+          <ArrowLink href="/compras-de-software" tone="blue" className="mt-8 text-base">
+            {t("lc.compras.link")}
+          </ArrowLink>
         </Container>
       </Section>
 

@@ -44,6 +44,13 @@ export default function ProductsPage() {
       bullets: [t("svc.audit.b1"), t("svc.audit.b2"), t("svc.audit.b3")],
       featured: false,
     },
+    {
+      title: t("svc.compras.title"),
+      official: t("svc.compras.official"),
+      desc: t("svc.compras.desc"),
+      bullets: [t("svc.compras.b1"), t("svc.compras.b2"), t("svc.compras.b3")],
+      featured: false,
+    },
   ];
 
   return (
@@ -107,7 +114,7 @@ export default function ProductsPage() {
       <Section className="border-b border-[#dbeaf2]">
         <Container>
           <SectionHeading eyebrow={t("products.addons.eyebrow")} title={t("products.addons.title")} desc={t("products.addons.subtitle")} />
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
+          <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {ADDONS.map((s) => (
               <AddonCard key={s.title} {...s} status={t("svc.status.available")} />
             ))}

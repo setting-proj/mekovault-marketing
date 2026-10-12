@@ -6,6 +6,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { Container } from "@/components/Container";
 import { LinkButton } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
+import { MiniAppsPicker } from "@/components/MiniAppsPicker";
 import { PricingTiers } from "@/components/PricingTiers";
 import { useT } from "@/lib/i18n/I18nProvider";
 import {
@@ -98,6 +99,16 @@ export function PricingClient({ catalog, live }: { catalog: Catalog; live: boole
           <SectionHeading eyebrow={t("tiers.eyebrow")} title={t("tiers.title")} desc={t("tiers.desc")} />
           <div className="mt-10">
             <PricingTiers catalog={catalog} />
+          </div>
+        </Container>
+      </Section>
+
+      {/* Mini apps y paquetes (decisión de Jorge, 2026-10-11) */}
+      <Section compact id="mini-apps" className="scroll-mt-20 border-b border-[#dbeaf2]">
+        <Container size="wide">
+          <SectionHeading eyebrow={t("apps.eyebrow")} title={t("apps.title")} desc={t("apps.desc")} />
+          <div className="mt-10">
+            <MiniAppsPicker />
           </div>
         </Container>
       </Section>

@@ -171,9 +171,14 @@ export function HomeView() {
               <PlatformRow name={t("lic.p2.name")} desc={t("lic.p2.desc")} />
               <PlatformRow name={t("lic.p3.name")} desc={t("lic.p3.desc")} connected />
             </div>
-            <ArrowLink href="/license-control" tone="blue" className="text-base">
-              {t("lic.link")}
-            </ArrowLink>
+            <div className="flex flex-wrap gap-x-8 gap-y-2">
+              <ArrowLink href="/license-control" tone="blue" className="text-base">
+                {t("lic.link")}
+              </ArrowLink>
+              <ArrowLink href="/compras-de-software" tone="blue" className="text-base">
+                {t("lic.link.compras")}
+              </ArrowLink>
+            </div>
           </div>
           <Reveal>
             <LicensesPanel />

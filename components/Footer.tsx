@@ -16,6 +16,7 @@ export function Footer() {
         { href: "/products", label: t("footer.link.services") },
         { href: "/platforms", label: t("footer.link.platforms") },
         { href: "/license-control", label: t("footer.link.license_control") },
+        { href: "/compras-de-software", label: t("footer.link.compras") },
         { href: "/pricing", label: t("footer.link.pricing") },
         { href: "/account-governance", label: t("footer.link.account_governance") },
         { href: "/recursos", label: t("footer.link.resources") },
