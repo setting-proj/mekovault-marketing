@@ -18,27 +18,10 @@ export function PricingClient() {
 
   return (
     <>
-      <Section compact>
-        <Container>
-          <SectionHeading
-            as="h1"
-            eyebrow={t("pricing.eyebrow")}
-            title={
-              <>
-                {t("pricing_page.title.pre")}{" "}
-                <span className="text-brand-gradient">{t("pricing_page.title.hl")}</span>
-              </>
-            }
-            desc={t("pricing_page.subtitle")}
-          />
-          <p className="mt-6 text-sm font-semibold text-[#33507a]">{t("pricing_page.trial_badge")}</p>
-        </Container>
-      </Section>
-
       {/* Arma tu precio */}
-      <Section compact id="precio" tone="panel" className="scroll-mt-20 border-y border-[#dbeaf2]">
+      <Section id="precio" tone="panel" className="scroll-mt-20 border-b border-[#dbeaf2]">
         <Container size="wide">
-          <SectionHeading eyebrow={t("build.eyebrow")} title={t("build.title")} desc={t("build.desc")} />
+          <SectionHeading as="h1" eyebrow={t("build.eyebrow")} title={t("build.title")} desc={t("build.desc")} />
           <div className="mt-10">
             <PricingBuilder />
           </div>
