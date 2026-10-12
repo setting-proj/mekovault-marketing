@@ -56,6 +56,7 @@ export function PricingBuilder() {
   const [addons, setAddons] = useState<Set<AddonKey>>(new Set());
   const [showApps, setShowApps] = useState(false);
   const [appsUsd, setAppsUsd] = useState(0);
+  const [appSlugs, setAppSlugs] = useState<string[]>([]);
 
   const rate = perAccountUsd(accounts);
   const baseUsd = baseMonthlyUsd(accounts);
@@ -65,6 +66,14 @@ export function PricingBuilder() {
     [addons],
   );
   const totalUsd = (baseUsd ?? 0) + addonsUsd + appsUsd;
+  // La selección viaja al registro como estimación (no cobra nada): el asistente la compara
+  // con las cuentas reales de Google Workspace y la deja ajustar antes de activar.
+  const signupUrl = useMemo(() => {
+    const q = new URLSearchParams({ src: "pricing", accounts: String(accounts) });
+    if (addons.size) q.set("addons", [...addons].join(","));
+    if (appSlugs.length) q.set("apps", appSlugs.join(","));
+    return `https://app.mekovault.com/signup?${q.toString()}`;
+  }, [accounts, addons, appSlugs]);
   const pct = ((accounts - 1) / (SLIDER_MAX - 1)) * 100;
 
   const toggleAddon = (k: AddonKey) =>
@@ -269,7 +278,7 @@ export function PricingBuilder() {
           </button>
           {showApps && (
             <div className="mt-5">
-              <MiniAppsPicker embedded onQuote={setAppsUsd} />
+              <MiniAppsPicker embedded onQuote={setAppsUsd} onSelection={setAppSlugs} />
             </div>
           )}
           {!showApps && appsUsd > 0 && (
@@ -313,7 +322,7 @@ export function PricingBuilder() {
             {t("build.summary.talk_cta")} <ArrowRight />
           </LinkButton>
         ) : (
-          <LinkButton href="https://app.mekovault.com/signup" external className="mt-5 w-full">
+          <LinkButton href={signupUrl} external className="mt-5 w-full">
             {t("build.summary.cta")} <ArrowRight />
           </LinkButton>
         )}

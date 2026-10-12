@@ -70,18 +70,22 @@ const ICONS: Record<string, LucideIcon> = {
 export function MiniAppsPicker({
   embedded = false,
   onQuote,
+  onSelection,
 }: {
   /** Dentro del armador de precios: sin panel propio de total ni CTA. */
   embedded?: boolean;
   /** Avisa el total mensual en USD de lo marcado. */
   onQuote?: (totalUsd: number) => void;
+  /** Avisa qué plataformas quedaron marcadas (slugs), para llevarlas al registro. */
+  onSelection?: (slugs: string[]) => void;
 } = {}) {
   const { t, locale } = useI18n();
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const q = useMemo(() => quote(selected), [selected]);
   useEffect(() => {
     onQuote?.(q.totalUsd);
-  }, [q.totalUsd, onQuote]);
+    onSelection?.(q.apps.map((a) => a.slug));
+  }, [q, onQuote, onSelection]);
 
   const toggle = (slug: string) =>
     setSelected((prev) => {
