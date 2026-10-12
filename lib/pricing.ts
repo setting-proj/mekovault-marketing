@@ -2,7 +2,8 @@ import type { Locale } from "./i18n/routing";
 
 /**
  * Modelo de precios (decisión de Jorge, 2026-10-12): se paga por cuenta
- * administrada de Google Workspace, con una barra que elige la cantidad.
+ * administrada de Google Workspace, con una barra que elige la cantidad, y
+ * todos los valores se muestran en USD.
  *
  * - 1 a 20 cuentas: gratis para siempre.
  * - De 21 en adelante: un precio por cuenta al mes, más barato por tramo.
@@ -47,57 +48,34 @@ export type AddonKey = "nomina" | "audit" | "compras" | "apps";
 
 export interface Addon {
   key: AddonKey;
-  /** Precio de lista por empresa al mes, en CLP. */
-  clp: number;
+  /** Precio de lista por empresa al mes, en USD. */
+  usd: number;
   /** Página con más detalle. */
   href?: string;
 }
 
 export const ADDONS: Addon[] = [
-  { key: "nomina", clp: 27_900, href: "/conectores/buk" },
-  { key: "audit", clp: 24_900, href: "/account-governance" },
-  { key: "compras", clp: 24_900, href: "/compras-de-software" },
-  { key: "apps", clp: 17_900, href: "/recursos/aplicaciones-vinculadas" },
+  { key: "nomina", usd: 29, href: "/conectores/buk" },
+  { key: "audit", usd: 25, href: "/account-governance" },
+  { key: "compras", usd: 25, href: "/compras-de-software" },
+  { key: "apps", usd: 19, href: "/recursos/aplicaciones-vinculadas" },
 ];
 
-/**
- * Tipo de cambio de referencia para pasar entre USD y CLP.
- * Se actualiza a mano; la fecha se muestra en la página.
- */
+/** Tipo de cambio de referencia (solo para la nota de facturación en Chile). */
 export const FX_REFERENCE = { clpPerUsd: 950, usdPerClp: 1 / 950, date: "2026-10-11" };
 
-/** Moneda en la que se presenta el precio según el idioma de la URL. */
-export function displayCurrency(locale: Locale): "CLP" | "USD" {
-  return locale === "es-CL" ? "CLP" : "USD";
+/** En Chile se factura en pesos; en el sitio todo se muestra en USD. */
+export function billsInClp(locale: Locale): boolean {
+  return locale === "es-CL";
 }
 
-export function clpToUsd(clp: number): number {
-  return Math.round(clp * FX_REFERENCE.usdPerClp);
-}
-
-export function usdToClp(usd: number): number {
-  return Math.round(usd * FX_REFERENCE.clpPerUsd);
-}
-
-export function formatUSD(v: number, decimals = 0): string {
-  return `US$ ${new Intl.NumberFormat("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(v)}`;
-}
-
-export function formatCLPAmount(v: number): string {
-  return `$${new Intl.NumberFormat("es-CL", { maximumFractionDigits: 0 }).format(v)} CLP`;
-}
-
-/** Un monto en CLP mostrado en la moneda del idioma. */
-export function formatPrice(clp: number, locale: Locale): string {
-  return displayCurrency(locale) === "CLP" ? formatCLPAmount(clp) : formatUSD(clpToUsd(clp));
-}
-
-/** Un monto en USD mostrado en la moneda del idioma (con decimales en USD). */
-export function formatUsdPrice(usd: number, locale: Locale, decimals = 0): string {
-  return displayCurrency(locale) === "CLP" ? formatCLPAmount(usdToClp(usd)) : formatUSD(usd, decimals);
+/** Dólares con el separador del idioma: "US$ 1,20" en español y portugués, "US$ 1.20" en inglés. */
+export function formatUSD(v: number, decimals = 0, locale: Locale = "es-CL"): string {
+  const tag = locale === "en-US" ? "en-US" : "es-CL";
+  return `US$ ${new Intl.NumberFormat(tag, { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(v)}`;
 }
 
 /** Precio por cuenta del primer tramo pagado, para el texto del inicio. */
 export function formatStartingRate(locale: Locale): string {
-  return formatUsdPrice(ACCOUNT_TIERS[1]!.usd, locale, 2);
+  return formatUSD(ACCOUNT_TIERS[1]!.usd, 2, locale);
 }

@@ -1,20 +1,16 @@
-import type { TranslationKey } from "./i18n/dictionaries";
-
 /**
- * Mini apps (una por plataforma) y paquetes, tal como se venden en /pricing.
- *
- * Decisión de Jorge (2026-10-11): "venderlo como mini apps o paquetes de apps,
- * seleccionables; cada paquete tiene un valor; es más barato comprar el paquete
- * que de a una, pero igual se puede adquirir de a una".
+ * Mini apps: una por plataforma, se eligen de a una y el precio por plataforma
+ * baja según cuántas se elijan (Jorge, 2026-10-12: "que aparezca una a una,
+ * lo pueden seleccionar y hacer un pack según la necesidad, no paquetes armados").
  *
  * REGLA DE HONESTIDAD: ninguna mini app se anuncia como disponible. "soon" =
- * conector en preparación; "guided" = la plataforma no permite automatizar la
- * baja y Mekovault organiza la tarea con un responsable y evidencia.
+ * conector en preparación (no se cobra hasta estar conectada); "guided" = la
+ * plataforma no permite automatizar la baja y Mekovault organiza la tarea con
+ * un responsable y evidencia.
  *
- * Los precios son de lista (propuesta publicada). El portal cobra hoy por los
- * módulos del catálogo; cuando estos productos existan en la facturación, el
- * origen pasa a ser la API con este archivo como respaldo (igual que
- * `lib/catalog.ts`).
+ * Precios de lista en USD por plataforma al mes. Cuando estos productos existan
+ * en la facturación del portal, el origen pasa a ser la API con este archivo
+ * como respaldo (igual que `lib/catalog.ts`).
  */
 
 export type MiniAppStatus = "soon" | "guided";
@@ -26,22 +22,6 @@ export interface MiniApp {
   /** Página propia en /plataformas/<slug>, si existe. */
   page?: string;
 }
-
-export type PackageKey = "collab" | "sales" | "dev" | "design" | "admin" | "all";
-
-export interface AppPackage {
-  key: PackageKey;
-  name: TranslationKey;
-  desc: TranslationKey;
-  apps: string[];
-  priceClp: number;
-}
-
-/** Precio de lista de una mini app suelta, por empresa al mes. */
-export const SINGLE_APP_CLP = 9_900;
-
-/** Compras de software (módulo), por empresa al mes. */
-export const COMPRAS_CLP = 24_900;
 
 export const MINI_APPS: MiniApp[] = [
   { slug: "slack", name: "Slack", status: "soon", page: "/plataformas/slack" },
@@ -69,88 +49,35 @@ export const MINI_APPS: MiniApp[] = [
   { slug: "zoho", name: "Zoho", status: "soon" },
 ];
 
-export const PACKAGES: AppPackage[] = [
-  {
-    key: "collab",
-    name: "apps.pkg.collab.name",
-    desc: "apps.pkg.collab.desc",
-    apps: ["slack", "zoom", "notion", "asana", "monday"],
-    priceClp: 34_900,
-  },
-  {
-    key: "sales",
-    name: "apps.pkg.sales.name",
-    desc: "apps.pkg.sales.desc",
-    apps: ["hubspot", "pipedrive", "salesforce", "zendesk"],
-    priceClp: 29_900,
-  },
-  {
-    key: "dev",
-    name: "apps.pkg.dev.name",
-    desc: "apps.pkg.dev.desc",
-    apps: ["atlassian", "github", "1password", "dropbox"],
-    priceClp: 29_900,
-  },
-  {
-    key: "design",
-    name: "apps.pkg.design.name",
-    desc: "apps.pkg.design.desc",
-    apps: ["figma", "canva", "adobe", "chatgpt"],
-    priceClp: 29_900,
-  },
-  {
-    key: "admin",
-    name: "apps.pkg.admin.name",
-    desc: "apps.pkg.admin.desc",
-    apps: ["defontana", "nubox", "softland", "docusign", "webdox", "zoho"],
-    priceClp: 34_900,
-  },
-  {
-    key: "all",
-    name: "apps.pkg.all.name",
-    desc: "apps.pkg.all.desc",
-    apps: MINI_APPS.map((a) => a.slug),
-    priceClp: 79_900,
-  },
+/** Precio por plataforma al mes (USD) según cuántas plataformas se eligen. */
+export const APP_PRICE_TIERS: Array<{ from: number; to: number | null; usd: number }> = [
+  { from: 1, to: 2, usd: 10 },
+  { from: 3, to: 5, usd: 8 },
+  { from: 6, to: 9, usd: 7 },
+  { from: 10, to: null, usd: 6 },
 ];
+
+export function perAppUsd(count: number): number {
+  if (count <= 0) return APP_PRICE_TIERS[0]!.usd;
+  const tier = APP_PRICE_TIERS.find((t) => count >= t.from && (t.to === null || count <= t.to));
+  return (tier ?? APP_PRICE_TIERS[APP_PRICE_TIERS.length - 1]!).usd;
+}
 
 export function findMiniApp(slug: string): MiniApp | undefined {
   return MINI_APPS.find((a) => a.slug === slug);
 }
 
-/** Lo que costarían las apps de un paquete compradas de a una. */
-export function packageSinglesClp(pkg: AppPackage): number {
-  return pkg.apps.length * SINGLE_APP_CLP;
-}
-
-/** Ahorro del paquete frente a las sueltas, en porcentaje entero. */
-export function packageSavingPct(pkg: AppPackage): number {
-  const singles = packageSinglesClp(pkg);
-  return Math.round(((singles - pkg.priceClp) / singles) * 100);
-}
-
 export interface Quote {
-  /** Paquetes marcados, en el orden del catálogo. */
-  packages: AppPackage[];
-  /** Mini apps sueltas que sí se cobran (no vienen en un paquete marcado). */
-  singles: MiniApp[];
-  /** Apps cubiertas por algún paquete marcado. */
-  covered: Set<string>;
-  /** Paquetes que saldrían más baratos que las sueltas marcadas de ese grupo. */
-  suggestions: AppPackage[];
-  totalClp: number;
+  apps: MiniApp[];
+  count: number;
+  unitUsd: number;
+  totalUsd: number;
 }
 
-/** Calcula la cotización a partir de los paquetes y mini apps marcados. */
-export function quote(selectedPackages: Set<PackageKey>, selectedApps: Set<string>): Quote {
-  const packages = PACKAGES.filter((p) => selectedPackages.has(p.key));
-  const covered = new Set(packages.flatMap((p) => p.apps));
-  const singles = MINI_APPS.filter((a) => selectedApps.has(a.slug) && !covered.has(a.slug));
-  const suggestions = PACKAGES.filter((p) => {
-    if (p.key === "all" || selectedPackages.has(p.key)) return false;
-    const n = p.apps.filter((s) => singles.some((a) => a.slug === s)).length;
-    return n * SINGLE_APP_CLP > p.priceClp;
-  });
-  const totalClp = packages.reduce((acc, p) => acc + p.priceClp, 0) + singles.length * SINGLE_APP_CLP;
-  return { packages, singles, covered, suggestions, totalClp };
+/** El pack que resulta de las plataformas marcadas. */
+export function quote(selected: Set<string>): Quote {
+  const apps = MINI_APPS.filter((a) => selected.has(a.slug));
+  const count = apps.length;
+  const unitUsd = perAppUsd(count);
+  return { apps, count, unitUsd, totalUsd: count * unitUsd };
 }
