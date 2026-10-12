@@ -4,15 +4,15 @@ export const meta = {
   title: "Setting up the new hire's email account: ready on day one, with no IT ticket",
   seoTitle: "Create a new hire's company email on day one · Mekovault",
   description:
-    "How to create a new hire's Google Workspace account with groups, org unit, alias and license on day one, requested from Personas with no IT ticket.",
+    "How to create a new hire's Google Workspace account with groups, org unit, alias and license on day one, requested from People with no IT ticket.",
   question: "How do I create the new hire's account without going through IT?",
 };
 
 export const summary =
-  "The new hire's email account should exist first thing on day one, with their name spelled right, the groups for their team, the right org unit and the license that matches their role. For that, the data has to come from Personas (or from payroll) before the start date, not from an IT ticket the morning the person shows up.";
+  "The new hire's email account should exist first thing on day one, with their name spelled right, the groups for their team, the right org unit and the license that matches their role. For that, the data has to come from People (or from payroll) before the start date, not from an IT ticket the morning the person shows up.";
 
 export const steps = [
-  { name: "Record the hire with a start date", text: "Personas enters the name, personal email, job title, team, manager and start date as soon as the offer letter is signed." },
+  { name: "Record the hire with a start date", text: "People enters the name, personal email, job title, team, manager and start date as soon as the offer letter is signed." },
   { name: "Decide the email address", text: "firstname.lastname on the company domain; if it is already taken, the alias is decided before day one, not on day one." },
   { name: "Assign groups, org unit and license", text: "By team: the email groups, the organizational unit and the license type come from a template, not from memory." },
   { name: "Create the account on the start date", text: "First thing in the morning, with a temporary password sent to the personal email and a forced change at first sign-in." },
@@ -22,7 +22,7 @@ export const steps = [
 export const faq = [
   {
     q: "Do I need someone from IT to create the account?",
-    a: "No. The Google admin console lets any administrator create users, and Mekovault does it on its own from the Personas record. What does need a decision is the standard: how email addresses are written, which groups each team has and which license goes with each role.",
+    a: "No. The Google admin console lets any administrator create users, and Mekovault does it on its own from the People record. What does need a decision is the standard: how email addresses are written, which groups each team has and which license goes with each role.",
   },
   {
     q: "What if the email address already exists?",
@@ -72,7 +72,7 @@ export function Body() {
 
       <h2>How Mekovault does it</h2>
       <p>
-        The hire is requested from HR (Personas) with a form that validates name, personal email, job title and date (in
+        The hire is requested from HR with a form that validates name, personal email, job title and date (in
         US format), shows the email address that will be created and lets you edit it, and detects whether it already
         exists. If your payroll system is connected (<Link href="/conectores/buk">Buk</Link> and{" "}
         <Link href="/conectores/talana">Talana</Link> today), the hire arrives on its own with its start date. On the

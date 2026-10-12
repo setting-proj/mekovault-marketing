@@ -9,7 +9,7 @@ export const meta = {
 };
 
 export const summary =
-  "Gestão de acessos, na linguagem do dono, é saber quem tem conta em quê, garantir que essa conta seja criada quando a pessoa entra e encerrada quando ela sai, e poder provar isso. Uma empresa de 10 a 500 pessoas sem equipe de TI não precisa de Okta, JumpCloud nem Rippling: precisa que o seu Google Workspace e as suas plataformas sejam governados a partir de Personas.";
+  "Gestão de acessos, na linguagem do dono, é saber quem tem conta em quê, garantir que essa conta seja criada quando a pessoa entra e encerrada quando ela sai, e poder provar isso. Uma empresa de 10 a 500 pessoas sem equipe de TI não precisa de Okta, JumpCloud nem Rippling: precisa que o seu Google Workspace e as suas plataformas sejam governados a partir de Pessoas.";
 
 export const faq = [
   {
@@ -37,7 +37,7 @@ export function Body() {
     <>
       <h2>O que uma empresa de 10 a 500 pessoas precisa de verdade</h2>
       <ol>
-        <li><strong>Uma origem:</strong> as admissões e os desligamentos saem do RH (Personas) ou da folha de pagamento, não de um e-mail para a TI.</li>
+        <li><strong>Uma origem:</strong> as admissões e os desligamentos saem do RH ou da folha de pagamento, não de um e-mail para a TI.</li>
         <li><strong>Um diretório que manda:</strong> o Google Workspace como fonte da verdade; as outras plataformas se penduram nele.</li>
         <li><strong>Datas:</strong> a conta nasce no dia da admissão e é encerrada no último dia, na hora.</li>
         <li><strong>Decisão do gestor:</strong> para quem vão os arquivos e o e-mail de quem sai.</li>

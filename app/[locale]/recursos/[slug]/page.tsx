@@ -38,6 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     type: "article",
     localized,
     availableLocales: available,
+    image: `/recursos/${r.slug}/opengraph-image`,
   });
 }
 

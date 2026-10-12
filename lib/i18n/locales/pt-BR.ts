@@ -306,7 +306,7 @@ const ptBR: Dictionary = {
   "contact.card.trial": "Teste grátis",
   "contact.form.eyebrow": "Formulário",
   "contact.form.title": "Escreva para a gente",
-  "contact.form.desc": "Conte brevemente o que precisa. Este formulário abre seu programa de e-mail.",
+  "contact.form.desc": "Conte brevemente o que você precisa. Respondemos no próximo dia útil.",
   "contact.form.name": "Nome",
   "contact.form.email": "E-mail",
   "contact.form.company": "Empresa",
@@ -1071,6 +1071,18 @@ const ptBR: Dictionary = {
   "pf.faq.3.a": "Como mini apps: um por plataforma, avulso ou em pacote, e o pacote sai mais barato. As que estão em preparação não são cobradas até ficarem conectadas.",
   "pf.faq.4.q": "O Mekovault instala algo nos computadores?",
   "pf.faq.4.a": "Não. Trabalha com as contas, não com os equipamentos: usa as conexões oficiais de cada plataforma e nunca guarda a senha pessoal de um administrador.",
+  // Contacto real, calculadora compartible y preguntas nuevas (2026-10-11)
+  "contact.form.sent.title": "Mensagem recebida",
+  "contact.form.sent.desc": "Respondemos no próximo dia útil no e-mail que você deixou.",
+  "contact.form.sending": "Enviando…",
+  "contact.form.failed": "Não conseguimos enviar a mensagem pelo site.",
+  "contact.form.failed.cta": "Envie por e-mail com um clique",
+  "calc.share": "Compartilhar resultado",
+  "calc.share.copied": "Link copiado",
+  "calc.share.failed": "Não foi possível copiar",
+  "calc.share.hint": "O link guarda seus três números: quem abrir vê o mesmo cálculo.",
+  "searches.q7": "Quais programas minha empresa paga e quem os usa?",
+  "searches.q8": "Como encontro as licenças que pagamos e ninguém usa?",
 };
 
 export default ptBR;

@@ -10,11 +10,12 @@
  *   fuga anual = personas × rotación × costo mensual × meses sin cerrar
  */
 
-import { useMemo, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { ArrowRight, Share2 } from "lucide-react";
 
 import { LinkButton } from "@/components/Button";
 import { useI18n } from "@/lib/i18n/I18nProvider";
+import { localizePath } from "@/lib/i18n/routing";
 
 const MONTHS_UNNOTICED = 6;
 
@@ -23,6 +24,37 @@ export function LeakCalculator() {
   const [people, setPeople] = useState(120);
   const [turnover, setTurnover] = useState(20);
   const [cost, setCost] = useState(12);
+  const [shared, setShared] = useState<"idle" | "copied" | "failed">("idle");
+
+  // Valores compartidos por enlace (?p=personas&t=rotación&c=costo), solo en el navegador.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const num = (k: string, min: number, max: number) => {
+      const v = Number(q.get(k));
+      return q.has(k) && Number.isFinite(v) && v >= min && v <= max ? v : null;
+    };
+    const p = num("p", 10, 1000);
+    const tv = num("t", 0, 60);
+    const c = num("c", 1, 40);
+    if (p !== null) setPeople(p);
+    if (tv !== null) setTurnover(tv);
+    if (c !== null) setCost(c);
+  }, []);
+
+  async function share() {
+    const url = `${window.location.origin}${localizePath(locale, "/calculadora-licencias")}?p=${people}&t=${turnover}&c=${cost}`;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: t("calc.title"), url });
+      } else {
+        await navigator.clipboard.writeText(url);
+      }
+      setShared("copied");
+    } catch {
+      setShared("failed");
+    }
+    window.setTimeout(() => setShared("idle"), 4000);
+  }
 
   const { leavers, annual, monthly } = useMemo(() => {
     const leavers = Math.round((people * turnover) / 100);
@@ -95,11 +127,20 @@ export function LeakCalculator() {
             {t("calc.assumption")}
           </p>
           <p className="mt-3 text-sm font-semibold leading-relaxed text-[#03045e]">{t("calc.compare")}</p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <LinkButton href="https://app.mekovault.com/signup" external size="lg" className="w-full sm:w-auto">
               {t("calc.cta")} <ArrowRight />
             </LinkButton>
+            <button
+              type="button"
+              onClick={share}
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-[10px] border border-[#c9dde8] bg-white px-5 text-sm font-bold text-[#03045e] transition-colors hover:border-[#0077b6]"
+            >
+              <Share2 className="size-4" />
+              {shared === "copied" ? t("calc.share.copied") : shared === "failed" ? t("calc.share.failed") : t("calc.share")}
+            </button>
           </div>
+          <p className="mt-2 text-xs text-[#5b7390]">{t("calc.share.hint")}</p>
         </div>
       </div>
     </div>

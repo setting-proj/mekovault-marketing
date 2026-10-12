@@ -40,6 +40,8 @@ const SEARCHES: Array<{ key: TranslationKey; href: string }> = [
   { key: "searches.q4", href: "/recursos/aplicaciones-vinculadas" },
   { key: "searches.q5", href: "/conectores/buk" },
   { key: "searches.q6", href: "/recursos/que-preguntar-antes-de-contratar" },
+  { key: "searches.q7", href: "/recursos/inventario-de-software" },
+  { key: "searches.q8", href: "/recursos/licencias-sin-usar" },
 ];
 
 /** En inglés y portugués se enlazan solo las guías que existen en ese idioma. */
@@ -50,6 +52,8 @@ const SEARCHES_INTL: Array<{ key: TranslationKey; href: string }> = [
   { key: "searches.q4", href: "/recursos/aplicaciones-vinculadas" },
   { key: "searches.q5", href: "/recursos/que-es-el-control-de-cuentas-y-licencias" },
   { key: "searches.q6", href: "/recursos/que-preguntar-antes-de-contratar" },
+  { key: "searches.q7", href: "/recursos/inventario-de-software" },
+  { key: "searches.q8", href: "/recursos/licencias-sin-usar" },
 ];
 
 /** Las tres puertas del inicio: un pilar por lo que le pasa hoy a la empresa. */
@@ -128,7 +132,7 @@ export function HomeView() {
         <Section id="preguntas" compact className="border-b border-[#dbeaf2] bg-white">
           <Container>
             <SectionHeading eyebrow={t("searches.eyebrow")} title={t("searches.title")} desc={t("searches.desc")} />
-            <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {(locale.startsWith("es") ? SEARCHES : SEARCHES_INTL).map((s) => (
                 <li key={s.href}>
                   <Link

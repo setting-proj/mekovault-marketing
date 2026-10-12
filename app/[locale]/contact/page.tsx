@@ -3,7 +3,7 @@
 import { Mail, MapPin, Building, ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/Container";
-import { LinkButton } from "@/components/Button";
+import { ContactForm } from "@/components/ContactForm";
 import { Section, SectionHeading } from "@/components/Section";
 import Link from "@/components/Link";
 import { useT } from "@/lib/i18n/I18nProvider";
@@ -107,71 +107,7 @@ export default function ContactPage() {
             center
           />
 
-          <form
-            action="mailto:cloud@mekovault.com"
-            method="post"
-            encType="text/plain"
-            className="mx-auto mt-10 max-w-lg space-y-4"
-          >
-            <div className="space-y-1.5">
-              <label htmlFor="name" className="text-sm font-medium">
-                {t("contact.form.name")}
-              </label>
-              <input
-                id="name"
-                name="name"
-                required
-                className="h-10 w-full rounded-lg border bg-card px-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/25"
-              />
-            </div>
-            <div className="space-y-1.5">
-              <label htmlFor="email" className="text-sm font-medium">
-                {t("contact.form.email")}
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                className="h-10 w-full rounded-lg border bg-card px-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/25"
-              />
-            </div>
-            <div className="space-y-1.5">
-              <label htmlFor="company" className="text-sm font-medium">
-                {t("contact.form.company")}
-              </label>
-              <input
-                id="company"
-                name="company"
-                className="h-10 w-full rounded-lg border bg-card px-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/25"
-              />
-            </div>
-            <div className="space-y-1.5">
-              <label htmlFor="message" className="text-sm font-medium">
-                {t("contact.form.message")}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                className="w-full rounded-lg border bg-card px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/25"
-              />
-            </div>
-            <LinkButton href="mailto:cloud@mekovault.com" size="lg" className="w-full">
-              {t("contact.form.send")}
-            </LinkButton>
-            <p className="text-center text-xs text-muted-foreground">
-              {t("contact.form.also")}{" "}
-              <a
-                href="mailto:cloud@mekovault.com"
-                className="font-medium text-primary hover:underline"
-              >
-                cloud@mekovault.com
-              </a>
-              .
-            </p>
-          </form>
+          <ContactForm />
         </Container>
       </Section>
     </>

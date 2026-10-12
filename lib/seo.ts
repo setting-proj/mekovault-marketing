@@ -32,6 +32,8 @@ type PageMeta = {
    */
   availableLocales?: Locale[];
   noindex?: boolean;
+  /** Ruta (sin idioma) de una imagen OG propia; por defecto la del sitio. */
+  image?: string;
 };
 
 /** Metadatos por página: título, descripción, canónica, hreflang y Open Graph. */
@@ -44,6 +46,7 @@ export function pageMetadata({
   localized = true,
   availableLocales,
   noindex = false,
+  image = "/opengraph-image",
 }: PageMeta): Metadata {
   const locales = availableLocales ?? (localized ? ALL_LOCALES : [DEFAULT_LOCALE]);
   const canonical = locales.includes(locale) ? absoluteUrl(locale, path) : absoluteUrl(DEFAULT_LOCALE, path);
@@ -51,7 +54,7 @@ export function pageMetadata({
   for (const l of locales) languages[HREFLANG[l]] = absoluteUrl(l, path);
   languages["x-default"] = absoluteUrl(DEFAULT_LOCALE, path);
 
-  const ogImage = absoluteUrl(locale, "/opengraph-image");
+  const ogImage = absoluteUrl(locale, image);
   return {
     metadataBase: new URL(SITE_URL),
     title: { absolute: title },

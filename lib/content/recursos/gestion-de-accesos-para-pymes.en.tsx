@@ -9,7 +9,7 @@ export const meta = {
 };
 
 export const summary =
-  "Access management, in an owner's words, is knowing who has an account on what, having that account created when the person starts and closed when they leave, and being able to prove it. A company of 10 to 500 people with no IT team does not need Okta, JumpCloud or Rippling: it needs its Google Workspace and its platforms governed from Personas.";
+  "Access management, in an owner's words, is knowing who has an account on what, having that account created when the person starts and closed when they leave, and being able to prove it. A company of 10 to 500 people with no IT team does not need Okta, JumpCloud or Rippling: it needs its Google Workspace and its platforms governed from People.";
 
 export const faq = [
   {
@@ -37,7 +37,7 @@ export function Body() {
     <>
       <h2>What a company of 10 to 500 people really needs</h2>
       <ol>
-        <li><strong>One source:</strong> hires and departures come from HR (Personas) or from payroll, not from an email to IT.</li>
+        <li><strong>One source:</strong> hires and departures come from HR or from payroll, not from an email to IT.</li>
         <li><strong>One directory in charge:</strong> Google Workspace as the source of truth; the other platforms hang from it.</li>
         <li><strong>Dates:</strong> the account is born on the start date and closed on the last day, at the hour.</li>
         <li><strong>The manager’s decision:</strong> who gets the files and the email of the person leaving.</li>

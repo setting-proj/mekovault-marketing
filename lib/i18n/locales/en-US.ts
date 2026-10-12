@@ -305,7 +305,7 @@ const enUS: Dictionary = {
   "contact.card.trial": "Free trial",
   "contact.form.eyebrow": "Form",
   "contact.form.title": "Write to us",
-  "contact.form.desc": "Tell us briefly what you need. This form opens your email program.",
+  "contact.form.desc": "Tell us briefly what you need. We reply on the next business day.",
   "contact.form.name": "Name",
   "contact.form.email": "Email",
   "contact.form.company": "Company",
@@ -1070,6 +1070,18 @@ const enUS: Dictionary = {
   "pf.faq.3.a": "As mini apps: one per platform, on their own or in a bundle, and the bundle is cheaper. Platforms in preparation are not charged until they are connected.",
   "pf.faq.4.q": "Does Mekovault install anything on computers?",
   "pf.faq.4.a": "No. It works with accounts, not devices: it uses each platform's official connection and never stores an administrator's personal password.",
+  // Contacto real, calculadora compartible y preguntas nuevas (2026-10-11)
+  "contact.form.sent.title": "Message received",
+  "contact.form.sent.desc": "We reply on the next business day to the email you left.",
+  "contact.form.sending": "Sending…",
+  "contact.form.failed": "We could not send the message from the site.",
+  "contact.form.failed.cta": "Send it by email in one click",
+  "calc.share": "Share result",
+  "calc.share.copied": "Link copied",
+  "calc.share.failed": "Could not copy",
+  "calc.share.hint": "The link keeps your three numbers: whoever opens it sees the same calculation.",
+  "searches.q7": "Which software does my company pay for, and who uses it?",
+  "searches.q8": "How do I find the licenses we pay for that nobody uses?",
 };
 
 export default enUS;

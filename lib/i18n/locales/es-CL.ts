@@ -339,8 +339,7 @@ const esCL = {
   "contact.card.trial": "Prueba gratis",
   "contact.form.eyebrow": "Formulario",
   "contact.form.title": "Escríbenos",
-  "contact.form.desc":
-    "Cuéntanos brevemente qué necesitas. Este formulario abre tu programa de correo.",
+  "contact.form.desc": "Cuéntanos brevemente qué necesitas. Respondemos en el próximo día hábil.",
   "contact.form.name": "Nombre",
   "contact.form.email": "Correo",
   "contact.form.company": "Empresa",
@@ -1106,6 +1105,18 @@ const esCL = {
   "pf.faq.3.a": "Como mini apps: una por plataforma, de a una o en paquete, y el paquete sale más barato. Las que están en preparación no se cobran hasta estar conectadas.",
   "pf.faq.4.q": "¿Mekovault instala algo en los computadores?",
   "pf.faq.4.a": "No. Trabaja con las cuentas, no con los equipos: usa las conexiones oficiales de cada plataforma y nunca guarda la clave personal de un administrador.",
+  // Contacto real, calculadora compartible y preguntas nuevas (2026-10-11)
+  "contact.form.sent.title": "Mensaje recibido",
+  "contact.form.sent.desc": "Te respondemos en el próximo día hábil al correo que dejaste.",
+  "contact.form.sending": "Enviando…",
+  "contact.form.failed": "No pudimos enviar el mensaje desde el sitio.",
+  "contact.form.failed.cta": "Envíalo por correo con un clic",
+  "calc.share": "Compartir resultado",
+  "calc.share.copied": "Enlace copiado",
+  "calc.share.failed": "No se pudo copiar",
+  "calc.share.hint": "El enlace guarda tus tres datos: quien lo abra ve el mismo cálculo.",
+  "searches.q7": "¿Qué programas paga mi empresa y quién los usa?",
+  "searches.q8": "¿Cómo encuentro las licencias que pagamos y nadie usa?",
 } as const;
 
 export type TranslationKey = keyof typeof esCL;
