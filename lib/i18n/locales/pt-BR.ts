@@ -18,9 +18,9 @@ const ptBR: Dictionary = {
   "nav.login": "Entrar",
   "nav.signup": "Comece grátis",
 
-  "hero.title.line1": "Encerre as contas e licenças de quem sai, no mesmo dia.",
-  "hero.title.line2": "Sem depender da TI.",
-  "hero.subtitle": "Google Workspace, Slack, Zoom, Figma e tudo o que você paga por pessoa. O RH pede, a Mekovault executa na hora e a evidência fica. Tudo nasce na folha de pagamento e se governa a partir dela.",
+  "hero.title.line1": "Administre as licenças de software e as contas da sua equipe, do início ao fim.",
+  "hero.title.line2": "Cuide do orçamento. Sem depender da TI.",
+  "hero.subtitle": "Onboarding e offboarding de aplicativos, sob controle: Google Workspace, Slack, Zoom, Figma e tudo o que você paga por pessoa. O RH pede, a Mekovault executa na hora e a evidência fica.",
   "hero.cta.signup": "Comece grátis por 90 dias",
   "hero.trust.1": "Sem cartão para começar",
   "hero.trust.2": "Instala em uma tarde",
@@ -799,9 +799,9 @@ const ptBR: Dictionary = {
   "gov.home.link": "Ver como as contas são governadas",
 
   // ========== SEO, guías y búsquedas (plan de marketing 2026-10-11) ==========
-  "seo.home.title": "Mekovault · Desligamento, admissão e licenças no Google Workspace",
-  "seo.home.description": "Encerre contas, libere licenças e transfira arquivos no mesmo dia em que alguém sai. O RH pede, sem TI. Grátis até 20 contas; depois, por conta por mês.",
-  "seo.og.tagline": "O RH pede, a Mekovault executa e a evidência fica. Grátis por 90 dias.",
+  "seo.home.title": "Licenças de software e contas sob controle, sem TI · Mekovault",
+  "seo.home.description": "Administre as licenças de software e as contas da sua equipe do início ao fim. Onboarding e offboarding de aplicativos sob controle, sem TI. Grátis até 20 contas.",
+  "seo.og.tagline": "Onboarding e offboarding de aplicativos, sob controle. Grátis até 20 contas.",
   "seo.offer.description": "Grátis até 20 contas do Google Workspace. Depois, a partir de US$ 1,20 por conta por mês, com a integração com o Workspace e as solicitações incluídas.",
   "seo.products.title": "Contas: admissão, desligamento e solicitações · Mekovault",
   "seo.products.description": "Conta criada no dia da entrada, encerrada no último dia com e-mail e arquivos transferidos, licenças liberadas e evidência por 365 dias. O RH pede, sem chamado para a TI.",

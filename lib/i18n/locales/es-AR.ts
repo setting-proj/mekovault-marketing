@@ -7,6 +7,9 @@
 import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
+  "hero.subtitle": "Onboarding y offboarding de aplicaciones, controlados: Google Workspace, Slack, Zoom, Figma y todo lo que pagás por persona. RRHH pide, Mekovault lo ejecuta a la hora y queda la evidencia.",
+  "hero.title.line2": "Cuidá el presupuesto. Sin depender de sistemas.",
+  "hero.title.line1": "Administrá las licencias de software y las cuentas de tu gente, de principio a fin.",
 
   "nav.signup": "Empezá gratis",
   "agov.cta.signup": "Empezá gratis 90 días",

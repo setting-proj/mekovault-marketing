@@ -17,9 +17,9 @@ const enUS: Dictionary = {
   "nav.login": "Sign in",
   "nav.signup": "Start free",
 
-  "hero.title.line1": "Close the accounts and licenses of whoever leaves, the same day.",
-  "hero.title.line2": "No IT department needed.",
-  "hero.subtitle": "Google Workspace, Slack, Zoom, Figma and everything you pay per person. HR requests it, Mekovault runs it on time and the evidence stays. Everything starts in payroll and is governed from there.",
+  "hero.title.line1": "Manage software licenses and your people's accounts, from day one to the last day.",
+  "hero.title.line2": "Protect the budget. No IT department needed.",
+  "hero.subtitle": "Application onboarding and offboarding, under control: Google Workspace, Slack, Zoom, Figma and everything you pay per person. HR requests it, Mekovault runs it on time and the evidence stays.",
   "hero.cta.signup": "Start free for 90 days",
   "hero.trust.1": "No card to start",
   "hero.trust.2": "Set up in an afternoon",
@@ -798,9 +798,9 @@ const enUS: Dictionary = {
   "gov.home.link": "See how accounts are governed",
 
   // ========== SEO, guías y búsquedas (plan de marketing 2026-10-11) ==========
-  "seo.home.title": "Mekovault · Offboarding, onboarding and licenses in Google Workspace",
-  "seo.home.description": "Close accounts, free up licenses and hand over files the day someone leaves. HR requests it, no IT needed. Free up to 20 accounts, then per account per month.",
-  "seo.og.tagline": "HR requests it, Mekovault runs it and the evidence stays. Free for 90 days.",
+  "seo.home.title": "Software license management and user accounts, no IT · Mekovault",
+  "seo.home.description": "Manage software licenses and your people's accounts from day one to the last day. Application onboarding and offboarding under control, no IT needed. Free up to 20 accounts.",
+  "seo.og.tagline": "Application onboarding and offboarding, under control. Free up to 20 accounts.",
   "seo.offer.description": "Free up to 20 Google Workspace accounts. Then from US$ 1.20 per account per month, with the Workspace integration and requests included.",
   "seo.products.title": "Accounts: onboarding, offboarding and requests · Mekovault",
   "seo.products.description": "Accounts created on day one, closed on the last day with email and files handed over, licenses released and 365 days of evidence. HR requests it, no IT ticket.",

@@ -7,6 +7,7 @@
 import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
+  "hero.title.line2": "Cuida el presupuesto. Sin depender de TI.",
 
   // Hero
 

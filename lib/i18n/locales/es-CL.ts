@@ -11,7 +11,7 @@
 const esCL = {
   // ========== Meta ==========
   "meta.title": "Mekovault · Bajas, altas y licencias en Google Workspace sin IT",
-  "meta.description": "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis hasta 20 cuentas; después, por cuenta al mes.",
+  "meta.description": "Administra las licencias de software y las cuentas de tu gente de principio a fin. Onboarding y offboarding de aplicaciones controlados, sin IT. Gratis hasta 20 cuentas.",
 
   // ========== Header nav ==========
   "nav.product": "Producto",
@@ -24,9 +24,9 @@ const esCL = {
   "nav.signup": "Empieza gratis",
 
   // ========== Home: hero ==========
-  "hero.title.line1": "Cierra las cuentas y licencias de quien se va, el mismo día.",
-  "hero.title.line2": "Sin depender de IT.",
-  "hero.subtitle": "Google Workspace, Slack, Zoom, Figma y todo lo que pagas por persona. Personas pide, Mekovault lo ejecuta a la hora y queda la evidencia. Todo nace en la nómina y se gobierna desde ahí.",
+  "hero.title.line1": "Administra las licencias de software y las cuentas de tu gente, de principio a fin.",
+  "hero.title.line2": "Cuida el presupuesto. Sin depender de IT.",
+  "hero.subtitle": "Onboarding y offboarding de aplicaciones, controlados: Google Workspace, Slack, Zoom, Figma y todo lo que pagas por persona. Personas pide, Mekovault lo ejecuta a la hora y queda la evidencia.",
   "hero.cta.signup": "Empieza gratis 90 días",
   "hero.trust.1": "Sin tarjeta para partir",
   "hero.trust.2": "Se instala en una tarde",
@@ -832,9 +832,9 @@ const esCL = {
   "gov.home.link": "Ver cómo se gobiernan las cuentas",
 
   // ========== SEO, guías y búsquedas (plan de marketing 2026-10-11) ==========
-  "seo.home.title": "Mekovault · Bajas, altas y licencias en Google Workspace sin IT",
-  "seo.home.description": "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis hasta 20 cuentas; después, por cuenta al mes.",
-  "seo.og.tagline": "Lo pide RRHH, Mekovault lo ejecuta y queda la evidencia. Gratis 90 días.",
+  "seo.home.title": "Licencias de software y cuentas bajo control, sin IT · Mekovault",
+  "seo.home.description": "Administra las licencias de software y las cuentas de tu gente de principio a fin. Onboarding y offboarding de aplicaciones controlados, sin IT. Gratis hasta 20 cuentas.",
+  "seo.og.tagline": "Onboarding y offboarding de aplicaciones, controlados. Gratis hasta 20 cuentas.",
   "seo.offer.description": "Gratis hasta 20 cuentas de Google Workspace. Después, desde US$ 1,20 por cuenta al mes, con la integración con Workspace y las solicitudes incluidas.",
   "seo.products.title": "Cuentas: altas, bajas y solicitudes sin IT · Mekovault",
   "seo.products.description": "Alta el día de ingreso, baja el último día con correo y archivos traspasados, licencias liberadas y evidencia 365 días. Todo lo pide Personas, sin ticket a IT.",

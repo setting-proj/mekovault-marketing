@@ -8,13 +8,11 @@
 import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
-  "seo.home.title": "Mekovault · Offboarding, altas y licencias en Google Workspace sin IT",
-  "seo.home.description":
-    "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis hasta 20 cuentas; después, por cuenta al mes.",
-  "hero.title.line1": "Cierra las cuentas y licencias de quien se va, el mismo día.",
-  "hero.title.line2": "Sin depender de IT.",
-  "hero.subtitle":
-    "Google Workspace, Slack, Zoom, Figma y todo lo que pagas por persona. RRHH pide, Mekovault lo ejecuta a la hora y queda la evidencia. Todo nace en la nómina y se gobierna desde ahí.",
+  "seo.home.title": "Licencias de software y cuentas bajo control, sin IT · Mekovault",
+  "seo.home.description": "Controla las licencias de software y las cuentas de tu gente del alta a la baja. Onboarding y offboarding de aplicaciones controlados, sin IT. Gratis hasta 20 cuentas.",
+  "hero.title.line1": "Controla las licencias de software y las cuentas de tu gente, del alta a la baja.",
+  "hero.title.line2": "Cuida el presupuesto. Sin depender de IT.",
+  "hero.subtitle": "Onboarding y offboarding de aplicaciones, controlados: Google Workspace, Slack, Zoom, Figma y todo lo que pagas por persona. RRHH pide, Mekovault lo ejecuta a la hora y queda la evidencia.",
   "calc.turnover.hint": "Porcentaje de personas que sale en un año. En España suele estar entre 10 % y 25 %.",
   "calc.cost": "Coste por licencia al mes (USD)",
   "faq.subtitle": "Recopilado de conversaciones con empresas de España y Latinoamérica.",
