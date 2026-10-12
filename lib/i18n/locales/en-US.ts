@@ -798,8 +798,8 @@ const enUS: Dictionary = {
   "gov.home.link": "See how accounts are governed",
 
   // ========== SEO, guías y búsquedas (plan de marketing 2026-10-11) ==========
-  "seo.home.title": "Software license management and user accounts, no IT · Mekovault",
-  "seo.home.description": "Manage software licenses and your people's accounts from day one to the last day. Application onboarding and offboarding under control, no IT needed. Free up to 20 accounts.",
+  "seo.home.title": "Software license management and user accounts · Mekovault",
+  "seo.home.description": "Manage software licenses and your people's accounts from day one to the last day. App onboarding and offboarding under control, no IT needed.",
   "seo.og.tagline": "Application onboarding and offboarding, under control. Free up to 20 accounts.",
   "seo.offer.description": "Free up to 20 Google Workspace accounts. Then from US$ 1.20 per account per month, with the Workspace integration and requests included.",
   "seo.products.title": "Accounts: onboarding, offboarding and requests · Mekovault",

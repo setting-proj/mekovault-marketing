@@ -8,8 +8,8 @@
 import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
-  "seo.home.title": "Licencias de software y cuentas bajo control, sin IT · Mekovault",
-  "seo.home.description": "Controla las licencias de software y las cuentas de tu gente del alta a la baja. Onboarding y offboarding de aplicaciones controlados, sin IT. Gratis hasta 20 cuentas.",
+  "seo.home.title": "Licencias de software y cuentas bajo control · Mekovault",
+  "seo.home.description": "Controla las licencias de software y las cuentas de tu gente del alta a la baja. Onboarding y offboarding de aplicaciones controlados, sin IT.",
   "hero.title.line1": "Controla las licencias de software y las cuentas de tu gente, del alta a la baja.",
   "hero.title.line2": "Cuida el presupuesto. Sin depender de IT.",
   "hero.subtitle": "Onboarding y offboarding de aplicaciones, controlados: Google Workspace, Slack, Zoom, Figma y todo lo que pagas por persona. RRHH pide, Mekovault lo ejecuta a la hora y queda la evidencia.",

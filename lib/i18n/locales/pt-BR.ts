@@ -799,8 +799,8 @@ const ptBR: Dictionary = {
   "gov.home.link": "Ver como as contas são governadas",
 
   // ========== SEO, guías y búsquedas (plan de marketing 2026-10-11) ==========
-  "seo.home.title": "Licenças de software e contas sob controle, sem TI · Mekovault",
-  "seo.home.description": "Administre as licenças de software e as contas da sua equipe do início ao fim. Onboarding e offboarding de aplicativos sob controle, sem TI. Grátis até 20 contas.",
+  "seo.home.title": "Licenças de software e contas sob controle · Mekovault",
+  "seo.home.description": "Administre as licenças de software e as contas da sua equipe do início ao fim. Onboarding e offboarding de aplicativos sob controle, sem TI.",
   "seo.og.tagline": "Onboarding e offboarding de aplicativos, sob controle. Grátis até 20 contas.",
   "seo.offer.description": "Grátis até 20 contas do Google Workspace. Depois, a partir de US$ 1,20 por conta por mês, com a integração com o Workspace e as solicitações incluídas.",
   "seo.products.title": "Contas: admissão, desligamento e solicitações · Mekovault",
