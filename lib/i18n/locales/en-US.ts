@@ -133,7 +133,7 @@ const enUS: Dictionary = {
   "notfound.home": "Back to home",
   "notfound.product": "See the product",
 
-  "products.eyebrow": "Product",
+  "products.eyebrow": "Accounts",
   "products.title.pre": "Every account in your company,",
   "products.title.hl": "under control.",
   "products.subtitle": "Mekovault manages your team's accounts on the platforms you pay for per seat: who joins, who leaves, who requests what and what it costs. Today with Google Workspace; the rest are on the way.",
@@ -466,8 +466,7 @@ const enUS: Dictionary = {
     "License Control",
   "common.learn_more":
     "Learn more",
-  "pf.eyebrow":
-    "Platforms",
+  "pf.eyebrow": "Applications",
   "pf.title.pre":
     "Every platform you pay for per seat,",
   "pf.title.hl":
@@ -502,8 +501,7 @@ const enUS: Dictionary = {
     "Write to us",
   "pf.cta.license":
     "See License Control",
-  "lc.eyebrow":
-    "License control",
+  "lc.eyebrow": "Licenses and spend",
   "lc.title.pre":
     "Blocking an account",
   "lc.title.hl":
@@ -808,11 +806,11 @@ const enUS: Dictionary = {
   "seo.home.description": "Close accounts, free up licenses and hand over files the day someone leaves. HR requests it, no IT needed. Free for 90 days, one price per company.",
   "seo.og.tagline": "HR requests it, Mekovault runs it and the evidence stays. Free for 90 days.",
   "seo.offer.description": "Free up to 20 Google Workspace accounts. Then one price per company by size, no per-user fee.",
-  "seo.products.title": "Product: onboarding, offboarding and licenses · Mekovault",
+  "seo.products.title": "Accounts: onboarding, offboarding and requests · Mekovault",
   "seo.products.description": "Accounts created on day one, closed on the last day with email and files handed over, licenses released and 365 days of evidence. HR requests it, no IT ticket.",
-  "seo.platforms.title": "The platforms you pay per person · Mekovault",
+  "seo.platforms.title": "Applications: platforms, access and mini apps · Mekovault",
   "seo.platforms.description": "Google Workspace connected today; Slack, Zoom, Figma, Adobe and the other per-seat platforms, one by one. What each one does on its own and what stays guided.",
-  "seo.license_control.title": "Google Workspace license control · Mekovault",
+  "seo.license_control.title": "Software license management and spend control · Mekovault",
   "seo.license_control.description": "Blocking an account does not always stop the bill. See how many licenses you bought, how many are in use and how many sit on blocked accounts before renewal.",
   "seo.pricing.title": "Pricing: free up to 20 accounts, then per company · Mekovault",
   "seo.pricing.description": "Free forever for up to 20 Google Workspace accounts (onboarding, offboarding and requests). Then one price per company by size, no per-user fee. No card.",
@@ -1037,6 +1035,41 @@ const enUS: Dictionary = {
   "svc.compras.b1": "Approval by manager, Control and Purchasing",
   "svc.compras.b2": "Purchase order, payment and invoice linked",
   "svc.compras.b3": "Notice 30 days before each renewal",
+  // Tres pilares: Cuentas, Licencias y gasto, Aplicaciones (2026-10-11)
+  "nav.accounts": "Accounts",
+  "nav.licenses": "Licenses and spend",
+  "nav.apps": "Applications",
+  "doors.eyebrow": "Three doors",
+  "doors.title": "Your company's accounts, licenses and software spend, under control.",
+  "doors.desc": "Start from what is happening today. All three doors lead to the same panel.",
+  "doors.1.title": "Someone joins or leaves",
+  "doors.1.desc": "Account ready on day one, closed on the last day with email and files handed over and the license released. HR requests it, no IT.",
+  "doors.1.cta": "See Accounts",
+  "doors.2.title": "What we pay per person",
+  "doors.2.desc": "Licenses purchased, in use and sitting in blocked accounts. Purchases approved in order and renewals flagged 30 days ahead.",
+  "doors.2.cta": "See Licenses and spend",
+  "doors.3.title": "What people connect and ask for",
+  "doors.3.desc": "Which platforms Mekovault manages, which apps have access to company accounts, and mini apps per platform.",
+  "doors.3.cta": "See Applications",
+  "lc.compras.eyebrow": "Software purchasing",
+  "lc.compras.title": "And when something has to be bought, it is requested in order",
+  "lc.compras.desc": "Licenses are not only released: they are also requested, approved and paid for. Software purchasing closes that loop in five steps and registers subscriptions without a connector so they enter license control.",
+  "lc.inventory.title": "Software inventory",
+  "lc.inventory.desc": "What the company pays for, with price, vendor, owner and renewal date, matched against the real accounts on every connected platform.",
+  "pf.apps.eyebrow": "Apps with access",
+  "pf.apps.title": "Which apps come in with your company's accounts",
+  "pf.apps.desc": "Everyone connects apps to their Google account: calendars, signatures, AI assistants, extensions. Mekovault lists them every week, asks the manager which ones stay and revokes the rest, with evidence.",
+  "pf.apps.link": "Read the connected apps guide",
+  "pf.faq.eyebrow": "Questions",
+  "pf.faq.title": "Application control: what people ask",
+  "pf.faq.1.q": "What is application control for a company?",
+  "pf.faq.1.a": "Knowing which platforms the company uses, who has an account on each one, which outside apps have access to those accounts and what it all costs per month. Mekovault does it from the Google Workspace accounts: accounts per platform, apps with access and licenses.",
+  "pf.faq.2.q": "What about platforms without a connector?",
+  "pf.faq.2.a": "They are covered as a guided task: Mekovault assigns the offboarding or onboarding to whoever administers that platform, with a deadline and instructions, and keeps the evidence. Nothing is left out of a person's exit.",
+  "pf.faq.3.q": "How are platforms purchased?",
+  "pf.faq.3.a": "As mini apps: one per platform, on their own or in a bundle, and the bundle is cheaper. Platforms in preparation are not charged until they are connected.",
+  "pf.faq.4.q": "Does Mekovault install anything on computers?",
+  "pf.faq.4.a": "No. It works with accounts, not devices: it uses each platform's official connection and never stores an administrator's personal password.",
 };
 
 export default enUS;

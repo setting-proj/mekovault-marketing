@@ -52,6 +52,13 @@ const SEARCHES_INTL: Array<{ key: TranslationKey; href: string }> = [
   { key: "searches.q6", href: "/recursos/que-preguntar-antes-de-contratar" },
 ];
 
+/** Las tres puertas del inicio: un pilar por lo que le pasa hoy a la empresa. */
+const DOORS: Array<{ href: string; title: TranslationKey; desc: TranslationKey; cta: TranslationKey }> = [
+  { href: "/products", title: "doors.1.title", desc: "doors.1.desc", cta: "doors.1.cta" },
+  { href: "/license-control", title: "doors.2.title", desc: "doors.2.desc", cta: "doors.2.cta" },
+  { href: "/platforms", title: "doors.3.title", desc: "doors.3.desc", cta: "doors.3.cta" },
+];
+
 export function HomeView() {
   const { t, locale } = useI18n();
   return (
@@ -93,6 +100,28 @@ export function HomeView() {
 
       {/* Plataformas que se pagan por persona */}
       <LogoMarquee />
+
+      {/* 1b. Tres puertas: Cuentas, Licencias y gasto, Aplicaciones (2026-10-11) */}
+      <Section id="puertas" compact tone="panel" className="border-b border-[#dbeaf2]">
+        <Container>
+          <SectionHeading eyebrow={t("doors.eyebrow")} title={t("doors.title")} desc={t("doors.desc")} />
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {DOORS.map((d) => (
+              <Link
+                key={d.href}
+                href={d.href}
+                className="group flex h-full flex-col rounded-[14px] border border-[#c9dde8] bg-white p-6 transition-colors hover:border-[#0077b6]"
+              >
+                <h3 className="text-[22px] font-extrabold tracking-[-0.02em] text-[#03045e]">{t(d.title)}</h3>
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-[#33507a]">{t(d.desc)}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-[15px] font-bold text-[#0077b6]">
+                  {t(d.cta)} <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       {/* 1a. Las preguntas que la gente busca (guías en español; plan de marketing 2026-10-11) */}
       {(

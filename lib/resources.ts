@@ -210,6 +210,51 @@ export const RESOURCES: Resource[] = [
     updated: "2026-10-11",
     readingMinutes: 5,
   },
+  // Compras y licencias (plan 1.10, demanda en MX, ES y EE. UU.)
+  {
+    slug: "inventario-de-software",
+    kind: "guia",
+    title: "Inventario de software: cómo saber qué paga tu empresa, quién lo usa y cuánto cuesta al mes",
+    seoTitle: "Inventario de software de tu empresa: cómo armarlo · Mekovault",
+    description:
+      "Una lista de todo lo que la empresa paga por persona, con precio, responsable, renovación y uso real. Cómo armarla en una tarde y mantenerla sin planillas.",
+    question: "¿Cómo sé qué programas paga mi empresa y quién los usa?",
+    updated: "2026-10-11",
+    readingMinutes: 7,
+  },
+  {
+    slug: "licencias-sin-usar",
+    kind: "guia",
+    title: "Licencias sin usar: cómo encontrarlas en cada plataforma y dejar de pagarlas antes de la renovación",
+    seoTitle: "Licencias sin usar: cómo encontrarlas y cortarlas · Mekovault",
+    description:
+      "Compradas, asignadas y en cuentas bloqueadas: dónde se esconden las licencias que nadie usa en Google Workspace, Slack, Zoom y el resto, y qué hacer antes de renovar.",
+    question: "¿Cómo encuentro las licencias que pagamos y nadie usa?",
+    updated: "2026-10-11",
+    readingMinutes: 7,
+  },
+  {
+    slug: "sistema-de-compras-de-software-sin-erp",
+    kind: "guia",
+    title: "Cómo armar un sistema de compras de software sin comprar un ERP: pedir, aprobar, pagar y renovar en orden",
+    seoTitle: "Sistema de compras de software sin ERP · Mekovault",
+    description:
+      "Quién pide, quién aprueba, quién paga y quién renueva cada herramienta: un flujo simple de compras de software para empresas de 20 a 500 personas, sin ERP ni IT.",
+    question: "¿Cómo ordeno las compras de software de mi empresa sin un ERP?",
+    updated: "2026-10-11",
+    readingMinutes: 8,
+  },
+  {
+    slug: "calendario-de-renovaciones",
+    kind: "guia",
+    title: "Calendario de renovaciones de software: cómo no pagar un año más por lo que nadie usa",
+    seoTitle: "Calendario de renovaciones de software · Mekovault",
+    description:
+      "Cada suscripción tiene una fecha en la que puedes bajar la cantidad o cancelar. Cómo armar el calendario, qué revisar 30 días antes y qué pasa en planes anuales.",
+    question: "¿Cuándo puedo bajar licencias o cancelar una suscripción sin pagar un año más?",
+    updated: "2026-10-11",
+    readingMinutes: 7,
+  },
 ];
 
 /** Plataformas en preparación: una página honesta por cada una (nunca "disponible hoy"). */

@@ -4,12 +4,12 @@
 
 Categoría: control de cuentas, licencias y suscripciones de la empresa (lo que en inglés se llama SaaS Management Platform con automatización de altas y bajas). Plataforma conectada hoy: Google Workspace. Nómina como origen de altas y bajas: BUK, Talana y Rankmi (opcional). Microsoft 365, Slack, Zoom y las demás plataformas se suman una por una; nada se anuncia como disponible antes de estarlo.
 
-## Producto
+## Producto (tres pilares: cuentas, licencias y gasto, aplicaciones)
 
-- [Inicio](https://www.mekovault.com/): qué hace Mekovault cuando alguien entra o sale de la empresa.
-- [Producto](https://www.mekovault.com/products): altas el día de ingreso, bajas el último día con correo y archivos traspasados, licencias liberadas, evidencia.
-- [Plataformas](https://www.mekovault.com/platforms): qué plataformas administra y qué hace sola cada una.
-- [Control de licencias](https://www.mekovault.com/license-control): cuántas licencias compraste, cuántas usas y cuántas quedaron en cuentas bloqueadas.
+- [Inicio](https://www.mekovault.com/): "Las cuentas, licencias y gastos de software de tu empresa, bajo control." Tres puertas: alguien entra o sale, lo que pagamos por persona, lo que la gente conecta y pide.
+- [Cuentas](https://www.mekovault.com/products): altas el día de ingreso, bajas el último día con correo y archivos traspasados, licencias liberadas, solicitudes con aprobación, evidencia 365 días.
+- [Licencias y gasto](https://www.mekovault.com/license-control): cuántas licencias compraste, cuántas usas y cuántas quedaron en cuentas bloqueadas; compras de software en cinco pasos; inventario de software; renovaciones avisadas 30 días antes. En inglés: software license management, license optimization, IT procurement.
+- [Aplicaciones](https://www.mekovault.com/platforms): qué plataformas administra (automático donde se puede, guiado donde no), qué apps externas tienen acceso a las cuentas de la empresa (shadow IT) y el selector de mini apps y paquetes. "Control de aplicaciones" vive aquí.
 - [Gobierno de cuentas](https://www.mekovault.com/account-governance): origen único, responsable para cada cuenta, evidencia de 365 días.
 - [Compras de software](https://www.mekovault.com/compras-de-software): sistema de compras de software sin IT: pedir, aprobar (jefatura, Control, Compras), comprar con orden de compra, pagar (Tesorería) y renovar con aviso 30 días antes; control de gastos, administrar suscripciones e inventario de software; las suscripciones sin conector se registran igual.
 - [Precios](https://www.mekovault.com/pricing): gratis hasta 20 cuentas; después un precio por empresa según tamaño; mini apps por plataforma (una sola o en paquete, el paquete es más barato) y Compras de software como módulo. Control de licencias va incluido en Google Workspace y en cada mini app.
@@ -33,6 +33,10 @@ Categoría: control de cuentas, licencias y suscripciones de la empresa (lo que 
 - [Mekovault vs Rippling](https://www.mekovault.com/recursos/mekovault-vs-rippling)
 - [Mekovault vs Zluri](https://www.mekovault.com/recursos/mekovault-vs-zluri)
 - [Mekovault vs un partner de Google Workspace](https://www.mekovault.com/recursos/mekovault-vs-partner-de-google)
+- [Inventario de software: qué paga tu empresa y quién lo usa](https://www.mekovault.com/recursos/inventario-de-software)
+- [Licencias sin usar: cómo encontrarlas y cortarlas](https://www.mekovault.com/recursos/licencias-sin-usar)
+- [Sistema de compras de software sin ERP](https://www.mekovault.com/recursos/sistema-de-compras-de-software-sin-erp)
+- [Calendario de renovaciones de software](https://www.mekovault.com/recursos/calendario-de-renovaciones)
 - [Centro de ayuda](https://www.mekovault.com/ayuda): alias, cuentas genéricas, reactivar, cambio de dominio, delegar buzón, licencias de Zoom y Slack.
 - [Calculadora de licencias](https://www.mekovault.com/calculadora-licencias): cuánto se fuga en licencias de gente que ya no está.
 

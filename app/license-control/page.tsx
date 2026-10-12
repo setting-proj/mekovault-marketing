@@ -35,6 +35,14 @@ const FAQ: Array<[TranslationKey, TranslationKey]> = [
   ["lc.faq.5.q", "lc.faq.5.a"],
 ];
 
+const COMPRAS_STEPS: Array<[TranslationKey, TranslationKey]> = [
+  ["compras.s1.title", "compras.s1.desc"],
+  ["compras.s2.title", "compras.s2.desc"],
+  ["compras.s3.title", "compras.s3.desc"],
+  ["compras.s4.title", "compras.s4.desc"],
+  ["compras.s5.title", "compras.s5.desc"],
+];
+
 export default function LicenseControlPage() {
   const { t, locale } = useI18n();
   const faqLd = {
@@ -145,6 +153,35 @@ export default function LicenseControlPage() {
             <div className="rounded-[12px] border border-dashed border-[#c9dde8] p-5 sm:p-6">
               <h3 className="text-[16px] font-extrabold text-[#03045e]">{t("lc.honest.title")}</h3>
               <p className="mt-1.5 text-[15px] leading-relaxed text-[#33507a]">{t("lc.honest.desc")}</p>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Compras de software e inventario: el pilar Licencias y gasto completo */}
+      <Section tone="panel" className="border-b border-[#dbeaf2]">
+        <Container className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,440px)_minmax(0,1fr)] lg:gap-16">
+          <div className="flex flex-col gap-6">
+            <SectionHeading eyebrow={t("lc.compras.eyebrow")} title={t("lc.compras.title")} desc={t("lc.compras.desc")} />
+            <ArrowLink href="/compras-de-software" tone="blue" className="text-base">
+              {t("lc.compras.link")}
+            </ArrowLink>
+          </div>
+          <div className="flex flex-col gap-3">
+            <ol className="divide-y divide-[#dbeaf2] rounded-[12px] border border-[#c9dde8] bg-white">
+              {COMPRAS_STEPS.map(([title, desc], i) => (
+                <li key={title} className="grid gap-1 p-4 sm:grid-cols-[170px_minmax(0,1fr)] sm:gap-5 sm:p-5">
+                  <h3 className="flex items-baseline gap-3 text-[16px] font-extrabold tracking-[-0.01em] text-[#03045e]">
+                    <span className="text-xs font-bold text-[#0077b6]">0{i + 1}</span>
+                    {t(title)}
+                  </h3>
+                  <p className="text-[14px] leading-relaxed text-[#33507a]">{t(desc)}</p>
+                </li>
+              ))}
+            </ol>
+            <div className="rounded-[12px] border border-dashed border-[#c9dde8] p-5">
+              <h3 className="text-[16px] font-extrabold text-[#03045e]">{t("lc.inventory.title")}</h3>
+              <p className="mt-1.5 text-[15px] leading-relaxed text-[#33507a]">{t("lc.inventory.desc")}</p>
             </div>
           </div>
         </Container>

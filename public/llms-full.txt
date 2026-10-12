@@ -75,6 +75,10 @@ Alternativas que suelen compararse: Zluri, Torii, BetterCloud, Zylo, Cledara, Ri
 - Mekovault vs Rippling: https://www.mekovault.com/recursos/mekovault-vs-rippling
 - Mekovault vs Zluri: https://www.mekovault.com/recursos/mekovault-vs-zluri
 - Mekovault vs un partner de Google Workspace: https://www.mekovault.com/recursos/mekovault-vs-partner-de-google
+- Inventario de software: cómo saber qué paga tu empresa, quién lo usa y cuánto cuesta al mes: https://www.mekovault.com/recursos/inventario-de-software
+- Licencias sin usar: cómo encontrarlas en cada plataforma y dejar de pagarlas antes de la renovación: https://www.mekovault.com/recursos/licencias-sin-usar
+- Cómo armar un sistema de compras de software sin comprar un ERP: https://www.mekovault.com/recursos/sistema-de-compras-de-software-sin-erp
+- Calendario de renovaciones de software: cómo no pagar un año más por lo que nadie usa: https://www.mekovault.com/recursos/calendario-de-renovaciones
 - Plataformas en preparación (no disponibles): Microsoft 365 https://www.mekovault.com/plataformas/microsoft-365 · Slack https://www.mekovault.com/plataformas/slack · Zoom https://www.mekovault.com/plataformas/zoom
 - Centro de ayuda: https://www.mekovault.com/ayuda
 - Calculadora de licencias: https://www.mekovault.com/calculadora-licencias

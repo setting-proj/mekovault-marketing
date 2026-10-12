@@ -8,15 +8,36 @@
 import { ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/Container";
-import { LinkButton } from "@/components/Button";
+import { ArrowLink, LinkButton } from "@/components/Button";
+import { JsonLd } from "@/components/JsonLd";
+import { MiniAppsPicker } from "@/components/MiniAppsPicker";
 import { EyebrowBadge, Section, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { HrTriggersSection, PlatformsSection } from "@/components/ServiceModel";
 import { PlatformsPanel } from "@/components/panels/PlatformsPanel";
-import { useT } from "@/lib/i18n/I18nProvider";
+import { useI18n } from "@/lib/i18n/I18nProvider";
+import type { TranslationKey } from "@/lib/i18n/dictionaries";
+
+/** Preguntas con la palabra "control de aplicaciones" (plan 8.4). */
+const FAQ: Array<[TranslationKey, TranslationKey]> = [
+  ["pf.faq.1.q", "pf.faq.1.a"],
+  ["pf.faq.2.q", "pf.faq.2.a"],
+  ["pf.faq.3.q", "pf.faq.3.a"],
+  ["pf.faq.4.q", "pf.faq.4.a"],
+];
 
 export default function PlatformsPage() {
-  const t = useT();
+  const { t, locale } = useI18n();
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: locale,
+    mainEntity: FAQ.map(([q, a]) => ({
+      "@type": "Question",
+      name: t(q),
+      acceptedAnswer: { "@type": "Answer", text: t(a) },
+    })),
+  };
   const HOW = [
     { n: 1, title: t("pf.how.auto.title"), desc: t("pf.how.auto.desc") },
     { n: 2, title: t("pf.how.guided.title"), desc: t("pf.how.guided.desc") },
@@ -68,6 +89,45 @@ export default function PlatformsPage() {
       </Section>
 
       <HrTriggersSection className="border-b border-[#dbeaf2]" />
+
+      {/* Aplicaciones con acceso a las cuentas (shadow IT) */}
+      <Section className="border-b border-[#dbeaf2]">
+        <Container className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,440px)_minmax(0,1fr)] lg:gap-16">
+          <SectionHeading eyebrow={t("pf.apps.eyebrow")} title={t("pf.apps.title")} />
+          <div className="flex flex-col gap-5">
+            <p className="text-[17px] leading-relaxed text-[#33507a]">{t("pf.apps.desc")}</p>
+            <ArrowLink href="/recursos/aplicaciones-vinculadas" tone="blue" className="text-base">
+              {t("pf.apps.link")}
+            </ArrowLink>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Mini apps y paquetes */}
+      <Section id="mini-apps" tone="panel" className="scroll-mt-20 border-b border-[#dbeaf2]">
+        <Container size="wide">
+          <SectionHeading eyebrow={t("apps.eyebrow")} title={t("apps.title")} desc={t("apps.desc")} />
+          <div className="mt-10">
+            <MiniAppsPicker />
+          </div>
+        </Container>
+      </Section>
+
+      {/* Preguntas: control de aplicaciones */}
+      <Section className="border-b border-[#dbeaf2]">
+        <Container>
+          <JsonLd data={faqLd} />
+          <SectionHeading eyebrow={t("pf.faq.eyebrow")} title={t("pf.faq.title")} />
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {FAQ.map(([q, a]) => (
+              <div key={q} className="rounded-[12px] border border-[#c9dde8] bg-white p-5 sm:p-6">
+                <h3 className="text-[17px] font-extrabold tracking-[-0.01em] text-[#03045e]">{t(q)}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-[#33507a]">{t(a)}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       {/* Llamado final */}
       <Section>

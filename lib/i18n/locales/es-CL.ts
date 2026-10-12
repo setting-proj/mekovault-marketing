@@ -161,7 +161,7 @@ const esCL = {
   "notfound.product": "Ver producto",
 
   // ========== Products page ==========
-  "products.eyebrow": "Producto",
+  "products.eyebrow": "Cuentas",
   "products.title.pre": "Todas las cuentas de tu empresa,",
   "products.title.hl": "bajo control.",
   "products.subtitle": "Mekovault administra las cuentas de tu equipo en las plataformas que pagas por persona: quién entra, quién sale, quién pide qué y cuánto cuesta. Hoy con Google Workspace; las demás, en camino.",
@@ -502,8 +502,7 @@ const esCL = {
     "Control de licencias",
   "common.learn_more":
     "Saber más",
-  "pf.eyebrow":
-    "Plataformas",
+  "pf.eyebrow": "Aplicaciones",
   "pf.title.pre":
     "Todas las plataformas que pagas por persona,",
   "pf.title.hl":
@@ -538,8 +537,7 @@ const esCL = {
     "Escríbenos",
   "pf.cta.license":
     "Ver Control de licencias",
-  "lc.eyebrow":
-    "Control de licencias",
+  "lc.eyebrow": "Licencias y gasto",
   "lc.title.pre":
     "Bloquear una cuenta",
   "lc.title.hl":
@@ -844,11 +842,11 @@ const esCL = {
   "seo.home.description": "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis 90 días, desde $49.900 CLP al mes.",
   "seo.og.tagline": "Lo pide RRHH, Mekovault lo ejecuta y queda la evidencia. Gratis 90 días.",
   "seo.offer.description": "Gratis hasta 20 cuentas de Google Workspace. Después, desde $49.900 CLP al mes por empresa, sin costo por persona.",
-  "seo.products.title": "Producto: altas, bajas y licencias sin IT · Mekovault",
+  "seo.products.title": "Cuentas: altas, bajas y solicitudes sin IT · Mekovault",
   "seo.products.description": "Alta el día de ingreso, baja el último día con correo y archivos traspasados, licencias liberadas y evidencia 365 días. Todo lo pide Personas, sin ticket a IT.",
-  "seo.platforms.title": "Plataformas que pagas por persona · Mekovault",
+  "seo.platforms.title": "Aplicaciones: plataformas, accesos y mini apps · Mekovault",
   "seo.platforms.description": "Google Workspace conectado hoy; Slack, Zoom, Figma, Adobe y las demás plataformas que pagas por persona, una por una. Qué hace sola cada una y qué queda guiado.",
-  "seo.license_control.title": "Control de licencias de Google Workspace · Mekovault",
+  "seo.license_control.title": "Licencias y gasto de software: control sin IT · Mekovault",
   "seo.license_control.description": "Bloquear una cuenta no siempre deja de cobrarla. Mira cuántas licencias compraste, cuántas usas y cuántas quedaron en cuentas bloqueadas, y qué cambiar en la renovación.",
   "seo.pricing.title": "Precios: gratis hasta 20 cuentas, luego por empresa · Mekovault",
   "seo.pricing.description": "Gratis para siempre hasta 20 cuentas de Google Workspace (altas, bajas y solicitudes). Después, un precio por empresa según el tamaño, sin costo por persona. Sin tarjeta.",
@@ -1073,6 +1071,41 @@ const esCL = {
   "svc.compras.b1": "Aprobación por jefatura, Control y Compras",
   "svc.compras.b2": "Orden de compra, pago y factura ligados",
   "svc.compras.b3": "Aviso 30 días antes de cada renovación",
+  // Tres pilares: Cuentas, Licencias y gasto, Aplicaciones (2026-10-11)
+  "nav.accounts": "Cuentas",
+  "nav.licenses": "Licencias y gasto",
+  "nav.apps": "Aplicaciones",
+  "doors.eyebrow": "Tres puertas",
+  "doors.title": "Las cuentas, licencias y gastos de software de tu empresa, bajo control.",
+  "doors.desc": "Entra por lo que te pasa hoy. Las tres puertas llevan al mismo panel.",
+  "doors.1.title": "Alguien entra o sale",
+  "doors.1.desc": "Alta el primer día, baja el último con correo y archivos traspasados y licencia liberada. Lo pide Personas, sin IT.",
+  "doors.1.cta": "Ver Cuentas",
+  "doors.2.title": "Lo que pagamos por persona",
+  "doors.2.desc": "Licencias compradas, usadas y en cuentas bloqueadas. Compras aprobadas en orden y renovaciones avisadas 30 días antes.",
+  "doors.2.cta": "Ver Licencias y gasto",
+  "doors.3.title": "Lo que la gente conecta y pide",
+  "doors.3.desc": "Qué plataformas administra Mekovault, qué apps tienen acceso a las cuentas de la empresa y mini apps por plataforma.",
+  "doors.3.cta": "Ver Aplicaciones",
+  "lc.compras.eyebrow": "Compras de software",
+  "lc.compras.title": "Y cuando hay que comprar, se pide en orden",
+  "lc.compras.desc": "Las licencias no solo se liberan: también se piden, se aprueban y se pagan. Compras de software cierra ese ciclo en cinco pasos y registra las suscripciones sin conector para que entren al control.",
+  "lc.inventory.title": "Inventario de software",
+  "lc.inventory.desc": "Lo que la empresa paga, con precio, proveedor, responsable y fecha de renovación, cruzado con las cuentas reales de cada plataforma conectada.",
+  "pf.apps.eyebrow": "Aplicaciones con acceso",
+  "pf.apps.title": "Qué apps entran con las cuentas de tu empresa",
+  "pf.apps.desc": "Cada persona conecta apps a su cuenta de Google: calendarios, firmas, asistentes de IA, extensiones. Mekovault las lista cada semana, le pregunta a la jefatura cuáles quedan y revoca las demás, con evidencia.",
+  "pf.apps.link": "Ver la guía de aplicaciones vinculadas",
+  "pf.faq.eyebrow": "Preguntas",
+  "pf.faq.title": "Control de aplicaciones: lo que la gente pregunta",
+  "pf.faq.1.q": "¿Qué es el control de aplicaciones de una empresa?",
+  "pf.faq.1.a": "Saber qué plataformas usa la empresa, quién tiene cuenta en cada una, qué apps externas tienen acceso a esas cuentas y cuánto cuesta todo al mes. Mekovault lo hace desde las cuentas de Google Workspace: cuentas por plataforma, apps con acceso y licencias.",
+  "pf.faq.2.q": "¿Qué pasa con las plataformas que no tienen conector?",
+  "pf.faq.2.a": "Entran igual, como tarea guiada: Mekovault le asigna la baja o el alta a quien administra esa plataforma, con plazo e instrucciones, y guarda la evidencia. Nada queda fuera de la salida de una persona.",
+  "pf.faq.3.q": "¿Cómo se contratan las plataformas?",
+  "pf.faq.3.a": "Como mini apps: una por plataforma, de a una o en paquete, y el paquete sale más barato. Las que están en preparación no se cobran hasta estar conectadas.",
+  "pf.faq.4.q": "¿Mekovault instala algo en los computadores?",
+  "pf.faq.4.a": "No. Trabaja con las cuentas, no con los equipos: usa las conexiones oficiales de cada plataforma y nunca guarda la clave personal de un administrador.",
 } as const;
 
 export type TranslationKey = keyof typeof esCL;

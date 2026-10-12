@@ -134,7 +134,7 @@ const ptBR: Dictionary = {
   "notfound.home": "Voltar ao início",
   "notfound.product": "Ver produto",
 
-  "products.eyebrow": "Produto",
+  "products.eyebrow": "Contas",
   "products.title.pre": "Todas as contas da sua empresa,",
   "products.title.hl": "sob controle.",
   "products.subtitle": "A Mekovault administra as contas da sua equipe nas plataformas que você paga por pessoa: quem entra, quem sai, quem pede o quê e quanto custa. Hoje com Google Workspace; as demais estão a caminho.",
@@ -467,8 +467,7 @@ const ptBR: Dictionary = {
     "Controle de licenças",
   "common.learn_more":
     "Saiba mais",
-  "pf.eyebrow":
-    "Plataformas",
+  "pf.eyebrow": "Aplicativos",
   "pf.title.pre":
     "Todas as plataformas que você paga por pessoa,",
   "pf.title.hl":
@@ -503,8 +502,7 @@ const ptBR: Dictionary = {
     "Fale com a gente",
   "pf.cta.license":
     "Ver Controle de licenças",
-  "lc.eyebrow":
-    "Controle de licenças",
+  "lc.eyebrow": "Licenças e gastos",
   "lc.title.pre":
     "Bloquear uma conta",
   "lc.title.hl":
@@ -809,11 +807,11 @@ const ptBR: Dictionary = {
   "seo.home.description": "Encerre contas, libere licenças e transfira arquivos no mesmo dia em que alguém sai. O RH pede, sem TI. Grátis por 90 dias, um preço por empresa.",
   "seo.og.tagline": "O RH pede, a Mekovault executa e a evidência fica. Grátis por 90 dias.",
   "seo.offer.description": "Grátis até 20 contas do Google Workspace. Depois, um preço por empresa conforme o tamanho, sem custo por pessoa.",
-  "seo.products.title": "Produto: admissão, desligamento e licenças · Mekovault",
+  "seo.products.title": "Contas: admissão, desligamento e solicitações · Mekovault",
   "seo.products.description": "Conta criada no dia da entrada, encerrada no último dia com e-mail e arquivos transferidos, licenças liberadas e evidência por 365 dias. O RH pede, sem chamado para a TI.",
-  "seo.platforms.title": "As plataformas que você paga por pessoa · Mekovault",
+  "seo.platforms.title": "Aplicativos: plataformas, acessos e mini apps · Mekovault",
   "seo.platforms.description": "Google Workspace conectado hoje; Slack, Zoom, Figma, Adobe e as demais plataformas pagas por pessoa, uma a uma. O que cada uma faz sozinha e o que fica guiado.",
-  "seo.license_control.title": "Controle de licenças do Google Workspace · Mekovault",
+  "seo.license_control.title": "Licenças e gastos com software: controle sem TI · Mekovault",
   "seo.license_control.description": "Bloquear uma conta nem sempre para a cobrança. Veja quantas licenças você comprou, quantas usa e quantas ficaram em contas bloqueadas antes da renovação.",
   "seo.pricing.title": "Preços: grátis até 20 contas, depois por empresa · Mekovault",
   "seo.pricing.description": "Grátis para sempre até 20 contas do Google Workspace (admissões, desligamentos e solicitações). Depois, um preço por empresa conforme o tamanho, sem custo por pessoa. Sem cartão.",
@@ -1038,6 +1036,41 @@ const ptBR: Dictionary = {
   "svc.compras.b1": "Aprovação do gestor, Controle e Compras",
   "svc.compras.b2": "Ordem de compra, pagamento e nota fiscal ligados",
   "svc.compras.b3": "Aviso 30 dias antes de cada renovação",
+  // Tres pilares: Cuentas, Licencias y gasto, Aplicaciones (2026-10-11)
+  "nav.accounts": "Contas",
+  "nav.licenses": "Licenças e gastos",
+  "nav.apps": "Aplicativos",
+  "doors.eyebrow": "Três portas",
+  "doors.title": "As contas, licenças e gastos com software da sua empresa, sob controle.",
+  "doors.desc": "Entre pelo que está acontecendo hoje. As três portas levam ao mesmo painel.",
+  "doors.1.title": "Alguém entra ou sai",
+  "doors.1.desc": "Conta pronta no primeiro dia, encerrada no último com e-mail e arquivos transferidos e licença liberada. O RH pede, sem TI.",
+  "doors.1.cta": "Ver Contas",
+  "doors.2.title": "O que pagamos por pessoa",
+  "doors.2.desc": "Licenças compradas, em uso e paradas em contas bloqueadas. Compras aprovadas em ordem e renovações avisadas 30 dias antes.",
+  "doors.2.cta": "Ver Licenças e gastos",
+  "doors.3.title": "O que as pessoas conectam e pedem",
+  "doors.3.desc": "Quais plataformas o Mekovault administra, quais apps têm acesso às contas da empresa e mini apps por plataforma.",
+  "doors.3.cta": "Ver Aplicativos",
+  "lc.compras.eyebrow": "Compras de software",
+  "lc.compras.title": "E quando é preciso comprar, pede-se em ordem",
+  "lc.compras.desc": "As licenças não são só liberadas: também são pedidas, aprovadas e pagas. Compras de software fecha esse ciclo em cinco passos e registra as assinaturas sem conector para que entrem no controle.",
+  "lc.inventory.title": "Inventário de software",
+  "lc.inventory.desc": "O que a empresa paga, com preço, fornecedor, responsável e data de renovação, cruzado com as contas reais de cada plataforma conectada.",
+  "pf.apps.eyebrow": "Apps com acesso",
+  "pf.apps.title": "Quais apps entram com as contas da sua empresa",
+  "pf.apps.desc": "Cada pessoa conecta apps à sua conta Google: calendários, assinaturas, assistentes de IA, extensões. O Mekovault lista todas por semana, pergunta ao gestor quais ficam e revoga as demais, com evidência.",
+  "pf.apps.link": "Ver o guia de aplicativos conectados",
+  "pf.faq.eyebrow": "Perguntas",
+  "pf.faq.title": "Controle de aplicativos: o que as pessoas perguntam",
+  "pf.faq.1.q": "O que é o controle de aplicativos de uma empresa?",
+  "pf.faq.1.a": "Saber quais plataformas a empresa usa, quem tem conta em cada uma, quais apps externos têm acesso a essas contas e quanto tudo custa por mês. O Mekovault faz isso a partir das contas do Google Workspace: contas por plataforma, apps com acesso e licenças.",
+  "pf.faq.2.q": "E as plataformas sem conector?",
+  "pf.faq.2.a": "Entram do mesmo jeito, como tarefa guiada: o Mekovault atribui o desligamento ou a admissão a quem administra essa plataforma, com prazo e instruções, e guarda a evidência. Nada fica fora da saída de uma pessoa.",
+  "pf.faq.3.q": "Como as plataformas são contratadas?",
+  "pf.faq.3.a": "Como mini apps: um por plataforma, avulso ou em pacote, e o pacote sai mais barato. As que estão em preparação não são cobradas até ficarem conectadas.",
+  "pf.faq.4.q": "O Mekovault instala algo nos computadores?",
+  "pf.faq.4.a": "Não. Trabalha com as contas, não com os equipamentos: usa as conexões oficiais de cada plataforma e nunca guarda a senha pessoal de um administrador.",
 };
 
 export default ptBR;

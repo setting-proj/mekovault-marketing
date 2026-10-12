@@ -20,10 +20,10 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   const NAV = [
-    { href: "/products", label: t("nav.product") },
-    { href: "/platforms", label: t("nav.platforms") },
+    { href: "/products", label: t("nav.accounts") },
+    { href: "/license-control", label: t("nav.licenses") },
+    { href: "/platforms", label: t("nav.apps") },
     { href: "/pricing", label: t("nav.pricing") },
-    { href: "/account-governance", label: t("nav.governance_short") },
     { href: "/recursos", label: t("nav.resources") },
     { href: "/about", label: t("nav.about") },
     { href: "/contact", label: t("nav.contact") },
