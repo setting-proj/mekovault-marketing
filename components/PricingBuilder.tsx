@@ -184,7 +184,7 @@ export function PricingBuilder() {
 
         {/* Incluido */}
         <div>
-          <h3 className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#5b7390]">{t("build.included.title")}</h3>
+          <h2 className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#5b7390]">{t("build.included.title")}</h2>
           <ul className="mt-3 grid gap-2 sm:grid-cols-2">
             {INCLUDED.map(({ key, icon: Icon }) => (
               <li key={key} className="flex items-start gap-3 rounded-[10px] border border-[#dbeaf2] bg-white p-4 text-[14px] leading-snug text-[#33507a]">
@@ -203,7 +203,7 @@ export function PricingBuilder() {
         {/* Adicionales */}
         <div>
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#5b7390]">{t("build.addons.title")}</h3>
+            <h2 className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#5b7390]">{t("build.addons.title")}</h2>
             <p className="text-[13px] text-[#33507a]">{t("build.addons.desc")}</p>
           </div>
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -256,7 +256,7 @@ export function PricingBuilder() {
         {/* Plataformas de a una */}
         <div>
           <div className="flex flex-wrap items-baseline justify-between gap-2">
-            <h3 className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#5b7390]">{t("build.miniapps.title")}</h3>
+            <h2 className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#5b7390]">{t("build.miniapps.title")}</h2>
             <p className="text-[13px] text-[#33507a]">{t("build.miniapps.desc")}</p>
           </div>
           <button

@@ -70,8 +70,8 @@ export function HomeView() {
       {/* 1. Hero */}
       <section className="overflow-hidden border-b border-[#dbeaf2] bg-white">
         <Container className="grid grid-cols-[minmax(0,1fr)] gap-12 pt-14 sm:pt-20 lg:grid-cols-[minmax(0,560px)_minmax(0,1fr)] lg:gap-14 lg:pt-24">
-          <div className="flex flex-col gap-7 lg:pt-6 lg:pb-20">
-            <h1 className="text-[38px] font-extrabold leading-[1.04] tracking-[-0.03em] text-[#03045e] sm:text-[52px] lg:text-[60px]">
+          <div className="flex flex-col gap-7 lg:pb-16">
+            <h1 className="text-[36px] font-extrabold leading-[1.06] tracking-[-0.03em] text-[#03045e] sm:text-[46px] lg:text-[50px]">
               {t("hero.title.line1")}
               <br />
               <span className="text-[#0077b6]">{t("hero.title.line2")}</span>
@@ -94,7 +94,7 @@ export function HomeView() {
             </div>
           </div>
 
-          <div className="min-w-0 self-end pb-8 lg:pb-0">
+          <div className="min-w-0 self-start pb-8 lg:pb-0">
             <div className="lg:-mb-px lg:w-[880px] lg:max-w-none">
               <RequestsCenterPanel cut />
             </div>

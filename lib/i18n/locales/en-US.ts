@@ -395,8 +395,7 @@ const enUS: Dictionary = {
     "Managing accounts is one thing. No longer paying for them is another.",
   "two.subtitle":
     "On most platforms a blocked account keeps being charged. That's why these are two services, and you take the one you need.",
-  "two.a.title":
-    "Account management",
+  "two.a.title": "Account lifecycle",
   "two.a.desc":
     "Create, block, reactivate and offboard your people's accounts on the connected platforms, from one place.",
   "two.a.b1":

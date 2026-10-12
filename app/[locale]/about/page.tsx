@@ -178,9 +178,9 @@ function Pillar({
       <div className="mb-4 inline-flex text-[#0077b6] [&_svg]:size-6">
         {icon}
       </div>
-      <h3 className="text-lg font-extrabold tracking-[-0.02em] text-[#03045e]">
+      <h2 className="text-lg font-extrabold tracking-[-0.02em] text-[#03045e]">
         {title}
-      </h3>
+      </h2>
       <p className="mt-1.5 text-sm text-muted-foreground">{desc}</p>
     </div>
   );
