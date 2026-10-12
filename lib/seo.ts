@@ -51,6 +51,7 @@ export function pageMetadata({
   for (const l of locales) languages[HREFLANG[l]] = absoluteUrl(l, path);
   languages["x-default"] = absoluteUrl(DEFAULT_LOCALE, path);
 
+  const ogImage = absoluteUrl(locale, "/opengraph-image");
   return {
     metadataBase: new URL(SITE_URL),
     title: { absolute: title },
@@ -63,9 +64,9 @@ export function pageMetadata({
       siteName: "Mekovault",
       locale: OG_LOCALE[locale],
       type,
-      images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: "Mekovault" }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: "Mekovault" }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [`${SITE_URL}/opengraph-image`] },
+    twitter: { card: "summary_large_image", title, description, images: [ogImage] },
     robots: noindex ? { index: false, follow: true } : { index: true, follow: true },
   };
 }

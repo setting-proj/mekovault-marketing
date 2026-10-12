@@ -95,3 +95,11 @@ export const OG_LOCALE: Record<Locale, string> = {
   "en-US": "en_US",
   "pt-BR": "pt_BR",
 };
+
+/**
+ * Segmento interno de `app/[locale]`. Igual al prefijo público, salvo Chile,
+ * que en la URL no lleva prefijo y por dentro es `cl` (el middleware reescribe
+ * `/x` a `/cl/x` y redirige `/cl/x` a `/x`).
+ */
+export const SEGMENT_TO_LOCALE: Record<string, Locale> = { cl: "es-CL", ...PREFIX_TO_LOCALE };
+export const LOCALE_SEGMENTS: string[] = Object.keys(SEGMENT_TO_LOCALE);

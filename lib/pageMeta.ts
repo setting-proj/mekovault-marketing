@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { detectLocaleServer } from "@/lib/i18n/detectLocale.server";
+import { localeFromParams, type LocaleParams } from "@/lib/i18n/params";
 import { dictionaries, type TranslationKey } from "@/lib/i18n/dictionaries";
 import { pageMetadata } from "@/lib/seo";
 
@@ -16,8 +16,8 @@ export function metadataFor(
   descriptionKey: TranslationKey,
   opts: { type?: "website" | "article"; localized?: boolean } = {},
 ) {
-  return async function generateMetadata(): Promise<Metadata> {
-    const locale = await detectLocaleServer();
+  return async function generateMetadata({ params }: { params: LocaleParams }): Promise<Metadata> {
+    const locale = await localeFromParams(params);
     const dict = dictionaries[locale];
     return pageMetadata({
       locale,
