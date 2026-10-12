@@ -10,7 +10,7 @@ import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 const overrides: Partial<Record<TranslationKey, string>> = {
   "seo.home.title": "Mekovault · Offboarding, altas y licencias en Google Workspace sin IT",
   "seo.home.description":
-    "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis 90 días, un precio por empresa.",
+    "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis hasta 20 cuentas; después, por cuenta al mes.",
   "hero.title.line1": "Cierra las cuentas y licencias de quien se va, el mismo día.",
   "hero.title.line2": "Sin depender de IT.",
   "hero.subtitle":

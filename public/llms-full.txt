@@ -10,7 +10,7 @@ La categoría, en inglés, se llama SaaS Management Platform con automatización
 
 Empresa: Mekovault SpA, Santiago de Chile. Mercados: Chile, Argentina, México, España, Brasil y Estados Unidos. Idiomas del producto y del sitio: español (Chile, Argentina, México), inglés y portugués.
 
-Precio: gratis para siempre hasta 20 cuentas de Google Workspace (solo Google Workspace y solicitudes, sin tarjeta). Después, un precio por empresa, sin costo por persona, por tamaño: Pequeña (21 a 50 cuentas) desde $49.900 CLP al mes (≈ US$ 59 fuera de Chile), Mediana (51 a 200 cuentas) con nómina conectada, apps vinculadas y compras, y Grande (201 a 500) a conversar; más de 500, a conversar. 90 días gratis en los planes pagados, sin tarjeta. Pago mensual, se cancela cuando se quiera. Fuera de Chile se factura en USD.
+Precio: gratis para siempre hasta 20 cuentas de Google Workspace (integración con Workspace y solicitudes, sin tarjeta). Desde la cuenta 21 se paga por cuenta administrada al mes, más barato por tramo: US$ 1,20 (21 a 50), US$ 1,00 (51 a 100), US$ 0,85 (101 a 200); con más de 200 cuentas se conversa. Adicionales con precio por empresa al mes: nómina conectada (Buk, Talana) 27.900 CLP, registro y auditoría 24.900, Compras de software 24.900, aplicaciones vinculadas 17.900, y mini apps por plataforma (9.900 cada una o en paquete). 90 días gratis en lo pagado; precios de lista en CLP para Chile (1 USD = 950 CLP) y en USD fuera de Chile.
 
 ## Qué hace, en concreto
 

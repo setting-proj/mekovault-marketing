@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Check, Plus } from "lucide-react";
 
 import { ArrowLink, LinkButton } from "@/components/Button";
@@ -25,12 +25,23 @@ import { FX_REFERENCE, displayCurrency, formatPrice } from "@/lib/pricing";
  * Decisión de Jorge (2026-10-11): seleccionables, cada paquete con su valor,
  * más barato que de a una, pero de a una también se puede.
  */
-export function MiniAppsPicker() {
+export function MiniAppsPicker({
+  embedded = false,
+  onQuote,
+}: {
+  /** Dentro del armador de precios: sin panel propio de total ni CTA. */
+  embedded?: boolean;
+  /** Avisa el total mensual en CLP de lo marcado. */
+  onQuote?: (totalClp: number) => void;
+} = {}) {
   const { t, locale } = useI18n();
   const [pkgs, setPkgs] = useState<Set<PackageKey>>(new Set());
   const [apps, setApps] = useState<Set<string>>(new Set());
   const q = useMemo(() => quote(pkgs, apps), [pkgs, apps]);
   const currency = displayCurrency(locale);
+  useEffect(() => {
+    onQuote?.(q.totalClp);
+  }, [q.totalClp, onQuote]);
 
   const togglePkg = (key: PackageKey) =>
     setPkgs((prev) => {
@@ -55,7 +66,7 @@ export function MiniAppsPicker() {
   const statusLabel = (a: MiniApp) => (a.status === "guided" ? t("apps.status.guided") : t("apps.status.soon"));
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+    <div className={cn("grid gap-8 lg:items-start", !embedded && "lg:grid-cols-[minmax(0,1fr)_320px]")}>
       <div className="flex flex-col gap-10">
         {/* Paquetes */}
         <div>
@@ -183,6 +194,7 @@ export function MiniAppsPicker() {
       </div>
 
       {/* Tu selección */}
+      {!embedded && (
       <aside className="rounded-[14px] border border-[#c9dde8] bg-white p-6 lg:sticky lg:top-[88px]">
         <p className="text-[13px] font-bold uppercase tracking-[0.06em] text-[#5b7390]">{t("apps.quote.title")}</p>
         {q.packages.length === 0 && q.singles.length === 0 ? (
@@ -224,6 +236,7 @@ export function MiniAppsPicker() {
           {t("apps.quote.cta")}
         </LinkButton>
       </aside>
+      )}
     </div>
   );
 }

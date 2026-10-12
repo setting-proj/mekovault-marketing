@@ -11,7 +11,7 @@
 const esCL = {
   // ========== Meta ==========
   "meta.title": "Mekovault · Bajas, altas y licencias en Google Workspace sin IT",
-  "meta.description": "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis 90 días, desde $49.900 CLP al mes.",
+  "meta.description": "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis hasta 20 cuentas; después, por cuenta al mes.",
 
   // ========== Header nav ==========
   "nav.product": "Producto",
@@ -92,8 +92,7 @@ const esCL = {
 
   // ========== Home: pricing preview ==========
   "pricing.eyebrow": "Precios",
-  "pricing.subtitle":
-    "Desde {price} al mes por empresa. Gratis los primeros 90 días, sin tarjeta.",
+  "pricing.subtitle": "Gratis hasta 20 cuentas. Después, desde {price} por cuenta al mes. 90 días gratis, sin tarjeta.",
 
   // ========== Home: FAQ ==========
   "faq.eyebrow": "Preguntas honestas",
@@ -224,9 +223,8 @@ const esCL = {
 
   // ========== Pricing page ==========
   "pricing_page.title.pre": "Precios simples,",
-  "pricing_page.title.hl": "por empresa",
-  "pricing_page.subtitle":
-    "Elige solo lo que necesitas. Cada módulo tiene un precio mensual fijo. Mientras más módulos activas, más descuento en todos.",
+  "pricing_page.title.hl": "por cuenta",
+  "pricing_page.subtitle": "Gratis hasta 20 cuentas. Después pagas por cuenta administrada, más barato mientras más cuentas. Incluye Google Workspace y solicitudes; lo demás se agrega cuando lo necesites.",
   "pricing_page.trial_badge": "Gratis para siempre hasta 20 cuentas · 90 días gratis en los planes pagados · sin tarjeta",
   "pricing_page.bundle.title": "Descuento por módulos",
   "pricing_page.bundle.apps": "{n}+ módulos",
@@ -253,11 +251,9 @@ const esCL = {
   "app.audit.name": "Registro y auditoría",
   "app.audit.pitch": "Historial que no se puede borrar, listo para auditorías.",
   "faq.price_includes.q": "¿Qué incluye el precio?",
-  "faq.price_includes.a":
-    "Cada módulo tiene un precio mensual fijo por empresa. Incluye soporte en español y todas las actualizaciones. Lo ves antes de activarlo y lo puedes desactivar cuando quieras.",
-  "faq.discount.q": "¿Cómo funciona el descuento por módulos?",
-  "faq.discount.a":
-    "Con dos módulos activos, los dos tienen 5 % de descuento. Con tres, 10 %. Se aplica solo, sin cupones.",
+  "faq.price_includes.a": "El precio por cuenta incluye la integración con Google Workspace, las solicitudes, el soporte en español y todas las actualizaciones. Los adicionales (nómina conectada, auditoría, compras, plataformas) se activan y desactivan cuando quieras.",
+  "faq.discount.q": "¿Baja el precio con más cuentas?",
+  "faq.discount.a": "Sí. De 21 a 50 cuentas pagas US$ 1,20 por cuenta al mes; de 51 a 100, US$ 1,00; de 101 a 200, US$ 0,85. Con más de 200 lo conversamos.",
   "faq.switch.q": "¿Puedo agregar o quitar módulos después?",
   "faq.switch.a":
     "Sí, en cualquier momento desde tu panel. Se cobra proporcional a los días: no pagas doble por el cambio.",
@@ -489,8 +485,7 @@ const esCL = {
     "Si bloqueo una cuenta, ¿dejo de pagar su licencia?",
   "faq.licenses.a":
     "No siempre. En la mayoría de las plataformas una cuenta bloqueada se sigue cobrando hasta que se libera la licencia y se reduce la cantidad contratada, y eso último lo hace tu empresa en la pantalla de pagos de cada plataforma. Control de licencias (próximamente) libera la licencia y te avisa a tiempo qué reducir.",
-  "pricing_page.model_note":
-    "Un precio fijo por empresa según los módulos que actives, sin costo por persona ni por implementación. Si tienes más de 500 personas o varias empresas, conversemos: cloud@mekovault.com.",
+  "pricing_page.model_note": "Se paga por cuenta administrada; los adicionales, por empresa. Sin costo por implementación. Más de 200 cuentas o varias empresas: conversemos en cloud@mekovault.com.",
 
   // ========== Páginas /platforms y /license-control (2026-09-21) ==========
   "nav.platforms":
@@ -708,7 +703,7 @@ const esCL = {
   "calc.fig2.label": "cuesta cada licencia por persona al mes; la factura llega igual aunque nadie la use",
   "calc.fig3.value": "6 meses",
   "calc.fig3.label": "se sigue pagando una cuenta olvidada, en promedio, antes de que alguien la cierre",
-  "cta.pricing_line": "Gratis hasta 20 cuentas. Después, desde {price} al mes por empresa, sin costo por persona.",
+  "cta.pricing_line": "Gratis hasta 20 cuentas. Después, desde {price} por cuenta al mes.",
   "faq.other.q": "Mi empresa no usa Google Workspace. ¿Sirve igual?",
   "faq.other.a": "Hoy Mekovault se conecta con Google Workspace. Las demás plataformas se están sumando una por una. Escríbenos cuál usas y te avisamos apenas esté.",
   "pf.panel.title": "Plataformas",
@@ -838,17 +833,17 @@ const esCL = {
 
   // ========== SEO, guías y búsquedas (plan de marketing 2026-10-11) ==========
   "seo.home.title": "Mekovault · Bajas, altas y licencias en Google Workspace sin IT",
-  "seo.home.description": "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis 90 días, desde $49.900 CLP al mes.",
+  "seo.home.description": "Cierra cuentas, libera licencias y traspasa archivos el mismo día que alguien deja la empresa. Lo pide RRHH, sin IT. Gratis hasta 20 cuentas; después, por cuenta al mes.",
   "seo.og.tagline": "Lo pide RRHH, Mekovault lo ejecuta y queda la evidencia. Gratis 90 días.",
-  "seo.offer.description": "Gratis hasta 20 cuentas de Google Workspace. Después, desde $49.900 CLP al mes por empresa, sin costo por persona.",
+  "seo.offer.description": "Gratis hasta 20 cuentas de Google Workspace. Después, desde US$ 1,20 por cuenta al mes, con la integración con Workspace y las solicitudes incluidas.",
   "seo.products.title": "Cuentas: altas, bajas y solicitudes sin IT · Mekovault",
   "seo.products.description": "Alta el día de ingreso, baja el último día con correo y archivos traspasados, licencias liberadas y evidencia 365 días. Todo lo pide Personas, sin ticket a IT.",
   "seo.platforms.title": "Aplicaciones: plataformas, accesos y mini apps · Mekovault",
   "seo.platforms.description": "Google Workspace conectado hoy; Slack, Zoom, Figma, Adobe y las demás plataformas que pagas por persona, una por una. Qué hace sola cada una y qué queda guiado.",
   "seo.license_control.title": "Licencias y gasto de software: control sin IT · Mekovault",
   "seo.license_control.description": "Bloquear una cuenta no siempre deja de cobrarla. Mira cuántas licencias compraste, cuántas usas y cuántas quedaron en cuentas bloqueadas, y qué cambiar en la renovación.",
-  "seo.pricing.title": "Precios: gratis hasta 20 cuentas, luego por empresa · Mekovault",
-  "seo.pricing.description": "Gratis para siempre hasta 20 cuentas de Google Workspace (altas, bajas y solicitudes). Después, un precio por empresa según el tamaño, sin costo por persona. Sin tarjeta.",
+  "seo.pricing.title": "Precios: gratis hasta 20 cuentas, luego por cuenta · Mekovault",
+  "seo.pricing.description": "Gratis para siempre hasta 20 cuentas de Google Workspace. Después, por cuenta al mes y más barato con más cuentas; adicionales por empresa. Sin tarjeta.",
   "seo.about.title": "Nosotros: una empresa chilena · Mekovault",
   "seo.about.description": "Mekovault SpA nació en Santiago para que las empresas sin administrador de cuentas cierren, abran y controlen sus cuentas y licencias sin depender de IT.",
   "seo.contact.title": "Contacto y soporte en español · Mekovault",
@@ -936,7 +931,7 @@ const esCL = {
   "about.believe.3.strong": "Decimos lo que no hacemos.",
   "about.believe.3.rest": "Ninguna plataforma deja que un tercero reduzca lo contratado, y varias no permiten automatizar nada. Lo decimos en cada página, y lo que no se puede automatizar queda como tarea con evidencia.",
   "about.believe.4.strong": "Un precio por empresa.",
-  "about.believe.4.rest": "Cobrar por persona castiga a la empresa que crece. Cobramos por empresa, según el tamaño, y no hay costo por implementación.",
+  "about.believe.4.rest": "Cobramos por cuenta administrada: gratis hasta 20, más barato mientras más cuentas, y sin costo por implementación.",
   "about.where.title": "Dónde estamos",
   "about.where.desc": "Mekovault SpA está en Santiago de Chile y el equipo trabaja remoto. Atendemos Chile, Argentina, México, España, Brasil y Estados Unidos en español, inglés y portugués. Los servidores están en Estados Unidos con copias cifradas; el detalle de dónde viven los datos está en Seguridad y arquitectura.",
   "about.where.link": "Ver seguridad y arquitectura",
@@ -960,7 +955,7 @@ const esCL = {
   "tiers.free.i4": "Auditoría de 365 días",
   "tiers.accounts_note": "Las cuentas son las de Google Workspace que Mekovault administra (activas y bloqueadas). El tramo se ajusta solo cuando creces.",
   "faq.free.q": "¿Qué incluye el plan gratis?",
-  "faq.free.a": "Hasta 20 cuentas de Google Workspace, para siempre y sin tarjeta: altas y bajas el día que corresponde, solicitudes (alta, baja, reactivación, alias, cuenta genérica), correo redirigido y archivos traspasados al salir, y la auditoría de 365 días. Cuando pasas de 20 cuentas o quieres nómina conectada, licencias por plataforma o compras, pasas a un plan por tamaño.",
+  "faq.free.a": "Hasta 20 cuentas de Google Workspace, para siempre y sin tarjeta: altas y bajas el día que corresponde, solicitudes (alta, baja, reactivación, alias, cuenta genérica), correo redirigido y archivos traspasados al salir. Desde la cuenta 21 pagas por cuenta al mes; nómina conectada, auditoría, compras y plataformas se agregan aparte.",
   // Mini apps, paquetes, Compras de software y preguntas de licencias (2026-10-11)
   "apps.eyebrow": "Mini apps y paquetes",
   "apps.title": "Una mini app por plataforma. Más barato en paquete.",
@@ -991,14 +986,14 @@ const esCL = {
   "apps.quote.title": "Tu selección",
   "apps.quote.empty": "Marca un paquete o una mini app para ver el total.",
   "apps.quote.total": "Total mini apps",
-  "apps.quote.base": "Se suma al plan de Google Workspace por tamaño.",
+  "apps.quote.base": "Se suma al precio por cuenta de Google Workspace.",
   "apps.quote.suggest": "Con las apps que marcaste te conviene el paquete {pkg}: {price} al mes en vez de {singles}.",
   "apps.quote.cta": "Activar desde el portal",
   "apps.compras.title": "Compras de software",
   "apps.compras.desc": "Pedir, aprobar, comprar, pagar y renovar el software de la empresa, con historial. Las suscripciones sin conector se registran aquí y entran al control de licencias.",
   "apps.compras.link": "Ver Compras de software",
   "apps.licenses.note": "Control de licencias va incluido: en Google Workspace y en cada mini app.",
-  "apps.m365.note": "Microsoft 365, Outlook y Teams no es una mini app: será una plataforma base, con el mismo precio por tamaño que Google Workspace, cuando su conector esté en producción.",
+  "apps.m365.note": "Microsoft 365, Outlook y Teams no es una mini app: será una plataforma base, con el mismo precio por cuenta que Google Workspace, cuando su conector esté en producción.",
   "apps.note.clp": "Precios de lista por empresa al mes, en pesos chilenos, IVA incluido en la boleta o factura.",
   "apps.note.activate": "Las mini apps se activan desde el portal; las plataformas en preparación no se cobran hasta estar conectadas.",
   "seo.compras.title": "Compras de software: pedir, aprobar, pagar y renovar",
@@ -1117,6 +1112,49 @@ const esCL = {
   "calc.share.hint": "El enlace guarda tus tres datos: quien lo abra ve el mismo cálculo.",
   "searches.q7": "¿Qué programas paga mi empresa y quién los usa?",
   "searches.q8": "¿Cómo encuentro las licencias que pagamos y nadie usa?",
+  // Precio por cuenta: barra, incluido y adicionales (Jorge 2026-10-12)
+  "build.eyebrow": "Arma tu precio",
+  "build.title": "Pagas por cuenta. Gratis hasta 20.",
+  "build.desc": "Mueve la barra hasta la cantidad de cuentas de Google Workspace que administras. El precio incluye la integración con Google Workspace y las solicitudes; todo lo demás se agrega por separado.",
+  "build.accounts": "Cuentas administradas",
+  "build.accounts.hint": "Las activas y bloqueadas que Mekovault administra en Google Workspace.",
+  "build.accounts.unit": "cuentas",
+  "build.free": "Gratis",
+  "build.free.desc": "para siempre, sin tarjeta",
+  "build.talk": "A conversar",
+  "build.talk.desc": "Con más de 200 cuentas confirmamos el precio contigo.",
+  "build.rate": "{price} por cuenta",
+  "build.tier.rate": "{price} por cuenta",
+  "build.included.title": "Incluido en el precio",
+  "build.included.1": "Integración con Google Workspace: altas, bajas, bloqueos, correo redirigido, archivos traspasados y licencias liberadas",
+  "build.included.2": "Solicitudes (ticketera): alta, baja, reactivación, alias y cuenta genérica, con aprobación por rol",
+  "build.addons.title": "Adicionales",
+  "build.addons.desc": "Cada uno con su precio al mes por empresa. Los activas cuando los necesites.",
+  "build.addon.per_company": "al mes por empresa",
+  "build.addon.nomina.name": "Nómina conectada",
+  "build.addon.nomina.desc": "Buk o Talana como origen de las altas y bajas, con las jefaturas desde la nómina.",
+  "build.addon.audit.name": "Registro y auditoría",
+  "build.addon.audit.desc": "Historial inmutable de 365 días, exportación para auditores y retención a medida.",
+  "build.addon.compras.name": "Compras de software",
+  "build.addon.compras.desc": "Pedir, aprobar, comprar, pagar y renovar el software de la empresa, con historial.",
+  "build.addon.apps.name": "Aplicaciones vinculadas",
+  "build.addon.apps.desc": "Qué apps tienen acceso a las cuentas de la empresa: barrido semanal, decisión de la jefatura y revocación.",
+  "build.miniapps.title": "Plataformas (mini apps)",
+  "build.miniapps.desc": "Una mini app por plataforma, de a una o en paquete. Las que están en preparación no se cobran hasta estar conectadas.",
+  "build.miniapps.toggle": "Agregar plataformas",
+  "build.miniapps.hide": "Ocultar plataformas",
+  "build.miniapps.selected": "Plataformas marcadas: {price} al mes.",
+  "build.summary.title": "Tu precio",
+  "build.summary.base": "{n} cuentas",
+  "build.summary.miniapps": "Mini apps",
+  "build.summary.total": "Total al mes",
+  "build.summary.free": "Gratis para siempre con hasta 20 cuentas.",
+  "build.summary.trial": "90 días gratis en lo pagado. Sin tarjeta para partir.",
+  "build.summary.cta": "Empieza gratis",
+  "build.summary.talk_cta": "Escríbenos",
+  "build.summary.more": "¿Varias empresas o un caso especial? Conversemos",
+  "build.summary.note.clp": "Precios de lista en pesos chilenos al tipo de cambio del {date}; IVA incluido en la boleta o factura.",
+  "build.summary.note.usd": "Precios de lista en dólares; fuera de Chile facturamos en USD por transferencia o tarjeta.",
 } as const;
 
 export type TranslationKey = keyof typeof esCL;

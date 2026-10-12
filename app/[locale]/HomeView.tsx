@@ -30,7 +30,7 @@ import { StatusPill } from "@/components/panels/shared";
 import Link from "@/components/Link";
 import { useI18n, useT } from "@/lib/i18n/I18nProvider";
 import type { TranslationKey } from "@/lib/i18n/dictionaries";
-import { formatCLP, mainAppPrice } from "@/lib/catalog";
+import { formatStartingRate } from "@/lib/pricing";
 
 /** Preguntas literales de dueños (ChatGPT, Gemini y Semrush, 2026-10-11) con su guía. */
 const SEARCHES: Array<{ key: TranslationKey; href: string }> = [
@@ -273,7 +273,7 @@ export function HomeView() {
         <Container size="narrow">
           <div className="rounded-[12px] bg-[#03045e] px-6 py-12 text-center text-white sm:px-14 sm:py-16">
             <EyebrowBadge tone="cyan" className="mx-auto">
-              {t("cta.pricing_line", { price: `${formatCLP(mainAppPrice())} CLP` })}
+              {t("cta.pricing_line", { price: formatStartingRate(locale) })}
             </EyebrowBadge>
             <h2 className="mt-4 text-balance text-[30px] font-extrabold leading-[1.1] tracking-[-0.025em] text-white sm:text-[40px]">
               {t("cta.title")}

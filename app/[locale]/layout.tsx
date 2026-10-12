@@ -98,9 +98,9 @@ export default async function RootLayout({
       },
       {
         "@type": "Offer",
-        name: dict["tiers.small.name"],
-        price: "49900",
-        priceCurrency: "CLP",
+        name: dict["build.title"],
+        price: "1.20",
+        priceCurrency: "USD",
         description: dict["seo.offer.description"],
         url: `${SITE_URL}/pricing`,
       },

@@ -1,54 +1,70 @@
 import type { Locale } from "./i18n/routing";
 
 /**
- * Precios por tamaño de empresa (plan de marketing 2026-10-11, propuesta a Jorge).
+ * Modelo de precios (decisión de Jorge, 2026-10-12): se paga por cuenta
+ * administrada de Google Workspace, con una barra que elige la cantidad.
  *
- * El cobro real del portal sigue siendo por módulos con descuento (catálogo
- * público). Lo que se muestra aquí son tres configuraciones recomendadas por
- * tramo de personas, con el total que resulta del catálogo y, fuera de
- * Chile, una referencia en dólares. Si Jorge confirma los montos por tramo,
- * pasan al catálogo y a la facturación.
+ * - 1 a 20 cuentas: gratis para siempre.
+ * - De 21 en adelante: un precio por cuenta al mes, más barato por tramo.
+ * - Más de 200: a conversar.
+ *
+ * Incluido en ese precio: la integración con Google Workspace (altas, bajas,
+ * bloqueos, correo, archivos, licencias) y las solicitudes (ticketera). Todo lo
+ * demás es adicional con su propio precio por empresa: nómina conectada,
+ * registro y auditoría, Compras de software, aplicaciones vinculadas y las
+ * mini apps por plataforma (`lib/miniapps.ts`).
+ *
+ * Son precios de lista publicados; el cobro del portal se ajusta aparte.
  */
 
-export type TierKey = "free" | "small" | "medium" | "large";
+export const FREE_ACCOUNTS = 20;
+export const TALK_ABOVE = 200;
+export const SLIDER_MAX = 250;
 
-export interface Tier {
-  key: TierKey;
-  /** Personas en la empresa: [desde, hasta]; `null` = sin tope. */
-  people: [number, number | null];
-  /** Módulos del catálogo que incluye la configuración recomendada. */
-  modules: string[];
-  /** Precio mensual sugerido por empresa, en CLP (propuesta; no se cobra aún). */
-  suggestedClp: number;
-  /** Referencia mensual en USD para fuera de Chile. */
-  suggestedUsd: number;
+/** Precio por cuenta al mes en USD según la cantidad total de cuentas. */
+export const ACCOUNT_TIERS: Array<{ from: number; to: number; usd: number }> = [
+  { from: 1, to: 20, usd: 0 },
+  { from: 21, to: 50, usd: 1.2 },
+  { from: 51, to: 100, usd: 1.0 },
+  { from: 101, to: 200, usd: 0.85 },
+];
+
+/** USD por cuenta para `n` cuentas; `null` cuando hay que conversar. */
+export function perAccountUsd(n: number): number | null {
+  if (n > TALK_ABOVE) return null;
+  const tier = ACCOUNT_TIERS.find((t) => n >= t.from && n <= t.to) ?? ACCOUNT_TIERS[0]!;
+  return tier.usd;
 }
 
-export const TIERS: Tier[] = [
-  // Jorge, 2026-10-11: hasta 20 cuentas es gratis, solo Google Workspace y solicitudes.
-  { key: "free", people: [1, 20], modules: ["super-workspace"], suggestedClp: 0, suggestedUsd: 0 },
-  { key: "small", people: [21, 50], modules: ["super-workspace"], suggestedClp: 49_900, suggestedUsd: 59 },
-  {
-    key: "medium",
-    people: [51, 200],
-    modules: ["super-workspace", "requests-tickets", "audit-compliance"],
-    suggestedClp: 99_900,
-    suggestedUsd: 119,
-  },
-  {
-    key: "large",
-    people: [201, 500],
-    modules: ["super-workspace", "requests-tickets", "audit-compliance"],
-    suggestedClp: 199_900,
-    suggestedUsd: 239,
-  },
+/** Total mensual en USD del precio base (todas las cuentas al precio del tramo). */
+export function baseMonthlyUsd(n: number): number | null {
+  const rate = perAccountUsd(n);
+  if (rate === null) return null;
+  return n <= FREE_ACCOUNTS ? 0 : Math.round(n * rate * 100) / 100;
+}
+
+export type AddonKey = "nomina" | "audit" | "compras" | "apps";
+
+export interface Addon {
+  key: AddonKey;
+  /** Precio de lista por empresa al mes, en CLP. */
+  clp: number;
+  /** Página con más detalle. */
+  href?: string;
+}
+
+export const ADDONS: Addon[] = [
+  { key: "nomina", clp: 27_900, href: "/conectores/buk" },
+  { key: "audit", clp: 24_900, href: "/account-governance" },
+  { key: "compras", clp: 24_900, href: "/compras-de-software" },
+  { key: "apps", clp: 17_900, href: "/recursos/aplicaciones-vinculadas" },
 ];
 
 /**
- * Tipo de cambio de referencia para mostrar precios fuera de Chile.
+ * Tipo de cambio de referencia para pasar entre USD y CLP.
  * Se actualiza a mano; la fecha se muestra en la página.
  */
-export const FX_REFERENCE = { usdPerClp: 1 / 950, date: "2026-10-11" };
+export const FX_REFERENCE = { clpPerUsd: 950, usdPerClp: 1 / 950, date: "2026-10-11" };
 
 /** Moneda en la que se presenta el precio según el idioma de la URL. */
 export function displayCurrency(locale: Locale): "CLP" | "USD" {
@@ -59,14 +75,29 @@ export function clpToUsd(clp: number): number {
   return Math.round(clp * FX_REFERENCE.usdPerClp);
 }
 
-export function formatUSD(v: number): string {
-  return `US$ ${new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(v)}`;
+export function usdToClp(usd: number): number {
+  return Math.round(usd * FX_REFERENCE.clpPerUsd);
 }
 
-/** Formatea un monto en CLP o, fuera de Chile, su referencia en USD. */
+export function formatUSD(v: number, decimals = 0): string {
+  return `US$ ${new Intl.NumberFormat("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(v)}`;
+}
+
+export function formatCLPAmount(v: number): string {
+  return `$${new Intl.NumberFormat("es-CL", { maximumFractionDigits: 0 }).format(v)} CLP`;
+}
+
+/** Un monto en CLP mostrado en la moneda del idioma. */
 export function formatPrice(clp: number, locale: Locale): string {
-  if (displayCurrency(locale) === "CLP") {
-    return `$${new Intl.NumberFormat("es-CL", { maximumFractionDigits: 0 }).format(clp)} CLP`;
-  }
-  return formatUSD(clpToUsd(clp));
+  return displayCurrency(locale) === "CLP" ? formatCLPAmount(clp) : formatUSD(clpToUsd(clp));
+}
+
+/** Un monto en USD mostrado en la moneda del idioma (con decimales en USD). */
+export function formatUsdPrice(usd: number, locale: Locale, decimals = 0): string {
+  return displayCurrency(locale) === "CLP" ? formatCLPAmount(usdToClp(usd)) : formatUSD(usd, decimals);
+}
+
+/** Precio por cuenta del primer tramo pagado, para el texto del inicio. */
+export function formatStartingRate(locale: Locale): string {
+  return formatUsdPrice(ACCOUNT_TIERS[1]!.usd, locale, 2);
 }

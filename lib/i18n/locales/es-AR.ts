@@ -49,7 +49,6 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "svc.audit.b2": "Descargá el historial en Excel",
 
   // Pricing preview
-  "pricing.subtitle": "Gratis hasta 20 cuentas. Después, desde {price} por mes por empresa, sin costo por persona.",
 
   // FAQ
   "faq.title": "Lo que preguntan los dueños y gerentes antes de arrancar",
@@ -87,8 +86,6 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "products.cta.signup": "Empezá gratis 90 días",
 
   // Pricing page
-  "pricing_page.subtitle":
-    "Elegí solo lo que necesitás. Cada módulo tiene un precio mensual fijo. Cuantos más módulos activás, más descuento en todos.",
   "pricing_page.trial_badge": "Gratis para siempre hasta 20 cuentas · 90 días gratis en los planes pagos · sin tarjeta",
   "pricing_page.select_hint": "Tocá un módulo para armar tu plan",
   "pricing_page.currency_note":
@@ -96,8 +93,6 @@ const overrides: Partial<Record<TranslationKey, string>> = {
   "pricing_page.reference_note": "Precios de referencia. Los confirmás al crear tu cuenta.",
   "pricing_page.faq.desc": "Si tenés otra duda, escribinos a cloud@mekovault.com.",
   "pricing_page.cta.title": "Empezá gratis. Decidí en 90 días.",
-  "faq.price_includes.a":
-    "Cada módulo tiene un precio mensual fijo por empresa. Incluye soporte en español y todas las actualizaciones. Lo ves antes de activarlo y lo podés desactivar cuando quieras.",
   "faq.switch.q": "¿Puedo agregar o sacar módulos después?",
   "faq.switch.a":
     "Sí, en cualquier momento desde tu panel. Se cobra proporcional a los días: no pagás doble por el cambio.",
