@@ -7,10 +7,14 @@
 import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
-  "hero.subtitle": "Onboarding y offboarding de aplicaciones, controlados: Google Workspace, Slack, Zoom, Figma y todo lo que pagás por persona. RRHH pide, Mekovault lo ejecuta a la hora y queda la evidencia.",
-  "hero.title.line2": "Cuidá el presupuesto. Sin depender de sistemas.",
-  "hero.title.line1": "Administrá las licencias de software y las cuentas de tu gente, de principio a fin.",
-
+  "hero.subtitle": "La IA de Mekovault detecta quién entra, quién sale y qué licencias sobran, y te lo deja listo para aprobar en un clic. Google Workspace, Slack, Zoom, Figma y todo lo que pagás por persona.",
+  "hero.title.line2": "Sin sistemas, sin planillas.",
+  "seo.og.tagline": "La IA que administra tus licencias y cuida tu presupuesto, sin sistemas. Gratis hasta 20 cuentas.",
+  "seo.home.description": "La IA de Mekovault detecta quién entra, quién sale y qué licencias de software sobran, y te lo deja listo para aprobar en un clic. Sin sistemas, sin planillas.",
+  "seo.home.title": "Tus licencias se administran solas · Mekovault",
+  "meta.description": "La IA de Mekovault detecta quién entra, quién sale y qué licencias sobran, y te lo deja listo para aprobar en un clic. Altas, bajas y presupuesto de software sin sistemas ni planillas.",
+  "meta.title": "Mekovault · Licencias y cuentas que se administran solas, con IA y sin sistemas",
+  "hero.title.line1": "Tus licencias se administran solas.",
   "nav.signup": "Empezá gratis",
   "agov.cta.signup": "Empezá gratis 90 días",
 

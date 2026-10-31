@@ -6,9 +6,8 @@
 import type { Dictionary } from "./es-CL";
 
 const ptBR: Dictionary = {
-  "meta.title": "Mekovault · Governo de contas, licenças e credenciais: tudo nasce na folha de pagamento",
-  "meta.description": "Governança das contas, licenças e credenciais de serviços da sua empresa: tudo nasce na folha de pagamento e se governa a partir dela. Quando alguém deixa a organização, nada continua cobrando. Sem depender de TI nem do Suporte.",
-
+  "meta.title": "Mekovault · Licenças e contas que se administram sozinhas, com IA e sem TI",
+  "meta.description": "A IA da Mekovault detecta quem entra, quem sai e quais licenças sobram, e deixa tudo pronto para aprovar em um clique. Admissões, desligamentos e orçamento de software sem TI nem planilhas.",
   "nav.product": "Produto",
   "nav.pricing": "Preços",
   "nav.about": "Sobre",
@@ -18,9 +17,9 @@ const ptBR: Dictionary = {
   "nav.login": "Entrar",
   "nav.signup": "Comece grátis",
 
-  "hero.title.line1": "Administre as licenças de software e as contas da sua equipe, do início ao fim.",
-  "hero.title.line2": "Cuide do orçamento. Sem depender da TI.",
-  "hero.subtitle": "Onboarding e offboarding de aplicativos, sob controle: Google Workspace, Slack, Zoom, Figma e tudo o que você paga por pessoa. O RH pede, a Mekovault executa na hora e a evidência fica.",
+  "hero.title.line1": "Suas licenças se administram sozinhas.",
+  "hero.title.line2": "Sem TI, sem planilhas.",
+  "hero.subtitle": "A IA da Mekovault detecta quem entra, quem sai e quais licenças sobram, e deixa tudo pronto para você aprovar em um clique. Google Workspace, Slack, Zoom, Figma e tudo o que você paga por pessoa.",
   "hero.cta.signup": "Comece grátis por 90 dias",
   "hero.trust.1": "Sem cartão para começar",
   "hero.trust.2": "Instala em uma tarde",
@@ -799,9 +798,9 @@ const ptBR: Dictionary = {
   "gov.home.link": "Ver como as contas são governadas",
 
   // ========== SEO, guías y búsquedas (plan de marketing 2026-10-11) ==========
-  "seo.home.title": "Licenças de software e contas sob controle · Mekovault",
-  "seo.home.description": "Administre as licenças de software e as contas da sua equipe do início ao fim. Onboarding e offboarding de aplicativos sob controle, sem TI.",
-  "seo.og.tagline": "Onboarding e offboarding de aplicativos, sob controle. Grátis até 20 contas.",
+  "seo.home.title": "Suas licenças se administram sozinhas · Mekovault",
+  "seo.home.description": "A IA da Mekovault detecta quem entra, quem sai e quais licenças de software sobram, e deixa tudo pronto para aprovar em um clique. Sem TI, sem planilhas.",
+  "seo.og.tagline": "A IA que administra suas licenças e cuida do seu orçamento, sem TI. Grátis até 20 contas.",
   "seo.offer.description": "Grátis até 20 contas do Google Workspace. Depois, a partir de US$ 1,20 por conta por mês, com a integração com o Workspace e as solicitações incluídas.",
   "seo.products.title": "Contas: admissão, desligamento e solicitações · Mekovault",
   "seo.products.description": "Conta criada no dia da entrada, encerrada no último dia com e-mail e arquivos transferidos, licenças liberadas e evidência por 365 dias. O RH pede, sem chamado para a TI.",

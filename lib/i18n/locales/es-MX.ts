@@ -7,7 +7,14 @@
 import esCL, { type Dictionary, type TranslationKey } from "./es-CL";
 
 const overrides: Partial<Record<TranslationKey, string>> = {
-  "hero.title.line2": "Cuida el presupuesto. Sin depender de TI.",
+  "hero.title.line2": "Sin TI, sin hojas de cálculo.",
+  "seo.og.tagline": "La IA que administra tus licencias y cuida tu presupuesto, sin TI. Gratis hasta 20 cuentas.",
+  "seo.home.description": "La IA de Mekovault detecta quién entra, quién sale y qué licencias de software sobran, y te lo deja listo para aprobar en un clic. Sin TI, sin hojas de cálculo.",
+  "seo.home.title": "Tus licencias se administran solas · Mekovault",
+  "meta.description": "La IA de Mekovault detecta quién entra, quién sale y qué licencias sobran, y te lo deja listo para aprobar en un clic. Altas, bajas y presupuesto de software sin TI ni hojas de cálculo.",
+  "meta.title": "Mekovault · Licencias y cuentas que se administran solas, con IA y sin TI",
+  "hero.subtitle": "La IA de Mekovault detecta quién entra, quién sale y qué licencias sobran, y te lo deja listo para aprobar en un clic. Google Workspace, Slack, Zoom, Figma y todo lo que pagas por persona.",
+  "hero.title.line1": "Tus licencias se administran solas.",
 
   // Hero
 

@@ -5,9 +5,8 @@
 import type { Dictionary } from "./es-CL";
 
 const enUS: Dictionary = {
-  "meta.title": "Mekovault · Governance of accounts, licenses and credentials: everything starts in payroll",
-  "meta.description": "Governance of your company's accounts, licenses and service credentials: everything starts in payroll and is governed from there. When someone leaves the organization, nothing keeps billing. Without depending on IT or Support.",
-
+  "meta.title": "Mekovault · Licenses and accounts that manage themselves, with AI and no IT",
+  "meta.description": "Mekovault's AI spots who joins, who leaves and which licenses are going unused, and leaves it ready to approve in one click. Onboarding, offboarding and software budget without IT or spreadsheets.",
   "nav.product": "Product",
   "nav.pricing": "Pricing",
   "nav.about": "About",
@@ -17,9 +16,9 @@ const enUS: Dictionary = {
   "nav.login": "Sign in",
   "nav.signup": "Start free",
 
-  "hero.title.line1": "Manage software licenses and your people's accounts, from day one to the last day.",
-  "hero.title.line2": "Protect the budget. No IT department needed.",
-  "hero.subtitle": "Application onboarding and offboarding, under control: Google Workspace, Slack, Zoom, Figma and everything you pay per person. HR requests it, Mekovault runs it on time and the evidence stays.",
+  "hero.title.line1": "Your licenses manage themselves.",
+  "hero.title.line2": "No IT, no spreadsheets.",
+  "hero.subtitle": "Mekovault's AI spots who joins, who leaves and which licenses are going unused, and leaves it ready for you to approve in one click. Google Workspace, Slack, Zoom, Figma and everything you pay per seat.",
   "hero.cta.signup": "Start free for 90 days",
   "hero.trust.1": "No card to start",
   "hero.trust.2": "Set up in an afternoon",
@@ -797,9 +796,9 @@ const enUS: Dictionary = {
   "gov.home.link": "See how accounts are governed",
 
   // ========== SEO, guías y búsquedas (plan de marketing 2026-10-11) ==========
-  "seo.home.title": "Software license management and user accounts · Mekovault",
-  "seo.home.description": "Manage software licenses and your people's accounts from day one to the last day. App onboarding and offboarding under control, no IT needed.",
-  "seo.og.tagline": "Application onboarding and offboarding, under control. Free up to 20 accounts.",
+  "seo.home.title": "Your licenses manage themselves · Mekovault",
+  "seo.home.description": "Mekovault's AI spots who joins, who leaves and which software licenses are going unused, and leaves it ready to approve in one click. No IT, no spreadsheets.",
+  "seo.og.tagline": "The AI that manages your licenses and protects your budget, no IT needed. Free up to 20 accounts.",
   "seo.offer.description": "Free up to 20 Google Workspace accounts. Then from US$ 1.20 per account per month, with the Workspace integration and requests included.",
   "seo.products.title": "Accounts: onboarding, offboarding and requests · Mekovault",
   "seo.products.description": "Accounts created on day one, closed on the last day with email and files handed over, licenses released and 365 days of evidence. HR requests it, no IT ticket.",
